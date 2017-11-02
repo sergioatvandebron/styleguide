@@ -18,7 +18,7 @@ const pages = [
   {
     path: '/',
     title: 'Introduction',
-    content: pageLoader(() => import('./pages/INTRO.md')),
+    content: pageLoader(() => import('./pages/intro.md')),
     imports: imports,
   },
   {
@@ -27,7 +27,7 @@ const pages = [
       {
         path: '/constants/colors',
         title: 'Colors',
-        content: pageLoader(() => import('./pages/COLORS.md'))
+        content: pageLoader(() => import('./pages/constants/colors.md'))
       }
     ]
   },
@@ -37,19 +37,19 @@ const pages = [
       {
         path: '/elements/buttons',
         title: 'Buttons',
-        content: pageLoader(() => import('./pages/BUTTONS.md')),
+        content: pageLoader(() => import('./pages/elements/buttons.md')),
         imports: imports,
       },
       {
         path: '/elements/headings',
         title: 'Headings',
-        content: pageLoader(() => import('./pages/HEADINGS.md')),
+        content: pageLoader(() => import('./pages/elements/headings.md')),
         imports: imports,
       },
       {
         path: '/elements/divider',
         title: 'Divider',
-        content: pageLoader(() => import('./pages/DIVIDER.md')),
+        content: pageLoader(() => import('./pages/elements/divider.md')),
         imports: imports,
       }
     ]
@@ -57,7 +57,7 @@ const pages = [
   {
     path: '/components',
     title: 'Components',
-    content: pageLoader(() => import('./pages/COMPONENTS.md')),
+    content: pageLoader(() => import('./pages/components/components.md')),
     imports: imports,
   }
 ];
