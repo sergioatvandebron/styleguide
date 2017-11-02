@@ -5,11 +5,13 @@ import { Catalog, pageLoader, ReactSpecimen } from "catalog";
 import Button from '../src/components/Button';
 import Heading from '../src/components/Heading';
 import Paragraph from '../src/components/Paragraph';
+import Divider from '../src/components/Divider';
 
 const imports = {
   Button,
   Heading,
-  Paragraph
+  Paragraph,
+  Divider
 };
 
 const pages = [
@@ -42,6 +44,12 @@ const pages = [
         path: '/elements/headings',
         title: 'Headings',
         content: pageLoader(() => import('./pages/HEADINGS.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/divider',
+        title: 'Divider',
+        content: pageLoader(() => import('./pages/DIVIDER.md')),
         imports: imports,
       }
     ]

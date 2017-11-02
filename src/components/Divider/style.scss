@@ -1,0 +1,21 @@
+@import "../../css/_global.scss";
+
+.Van-Divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: $color-grey-light;
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+
+  &-content {
+    position: relative;
+    top: -10px;
+    background-color: $color-white;
+    display: inline-block;
+    padding: 0 10px;
+    color: $color-grey-light;
+    font-size: 16px;
+  }
+}
