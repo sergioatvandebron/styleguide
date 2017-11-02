@@ -1,0 +1,11 @@
+@import "../../css/_global.scss";
+
+.Van-Paragraph {
+  font-weight: 100;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 17px;
+  line-height: 30px;
+  color: $color-primary-darker;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

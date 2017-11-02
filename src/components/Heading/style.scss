@@ -1,0 +1,30 @@
+@import "../../css/_global.scss";
+
+.Van-Heading {
+  font-family: "Proxima Nova", sans-serif;
+  color: $color-primary-darker;
+
+  &--h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  &--h2 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  &--h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &--h4 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,73 @@
+@import "../../css/_global.scss";
+
+.Van-Button {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  border-radius: 5px;
+  min-height: 50px;
+  border: 1px solid transparent;
+  background-color: transparent;
+
+  &--primary {
+    border-color: $color-pink-primary;
+    background-color: $color-pink-primary;
+    color: $color-white;
+    
+    &:hover {
+      border-color: $color-pink-dark;
+      background-color: $color-pink-dark;
+    }
+  }
+
+  &--info {
+    border-color: $color-blue-primary;
+    background-color: $color-blue-primary;
+    color: $color-white;
+
+    &:hover {
+      border-color: $color-blue-dark;
+      background-color: $color-blue-dark;
+    }
+  }
+
+  &--warning {
+    border-color: $color-orange;
+    background-color: $color-orange;
+    color: $color-white;
+  }
+
+
+  &--large {
+    min-height: 60px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &--small {
+    min-height: 40px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  &--tiny {
+    min-height: 35px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &--compact {
+    min-height: 26px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

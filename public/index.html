@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <style>
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-semibold.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-semibold.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-semibold.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-semibold.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-semibold.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 600;
+        font-style: normal; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-thin.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-thin.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-thin.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-thin.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-thin.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 100;
+        font-style: normal; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-bold.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-bold.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-bold.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-bold.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-bold.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 700;
+        font-style: normal; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-semibold-italic.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-semibold-italic.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-semibold-italic.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-semibold-italic.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-semibold-italic.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 600;
+        font-style: italic; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-light.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-light.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-light.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-light.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-light.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 300;
+        font-style: normal; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-regular.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-regular.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-regular.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-regular.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-regular.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 400;
+        font-style: normal; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-regular-italic.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-regular-italic.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-regular-italic.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-regular-italic.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-regular-italic.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 400;
+        font-style: italic; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-extrabold-italic.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-extrabold-italic.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-extrabold-italic.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-extrabold-italic.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-extrabold-italic.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 800;
+        font-style: italic; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-light-italic.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-light-italic.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-light-italic.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-light-italic.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-light-italic.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 300;
+        font-style: italic; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-extrabold.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-extrabold.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-extrabold.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-extrabold.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-extrabold.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 800;
+        font-style: normal; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-black.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-black.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-black.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-black.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-black.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 900;
+        font-style: normal; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-thin-italic.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-thin-italic.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-thin-italic.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-thin-italic.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-thin-italic.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 100;
+        font-style: italic; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-bold-italic.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-bold-italic.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-bold-italic.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-bold-italic.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-bold-italic.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 700;
+        font-style: italic; }
+
+      @font-face {
+        font-family: "Proxima Nova";
+        src: url('./assets/fonts/proxima-nova-black-italic.eot?15d9d696b70');
+        src: url('./assets/fonts/proxima-nova-black-italic.eot?&15d9d696b70#iefix') format("embedded-opentype"), url('./assets/fonts/proxima-nova-black-italic.woff?15d9d696b70') format("woff"), url('./assets/fonts/proxima-nova-black-italic.ttf?15d9d696b70') format("truetype"), url('./assets/fonts/proxima-nova-black-italic.svg?15d9d696b70#Proxima%20Nova') format("svg");
+        font-weight: 900;
+        font-style: italic; }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
