@@ -2,8 +2,9 @@
 `Input` represents an HTML `<input>` element with `type` set to any text type, but not `checkbox` or `radio`.
 
 ### A note on props
-`Input` will pass all the props down to the underlying element, except for `meta` and `input`, which are common props injected by redux-form's `Field`.
-A `className` prop will be added (but not replace) the main input css class.
+`Input` will pass all the props down to the underlying element, except for `meta` and `input`, which are common props injected by redux-form's `Field`. These are also the default ways to pass error messages, success and id to the input (c.f. `Field`'s documentation).
+
+A `className` prop will be added (but not replace) the main css class.
 
 ### Examples
 Default input:
