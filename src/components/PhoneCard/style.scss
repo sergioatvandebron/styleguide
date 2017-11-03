@@ -1,0 +1,28 @@
+@import "../../css/_global.scss";
+
+.Van-PhoneCard {
+  width: 325px;
+  min-height: 75px;
+  background-color: rgba(255, 255, 255, .6);
+  padding: 15px 20px;
+
+  &-number {
+    display: block;
+    color: $color-green-primary;
+    font-weight: $font-weight-semibold;
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .fa {
+    font-size: 23px;
+    margin-right: 8px;
+  }
+
+  &-description {
+    display: block;
+    color: $color-primary-bright;
+    font-size: 13px;
+    line-height: 18px;
+  }
+}

@@ -2,7 +2,7 @@
 
 @mixin background-color($text-color, $bg-color, $inverted: false) {
   @if $inverted {
-    background-color: transparent;
+    background-color: $color-white;
     color: $bg-color;
     border-color: $color-grey;
   } @else {
