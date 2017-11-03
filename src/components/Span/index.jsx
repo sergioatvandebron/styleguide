@@ -16,7 +16,12 @@ class Span extends PureComponent {
   }
 
   render() {
-    return <span className={this.getClass()}>{this.props.children}</span>;
+    const {
+      className,
+      ...props
+    } = this.props;
+
+    return <span className={this.getClass()} {...props}>{this.props.children}</span>;
   }
 }
 

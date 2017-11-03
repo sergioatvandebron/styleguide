@@ -31,8 +31,6 @@ class Link extends PureComponent {
 
 Link.propTypes = {
   className: PropTypes.string,
-  href: PropTypes.string,
-  title: PropTypes.string,
   type: PropTypes.string
 };
 
