@@ -22,6 +22,7 @@ const Input = ({
     <div className={classNames}>
       <input
         className='Van-TextInput-input'
+        id={input.name || props.id}
         {...props}
         {...input}
       />
