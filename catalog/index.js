@@ -6,6 +6,7 @@ import Button from '../src/components/Button';
 import Heading from '../src/components/Heading';
 import Paragraph from '../src/components/Paragraph';
 import Divider from '../src/components/Divider';
+import Input from '../src/components/Input';
 
 const imports = {
   Button,
@@ -28,6 +29,17 @@ const pages = [
         path: '/constants/colors',
         title: 'Colors',
         content: pageLoader(() => import('./pages/constants/colors.md'))
+      }
+    ]
+  },
+  {
+    title: 'Form',
+    pages: [
+      {
+        path: '/form/input',
+        title: 'Input',
+        content: pageLoader(() => import('./pages/form/input.md')),
+        imports: { Input }
       }
     ]
   },
