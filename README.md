@@ -6,9 +6,6 @@
 - Divider
 - Button
 - Label
-- Grid
-- Col
-- Container
 - Inputs, textarea, select
 - Logo
 - Image
@@ -19,6 +16,11 @@
   - Simple
   - Unstyled
   - With icon
+
+## Layout
+- Grid
+- Col
+- Container
 
 ## Components
 - Card
