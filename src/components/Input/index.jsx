@@ -8,15 +8,28 @@ const Input = ({
   input,
   className,
   ...props
-}) => (
-  <div>
-    <input
-      className={classnames('Van-Text-Input', className)}
-      {...props}
-      {...input}
-    />
-  </div>
-);
+}) => {
+  const { error, warning, touched } = meta;
+  const classNames = classnames(
+    'Van-TextInput',
+    className,
+    { 'Van-TextInput--error': touched && error },
+    { 'Van-TextInput--warning': touched && warning },
+    { 'Van-TextInput--success': touched && !error && !warning }
+  );
+
+  return (
+    <div className={classNames}>
+      <input
+        className='Van-TextInput-input'
+        {...props}
+        {...input}
+      />
+
+      {touched && typeof error === 'string' && <div className="Van-TextInput-error-message">{error}</div>}
+    </div>
+  );
+};
 
 Input.propTypes = {
   meta: PropTypes.object,

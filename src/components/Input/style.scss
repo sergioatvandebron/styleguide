@@ -1,12 +1,52 @@
 @import "../../css/_form-globals.scss";
+@import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 
-.Van-Text-Input {
-  background-color: $input-bg;
-  border: 0;
-  box-sizing: border-box;
-  color: $input-color;
-  display: block;
-  font-size: $input-font-size;
-  padding: $input-padding;
-  width: 100%;
+@mixin input-message($state-name, $color, $border-color, $addition) {
+  &::after {
+    color: $color;
+    content: $addition;
+    font-family: FontAwesome;
+    line-height: 42px;
+    position: absolute;
+    right: 11px;
+    top: 0;
+  }
+
+  .Van-TextInput-input {
+    border-color: $border-color;
+    padding-right: 30px;
+  }
+
+  .Van-TextInput-#{$state-name}-message {
+    color: $color;
+    font-size: 13px;
+    padding-top: 3px;
+  }
+}
+
+.Van-TextInput {
+  position: relative;
+
+  &-input {
+    background-color: $input-bg;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: $input-color;
+    display: block;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    width: 100%;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &--error {
+    @include input-message("error", $input-error-color, $input-error-border, "\f00d");
+  }
+
+  &--success {
+    @include input-message("success", $input-success-color, $input-success-border, "\f00c");
+  }
 }

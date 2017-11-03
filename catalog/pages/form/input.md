@@ -11,12 +11,32 @@ Default input:
 <Input />
 ```
 
-An input with `type` email and a placeholder:
+Input with `type` email and a placeholder:
 ```react
 <Input type="email" placeholder="Enter your e-mail" />
 ```
 
-An input with `read-only` attribute:
+Input with `read-only` attribute:
 ```react
 <Input readOnly />
+```
+
+Input with `onChange` handler:
+```react
+<Input onChange={ev => alert(ev.target.value)} />
+```
+
+Input with error:
+```react
+<Input meta={{ touched: true, error: true }} />
+```
+
+Input with error message:
+```react
+<Input meta={{ touched: true, error: 'Oops! You messed up.' }} />
+```
+
+Input with success:
+```react
+<Input meta={{ touched: true }} />
 ```
