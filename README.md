@@ -13,9 +13,9 @@
 - Table
 - Block (white box)
 - List
-  - Simple
-  - Unstyled
-  - With icon
+  * [x] Simple
+  * [x] Unstyled
+  * With icon
 
 ## Layout
 - [x] Grid

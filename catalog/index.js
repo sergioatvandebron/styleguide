@@ -13,6 +13,7 @@ import Link from '../src/components/Link';
 import Grid from '../src/components/Grid';
 import Col from '../src/components/Col';
 import Container from '../src/components/Container';
+import List from '../src/components/List';
 
 const imports = {
   Button,
@@ -24,7 +25,8 @@ const imports = {
   Label,
   Grid,
   Col,
-  Container
+  Container,
+  List
 };
 
 const pages = [
@@ -91,6 +93,12 @@ const pages = [
         path: '/elements/grid',
         title: 'Grid',
         content: pageLoader(() => import('./pages/elements/grid.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/list',
+        title: 'List',
+        content: pageLoader(() => import('./pages/elements/list.md')),
         imports: imports,
       }
     ]
