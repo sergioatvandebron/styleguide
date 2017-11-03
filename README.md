@@ -10,7 +10,7 @@
 - Logo
 - Image
 - Icons
-- Table
+- [x] Table
 - Block (white box)
 - List
   * [x] Simple
@@ -31,7 +31,7 @@
 - Modal
 - Hero
 - Collapse
-- PhoneCard
+- [x] PhoneCard
 - Toggle
 - 
 - FormField (wrapping Label, input, textarea)
