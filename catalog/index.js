@@ -8,6 +8,7 @@ import Paragraph from '../src/components/Paragraph';
 import Divider from '../src/components/Divider';
 import Input from '../src/components/Input';
 import NumberInput from '../src/components/NumberInput';
+import Switch from '../src/components/Switch';
 import Label from '../src/components/Label';
 import Span from '../src/components/Span';
 import Link from '../src/components/Link';
@@ -66,6 +67,12 @@ const pages = [
         title: 'NumberInput',
         content: pageLoader(() => import('./pages/form/numberinput.md')),
         imports: { NumberInput }
+      },
+      {
+        path: '/form/switch',
+        title: 'Switch',
+        content: pageLoader(() => import('./pages/form/switch.md')),
+        imports: { Switch } 
       }
     ]
   },
