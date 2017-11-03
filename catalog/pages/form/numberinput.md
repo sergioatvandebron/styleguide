@@ -1,5 +1,5 @@
 # NumberInput
-`NumberInput` represents an HTML `input` element with custom `up` and `down` controls.
+`NumberInput` represents an HTML `input` element with `type` number and custom `up` and `down` controls.
 
 ### Props
 Refer to `Input`'s section on props.

@@ -1,0 +1,61 @@
+.Van-Switch {
+  background: #ccc;
+  border-radius: 15px;
+  height: 26px;
+  overflow: hidden;
+  position: relative;
+  width: 60px;
+
+  .Van-Switch-input {
+    display: none;
+
+    &:checked + .Van-Switch-wrapper {
+      & > .Van-Switch-label--on {
+        opacity: 1;
+        transition: all .25s;
+      }
+      
+      & > .Van-Switch-toggle {
+        left: calc(100% - 21px);
+        transition: all .25s;
+      }
+    }
+  }
+
+  .Van-Switch-toggle {
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    transition: all .25s;
+    width: 16px;
+    z-index: 3;
+  }
+
+  .Van-Switch-label {
+    bottom: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    left: 0;
+    line-height: 16px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .Van-Switch-label--on {
+    background: #42B727;
+    opacity: 0;
+    transition: all .25s;
+    z-index: 2;
+  }
+
+  .Van-Switch-label--off {
+    text-align: right;
+  }
+}
