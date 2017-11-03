@@ -6,8 +6,7 @@ import Button from '../src/components/Button';
 import Heading from '../src/components/Heading';
 import Paragraph from '../src/components/Paragraph';
 import Divider from '../src/components/Divider';
-import Span from '../src/components/Span';
-import Link from '../src/components/Link';
+import Label from '../src/components/Label';
 
 const imports = {
   Button,
@@ -15,7 +14,8 @@ const imports = {
   Paragraph,
   Divider,
   Span,
-  Link
+  Link,
+  Label
 };
 
 const pages = [
@@ -59,6 +59,12 @@ const pages = [
         path: '/elements/divider',
         title: 'Divider',
         content: pageLoader(() => import('./pages/elements/divider.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/label',
+        title: 'Label',
+        content: pageLoader(() => import('./pages/elements/labels.md')),
         imports: imports,
       }
     ]
