@@ -1,14 +1,11 @@
 ## Elements
-- Headings
-- Paragraph
-- Span
-- Link
-- Divider
+- [x] Headings
+- [x] Paragraph
+- [x] Span
+- [x] Link
+- [x] Divider
 - Button
-- Label
-- Grid
-- Col
-- Container
+- [x] Label
 - Inputs, textarea, select
 - Logo
 - Image
@@ -19,6 +16,11 @@
   - Simple
   - Unstyled
   - With icon
+
+## Layout
+- Grid
+- Col
+- Container
 
 ## Components
 - Card

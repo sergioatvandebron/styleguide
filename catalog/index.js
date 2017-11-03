@@ -7,12 +7,18 @@ import Heading from '../src/components/Heading';
 import Paragraph from '../src/components/Paragraph';
 import Divider from '../src/components/Divider';
 import Input from '../src/components/Input';
+import Label from '../src/components/Label';
+import Span from '../src/components/Span';
+import Link from '../src/components/Link';
 
 const imports = {
   Button,
   Heading,
   Paragraph,
-  Divider
+  Divider,
+  Span,
+  Link,
+  Label
 };
 
 const pages = [
@@ -29,6 +35,11 @@ const pages = [
         path: '/constants/colors',
         title: 'Colors',
         content: pageLoader(() => import('./pages/constants/colors.md'))
+      },
+      {
+        path: '/constants/sizes',
+        title: 'Sizes',
+        content: pageLoader(() => import('./pages/constants/sizes.md'))
       }
     ]
   },
@@ -54,7 +65,7 @@ const pages = [
       },
       {
         path: '/elements/headings',
-        title: 'Headings',
+        title: 'Typograph',
         content: pageLoader(() => import('./pages/elements/headings.md')),
         imports: imports,
       },
@@ -62,6 +73,12 @@ const pages = [
         path: '/elements/divider',
         title: 'Divider',
         content: pageLoader(() => import('./pages/elements/divider.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/label',
+        title: 'Label',
+        content: pageLoader(() => import('./pages/elements/labels.md')),
         imports: imports,
       }
     ]
