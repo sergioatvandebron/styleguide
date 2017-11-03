@@ -48,6 +48,21 @@ $font-weight-normal:   400;
 $font-weight-bold:     700;
 $font-weight-semibold: 600;
 
+* {
+  box-sizing: border-box;
+}
+
+*[class^="Van-"] {
+  box-sizing: border-box;
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 17px;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
 
 html {
   position: relative;

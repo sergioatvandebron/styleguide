@@ -13,14 +13,14 @@
 - Table
 - Block (white box)
 - List
-  - Simple
-  - Unstyled
-  - With icon
+  * [x] Simple
+  * [x] Unstyled
+  * With icon
 
 ## Layout
-- Grid
-- Col
-- Container
+- [x] Grid
+- [x] Col
+- [x] Container
 
 ## Components
 - Card

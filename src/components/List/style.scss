@@ -1,0 +1,11 @@
+@import "../../css/_global.scss";
+
+.Van-List {
+  font-size: 17px;
+  line-height: 30px;
+
+  &--unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
+}
