@@ -12,7 +12,7 @@ class PhoneCard extends PureComponent {
 
     classes.push(className);
 
-    return classes.join(' ');
+    return classes.join(' ').trim();
   }
 
   render() {
@@ -34,7 +34,9 @@ class PhoneCard extends PureComponent {
 }
 
 PhoneCard.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  number: PropTypes.string,
+  description: PropTypes.string
 };
 
 export default PhoneCard;
