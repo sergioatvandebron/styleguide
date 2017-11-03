@@ -4,7 +4,7 @@
 - [x] Span
 - [x] Link
 - [x] Divider
-- Button
+- [x] Button
 - [x] Label
 - Inputs, textarea, select
 - Logo
