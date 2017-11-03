@@ -1,10 +1,14 @@
 @import './global';
 
-$input-bg:          #F7F7F7;
-$input-color:       $color-primary;
+$input-bg:            #F7F7F7;
+$input-color:           $color-primary;
+$input-error-color:     $color-orange;
+$input-error-border:    $color-orange;
+$input-success-color:   $color-green-primary;
+$input-success-border:  transparent;
 
 // fonts
-$input-font-size:   15px;
+$input-font-size:     15px;
 
 // lengths
-$input-padding:     11px;
+$input-padding:       11px;
