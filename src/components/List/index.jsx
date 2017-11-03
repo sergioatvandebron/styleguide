@@ -21,8 +21,8 @@ class List extends PureComponent {
   render() {
     return (
       <ul className={this.getClass()}>
-        {this.props.items.map(item => {
-          return <li className="Van-List-item">{item}</li>
+        {this.props.items.map((item, index) => {
+          return <li className="Van-List-item" key={index}>{item}</li>
         })}
       </ul>
     );
