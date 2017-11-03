@@ -14,6 +14,7 @@ import Grid from '../src/components/Grid';
 import Col from '../src/components/Col';
 import Container from '../src/components/Container';
 import List from '../src/components/List';
+import Table from '../src/components/Table';
 
 const imports = {
   Button,
@@ -26,7 +27,8 @@ const imports = {
   Grid,
   Col,
   Container,
-  List
+  List,
+  Table
 };
 
 const pages = [
@@ -99,6 +101,12 @@ const pages = [
         path: '/elements/list',
         title: 'List',
         content: pageLoader(() => import('./pages/elements/list.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/table',
+        title: 'Table',
+        content: pageLoader(() => import('./pages/elements/table.md')),
         imports: imports,
       }
     ]

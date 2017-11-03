@@ -1,0 +1,43 @@
+@import "../../css/_global.scss";
+
+.Van-Table {
+  border-collapse: collapse;
+  text-align: left;
+
+  &-head {
+    background-color: #F7F7F7;
+    font-weight: $font-weight-semibold;
+    height: 36px;
+    border-bottom: 1px solid #EBEBEA;
+  }
+
+  &-headCell {
+    font-size: 18px;
+  }
+  
+  &-headCell,
+  &-cell,
+  &-footerCell {
+    padding: 8px 10px;
+  }
+
+  &-body {
+  }
+
+  &-row {
+    border-bottom: 1px solid #EBEBEA;
+  }
+
+  &-cell {
+    font-weight: $font-weight-light;
+    font-size: 15px;
+  }
+
+  &-footerCell {
+    font-weight: $font-weight-semibold;
+  }
+
+  &--full {
+    width: 100%;
+  }
+}
