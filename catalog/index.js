@@ -6,12 +6,16 @@ import Button from '../src/components/Button';
 import Heading from '../src/components/Heading';
 import Paragraph from '../src/components/Paragraph';
 import Divider from '../src/components/Divider';
+import Span from '../src/components/Span';
+import Link from '../src/components/Link';
 
 const imports = {
   Button,
   Heading,
   Paragraph,
-  Divider
+  Divider,
+  Span,
+  Link
 };
 
 const pages = [
@@ -28,6 +32,11 @@ const pages = [
         path: '/constants/colors',
         title: 'Colors',
         content: pageLoader(() => import('./pages/constants/colors.md'))
+      },
+      {
+        path: '/constants/sizes',
+        title: 'Sizes',
+        content: pageLoader(() => import('./pages/constants/sizes.md'))
       }
     ]
   },
@@ -42,7 +51,7 @@ const pages = [
       },
       {
         path: '/elements/headings',
-        title: 'Headings',
+        title: 'Typograph',
         content: pageLoader(() => import('./pages/elements/headings.md')),
         imports: imports,
       },

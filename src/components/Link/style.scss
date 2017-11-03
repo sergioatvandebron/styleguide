@@ -1,0 +1,23 @@
+@import "../../css/_global.scss";
+
+.Van-Link {
+  font-weight: $font-weight-semibold;
+  font-size: 17px;
+  line-height: 20px;
+  color: $color-primary-bright;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-pink-primary;
+  }
+
+  &--secondary {
+    font-weight: $font-weight-light;
+    color: $color-green-primary;
+
+    &:hover {
+      color: $color-green-primary;
+      font-weight: $font-weight-semibold;
+    }
+  }
+}
