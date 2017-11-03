@@ -18,9 +18,9 @@
   - With icon
 
 ## Layout
-- Grid
-- Col
-- Container
+- [x] Grid
+- [x] Col
+- [x] Container
 
 ## Components
 - Card

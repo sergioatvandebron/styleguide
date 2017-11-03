@@ -48,6 +48,9 @@ $font-weight-normal:   400;
 $font-weight-bold:     700;
 $font-weight-semibold: 600;
 
+* {
+  box-sizing: border-box;
+}
 
 html {
   position: relative;

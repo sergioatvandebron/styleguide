@@ -9,6 +9,9 @@ import Divider from '../src/components/Divider';
 import Label from '../src/components/Label';
 import Span from '../src/components/Span';
 import Link from '../src/components/Link';
+import Grid from '../src/components/Grid';
+import Col from '../src/components/Col';
+import Container from '../src/components/Container';
 
 const imports = {
   Button,
@@ -17,7 +20,10 @@ const imports = {
   Divider,
   Span,
   Link,
-  Label
+  Label,
+  Grid,
+  Col,
+  Container
 };
 
 const pages = [
@@ -67,6 +73,12 @@ const pages = [
         path: '/elements/label',
         title: 'Label',
         content: pageLoader(() => import('./pages/elements/labels.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/grid',
+        title: 'Grid',
+        content: pageLoader(() => import('./pages/elements/grid.md')),
         imports: imports,
       }
     ]
