@@ -5,7 +5,7 @@
 - [x] Link
 - [x] Divider
 - Button
-- Label
+- [x] Label
 - Inputs, textarea, select
 - Logo
 - Image

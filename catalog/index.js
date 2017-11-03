@@ -6,6 +6,7 @@ import Button from '../src/components/Button';
 import Heading from '../src/components/Heading';
 import Paragraph from '../src/components/Paragraph';
 import Divider from '../src/components/Divider';
+import Input from '../src/components/Input';
 import Label from '../src/components/Label';
 import Span from '../src/components/Span';
 import Link from '../src/components/Link';
@@ -45,6 +46,17 @@ const pages = [
         path: '/constants/sizes',
         title: 'Sizes',
         content: pageLoader(() => import('./pages/constants/sizes.md'))
+      }
+    ]
+  },
+  {
+    title: 'Form',
+    pages: [
+      {
+        path: '/form/input',
+        title: 'Input',
+        content: pageLoader(() => import('./pages/form/input.md')),
+        imports: { Input }
       }
     ]
   },
