@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './style.css';
-
-// style
-// size
-// color
 
 class Button extends Component {
   getClass() {
@@ -21,6 +18,8 @@ class Button extends Component {
       classes.push('Van-Button--warning');
     } else if (this.props.type === 'danger') {
       classes.push('Van-Button--danger');
+    } else if (this.props.type === 'success') {
+      classes.push('Van-Button--success');
     }
 
     if (this.props.size === 'full') {
@@ -35,7 +34,11 @@ class Button extends Component {
       classes.push('Van-Button--tiny');
     }
 
-    return classes.join(' ');
+    if (this.props.inverted) {
+      classes.push('Van-Button--inverted');
+    }
+
+    return classes.join(' ').trim();
   }
 
   render() {
@@ -44,5 +47,12 @@ class Button extends Component {
     );
   }
 }
+
+Button.propTypes = {
+  className: PropTypes.string,
+  type: PropTypes.string,
+  size: PropTypes.string,
+  inverted: PropTypes.bool
+};
 
 export default Button;
