@@ -1,9 +1,9 @@
 ## Elements
-- Headings
-- Paragraph
-- Span
-- Link
-- Divider
+- [x] Headings
+- [x] Paragraph
+- [x] Span
+- [x] Link
+- [x] Divider
 - Button
 - Label
 - Inputs, textarea, select
