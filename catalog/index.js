@@ -7,6 +7,8 @@ import Heading from '../src/components/Heading';
 import Paragraph from '../src/components/Paragraph';
 import Divider from '../src/components/Divider';
 import Label from '../src/components/Label';
+import Span from '../src/components/Span';
+import Link from '../src/components/Link';
 
 const imports = {
   Button,
