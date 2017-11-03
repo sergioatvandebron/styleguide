@@ -1,48 +1,73 @@
 @import "../../css/_global.scss";
 
+@mixin background-color($text-color, $bg-color, $inverted: false) {
+  @if $inverted {
+    background-color: transparent;
+    color: $bg-color;
+    border-color: $color-grey;
+  } @else {
+    background-color: $bg-color;
+    color: $text-color;
+    border-color: $bg-color;
+    
+    &:hover {
+      background-color: lighten($bg-color, 6);
+    }
+  }
+  
+  &:hover {
+    border-color: lighten($bg-color, 6);
+  }
+}
+
 .Van-Button {
   display: inline-block;
   vertical-align: middle;
-  font-family: "Proxima Nova", sans-serif;
   font-size: 18px;
   text-align: center;
+  padding: 0 15px;
   margin: 0;
   cursor: pointer;
   transition: all 300ms ease-in-out;
   border-radius: 5px;
   min-height: 50px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background-color: transparent;
 
+
+  // Colors
   &--primary {
-    border-color: $color-pink-primary;
-    background-color: $color-pink-primary;
-    color: $color-white;
-    
-    &:hover {
-      border-color: $color-pink-dark;
-      background-color: $color-pink-dark;
-    }
+    @include background-color($color-white, $color-pink-primary);
+
+    &.Van-Button--inverted { @include background-color($color-white, $color-pink-primary, true); }
   }
 
   &--info {
-    border-color: $color-blue-primary;
-    background-color: $color-blue-primary;
-    color: $color-white;
+    @include background-color($color-white, $color-blue-primary);
 
-    &:hover {
-      border-color: $color-blue-dark;
-      background-color: $color-blue-dark;
-    }
+    &.Van-Button--inverted { @include background-color($color-white, $color-blue-primary, true); }
   }
 
   &--warning {
-    border-color: $color-orange;
-    background-color: $color-orange;
-    color: $color-white;
+    @include background-color($color-white, $color-orange);
+
+    &.Van-Button--inverted { @include background-color($color-white, $color-orange, true); }
+  }
+
+  &--danger {
+    @include background-color($color-white, $color-red);
+
+    &.Van-Button--inverted { @include background-color($color-white, $color-red, true); }
+  }
+
+  &--success {
+    @include background-color($color-white, $color-green-primary);
+
+    &.Van-Button--inverted { @include background-color($color-white, $color-green-primary, true); }
   }
 
 
+  // Sizes
   &--large {
     min-height: 60px;
     font-size: 20px;
