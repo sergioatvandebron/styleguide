@@ -8,7 +8,11 @@ $input-success-color:   $color-green-primary;
 $input-success-border:  transparent;
 
 // fonts
-$input-font-size:     15px;
+$input-font-size:       15px;
 
 // lengths
-$input-padding:       11px;
+$input-padding-top:     11px;
+$input-padding-bottom:  11px;
+$input-padding-left:    11px;
+$input-padding-right:   11px;
+$input-padding:         $input-padding-top $input-padding-right $input-padding-bottom $input-padding-left;

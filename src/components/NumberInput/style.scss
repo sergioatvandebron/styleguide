@@ -1,0 +1,82 @@
+@import "../../css/_global.scss";
+@import "../../css/_form-globals.scss";
+
+$number-input-ctrl-width:       50px;
+$number-input-color:            $color-pink-primary;
+$number-input-ctrl-hover-color: $color-pink-primary;
+$number-input-ctrl-bg:          $color-grey-light;
+
+.Van-NumberInput {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  width: 160px;
+  z-index: 2;
+
+  &--error {
+    border: 1px solid $input-error-border;
+  }
+
+  .Van-NumberInput-input {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    border: 0;
+    box-sizing: border-box;
+    color: $color-pink-primary;
+    appearance: textfield;
+    background: $input-bg;
+    cursor: text;
+    display: block;
+    font-size: $input-font-size;
+    padding: $input-padding-top ($number-input-ctrl-width + $input-padding-left);
+    text-align: center;
+    width: 100%;
+
+    // fix number input controls in chrome
+    &::-webkit-inner-spin-button, 
+    &::-webkit-outer-spin-button { 
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+  
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .Van-NumberInput-ctrl {
+    background-color: $number-input-ctrl-bg;
+    border: 0;
+    bottom: 0;
+    color: #5B636B;
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: 900;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: $number-input-ctrl-width;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &:active {
+      outline: 0;
+      color: $number-input-ctrl-hover-color;
+    }
+  }
+
+  .Van-NumberInput-ctrl--up {
+    border-radius: 0 5px 5px 0;
+    line-height: 1.4;
+    right: 0;
+  }
+
+  .Van-NumberInput-ctrl--down {
+    border-radius: 5px 0 0 5px;
+    left: 0;
+  }
+}
