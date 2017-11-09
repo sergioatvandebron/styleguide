@@ -1,5 +1,7 @@
+@import "../../css/_global.scss";
+
 .Van-Switch {
-  background: #ccc;
+  background: $color-grey;
   border-radius: 15px;
   height: 26px;
   overflow: hidden;
@@ -23,7 +25,7 @@
   }
 
   .Van-Switch-toggle {
-    background: white;
+    background: $color-white;
     border-radius: 50%;
     cursor: pointer;
     height: 16px;
@@ -37,7 +39,7 @@
 
   .Van-Switch-label {
     bottom: 0;
-    color: white;
+    color: $color-white;
     cursor: pointer;
     font-size: 13px;
     left: 0;
@@ -49,7 +51,7 @@
   }
 
   .Van-Switch-label--on {
-    background: #42B727;
+    background: $color-green-primary;
     opacity: 0;
     transition: all .25s;
     z-index: 2;
