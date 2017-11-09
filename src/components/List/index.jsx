@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import './style.css';
+import './style.scss';
 
 // TODO: add icon part!
 class List extends PureComponent {

@@ -32,8 +32,7 @@
 - Hero
 - Collapse
 - [x] PhoneCard
-- Toggle
-- 
+- [x] Toggle
 - FormField (wrapping Label, input, textarea)
 - Thunderballoon
 - ConsumptionFields
