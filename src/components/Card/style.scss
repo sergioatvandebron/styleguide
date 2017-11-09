@@ -1,0 +1,136 @@
+@import "../../css/_global.scss";
+@import "../../css/_utilities.scss";
+
+.Van-Card {
+  position: relative;
+  width: 384px;
+  background-color: $color-white;
+  border: 1px solid $color-grey-light;
+  color: $color-primary;
+
+  &-label {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    padding: 5px 10px;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 11px;
+    line-height: 13px;
+    text-transform: uppercase;
+  }
+
+  &-type {
+    font-size: 13px;
+    font-weight: $font-weight-semibold;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $color-pink-primary;
+  }
+
+  &-producer {
+    font-size: 24px;
+    font-weight: $font-weight-bold;
+    line-height: 25px;
+    margin: 0;
+  }
+
+  &-consumption {
+    font-size: 13px;
+    line-height: 16px;
+    color: $color-primary-bright;
+  }
+
+  &-consumption {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &-icon {
+    color: $color-grey;
+    cursor: pointer;
+  }
+
+  &-subtitle {
+    font-size: 18px;
+    line-height: 25px;
+    margin: 0;
+  }
+
+  &-price {
+    font-size: 13px;
+    line-height: 16px;
+
+    &-value {
+      font-weight: $font-weight-bold;
+      font-size: 25px;
+      line-height: 30px;
+      color: $color-primary-darker;
+    }
+
+    &-description {
+      font-size: 12px;
+      line-height: 14px;
+      color: $color-primary-brightst;
+    }
+  }
+
+  &-link {
+    font-weight: $font-weight-semibold;
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  &-footer {
+    background-color: #F2F2F2;
+    border-top: 1px solid $color-grey-light;
+  }
+
+  &-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &-listitem {
+    font-size: 15px;
+    line-height: 25px;
+
+    &::before {
+      content: "\f00c";
+      font-family: 'FontAwesome';
+      font-size: 17px;
+      margin-right: 10px;
+      display: inline-block;
+      color: $color-green-primary;
+    }
+  }
+
+
+
+  &-image {
+    width: 100%;
+  }
+
+  &-location {
+    font-size: 15px;
+    line-height: 18px;
+    color: $color-primary-bright;
+
+    &--big {
+      font-size: 17px;
+      line-height: 21px;
+    }
+  }
+
+  &-button {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: $font-weight-bold;
+    height: 40px;
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+

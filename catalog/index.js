@@ -18,6 +18,7 @@ import Container from '../src/components/Container';
 import List from '../src/components/List';
 import Table from '../src/components/Table';
 import PhoneCard from '../src/components/PhoneCard';
+import Card from '../src/components/Card';
 
 const imports = {
   Button,
@@ -32,7 +33,8 @@ const imports = {
   Container,
   List,
   Table,
-  PhoneCard
+  PhoneCard,
+  Card
 };
 
 const pages = [
@@ -134,6 +136,12 @@ const pages = [
         path: '/components/phone-card',
         title: 'PhoneCard',
         content: pageLoader(() => import('./pages/components/phone-card.md')),
+        imports: imports,
+      },
+      {
+        path: '/components/card',
+        title: 'Card',
+        content: pageLoader(() => import('./pages/components/card.md')),
         imports: imports,
       }
     ]
