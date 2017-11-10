@@ -1,0 +1,12 @@
+@mixin font-face($type, $weight, $style) {
+  @font-face {
+    font-family: "Proxima Nova";
+    src: url('./assets/fonts/proxima-nova-#{$type}.eot'); // IE9
+    src: url('./assets/fonts/proxima-nova-#{$type}.eot?#iefix') format("embedded-opentype"), // IE8 and below
+         url('./assets/fonts/proxima-nova-#{$type}.woff') format("woff"), // standards
+         url('./assets/fonts/proxima-nova-#{$type}.ttf') format("truetype"), // Safari, Android, iOS
+         url('./assets/fonts/proxima-nova-#{$type}.svg#proxima_nova') format('svg');
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
