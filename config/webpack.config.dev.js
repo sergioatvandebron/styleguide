@@ -77,10 +77,14 @@ module.exports = (env) => {
         },
         {
           // load media files - need to be injected without a prefixing slash
-          test: /(\.svg|\.woff|\.eot|\.ttf|\.png|\.gif|\.jpg)/,
+          test: /(proxima-nova(.)*svg|\.woff|\.eot|\.ttf|\.png|\.gif|\.jpg)/,
           use: [
             'file-loader?name=static/media/[name].[hash:8].[ext]'
           ]
+        },
+        {
+          test: /\.svg$/,
+          loader: 'svg-inline-loader'
         }
       ]
     },
