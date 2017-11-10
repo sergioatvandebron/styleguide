@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = (env) => {
   const paths = require('./paths');
@@ -90,6 +91,12 @@ module.exports = (env) => {
     plugins: [
       // clean the dist folder
       new CleanWebpackPlugin('dist', {root: paths.appDir }),
+
+      new StyleLintPlugin({
+        syntax: 'scss',
+        configFile: paths.appDir + '/config/stylelint.json'
+      }),
+
       // inject bundles to an html file
       new HtmlWebpackPlugin({
         inject: true,

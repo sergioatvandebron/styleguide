@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const port = 8624;
 
@@ -90,6 +91,11 @@ module.exports = (env) => {
     },
 
     plugins: [
+      new StyleLintPlugin({
+        syntax: 'scss',
+        configFile: paths.appDir + '/config/stylelint.json'
+      }),
+
       // inject bundles to an html file
       new HtmlWebpackPlugin({
         inject: true,
