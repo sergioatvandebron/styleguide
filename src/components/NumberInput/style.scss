@@ -34,13 +34,13 @@ $number-input-ctrl-bg:          $color-grey-light;
     width: 100%;
 
     // fix number input controls in chrome
-    &::-webkit-inner-spin-button, 
-    &::-webkit-outer-spin-button { 
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
       -webkit-appearance: textfield;
       -moz-appearance: textfield;
       appearance: textfield;
     }
-  
+
     &:focus {
       outline: 0;
     }
@@ -50,7 +50,7 @@ $number-input-ctrl-bg:          $color-grey-light;
     background-color: $number-input-ctrl-bg;
     border: 0;
     bottom: 0;
-    color: #5B636B;
+    color: #5b636b;
     cursor: pointer;
     font-size: 23px;
     font-weight: 900;

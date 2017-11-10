@@ -94,7 +94,7 @@ module.exports = (env) => {
 
       new StyleLintPlugin({
         syntax: 'scss',
-        configFile: paths.appDir + '/config/stylelint.json'
+        configFile: paths.appDir + '/config/stylelint.js'
       }),
 
       // inject bundles to an html file
