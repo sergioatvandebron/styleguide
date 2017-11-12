@@ -19,6 +19,7 @@ import List from '../src/components/List';
 import Table from '../src/components/Table';
 import PhoneCard from '../src/components/PhoneCard';
 import Card from '../src/components/Card';
+import Icon from '../src/components/Icon';
 
 const imports = {
   Button,
@@ -34,7 +35,8 @@ const imports = {
   List,
   Table,
   PhoneCard,
-  Card
+  Card,
+  Icon
 };
 
 const pages = [
@@ -125,6 +127,12 @@ const pages = [
         path: '/elements/table',
         title: 'Table',
         content: pageLoader(() => import('./pages/elements/table.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/icon',
+        title: 'Icon',
+        content: pageLoader(() => import('./pages/elements/icons.md')),
         imports: imports,
       }
     ]
