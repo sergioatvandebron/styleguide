@@ -15,13 +15,13 @@ const Input = ({
     className,
     { 'Van-TextInput--error': touched && error },
     { 'Van-TextInput--warning': touched && warning },
-    { 'Van-TextInput--success': touched && !error && !warning }
+    { 'Van-TextInput--success': touched && !error && !warning },
   );
 
   return (
     <div className={classNames}>
       <input
-        className='Van-TextInput-input'
+        className="Van-TextInput-input"
         id={input.name || props.id}
         {...props}
         {...input}
@@ -35,13 +35,15 @@ const Input = ({
 Input.propTypes = {
   meta: PropTypes.object,
   input: PropTypes.object,
-  className: PropTypes.string
+  className: PropTypes.string,
+  id: PropTypes.string,
 };
 
 Input.defaultProps = {
   meta: {},
   input: {},
-  className: ''
+  className: '',
+  id: '',
 };
 
 export default Input;

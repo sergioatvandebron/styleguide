@@ -4,7 +4,7 @@ import './style.scss';
 
 class Table extends Component {
   getClass() {
-    let classes = ['Van-Table'];
+    const classes = ['Van-Table'];
 
     if (this.props.full) {
       classes.push('Van-Table--full');
@@ -18,32 +18,34 @@ class Table extends Component {
       <table className={this.getClass()}>
         <thead className="Van-Table-head">
           <tr>
-            {this.props.columns.map(column => {
-              return <th key={column.value} className="Van-Table-headCell" {...column.props}>{column.value}</th>
-            })}
+            {this.props.columns.map(column => (
+              <th key={column.value} className="Van-Table-headCell" {...column.props}>
+                {column.value}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody className="Van-Table-body">
-          {this.props.rows.map((row, idx) => {
-            return (
-              <tr key={idx} className="Van-Table-row" {...row.props}>
-                {row.cells.map(cell => {
-                  return <th key={cell.value} className="Van-Table-cell" {...cell.props}>{cell.value}</th>
-                })}
-              </tr>
-            );
-          })}
+          {this.props.rows.map((row, idx) => (
+            <tr key={idx} className="Van-Table-row" {...row.props}>
+              {row.cells.map(cell => (
+                <th key={cell.value} className="Van-Table-cell" {...cell.props}>
+                  {cell.value}
+                </th>
+              ))}
+            </tr>
+          ))}
         </tbody>
         <tfoot>
-          {this.props.footer.map((row, idx) => {
-            return (
-              <tr key={idx} className="Van-Table-footerRow" {...row.props}>
-                {row.cells.map(cell => {
-                  return <td key={cell.value} className="Van-Table-footerCell" {...cell.props}>{cell.value}</td>
-                })}
-              </tr>
-            );
-          })}
+          {this.props.footer.map((row, idx) => (
+            <tr key={idx} className="Van-Table-footerRow" {...row.props}>
+              {row.cells.map(cell => (
+                <td key={cell.value} className="Van-Table-footerCell" {...cell.props}>
+                  {cell.value}
+                </td>
+              ))}
+            </tr>
+          ))}
         </tfoot>
       </table>
     );
@@ -53,7 +55,9 @@ class Table extends Component {
 Table.defaultProps = {
   columns: [],
   rows: [],
-  footer: []
+  footer: [],
+  className: '',
+  full: false,
 };
 
 Table.propTypes = {
@@ -61,7 +65,7 @@ Table.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.object),
   rows: PropTypes.arrayOf(PropTypes.object),
   footer: PropTypes.arrayOf(PropTypes.object),
-  full: PropTypes.bool
+  full: PropTypes.bool,
 };
 
 export default Table;

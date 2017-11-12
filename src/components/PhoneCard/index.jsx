@@ -4,7 +4,7 @@ import './style.scss';
 
 class PhoneCard extends PureComponent {
   getClass(className) {
-    let classes = ['Van-PhoneCard'];
+    const classes = ['Van-PhoneCard'];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -33,10 +33,16 @@ class PhoneCard extends PureComponent {
   }
 }
 
+PhoneCard.defaultProps = {
+  className: '',
+  number: '',
+  description: '',
+};
+
 PhoneCard.propTypes = {
   className: PropTypes.string,
   number: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
 };
 
 export default PhoneCard;

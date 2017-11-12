@@ -17,8 +17,17 @@ class Container extends PureComponent {
   }
 }
 
+Container.defaultProps = {
+  fluid: false,
+  children: '',
+};
+
 Container.propTypes = {
-  fluid: PropTypes.bool
+  fluid: PropTypes.bool,
+  children: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
 };
 
 export default Container;

@@ -4,7 +4,7 @@ import './style.scss';
 
 class Button extends Component {
   getClass() {
-    let classes = ['Van-Button'];
+    const classes = ['Van-Button'];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -48,11 +48,23 @@ class Button extends Component {
   }
 }
 
+Button.defaultProps = {
+  className: '',
+  type: 'primary',
+  size: '',
+  inverted: false,
+  children: '',
+};
+
 Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,
   size: PropTypes.string,
-  inverted: PropTypes.bool
+  inverted: PropTypes.bool,
+  children: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
 };
 
 export default Button;

@@ -4,7 +4,7 @@ import './style.scss';
 
 class Paragraph extends PureComponent {
   getClass(className) {
-    let classes = ['Van-Paragraph'];
+    const classes = ['Van-Paragraph'];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -20,8 +20,17 @@ class Paragraph extends PureComponent {
   }
 }
 
+Paragraph.defaultProps = {
+  className: '',
+  children: '',
+};
+
 Paragraph.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  children: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
 };
 
 export default Paragraph;

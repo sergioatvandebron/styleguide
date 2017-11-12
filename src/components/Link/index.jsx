@@ -4,7 +4,7 @@ import './style.scss';
 
 class Link extends PureComponent {
   getClass(className) {
-    let classes = ['Van-Link'];
+    const classes = ['Van-Link'];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -29,9 +29,19 @@ class Link extends PureComponent {
   }
 }
 
+Link.defaultProps = {
+  className: '',
+  type: '',
+  children: '',
+};
+
 Link.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.string
+  type: PropTypes.string,
+  children: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
 };
 
 export default Link;

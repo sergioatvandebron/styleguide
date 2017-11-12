@@ -24,14 +24,14 @@ Switch.defaultProps = {
   meta: {},
   input: {},
   id: '',
-  name: ''
+  name: '',
 };
 
 Switch.propTypes = {
   meta: PropTypes.object,
   input: PropTypes.object,
   id: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
 };
 
 export default Switch;

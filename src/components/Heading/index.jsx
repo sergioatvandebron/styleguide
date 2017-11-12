@@ -4,7 +4,7 @@ import './style.scss';
 
 class Heading extends PureComponent {
   getClass(className) {
-    let classes = ['Van-Heading'];
+    const classes = ['Van-Heading'];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -39,9 +39,19 @@ class Heading extends PureComponent {
   }
 }
 
+Heading.defaultProps = {
+  className: '',
+  size: 'h1',
+  children: '',
+};
+
 Heading.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.string
+  size: PropTypes.string,
+  children: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
 };
 
 export default Heading;

@@ -22,10 +22,21 @@ class Col extends PureComponent {
   }
 }
 
+Col.defaultProps = {
+  sm: '',
+  md: '',
+  lg: '',
+  children: '',
+};
+
 Col.propTypes = {
   sm: PropTypes.string,
   md: PropTypes.string,
-  lg: PropTypes.string
+  lg: PropTypes.string,
+  children: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
 };
 
 export default Col;

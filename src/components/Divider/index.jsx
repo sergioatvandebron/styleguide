@@ -4,7 +4,7 @@ import './style.scss';
 
 class Divider extends PureComponent {
   getClass(className) {
-    let classes = ['Van-Divider'];
+    const classes = ['Van-Divider'];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -16,14 +16,25 @@ class Divider extends PureComponent {
   }
 
   render() {
-    return <span className={this.getClass()}>
-      <span className="Van-Divider-content">{this.props.children}</span>
-    </span>;
+    return (
+      <span className={this.getClass()}>
+        <span className="Van-Divider-content">{this.props.children}</span>
+      </span>
+    );
   }
 }
 
+Divider.defaultProps = {
+  className: '',
+  children: '',
+};
+
 Divider.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  children: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
 };
 
 export default Divider;
