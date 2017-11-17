@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Input/> renders with specific attributes 1`] = `
+<div
+  className="Van-TextInput"
+>
+  <input
+    className="Van-TextInput-input"
+    data-id="0"
+    id=""
+    type="text"
+  />
+</div>
+`;
+
+exports[`<Input/> renders with specific className 1`] = `
+<div
+  className="Van-TextInput my-class"
+>
+  <input
+    className="Van-TextInput-input"
+    id=""
+    type="text"
+  />
+</div>
+`;

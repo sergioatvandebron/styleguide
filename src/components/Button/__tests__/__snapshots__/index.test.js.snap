@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> renders compact button size 1`] = `
+<button
+  className="Van-Button Van-Button--primary Van-Button--compact"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders danger button type 1`] = `
+<button
+  className="Van-Button Van-Button--danger"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders full button 1`] = `
+<button
+  className="Van-Button Van-Button--primary Van-Button--full"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders info button type 1`] = `
+<button
+  className="Van-Button Van-Button--info"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders inverted button 1`] = `
+<button
+  className="Van-Button Van-Button--primary Van-Button--inverted"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders large button size 1`] = `
+<button
+  className="Van-Button Van-Button--primary Van-Button--large"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders primary button type 1`] = `
+<button
+  className="Van-Button Van-Button--primary"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders primary button type if does not pass a type 1`] = `
+<button
+  className="Van-Button Van-Button--primary"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders small button size 1`] = `
+<button
+  className="Van-Button Van-Button--primary Van-Button--small"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders success button type 1`] = `
+<button
+  className="Van-Button Van-Button--success"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders tiny button size 1`] = `
+<button
+  className="Van-Button Van-Button--primary Van-Button--tiny"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders warning button type 1`] = `
+<button
+  className="Van-Button Van-Button--warning"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders with specific className 1`] = `
+<button
+  className="Van-Button my-class Van-Button--primary"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders with specific className 2`] = `
+<button
+  className="Van-Button Van-Button--primary"
+  data-id="0"
+>
+  My button
+</button>
+`;

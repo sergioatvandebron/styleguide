@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link> renders primary Link 1`] = `
+<a
+  className="Van-Link"
+>
+  My Link
+</a>
+`;
+
+exports[`<Link> renders secondary Link component 1`] = `
+<a
+  className="Van-Link Van-Link--secondary"
+>
+  My Link
+</a>
+`;
+
+exports[`<Link> renders with specific attributes 1`] = `
+<a
+  className="Van-Link"
+  data-id="0"
+  href="#"
+  title="My link"
+>
+  My Link
+</a>
+`;
+
+exports[`<Link> renders with specific className 1`] = `
+<a
+  className="Van-Link my-class"
+>
+  My Link
+</a>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container> renders Container 1`] = `
+<div
+  className="container"
+>
+  My Container
+</div>
+`;
+
+exports[`<Container> renders fluid Container 1`] = `
+<div
+  className="container-fluid"
+>
+  My Container
+</div>
+`;
+
+exports[`<Container> renders with specific attributes 1`] = `
+<div
+  className="container"
+  data-id="0"
+>
+  My Container
+</div>
+`;
+
+exports[`<Container> renders with specific className 1`] = `
+<div
+  className="container my-class"
+>
+  My Container
+</div>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Grid> renders grid 1`] = `
+<div
+  className="row"
+>
+  My Grid
+</div>
+`;
+
+exports[`<Grid> renders with specific attributes 1`] = `
+<div
+  className="row"
+  data-id="0"
+>
+  My Grid
+</div>
+`;
+
+exports[`<Grid> renders with specific className 1`] = `
+<div
+  className="row my-class"
+>
+  My Grid
+</div>
+`;

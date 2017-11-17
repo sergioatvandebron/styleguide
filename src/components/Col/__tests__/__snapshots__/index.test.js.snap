@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Col> renders Col with lg size 5 1`] = `
+<div
+  className="col-lg-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with md size 5 1`] = `
+<div
+  className="col-md-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with offset-lg size 5 1`] = `
+<div
+  className="col-lg-5 col-lg-offset-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with offset-md size 5 1`] = `
+<div
+  className="col-md-5 col-md-offset-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with offset-sm size 5 1`] = `
+<div
+  className="col-sm-5 col-sm-offset-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with offset-xs size 5 1`] = `
+<div
+  className="col-xs-5 col-xs-offset-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with sm size 5 1`] = `
+<div
+  className="col-sm-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with xs size 5 1`] = `
+<div
+  className="col-xs-5"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders Col with xs, sm, sm and lg size 3 1`] = `
+<div
+  className="col-xs-3 col-sm-3 col-md-3 col-lg-3"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders with specific attributes 1`] = `
+<div
+  className="col-xs-5"
+  data-id="0"
+>
+  My Col
+</div>
+`;
+
+exports[`<Col> renders with specific className 1`] = `
+<div
+  className="col-xs-5 my-class"
+>
+  My Col
+</div>
+`;
