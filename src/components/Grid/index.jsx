@@ -1,19 +1,28 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import './style.scss';
 
 class Grid extends PureComponent {
   render() {
-    return <div className="row">{this.props.children}</div>;
+    const {
+      className,
+      children,
+      ...props
+    } = this.props;
+
+    return <div className={classnames('row', className)} {...props}>{children}</div>;
   }
 }
 
 Grid.defaultProps = {
+  className: '',
   children: '',
 };
 
 Grid.propTypes = {
-  children: PropTypes.oneOf([
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
   ]),

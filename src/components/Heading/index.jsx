@@ -48,9 +48,9 @@ Heading.defaultProps = {
 Heading.propTypes = {
   className: PropTypes.string,
   size: PropTypes.string,
-  children: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
   ]),
 };
 

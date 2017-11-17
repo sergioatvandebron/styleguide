@@ -7,6 +7,7 @@ const Input = ({
   meta,
   input,
   className,
+  type,
   ...props
 }) => {
   const { error, warning, touched } = meta;
@@ -23,6 +24,7 @@ const Input = ({
       <input
         className="Van-TextInput-input"
         id={input.name || props.id}
+        type={type}
         {...props}
         {...input}
       />
@@ -37,6 +39,7 @@ Input.propTypes = {
   input: PropTypes.object,
   className: PropTypes.string,
   id: PropTypes.string,
+  type: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -44,6 +47,7 @@ Input.defaultProps = {
   input: {},
   className: '',
   id: '',
+  type: 'text',
 };
 
 export default Input;

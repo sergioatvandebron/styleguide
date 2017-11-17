@@ -26,8 +26,8 @@ class Table extends Component {
           </tr>
         </thead>
         <tbody className="Van-Table-body">
-          {this.props.rows.map((row, idx) => (
-            <tr key={idx} className="Van-Table-row" {...row.props}>
+          {this.props.rows.map(row => (
+            <tr key={row} className="Van-Table-row" {...row.props}>
               {row.cells.map(cell => (
                 <th key={cell.value} className="Van-Table-cell" {...cell.props}>
                   {cell.value}
@@ -37,8 +37,8 @@ class Table extends Component {
           ))}
         </tbody>
         <tfoot>
-          {this.props.footer.map((row, idx) => (
-            <tr key={idx} className="Van-Table-footerRow" {...row.props}>
+          {this.props.footer.map(row => (
+            <tr key={row} className="Van-Table-footerRow" {...row.props}>
               {row.cells.map(cell => (
                 <td key={cell.value} className="Van-Table-footerCell" {...cell.props}>
                   {cell.value}

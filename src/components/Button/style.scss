@@ -1,26 +1,7 @@
+/** @define Button */
+
 @import "../../css/_global.scss";
-
-@mixin background-color($text-color, $bg-color, $inverted: false) {
-  @if $inverted {
-    background-color: $color-white;
-    color: $bg-color;
-    border-color: $color-grey;
-  }
-
-  @else {
-    background-color: $bg-color;
-    color: $text-color;
-    border-color: $bg-color;
-
-    &:hover {
-      background-color: lighten($bg-color, 6);
-    }
-  }
-
-  &:hover {
-    border-color: lighten($bg-color, 6);
-  }
-}
+@import "../../css/_mixins";
 
 .Van-Button {
   display: inline-block;

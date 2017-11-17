@@ -1,24 +1,22 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import './style.scss';
 
 class Divider extends PureComponent {
-  getClass(className) {
-    const classes = ['Van-Divider'];
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    classes.push(className);
-
-    return classes.join(' ');
-  }
-
   render() {
+    const {
+      className,
+      children,
+      ...props
+    } = this.props;
+
     return (
-      <span className={this.getClass()}>
-        <span className="Van-Divider-content">{this.props.children}</span>
+      <span
+        className={classnames('Van-Divider', className)}
+        {...props}
+      >
+        <span className="Van-Divider-content">{children}</span>
       </span>
     );
   }
@@ -31,7 +29,7 @@ Divider.defaultProps = {
 
 Divider.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOf([
+  children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
   ]),

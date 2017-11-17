@@ -1,9 +1,11 @@
+/** @define Link */
+
 @import "../../css/_global.scss";
 
 .Van-Link {
   font-weight: $font-weight-semibold;
-  font-size: 17px;
-  line-height: 20px;
+  // font-size: 17px;
+  // line-height: 20px;
   color: $color-primary-bright;
   text-decoration: underline;
 

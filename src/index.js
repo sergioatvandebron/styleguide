@@ -1,18 +1,7 @@
 import './index.scss';
 
 if (process.env.NODE_ENV === 'development') {
-  Promise.all([
-    import('react'),
-    import('react-dom'),
-    import('./App')
-  ])
-    .then(([
-      React,
-      ReactDOM,
-      {default: App}
-    ]) => {
-      ReactDOM.render(<App />, document.getElementById('root'));
-    });
+  import('./index.dev');
 }
 
 export { default as Button } from './components/Button';
@@ -31,5 +20,4 @@ export { default as Container } from './components/Container';
 export { default as List } from './components/List';
 export { default as Table } from './components/Table';
 export { default as PhoneCard } from './components/PhoneCard';
-export { default as Card } from './components/Card';
 export { default as Icon } from './components/Icon';

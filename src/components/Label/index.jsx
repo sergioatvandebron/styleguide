@@ -29,7 +29,7 @@ Label.defaultProps = {
 
 Label.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOf([
+  children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
   ]),

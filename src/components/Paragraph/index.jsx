@@ -1,22 +1,24 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import './style.scss';
 
 class Paragraph extends PureComponent {
-  getClass(className) {
-    const classes = ['Van-Paragraph'];
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    classes.push(className);
-
-    return classes.join(' ');
-  }
-
   render() {
-    return <p className={this.getClass()}>{this.props.children}</p>;
+    const {
+      className,
+      children,
+      ...props
+    } = this.props;
+
+    return (
+      <p
+        className={classnames('Van-Paragraph', className)}
+        {...props}
+      >
+        {children}
+      </p>
+    );
   }
 }
 
@@ -27,7 +29,7 @@ Paragraph.defaultProps = {
 
 Paragraph.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOf([
+  children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
   ]),

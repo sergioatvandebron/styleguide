@@ -1,3 +1,8 @@
+@import "./_mixins";
+
+.Van-u-float-right { float: right; }
+.Van-u-float-left { float: left; }
+
 /* Font weight */
 .Van-u-text-bold { font-weight: $font-weight-bold !important; }
 .Van-u-text-semibold { font-weight: $font-weight-semibold !important; }
@@ -31,39 +36,39 @@
 }
 
 /* Colors */
-.Van-u-color-white { color: $color-white !important; }
-.Van-u-color-dark { color: $color-dark !important; }
-.Van-u-color-grey { color: $color-grey !important; }
-.Van-u-color-grey-dark { color: $color-grey-dark !important; }
-.Van-u-color-grey-bright { color: $color-grey-bright !important; }
-.Van-u-color-primary-darker { color: $color-primary-darker !important; }
-.Van-u-color-primary { color: $color-primary !important; }
-.Van-u-color-primary-light { color: $color-primary-light !important; }
-.Van-u-color-primary-bright { color: $color-primary-bright !important; }
-.Van-u-color-primary-brightst { color: $color-primary-brightst !important; }
-.Van-u-color-pink-darker { color: $color-pink-darker !important; }
-.Van-u-color-pink-dark { color: $color-pink-dark !important; }
-.Van-u-color-pink-primary { color: $color-pink-primary !important; }
-.Van-u-color-pink-light { color: $color-pink-light !important; }
-.Van-u-color-pink-bright { color: $color-pink-bright !important; }
-.Van-u-color-blue-darker { color: $color-blue-darker !important; }
-.Van-u-color-blue-dark { color: $color-blue-dark !important; }
-.Van-u-color-blue-primary { color: $color-blue-primary !important; }
-.Van-u-color-blue-light { color: $color-blue-light !important; }
-.Van-u-color-blue-bright { color: $color-blue-bright !important; }
-.Van-u-color-green-darker { color: $color-green-darker !important; }
-.Van-u-color-green-dark { color: $color-green-dark !important; }
-.Van-u-color-green-primary { color: $color-green-primary !important; }
-.Van-u-color-green-light { color: $color-green-light !important; }
-.Van-u-color-green-bright { color: $color-green-bright !important; }
-.Van-u-color-yelno { color: $color-yelno !important; }
-.Van-u-color-yellow-primary { color: $color-yellow-primary !important; }
-.Van-u-color-yellow-light { color: $color-yellow-light !important; }
-.Van-u-color-yellow-bright { color: $color-yellow-bright !important; }
-.Van-u-color-yellow-brightst { color: $color-yellow-brightst !important; }
-.Van-u-color-orange { color: $color-orange !important; }
-.Van-u-color-red { color: $color-red !important; }
-.Van-u-color-facebook-blue { color: $color-facebook-blue !important; }
+.Van-u-color-white { @include color-fill($color-white); }
+.Van-u-color-dark { @include color-fill($color-dark); }
+.Van-u-color-grey { @include color-fill($color-grey); }
+.Van-u-color-grey-dark { @include color-fill($color-grey-dark); }
+.Van-u-color-grey-bright { @include color-fill($color-grey-bright); }
+.Van-u-color-primary-darker { @include color-fill($color-primary-darker); }
+.Van-u-color-primary { @include color-fill($color-primary); }
+.Van-u-color-primary-light { @include color-fill($color-primary-light); }
+.Van-u-color-primary-bright { @include color-fill($color-primary-bright); }
+.Van-u-color-primary-brightst { @include color-fill($color-primary-brightst); }
+.Van-u-color-pink-darker { @include color-fill($color-pink-darker); }
+.Van-u-color-pink-dark { @include color-fill($color-pink-dark); }
+.Van-u-color-pink-primary { @include color-fill($color-pink-primary); }
+.Van-u-color-pink-light { @include color-fill($color-pink-light); }
+.Van-u-color-pink-bright { @include color-fill($color-pink-bright); }
+.Van-u-color-blue-darker { @include color-fill($color-blue-darker); }
+.Van-u-color-blue-dark { @include color-fill($color-blue-dark); }
+.Van-u-color-blue-primary { @include color-fill($color-blue-primary); }
+.Van-u-color-blue-light { @include color-fill($color-blue-light); }
+.Van-u-color-blue-bright { @include color-fill($color-blue-bright); }
+.Van-u-color-green-darker { @include color-fill($color-green-darker); }
+.Van-u-color-green-dark { @include color-fill($color-green-dark); }
+.Van-u-color-green-primary { @include color-fill($color-green-primary); }
+.Van-u-color-green-light { @include color-fill($color-green-light); }
+.Van-u-color-green-bright { @include color-fill($color-green-bright); }
+.Van-u-color-yelno { @include color-fill($color-yelno); }
+.Van-u-color-yellow-primary { @include color-fill($color-yellow-primary); }
+.Van-u-color-yellow-light { @include color-fill($color-yellow-light); }
+.Van-u-color-yellow-bright { @include color-fill($color-yellow-bright); }
+.Van-u-color-yellow-brightst { @include color-fill($color-yellow-brightst); }
+.Van-u-color-orange { @include color-fill($color-orange); }
+.Van-u-color-red { @include color-fill($color-red); }
+.Van-u-color-facebook-blue { @include color-fill($color-facebook-blue); }
 
 .Van-u-bg-white { background-color: $color-white !important; }
 .Van-u-bg-dark { background-color: $color-dark !important; }

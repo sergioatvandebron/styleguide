@@ -1,49 +1,42 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import './style.scss';
 
-class Button extends Component {
-  getClass() {
-    const classes = ['Van-Button'];
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    if (this.props.type === 'primary') {
-      classes.push('Van-Button--primary');
-    } else if (this.props.type === 'info') {
-      classes.push('Van-Button--info');
-    } else if (this.props.type === 'warning') {
-      classes.push('Van-Button--warning');
-    } else if (this.props.type === 'danger') {
-      classes.push('Van-Button--danger');
-    } else if (this.props.type === 'success') {
-      classes.push('Van-Button--success');
-    }
-
-    if (this.props.size === 'full') {
-      classes.push('Van-Button--full');
-    } else if (this.props.size === 'small') {
-      classes.push('Van-Button--small');
-    } else if (this.props.size === 'compact') {
-      classes.push('Van-Button--compact');
-    } else if (this.props.size === 'large') {
-      classes.push('Van-Button--large');
-    } else if (this.props.size === 'tiny') {
-      classes.push('Van-Button--tiny');
-    }
-
-    if (this.props.inverted) {
-      classes.push('Van-Button--inverted');
-    }
-
-    return classes.join(' ').trim();
-  }
-
+class Button extends PureComponent {
   render() {
+    const {
+      className,
+      type,
+      size,
+      full,
+      inverted,
+      children,
+      ...props
+    } = this.props;
+
     return (
-      <button className={this.getClass()}>{this.props.children}</button>
+      <button
+        className={classnames('Van-Button', className, {
+          'Van-Button--primary': type === 'primary',
+          'Van-Button--info': type === 'info',
+          'Van-Button--warning': type === 'warning',
+          'Van-Button--danger': type === 'danger',
+          'Van-Button--success': type === 'success',
+
+          'Van-Button--small': size === 'small',
+          'Van-Button--compact': size === 'compact',
+          'Van-Button--large': size === 'large',
+          'Van-Button--tiny': size === 'tiny',
+
+          'Van-Button--full': full,
+
+          'Van-Button--inverted': inverted,
+        })}
+        {...props}
+      >
+        {children}
+      </button>
     );
   }
 }
@@ -52,6 +45,7 @@ Button.defaultProps = {
   className: '',
   type: 'primary',
   size: '',
+  full: false,
   inverted: false,
   children: '',
 };
@@ -60,10 +54,11 @@ Button.propTypes = {
   className: PropTypes.string,
   type: PropTypes.string,
   size: PropTypes.string,
+  full: PropTypes.bool,
   inverted: PropTypes.bool,
-  children: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
   ]),
 };
 

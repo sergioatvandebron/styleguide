@@ -7,13 +7,13 @@ class NumberInput extends React.Component {
   static defaultProps = {
     input: {},
     meta: {},
-    step: 1
+    step: 1,
   };
 
   static propTypes = {
     input: PropTypes.object,
     meta: PropTypes.object,
-    step: PropTypes.number
+    step: PropTypes.number,
   };
 
   handleClick = (dir) => {
@@ -33,7 +33,7 @@ class NumberInput extends React.Component {
     } = this.props;
     const className = classnames(
       'Van-NumberInput',
-      { 'Van-NumberInput--error': touched && error }
+      { 'Van-NumberInput--error': touched && error },
     );
 
     return (
