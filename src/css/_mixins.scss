@@ -12,9 +12,16 @@
   }
 }
 
-@mixin color-fill($color) {
-  color: $color !important;
-  fill: $color !important;
+@mixin color-fill($color, $important: false) {
+  @if $important {
+    color: $color !important;
+    fill: $color !important;
+  }
+
+  @else {
+    color: $color;
+    fill: $color;
+  }
 }
 
 @mixin background-color($text-color, $bg-color, $inverted: false) {
@@ -39,4 +46,9 @@
   &:hover {
     border-color: lighten($bg-color, 6);
   }
+}
+
+@mixin icon-size($size) {
+  width: $size;
+  height: $size;
 }
