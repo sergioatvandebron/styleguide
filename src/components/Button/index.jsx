@@ -35,7 +35,9 @@ class Button extends PureComponent {
         })}
         {...props}
       >
-        {children}
+        {children instanceof Array ? children.map(c => (
+          (typeof c === 'string') ? <span key={c}>{c}</span> : c
+        )) : children}
       </button>
     );
   }
@@ -43,7 +45,7 @@ class Button extends PureComponent {
 
 Button.defaultProps = {
   className: '',
-  type: 'primary',
+  type: '',
   size: '',
   full: false,
   inverted: false,

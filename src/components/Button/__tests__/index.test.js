@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import Icon from '../../Icon';
 import Button from '../';
 
 describe("<Button>", () => {
@@ -110,6 +111,28 @@ describe("<Button>", () => {
   it("renders with specific className", () => {
     const tree = renderer.create(
       <Button data-id="0">My button</Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders with button on the right", () => {
+    const tree = renderer.create(
+      <Button>
+        My button
+        <Icon source="facebook" />
+      </Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders with button on the left", () => {
+    const tree = renderer.create(
+      <Button>
+        <Icon source="facebook" />
+        My button
+      </Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();

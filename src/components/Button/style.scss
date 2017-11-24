@@ -4,18 +4,20 @@
 @import "../../css/_mixins";
 
 .Van-Button {
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
   font-size: 18px;
+  justify-content: center;
   text-align: center;
+  white-space: nowrap;
   padding: 0 15px;
   margin: 0;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
   border-radius: 5px;
   min-height: 50px;
-  border: 2px solid transparent;
-  background-color: transparent;
+  border: 2px solid $color-grey-bright;
+  background-color: $color-grey-bright;
 
   // Colors
   &--primary {
@@ -75,5 +77,17 @@
 
   &--full {
     width: 100%;
+  }
+
+  > .Van-Icon {
+    /* postcss-bem-linter: ignore */
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+
+    /* postcss-bem-linter: ignore */
+    &:last-child {
+      margin-left: 0.5rem;
+    }
   }
 }
