@@ -1,22 +1,35 @@
-@import "../../css/_global.scss";
+/** @define PhoneCard */
+
+@import "../../css/_global";
+@import "../../css/mixins";
 
 .Van-PhoneCard {
   width: 325px;
   min-height: 75px;
   background-color: rgba(255, 255, 255, 0.6);
-  padding: 15px 20px;
+  padding: 15px 10px;
+  text-align: left;
+  display: inline-block;
+  align-items: flex-start;
+
+  &--withBorder {
+    border: 2px solid $color-grey-bright;
+  }
 
   &-number {
-    display: block;
-    color: $color-green-primary;
+    @include color-fill($color-green-primary);
+
+    display: inline-flex;
     font-weight: $font-weight-semibold;
     font-size: 17px;
     line-height: 25px;
   }
 
-  .fa {
-    font-size: 23px;
+  /* postcss-bem-linter: ignore */
+  .Van-Icon {
+    width: 1.3rem;
     margin-right: 8px;
+    margin-top: 0;
   }
 
   &-description {
