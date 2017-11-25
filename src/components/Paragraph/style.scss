@@ -1,11 +1,10 @@
-@import "../../css/_global.scss";
+/** @define Paragraph */
+
+@import "../../css/_global";
 
 .Van-Paragraph {
-  font-weight: 100;
-  font-family: "Proxima Nova", sans-serif;
+  font-weight: 300;
   font-size: 17px;
   line-height: 30px;
   color: $color-primary-darker;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
 }

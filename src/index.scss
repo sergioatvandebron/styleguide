@@ -1,4 +1,5 @@
-@import "./css/_mixins";
+@import "./css/global";
+@import "./css/mixins";
 
 // do we need all these types?
 @include font-face("thin", 100, "normal");
@@ -17,8 +18,7 @@
 @include font-face("black-italic", 900, "italic");
 
 * {
-  box-sizing: border-box;
-
+  &,
   &[class^="Van-"] {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -28,6 +28,11 @@
   }
 }
 
-html {
+.Van-Wrapper {
+  font-size: 18px;
   font-family: "Proxima Nova", sans-serif;
+  font-weight: 300;
+  color: $color-primary;
 }
+
+@import "./css/utilities";
