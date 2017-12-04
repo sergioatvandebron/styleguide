@@ -27,7 +27,8 @@
 
   /* postcss-bem-linter: ignore */
   .Van-Icon {
-    width: 1.3rem;
+    @include icon-size(23px);
+
     margin-right: 8px;
     margin-top: 0;
   }
