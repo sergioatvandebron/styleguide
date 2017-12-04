@@ -1,5 +1,6 @@
 @import "../../css/_form-globals.scss";
-@import '../../../node_modules/font-awesome/css/font-awesome.min.css';
+// TODO: fix it to works with Icon component
+// @import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 
 @mixin input-message($state-name, $color, $border-color, $addition) {
   &::after {
