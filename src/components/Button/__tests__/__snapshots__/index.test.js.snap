@@ -2,7 +2,7 @@
 
 exports[`<Button> renders compact button size 1`] = `
 <button
-  className="Van-Button Van-Button--primary Van-Button--compact"
+  className="Van-Button Van-Button--compact"
 >
   My button
 </button>
@@ -18,7 +18,7 @@ exports[`<Button> renders danger button type 1`] = `
 
 exports[`<Button> renders full button 1`] = `
 <button
-  className="Van-Button Van-Button--primary Van-Button--full"
+  className="Van-Button Van-Button--full"
 >
   My button
 </button>
@@ -34,7 +34,7 @@ exports[`<Button> renders info button type 1`] = `
 
 exports[`<Button> renders inverted button 1`] = `
 <button
-  className="Van-Button Van-Button--primary Van-Button--inverted"
+  className="Van-Button Van-Button--inverted"
 >
   My button
 </button>
@@ -42,7 +42,7 @@ exports[`<Button> renders inverted button 1`] = `
 
 exports[`<Button> renders large button size 1`] = `
 <button
-  className="Van-Button Van-Button--primary Van-Button--large"
+  className="Van-Button Van-Button--large"
 >
   My button
 </button>
@@ -58,7 +58,7 @@ exports[`<Button> renders primary button type 1`] = `
 
 exports[`<Button> renders primary button type if does not pass a type 1`] = `
 <button
-  className="Van-Button Van-Button--primary"
+  className="Van-Button"
 >
   My button
 </button>
@@ -66,7 +66,7 @@ exports[`<Button> renders primary button type if does not pass a type 1`] = `
 
 exports[`<Button> renders small button size 1`] = `
 <button
-  className="Van-Button Van-Button--primary Van-Button--small"
+  className="Van-Button Van-Button--small"
 >
   My button
 </button>
@@ -82,7 +82,7 @@ exports[`<Button> renders success button type 1`] = `
 
 exports[`<Button> renders tiny button size 1`] = `
 <button
-  className="Van-Button Van-Button--primary Van-Button--tiny"
+  className="Van-Button Van-Button--tiny"
 >
   My button
 </button>
@@ -98,7 +98,7 @@ exports[`<Button> renders warning button type 1`] = `
 
 exports[`<Button> renders with button on the left 1`] = `
 <button
-  className="Van-Button Van-Button--primary"
+  className="Van-Button"
 >
   <span
     className="Van-Icon"
@@ -117,7 +117,7 @@ exports[`<Button> renders with button on the left 1`] = `
 
 exports[`<Button> renders with button on the right 1`] = `
 <button
-  className="Van-Button Van-Button--primary"
+  className="Van-Button"
 >
   <span>
     My button
@@ -136,7 +136,7 @@ exports[`<Button> renders with button on the right 1`] = `
 
 exports[`<Button> renders with specific className 1`] = `
 <button
-  className="Van-Button my-class Van-Button--primary"
+  className="Van-Button my-class"
 >
   My button
 </button>
@@ -144,7 +144,7 @@ exports[`<Button> renders with specific className 1`] = `
 
 exports[`<Button> renders with specific className 2`] = `
 <button
-  className="Van-Button Van-Button--primary"
+  className="Van-Button"
   data-id="0"
 >
   My button

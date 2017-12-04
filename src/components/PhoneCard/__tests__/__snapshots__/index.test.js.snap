@@ -28,6 +28,34 @@ exports[`<PhoneCard> renders PhoneCard 1`] = `
 </div>
 `;
 
+exports[`<PhoneCard> renders PhoneCard with border 1`] = `
+<div
+  className="Van-PhoneCard Van-PhoneCard--withBorder"
+  description="PhoneCard description"
+  number="1234567890"
+>
+  <span
+    className="Van-PhoneCard-number"
+  >
+    <span
+      className="Van-Icon"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      source="phone"
+    />
+    1234567890
+  </span>
+  <span
+    className="Van-PhoneCard-description"
+  >
+    PhoneCard description
+  </span>
+</div>
+`;
+
 exports[`<PhoneCard> renders with specific attributes 1`] = `
 <div
   className="Van-PhoneCard"
