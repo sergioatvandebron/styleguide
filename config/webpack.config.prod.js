@@ -108,7 +108,7 @@ module.exports = (env) => {
       }),
       // create a css file instead of setting styles inline
       new ExtractTextPlugin({
-        filename: 'static/css/[name].[hash:8].css',
+        filename: 'static/css/[name].css',
         disable: false,
         allChunks: true
       }),
