@@ -24,15 +24,15 @@ class Col extends PureComponent {
     return (
       <div
         className={classnames({
-          [`col-xs-${xs}`]: typeof xs === 'number',
-          [`col-sm-${sm}`]: typeof sm === 'number',
-          [`col-md-${md}`]: typeof md === 'number',
-          [`col-lg-${lg}`]: typeof lg === 'number',
+          [`col-xs-${xs}`]: (typeof xs === 'number' || typeof xs === 'string'),
+          [`col-sm-${sm}`]: (typeof sm === 'number' || typeof sm === 'string'),
+          [`col-md-${md}`]: (typeof md === 'number' || typeof md === 'string'),
+          [`col-lg-${lg}`]: (typeof lg === 'number' || typeof lg === 'string'),
 
-          [`col-xs-offset-${xsOffset}`]: typeof xsOffset === 'number',
-          [`col-sm-offset-${smOffset}`]: typeof smOffset === 'number',
-          [`col-md-offset-${mdOffset}`]: typeof mdOffset === 'number',
-          [`col-lg-offset-${lgOffset}`]: typeof lgOffset === 'number',
+          [`col-xs-offset-${xsOffset}`]: (typeof xsOffset === 'number' || typeof xsOffset === 'string'),
+          [`col-sm-offset-${smOffset}`]: (typeof smOffset === 'number' || typeof smOffset === 'string'),
+          [`col-md-offset-${mdOffset}`]: (typeof mdOffset === 'number' || typeof mdOffset === 'string'),
+          [`col-lg-offset-${lgOffset}`]: (typeof lgOffset === 'number' || typeof lgOffset === 'string'),
         }, className)}
         {...props}
       >
@@ -57,14 +57,38 @@ Col.defaultProps = {
 
 Col.propTypes = {
   className: PropTypes.string,
-  xs: PropTypes.number,
-  sm: PropTypes.number,
-  md: PropTypes.number,
-  lg: PropTypes.number,
-  xsOffset: PropTypes.number,
-  smOffset: PropTypes.number,
-  mdOffset: PropTypes.number,
-  lgOffset: PropTypes.number,
+  xs: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  sm: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  md: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  lg: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  xsOffset: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  smOffset: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  mdOffset: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  lgOffset: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
