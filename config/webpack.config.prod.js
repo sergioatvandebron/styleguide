@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const FileReplacePlugin = require('replace-in-file-webpack-plugin');
 
 module.exports = (env) => {
   const paths = require('./paths');
@@ -131,7 +132,19 @@ module.exports = (env) => {
           warnings: false,
           screw_ie8: true
         }
-      })
+      }),
+      new FileReplacePlugin([
+        {
+          dir: 'dist',
+          files: ['static/css/main.css'],
+          rules: [
+            {
+            search: /\/static\//g,
+            replace: '../'
+            }
+          ]
+        }
+      ])
     ]
   }
 };
