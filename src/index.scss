@@ -18,21 +18,18 @@
 @include font-face("black-italic", 900, "italic");
 
 * {
-  &,
-  &[class^="Van-"] {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-  }
-}
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 
-.Van-Wrapper {
-  font-size: 18px;
-  font-family: "Proxima Nova", sans-serif;
-  font-weight: 300;
-  color: $color-primary;
+  &[class^="Van-"] {
+    font-size: 18px;
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: 300;
+    color: $color-primary;
+  }
 }
 
 @import "./css/utilities";
