@@ -1,4 +1,4 @@
-import './index.scss';
+export { default as indexStyles } from './index.scss';
 
 if (process.env.NODE_ENV === 'development') {
   import('./index.dev');
