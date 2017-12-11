@@ -1,0 +1,42 @@
+/** @define SkeletonDisplayText */
+
+@import "../../css/_global";
+@import "../../css/mixins";
+
+.Van-SkeletonDisplayText {
+  @include skeleton-shimmer;
+  @include skeleton-style;
+
+  backface-visibility: hidden;
+  max-width: 12rem;
+  position: relative;
+
+  &:not(:first-child) {
+    margin-top: 1.2rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+
+  &--small {
+    height: 2.8rem;
+  }
+
+  &--medium {
+    height: 3.2rem;
+  }
+
+  &--large {
+    height: 4.4rem;
+  }
+
+  &--extraLarge {
+    height: 6.4rem;
+  }
+
+  &--full {
+    max-width: 100%;
+    width: 100%;
+  }
+}

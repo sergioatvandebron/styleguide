@@ -52,3 +52,32 @@
   width: $size;
   height: $size;
 }
+
+@keyframes skeletonShimmerAnimation {
+  0% {
+    opacity: 0.45;
+  }
+
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@mixin skeleton-shimmer {
+  animation: skeletonShimmerAnimation 0.5s linear infinite alternate;
+  will-change: opacity;
+}
+
+@mixin skeleton-style {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-color: $color-grey-bright;
+    border-radius: 3px;
+  }
+}

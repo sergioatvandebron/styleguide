@@ -1,0 +1,30 @@
+/** @define SkeletonBodyText */
+
+@import "../../css/_global";
+@import "../../css/mixins";
+
+.Van-SkeletonBodyText {
+  @include skeleton-shimmer;
+
+  backface-visibility: hidden;
+
+  &:not(:first-child) {
+    margin-top: 1.2rem;
+  }
+
+  &-line {
+    @include skeleton-style;
+
+    height: 0.8rem;
+    position: relative;
+    margin-top: 1.2rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child:not(:first-child) {
+      width: 80%;
+    }
+  }
+}
