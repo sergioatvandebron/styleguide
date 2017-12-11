@@ -21,3 +21,5 @@ export { default as List } from './components/List';
 export { default as Table } from './components/Table';
 export { default as PhoneCard } from './components/PhoneCard';
 export { default as Icon } from './components/Icon';
+export { default as SkeletonBodyText } from './components/SkeletonBodyText';
+export { default as SkeletonDisplayText } from './components/SkeletonDisplayText';
