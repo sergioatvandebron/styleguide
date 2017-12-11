@@ -24,7 +24,7 @@ Grid.propTypes = {
   className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.element,
+    PropTypes.node,
   ]),
 };
 
