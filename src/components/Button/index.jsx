@@ -54,8 +54,21 @@ Button.defaultProps = {
 
 Button.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.string,
-  size: PropTypes.string,
+  type: PropTypes.oneOf([
+    '',
+    'primary',
+    'info',
+    'warning',
+    'danger',
+    'success',
+  ]),
+  size: PropTypes.oneOf([
+    '',
+    'small',
+    'compact',
+    'large',
+    'tiny',
+  ]),
   full: PropTypes.bool,
   inverted: PropTypes.bool,
   children: PropTypes.oneOfType([
