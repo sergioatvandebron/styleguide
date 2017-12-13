@@ -3,21 +3,29 @@ import renderer from 'react-test-renderer';
 import Input from '../';
 
 describe('<Input/>', () => {
-  // it("renders input text", () => {
-  //   const wrapper = render(<Input meta={{error:null}} type="text"/>)
+  it("renders error input", () => {
+    const tree = renderer.create(
+      <Input meta={{ touched: true, error: true }} />
+    ).toJSON();
 
-  //   const input = wrapper.find('input');
-  //   expect(input.length).toEqual(1);
-  //   expect(input[0].attribs.type).toBe("text");
-  //   expect(input[0].attribs.class).toBe('Van-Text-Input');
-  // });
+    expect(tree).toMatchSnapshot();
+  });
 
-  // it("contains informed className", () => {
-  //   const wrapper = render(<Input meta={{error:null}} type="text" className= "someClassName"/>)
+  it("renders error input with error message", () => {
+    const tree = renderer.create(
+      <Input meta={{ touched: true, error: 'My error message' }} />
+    ).toJSON();
 
-  //   const input = wrapper.find('input');
-  //   expect(input[0].attribs.class).toBe('Van-Text-Input someClassName');
-  // });
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders success input", () => {
+    const tree = renderer.create(
+      <Input meta={{ touched: true }} />
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 
   it("renders with specific className", () => {
     const tree = renderer.create(

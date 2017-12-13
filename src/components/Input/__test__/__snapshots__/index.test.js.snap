@@ -1,5 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Input/> renders error input 1`] = `
+<div
+  className="Van-TextInput Van-TextInput--error"
+>
+  <input
+    className="Van-TextInput-input"
+    id=""
+    type="text"
+  />
+  <span
+    className="Van-Icon Van-TextInput-icon"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
+      }
+    }
+    source="close"
+  />
+</div>
+`;
+
+exports[`<Input/> renders error input with error message 1`] = `
+<div
+  className="Van-TextInput Van-TextInput--error"
+>
+  <input
+    className="Van-TextInput-input"
+    id=""
+    type="text"
+  />
+  <span
+    className="Van-Icon Van-TextInput-icon"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
+      }
+    }
+    source="close"
+  />
+  <div
+    className="Van-TextInput-error-message"
+  >
+    My error message
+  </div>
+</div>
+`;
+
+exports[`<Input/> renders success input 1`] = `
+<div
+  className="Van-TextInput Van-TextInput--success"
+>
+  <input
+    className="Van-TextInput-input"
+    id=""
+    type="text"
+  />
+  <span
+    className="Van-Icon Van-TextInput-icon"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test-file-stub",
+      }
+    }
+    source="check"
+  />
+</div>
+`;
+
 exports[`<Input/> renders with specific attributes 1`] = `
 <div
   className="Van-TextInput"

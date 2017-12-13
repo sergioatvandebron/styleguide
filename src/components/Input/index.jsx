@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Icon from '../Icon';
 import './style.scss';
 
 const Input = ({
@@ -29,7 +30,17 @@ const Input = ({
         {...input}
       />
 
-      {touched && typeof error === 'string' && <div className="Van-TextInput-error-message">{error}</div>}
+      {touched && error &&
+        <Icon source="close" className="Van-TextInput-icon" />
+      }
+
+      {touched && !error && !warning &&
+        <Icon source="check" className="Van-TextInput-icon" />
+      }
+
+      {touched && typeof error === 'string' &&
+        <div className="Van-TextInput-error-message">{error}</div>
+      }
     </div>
   );
 };

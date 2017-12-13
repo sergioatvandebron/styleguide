@@ -1,18 +1,6 @@
 @import "../../css/_form-globals.scss";
-// TODO: fix it to works with Icon component
-// @import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 
-@mixin input-message($state-name, $color, $border-color, $addition) {
-  &::after {
-    color: $color;
-    content: $addition;
-    font-family: FontAwesome;
-    line-height: 42px;
-    position: absolute;
-    right: 11px;
-    top: 0;
-  }
-
+@mixin input-message($state-name, $color, $border-color) {
   .Van-TextInput-input {
     border-color: $border-color;
     padding-right: 30px;
@@ -22,6 +10,10 @@
     color: $color;
     font-size: 13px;
     padding-top: 3px;
+  }
+
+  .Van-TextInput-icon {
+    fill: $color;
   }
 }
 
@@ -43,11 +35,17 @@
     }
   }
 
+  &-icon {
+    position: absolute;
+    top: 11px;
+    right: 8px;
+  }
+
   &--error {
-    @include input-message("error", $input-error-color, $input-error-border, "\f00d");
+    @include input-message("error", $input-error-color, $input-error-border);
   }
 
   &--success {
-    @include input-message("success", $input-success-color, $input-success-border, "\f00c");
+    @include input-message("success", $input-success-color, $input-success-border);
   }
 }
