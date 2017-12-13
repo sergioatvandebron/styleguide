@@ -34,7 +34,12 @@ SkeletonDisplayText.defaultProps = {
 
 SkeletonDisplayText.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.oneOf([
+    'small',
+    'medium',
+    'large',
+    'extraLarge',
+  ]),
   full: PropTypes.bool,
 };
 
