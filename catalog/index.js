@@ -18,8 +18,10 @@ import Container from '../src/components/Container';
 import List from '../src/components/List';
 import Table from '../src/components/Table';
 import PhoneCard from '../src/components/PhoneCard';
-import Card from '../src/components/Card';
 import Icon from '../src/components/Icon';
+import SkeletonBodyText from '../src/components/SkeletonBodyText';
+import SkeletonDisplayText from '../src/components/SkeletonDisplayText';
+import SkeletonCard from '../src/components/SkeletonCard';
 
 const imports = {
   Button,
@@ -35,8 +37,10 @@ const imports = {
   List,
   Table,
   PhoneCard,
-  Card,
-  Icon
+  Icon,
+  SkeletonBodyText,
+  SkeletonDisplayText,
+  SkeletonCard
 };
 
 const pages = [
@@ -134,6 +138,24 @@ const pages = [
         title: 'Icon',
         content: pageLoader(() => import('./pages/elements/icons.md')),
         imports: imports,
+      },
+      {
+        path: '/elements/skeleton-body-text',
+        title: 'SkeletonBodyText',
+        content: pageLoader(() => import('./pages/elements/skeleton-body-text.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/skeleton-display-text',
+        title: 'SkeletonDisplayText',
+        content: pageLoader(() => import('./pages/elements/skeleton-display-text.md')),
+        imports: imports,
+      },
+      {
+        path: '/elements/skeleton-card',
+        title: 'SkeletonCard',
+        content: pageLoader(() => import('./pages/elements/skeleton-card.md')),
+        imports: imports,
       }
     ]
   },
@@ -144,12 +166,6 @@ const pages = [
         path: '/components/phone-card',
         title: 'PhoneCard',
         content: pageLoader(() => import('./pages/components/phone-card.md')),
-        imports: imports,
-      },
-      {
-        path: '/components/card',
-        title: 'Card',
-        content: pageLoader(() => import('./pages/components/card.md')),
         imports: imports,
       }
     ]
