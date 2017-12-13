@@ -1,0 +1,10 @@
+/** @define SkeletonCard */
+
+@import "../../css/_global";
+
+.Van-SkeletonCard {
+  width: 363px;
+  border: 2px solid $color-grey-bright;
+  background-color: $color-white;
+  padding: 20px;
+}

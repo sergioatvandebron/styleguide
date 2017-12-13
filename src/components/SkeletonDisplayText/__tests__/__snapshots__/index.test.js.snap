@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SkeletonCard> renders extraLarge size 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--extraLarge"
+/>
+`;
+
+exports[`<SkeletonCard> renders full width 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--medium Van-SkeletonDisplayText--full"
+/>
+`;
+
+exports[`<SkeletonCard> renders large size 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--large"
+/>
+`;
+
+exports[`<SkeletonCard> renders medium size 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--medium"
+/>
+`;
+
+exports[`<SkeletonCard> renders small size 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--small"
+/>
+`;
+
+exports[`<SkeletonCard> renders small size and full width 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--small Van-SkeletonDisplayText--full"
+/>
+`;
+
+exports[`<SkeletonCard> renders with specific attributes 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--medium"
+  data-id="0"
+/>
+`;
+
+exports[`<SkeletonCard> renders with specific className 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--medium my-class"
+/>
+`;
+
+exports[`<SkeletonCard> renders without params 1`] = `
+<div
+  className="Van-SkeletonDisplayText Van-SkeletonDisplayText--medium"
+/>
+`;

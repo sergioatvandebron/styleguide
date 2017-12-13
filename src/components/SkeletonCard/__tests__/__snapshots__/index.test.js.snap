@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SkeletonCard> renders with a component as children 1`] = `
+<div
+  className="Van-SkeletonCard"
+>
+  <div
+    className="Van-SkeletonDisplayText Van-SkeletonDisplayText--medium"
+  />
+</div>
+`;
+
+exports[`<SkeletonCard> renders with a string as children 1`] = `
+<div
+  className="Van-SkeletonCard"
+>
+  My card
+</div>
+`;
+
+exports[`<SkeletonCard> renders with specific attributes 1`] = `
+<div
+  className="Van-SkeletonCard"
+  data-id="0"
+>
+  My Col
+</div>
+`;
+
+exports[`<SkeletonCard> renders with specific className 1`] = `
+<div
+  className="Van-SkeletonCard my-class"
+>
+  My Col
+</div>
+`;
