@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumberInput/> renders the correct markup 1`] = `
+<div
+  className="Van-NumberInput"
+>
+  <button
+    className="Van-NumberInput-ctrl Van-NumberInput-ctrl--down"
+    onClick={[Function]}
+    type="button"
+  >
+    -
+  </button>
+  <button
+    className="Van-NumberInput-ctrl Van-NumberInput-ctrl--up"
+    onClick={[Function]}
+    type="button"
+  >
+    +
+  </button>
+  <input
+    className="Van-NumberInput-input"
+    step={1}
+    type="number"
+  />
+</div>
+`;
+
+exports[`<NumberInput/> renders with specific attributes 1`] = `
+<div
+  className="Van-NumberInput"
+>
+  <button
+    className="Van-NumberInput-ctrl Van-NumberInput-ctrl--down"
+    onClick={[Function]}
+    type="button"
+  >
+    -
+  </button>
+  <button
+    className="Van-NumberInput-ctrl Van-NumberInput-ctrl--up"
+    onClick={[Function]}
+    type="button"
+  >
+    +
+  </button>
+  <input
+    className="Van-NumberInput-input"
+    data-id="0"
+    step={1}
+    type="number"
+  />
+</div>
+`;
+
+exports[`<NumberInput/> renders with specific className 1`] = `
+<div
+  className="Van-NumberInput"
+>
+  <button
+    className="Van-NumberInput-ctrl Van-NumberInput-ctrl--down"
+    onClick={[Function]}
+    type="button"
+  >
+    -
+  </button>
+  <button
+    className="Van-NumberInput-ctrl Van-NumberInput-ctrl--up"
+    onClick={[Function]}
+    type="button"
+  >
+    +
+  </button>
+  <input
+    className="Van-NumberInput-input"
+    step={1}
+    type="number"
+  />
+</div>
+`;

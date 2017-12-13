@@ -1,3 +1,5 @@
+/** @define NumberInput */
+
 @import "../../css/_global.scss";
 @import "../../css/_form-globals.scss";
 
@@ -18,7 +20,7 @@ $number-input-ctrl-bg:          $color-grey-light;
     border: 1px solid $input-error-border;
   }
 
-  .Van-NumberInput-input {
+  &-input {
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
     border: 0;
@@ -46,11 +48,11 @@ $number-input-ctrl-bg:          $color-grey-light;
     }
   }
 
-  .Van-NumberInput-ctrl {
+  &-ctrl {
     background-color: $number-input-ctrl-bg;
     border: 0;
     bottom: 0;
-    color: #5b636b;
+    color: $color-primary-bright;
     cursor: pointer;
     font-size: 23px;
     font-weight: 900;
@@ -69,13 +71,13 @@ $number-input-ctrl-bg:          $color-grey-light;
     }
   }
 
-  .Van-NumberInput-ctrl--up {
+  &-ctrl--up {
     border-radius: 0 5px 5px 0;
     line-height: 1.4;
     right: 0;
   }
 
-  .Van-NumberInput-ctrl--down {
+  &-ctrl--down {
     border-radius: 5px 0 0 5px;
     left: 0;
   }

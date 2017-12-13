@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './style.scss';
 
-class NumberInput extends React.Component {
+class NumberInput extends PureComponent {
   static defaultProps = {
     input: {},
     meta: {},
@@ -38,8 +38,20 @@ class NumberInput extends React.Component {
 
     return (
       <div className={className}>
-        <button type="button" className="Van-NumberInput-ctrl Van-NumberInput-ctrl--down" onClick={() => this.handleClick('down')}>-</button>
-        <button type="button" className="Van-NumberInput-ctrl Van-NumberInput-ctrl--up" onClick={() => this.handleClick('up')}>+</button>
+        <button
+          type="button"
+          className="Van-NumberInput-ctrl Van-NumberInput-ctrl--down"
+          onClick={() => this.handleClick('down')}
+        >
+          -
+        </button>
+        <button
+          type="button"
+          className="Van-NumberInput-ctrl Van-NumberInput-ctrl--up"
+          onClick={() => this.handleClick('up')}
+        >
+          +
+        </button>
 
         <input
           {...props}
