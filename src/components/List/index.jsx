@@ -1,28 +1,31 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import Icon from '../Icon';
 import './style.scss';
 
-// TODO: add icon part!
 class List extends PureComponent {
-  getClass() {
-    const classes = ['Van-List'];
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    if (this.props.unstyled) {
-      classes.push('Van-List--unstyled');
-    }
-
-    return classes.join(' ');
-  }
-
   render() {
+    const {
+      className,
+      unstyled,
+      ...props
+    } = this.props;
+
     return (
-      <ul className={this.getClass()}>
+      <ul
+        className={classnames('Van-List', {
+          'Van-List--unstyled': unstyled,
+        }, className)}
+        {...props}
+      >
         {this.props.items.map(item => (
-          <li className="Van-List-item" key={item}>{item}</li>
+          <li className="Van-List-item" key={item.text}>
+            {item.icon &&
+              <Icon source={item.icon} className="Van-List-icon" />
+            }
+            {item.text}
+          </li>
         ))}
       </ul>
     );
@@ -37,7 +40,10 @@ List.defaultProps = {
 
 List.propTypes = {
   className: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.string),
+  items: PropTypes.arrayOf(PropTypes.shape({
+    icon: PropTypes.string,
+    text: PropTypes.string,
+  })),
   unstyled: PropTypes.bool,
 };
 

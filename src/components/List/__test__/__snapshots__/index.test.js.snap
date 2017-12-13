@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List> renders an empty list 1`] = `
+<ul
+  className="Van-List"
+  items={Array []}
+/>
+`;
+
+exports[`<List> renders an empty list if you don't pass items 1`] = `
+<ul
+  className="Van-List"
+  items={Array []}
+/>
+`;
+
+exports[`<List> renders list with icons 1`] = `
+<ul
+  className="Van-List Van-List--unstyled"
+  items={
+    Array [
+      Object {
+        "icon": "check",
+        "text": "Item 1",
+      },
+      Object {
+        "icon": "close",
+        "text": "Item 2",
+      },
+      Object {
+        "icon": "facebook",
+        "text": "Item 3",
+      },
+      Object {
+        "icon": "instagram",
+        "text": "Item 4",
+      },
+    ]
+  }
+>
+  <li
+    className="Van-List-item"
+  >
+    <span
+      className="Van-Icon Van-List-icon"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      source="check"
+    />
+    Item 1
+  </li>
+  <li
+    className="Van-List-item"
+  >
+    <span
+      className="Van-Icon Van-List-icon"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      source="close"
+    />
+    Item 2
+  </li>
+  <li
+    className="Van-List-item"
+  >
+    <span
+      className="Van-Icon Van-List-icon"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      source="facebook"
+    />
+    Item 3
+  </li>
+  <li
+    className="Van-List-item"
+  >
+    <span
+      className="Van-Icon Van-List-icon"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+      source="instagram"
+    />
+    Item 4
+  </li>
+</ul>
+`;
+
+exports[`<List> renders regular list 1`] = `
+<ul
+  className="Van-List"
+  items={
+    Array [
+      Object {
+        "text": "Item 1",
+      },
+      Object {
+        "text": "Item 2",
+      },
+    ]
+  }
+>
+  <li
+    className="Van-List-item"
+  >
+    Item 1
+  </li>
+  <li
+    className="Van-List-item"
+  >
+    Item 2
+  </li>
+</ul>
+`;
+
+exports[`<List> renders unstyled list 1`] = `
+<ul
+  className="Van-List Van-List--unstyled"
+  items={
+    Array [
+      Object {
+        "text": "Item 1",
+      },
+      Object {
+        "text": "Item 2",
+      },
+    ]
+  }
+>
+  <li
+    className="Van-List-item"
+  >
+    Item 1
+  </li>
+  <li
+    className="Van-List-item"
+  >
+    Item 2
+  </li>
+</ul>
+`;
+
+exports[`<List> renders with specific attributes 1`] = `
+<ul
+  className="Van-List"
+  data-id="0"
+  items={
+    Array [
+      Object {
+        "text": "Item 1",
+      },
+      Object {
+        "text": "Item 2",
+      },
+    ]
+  }
+>
+  <li
+    className="Van-List-item"
+  >
+    Item 1
+  </li>
+  <li
+    className="Van-List-item"
+  >
+    Item 2
+  </li>
+</ul>
+`;
+
+exports[`<List> renders with specific className 1`] = `
+<ul
+  className="Van-List my-class"
+  items={
+    Array [
+      Object {
+        "text": "Item 1",
+      },
+      Object {
+        "text": "Item 2",
+      },
+    ]
+  }
+>
+  <li
+    className="Van-List-item"
+  >
+    Item 1
+  </li>
+  <li
+    className="Van-List-item"
+  >
+    Item 2
+  </li>
+</ul>
+`;

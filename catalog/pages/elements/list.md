@@ -1,13 +1,45 @@
 ### Normal list
 ```react
-<List items={['Item 1', 'Item 2']} />
+<List
+  items={[
+    { text: 'Item 1' },
+    { text: 'Item 2' },
+  ]}
+/>
 ```
 
 ### Unstyled list
 ```react
 <List
-  items={['Item 1', 'Item 2']}
+  items={[
+    { text: 'Item 1' },
+    { text: 'Item 2' },
+  ]}
   unstyled
+/>
+```
+
+### List with icons
+```react
+<List
+  items={[
+    {
+      text: 'Item 1',
+      icon: 'check',
+    },
+    {
+      text: 'Item 2',
+      icon: 'close',
+    },
+    {
+      text: 'Item 3',
+      icon: 'facebook',
+    },
+    {
+      text: 'Item 4',
+      icon: 'instagram',
+    },
+  ]}
 />
 ```
 
