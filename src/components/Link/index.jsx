@@ -33,7 +33,10 @@ Link.defaultProps = {
 
 Link.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.oneOf([
+    '',
+    'secondary',
+  ]),
   children: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element,
