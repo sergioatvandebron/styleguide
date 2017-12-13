@@ -91,7 +91,7 @@ Col.propTypes = {
   ]),
   children: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.element,
+    PropTypes.node,
   ]),
 };
 
