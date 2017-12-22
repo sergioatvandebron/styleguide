@@ -34,8 +34,8 @@ module.exports = (env) => {
     ],
 
     output: {
-      filename: 'static/js/bundle.js',
-      // chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+      filename: 'js/bundle.js',
+      // chunkFilename: 'js/[name].[chunkhash:8].chunk.js',
       path: paths.distDir,
       publicPath: '/',
       libraryTarget: 'umd'
@@ -71,7 +71,7 @@ module.exports = (env) => {
           // load media files - need to be injected without a prefixing slash
           test: /(proxima-nova(.)*svg|\.woff|\.eot|\.ttf|\.png|\.gif|\.jpg)/,
           use: [
-            'file-loader?name=static/media/[name].[hash:8].[ext]'
+            'file-loader?name=media/[name].[hash:8].[ext]'
           ]
         },
         {
@@ -109,7 +109,7 @@ module.exports = (env) => {
       }),
       // create a css file instead of setting styles inline
       new ExtractTextPlugin({
-        filename: 'static/css/[name].css',
+        filename: 'css/[name].css',
         disable: false,
         allChunks: true
       }),
@@ -136,11 +136,11 @@ module.exports = (env) => {
       new FileReplacePlugin([
         {
           dir: 'dist',
-          files: ['static/css/main.css'],
+          files: ['css/main.css'],
           rules: [
             {
-            search: /\/static\//g,
-            replace: '../'
+            search: /\/media\//g,
+            replace: '../media/'
             }
           ]
         }
