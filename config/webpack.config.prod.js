@@ -89,24 +89,6 @@ module.exports = (env) => {
         syntax: 'scss',
         configFile: paths.appDir + '/config/stylelint.js'
       }),
-
-      // inject bundles to an html file
-      new HtmlWebpackPlugin({
-        inject: true,
-        template: paths.publicDir + '/index.html',
-        minify: {
-          removeComments: true,
-          collapseWhitespace: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeStyleLinkTypeAttributes: true,
-          keepClosingSlash: true,
-          minifyJS: true,
-          minifyCSS: true,
-          minifyURLs: true
-        }
-      }),
       // create a css file instead of setting styles inline
       new ExtractTextPlugin({
         filename: 'css/[name].css',
