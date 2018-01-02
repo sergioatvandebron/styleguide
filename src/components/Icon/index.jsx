@@ -19,13 +19,14 @@ class Icon extends PureComponent {
   render() {
     const {
       className,
+      source,
       ...props
     } = this.props;
 
     return (
       <span
         className={this.getClass()}
-        dangerouslySetInnerHTML={{ __html: ICONS[this.props.source] }}
+        dangerouslySetInnerHTML={{ __html: ICONS[source] }}
         {...props}
       />
     );
