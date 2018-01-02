@@ -8,7 +8,7 @@ exports[`<Button> renders compact button size 1`] = `
 </button>
 `;
 
-exports[`<Button> renders danger button type 1`] = `
+exports[`<Button> renders danger button 1`] = `
 <button
   className="Van-Button Van-Button--danger"
 >
@@ -24,7 +24,7 @@ exports[`<Button> renders full button 1`] = `
 </button>
 `;
 
-exports[`<Button> renders info button type 1`] = `
+exports[`<Button> renders info button 1`] = `
 <button
   className="Van-Button Van-Button--info"
 >
@@ -48,7 +48,7 @@ exports[`<Button> renders large button size 1`] = `
 </button>
 `;
 
-exports[`<Button> renders primary button type 1`] = `
+exports[`<Button> renders primary button 1`] = `
 <button
   className="Van-Button Van-Button--primary"
 >
@@ -56,7 +56,7 @@ exports[`<Button> renders primary button type 1`] = `
 </button>
 `;
 
-exports[`<Button> renders primary button type if does not pass a type 1`] = `
+exports[`<Button> renders primary button if does not pass a theme 1`] = `
 <button
   className="Van-Button"
 >
@@ -72,7 +72,7 @@ exports[`<Button> renders small button size 1`] = `
 </button>
 `;
 
-exports[`<Button> renders success button type 1`] = `
+exports[`<Button> renders success button 1`] = `
 <button
   className="Van-Button Van-Button--success"
 >
@@ -88,7 +88,7 @@ exports[`<Button> renders tiny button size 1`] = `
 </button>
 `;
 
-exports[`<Button> renders warning button type 1`] = `
+exports[`<Button> renders warning button 1`] = `
 <button
   className="Van-Button Van-Button--warning"
 >
@@ -107,7 +107,6 @@ exports[`<Button> renders with button on the left 1`] = `
         "__html": "test-file-stub",
       }
     }
-    source="facebook"
   />
   <span>
     My button
@@ -129,7 +128,6 @@ exports[`<Button> renders with button on the right 1`] = `
         "__html": "test-file-stub",
       }
     }
-    source="facebook"
   />
 </button>
 `;

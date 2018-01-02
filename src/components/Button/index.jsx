@@ -7,7 +7,7 @@ class Button extends PureComponent {
   render() {
     const {
       className,
-      type,
+      theme,
       size,
       full,
       inverted,
@@ -18,11 +18,11 @@ class Button extends PureComponent {
     return (
       <button
         className={classnames('Van-Button', className, {
-          'Van-Button--primary': type === 'primary',
-          'Van-Button--info': type === 'info',
-          'Van-Button--warning': type === 'warning',
-          'Van-Button--danger': type === 'danger',
-          'Van-Button--success': type === 'success',
+          'Van-Button--primary': theme === 'primary',
+          'Van-Button--info': theme === 'info',
+          'Van-Button--warning': theme === 'warning',
+          'Van-Button--danger': theme === 'danger',
+          'Van-Button--success': theme === 'success',
 
           'Van-Button--small': size === 'small',
           'Van-Button--compact': size === 'compact',
@@ -45,7 +45,7 @@ class Button extends PureComponent {
 
 Button.defaultProps = {
   className: '',
-  type: '',
+  theme: '',
   size: '',
   full: false,
   inverted: false,
@@ -54,7 +54,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf([
+  theme: PropTypes.oneOf([
     '',
     'primary',
     'info',

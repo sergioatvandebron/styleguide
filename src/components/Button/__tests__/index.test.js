@@ -4,7 +4,7 @@ import Icon from '../../Icon';
 import Button from '../';
 
 describe("<Button>", () => {
-  it("renders primary button type if does not pass a type", () => {
+  it("renders primary button if does not pass a theme", () => {
     const tree = renderer.create(
       <Button>My button</Button>
     ).toJSON();
@@ -12,41 +12,41 @@ describe("<Button>", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders primary button type", () => {
+  it("renders primary button", () => {
     const tree = renderer.create(
-      <Button type="primary">My button</Button>
+      <Button theme="primary">My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders info button type", () => {
+  it("renders info button", () => {
     const tree = renderer.create(
-      <Button type="info">My button</Button>
+      <Button theme="info">My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders warning button type", () => {
+  it("renders warning button", () => {
     const tree = renderer.create(
-      <Button type="warning">My button</Button>
+      <Button theme="warning">My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders danger button type", () => {
+  it("renders danger button", () => {
     const tree = renderer.create(
-      <Button type="danger">My button</Button>
+      <Button theme="danger">My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders success button type", () => {
+  it("renders success button", () => {
     const tree = renderer.create(
-      <Button type="success">My button</Button>
+      <Button theme="success">My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
