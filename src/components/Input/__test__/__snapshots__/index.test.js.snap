@@ -16,7 +16,6 @@ exports[`<Input/> renders error input 1`] = `
         "__html": "test-file-stub",
       }
     }
-    source="close"
   />
 </div>
 `;
@@ -37,7 +36,6 @@ exports[`<Input/> renders error input with error message 1`] = `
         "__html": "test-file-stub",
       }
     }
-    source="close"
   />
   <div
     className="Van-TextInput-error-message"
@@ -63,7 +61,6 @@ exports[`<Input/> renders success input 1`] = `
         "__html": "test-file-stub",
       }
     }
-    source="check"
   />
 </div>
 `;

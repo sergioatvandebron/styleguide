@@ -16,7 +16,6 @@ exports[`<PhoneCard> renders PhoneCard 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="phone"
     />
     1234567890
   </span>
@@ -44,7 +43,6 @@ exports[`<PhoneCard> renders PhoneCard with border 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="phone"
     />
     1234567890
   </span>
@@ -73,7 +71,6 @@ exports[`<PhoneCard> renders with specific attributes 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="phone"
     />
     1234567890
   </span>
@@ -101,7 +98,6 @@ exports[`<PhoneCard> renders with specific className 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="phone"
     />
     1234567890
   </span>

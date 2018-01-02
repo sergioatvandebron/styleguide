@@ -48,7 +48,6 @@ exports[`<List> renders list with icons 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="check"
     />
     Item 1
   </li>
@@ -62,7 +61,6 @@ exports[`<List> renders list with icons 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="close"
     />
     Item 2
   </li>
@@ -76,7 +74,6 @@ exports[`<List> renders list with icons 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="facebook"
     />
     Item 3
   </li>
@@ -90,7 +87,6 @@ exports[`<List> renders list with icons 1`] = `
           "__html": "test-file-stub",
         }
       }
-      source="instagram"
     />
     Item 4
   </li>
