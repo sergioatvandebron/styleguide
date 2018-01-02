@@ -16,6 +16,14 @@ class Col extends PureComponent {
       smOffset,
       mdOffset,
       lgOffset,
+      xsPull,
+      smPull,
+      mdPull,
+      lgPull,
+      xsPush,
+      smPush,
+      mdPush,
+      lgPush,
       className,
       children,
       ...props
@@ -33,6 +41,16 @@ class Col extends PureComponent {
           [`col-sm-offset-${smOffset}`]: (typeof smOffset === 'number' || typeof smOffset === 'string'),
           [`col-md-offset-${mdOffset}`]: (typeof mdOffset === 'number' || typeof mdOffset === 'string'),
           [`col-lg-offset-${lgOffset}`]: (typeof lgOffset === 'number' || typeof lgOffset === 'string'),
+
+          [`col-xs-push-${xsPush}`]: (typeof xsPush === 'number' || typeof xsPush === 'string'),
+          [`col-sm-push-${smPush}`]: (typeof smPush === 'number' || typeof smPush === 'string'),
+          [`col-md-push-${mdPush}`]: (typeof mdPush === 'number' || typeof mdPush === 'string'),
+          [`col-lg-push-${lgPush}`]: (typeof lgPush === 'number' || typeof lgPush === 'string'),
+
+          [`col-xs-pull-${xsPull}`]: (typeof xsPull === 'number' || typeof xsPull === 'string'),
+          [`col-sm-pull-${smPull}`]: (typeof smPull === 'number' || typeof smPull === 'string'),
+          [`col-md-pull-${mdPull}`]: (typeof mdPull === 'number' || typeof mdPull === 'string'),
+          [`col-lg-pull-${lgPull}`]: (typeof lgPull === 'number' || typeof lgPull === 'string'),
         }, className)}
         {...props}
       >
@@ -52,6 +70,14 @@ Col.defaultProps = {
   smOffset: undefined,
   mdOffset: undefined,
   lgOffset: undefined,
+  xsPull: undefined,
+  smPull: undefined,
+  mdPull: undefined,
+  lgPull: undefined,
+  xsPush: undefined,
+  smPush: undefined,
+  mdPush: undefined,
+  lgPush: undefined,
   children: '',
 };
 
@@ -86,6 +112,38 @@ Col.propTypes = {
     PropTypes.number,
   ]),
   lgOffset: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  xsPush: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  smPush: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  mdPush: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  lgPush: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  xsPull: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  smPull: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  mdPull: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  lgPull: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
   ]),
