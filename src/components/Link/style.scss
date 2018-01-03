@@ -1,20 +1,23 @@
 /** @define Link */
 
-@import "../../css/_global.scss";
+@import "../../css/_global";
+@import "../../css/mixins";
 
 .Van-Link {
-  color: $color-primary-bright;
+  @include color-fill($color-primary-bright);
+
   text-decoration: none;
 
   &:hover {
-    color: $color-pink-primary;
+    @include color-fill($color-pink-primary);
   }
 
   &--secondary {
-    color: $color-green-primary;
+    @include color-fill($color-green-primary);
 
     &:hover {
-      color: $color-green-primary;
+      @include color-fill($color-green-primary);
+
       text-decoration: underline;
     }
   }
