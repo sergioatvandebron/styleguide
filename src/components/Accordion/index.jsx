@@ -17,13 +17,23 @@ class Accordion extends PureComponent {
   }
 
   componentWillMount() {
-    this.setState({
+    this.updateAccordionState({
       isOpen: this.props.isOpen,
+    });
+  }
+
+  componentWillReceiveProps(nexProps) {
+    this.updateAccordionState({
+      isOpen: nexProps.isOpen,
     });
   }
 
   getIconMarkup() {
     return this.state.isOpen ? <Icon source="angleUp" /> : <Icon source="angleDown" />;
+  }
+
+  updateAccordionState(state) {
+    this.setState(state);
   }
 
   toggle() {
