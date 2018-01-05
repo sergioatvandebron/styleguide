@@ -81,3 +81,47 @@
     border-radius: 3px;
   }
 }
+
+@mixin spacing($type, $direction: false) {
+  @if $direction {
+    &-#{$direction} {
+      &--flush { #{$type}-#{$direction}: 0 !important; }
+
+      &--tiny { #{$type}-#{$direction}: 5px !important; }
+
+      &--x-small { #{$type}-#{$direction}: 10px !important; }
+
+      &--small { #{$type}-#{$direction}: 15px !important; }
+
+      &--medium { #{$type}-#{$direction}: 20px !important; }
+
+      &--large { #{$type}-#{$direction}: 25px !important; }
+
+      &--x-large { #{$type}-#{$direction}: 30px !important; }
+
+      &--xx-large { #{$type}-#{$direction}: 35px !important; }
+
+      &--ultra { #{$type}-#{$direction}: 40px !important; }
+    }
+  }
+
+  @else {
+    &--flush { #{$type}: 0 !important; }
+
+    &--tiny { #{$type}: 5px !important; }
+
+    &--x-small { #{$type}: 10px !important; }
+
+    &--small { #{$type}: 15px !important; }
+
+    &--medium { #{$type}: 20px !important; }
+
+    &--large { #{$type}: 25px !important; }
+
+    &--x-large { #{$type}: 30px !important; }
+
+    &--xx-large { #{$type}: 35px !important; }
+
+    &--ultra { #{$type}: 40px !important; }
+  }
+}

@@ -1,4 +1,6 @@
-@import "./_mixins";
+@import "./mixins";
+
+$directionList: top bottom left right;
 
 .Van-u-display-block { display: block; }
 
@@ -109,201 +111,17 @@
 .Van-u-bg-facebook-blue { background-color: $color-facebook-blue !important; }
 
 .Van-u-margin {
-  &--flush { margin: 0; }
+  @include spacing('margin');
 
-  &--tiny { margin: 5px; }
-
-  &--x-small { margin: 10px; }
-
-  &--small { margin: 15px; }
-
-  &--medium { margin: 20px; }
-
-  &--large { margin: 25px; }
-
-  &--x-large { margin: 30px; }
-
-  &--xx-large { margin: 35px; }
-
-  &--ultra { margin: 40px; }
-
-  &-top {
-    &--flush { margin-top: 0; }
-
-    &--tiny { margin-top: 5px; }
-
-    &--x-small { margin-top: 10px; }
-
-    &--small { margin-top: 15px; }
-
-    &--medium { margin-top: 20px; }
-
-    &--large { margin-top: 25px; }
-
-    &--x-large { margin-top: 30px; }
-
-    &--xx-large { margin-top: 35px; }
-
-    &--ultra { margin-top: 40px; }
-  }
-
-  &-bottom {
-    &--flush { margin-bottom: 0; }
-
-    &--tiny { margin-bottom: 5px; }
-
-    &--x-small { margin-bottom: 10px; }
-
-    &--small { margin-bottom: 15px; }
-
-    &--medium { margin-bottom: 20px; }
-
-    &--large { margin-bottom: 25px; }
-
-    &--x-large { margin-bottom: 30px; }
-
-    &--xx-large { margin-bottom: 35px; }
-
-    &--ultra { margin-bottom: 40px; }
-  }
-
-  &-left {
-    &--flush { margin-left: 0; }
-
-    &--tiny { margin-left: 5px; }
-
-    &--x-small { margin-left: 10px; }
-
-    &--small { margin-left: 15px; }
-
-    &--medium { margin-left: 20px; }
-
-    &--large { margin-left: 25px; }
-
-    &--x-large { margin-left: 30px; }
-
-    &--xx-large { margin-left: 35px; }
-
-    &--ultra { margin-left: 40px; }
-  }
-
-  &-right {
-    &--flush { margin-right: 0; }
-
-    &--tiny { margin-right: 5px; }
-
-    &--x-small { margin-right: 10px; }
-
-    &--small { margin-right: 15px; }
-
-    &--medium { margin-right: 20px; }
-
-    &--large { margin-right: 25px; }
-
-    &--x-large { margin-right: 30px; }
-
-    &--xx-large { margin-right: 35px; }
-
-    &--ultra { margin-right: 40px; }
+  @each $direction in $directionList {
+    @include spacing('margin', $direction);
   }
 }
 
 .Van-u-padding {
-  &--flush { padding: 0; }
+  @include spacing('padding');
 
-  &--tiny { padding: 5px; }
-
-  &--x-small { padding: 10px; }
-
-  &--small { padding: 15px; }
-
-  &--medium { padding: 20px; }
-
-  &--large { padding: 25px; }
-
-  &--x-large { padding: 30px; }
-
-  &--xx-large { padding: 35px; }
-
-  &--ultra { padding: 40px; }
-
-  &-top {
-    &--flush { padding-top: 0; }
-
-    &--tiny { padding-top: 5px; }
-
-    &--x-small { padding-top: 10px; }
-
-    &--small { padding-top: 15px; }
-
-    &--medium { padding-top: 20px; }
-
-    &--large { padding-top: 25px; }
-
-    &--x-large { padding-top: 30px; }
-
-    &--xx-large { padding-top: 35px; }
-
-    &--ultra { padding-top: 40px; }
-  }
-
-  &-bottom {
-    &--flush { padding-bottom: 0; }
-
-    &--tiny { padding-bottom: 5px; }
-
-    &--x-small { padding-bottom: 10px; }
-
-    &--small { padding-bottom: 15px; }
-
-    &--medium { padding-bottom: 20px; }
-
-    &--large { padding-bottom: 25px; }
-
-    &--x-large { padding-bottom: 30px; }
-
-    &--xx-large { padding-bottom: 35px; }
-
-    &--ultra { padding-bottom: 40px; }
-  }
-
-  &-left {
-    &--flush { padding-left: 0; }
-
-    &--tiny { padding-left: 5px; }
-
-    &--x-small { padding-left: 10px; }
-
-    &--small { padding-left: 15px; }
-
-    &--medium { padding-left: 20px; }
-
-    &--large { padding-left: 25px; }
-
-    &--x-large { padding-left: 30px; }
-
-    &--xx-large { padding-left: 35px; }
-
-    &--ultra { padding-left: 40px; }
-  }
-
-  &-right {
-    &--flush { padding-right: 0; }
-
-    &--tiny { padding-right: 5px; }
-
-    &--x-small { padding-right: 10px; }
-
-    &--small { padding-right: 15px; }
-
-    &--medium { padding-right: 20px; }
-
-    &--large { padding-right: 25px; }
-
-    &--x-large { padding-right: 30px; }
-
-    &--xx-large { padding-right: 35px; }
-
-    &--ultra { padding-right: 40px; }
+  @each $direction in $directionList {
+    @include spacing('padding', $direction);
   }
 }
