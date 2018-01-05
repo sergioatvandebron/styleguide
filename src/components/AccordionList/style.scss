@@ -1,0 +1,67 @@
+/** @define AccordionList */
+
+@import "../../css/_global";
+@import "../../css/mixins";
+
+.Van-AccordionList {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 0 0;
+
+  &-item {
+    position: relative;
+    padding-left: 0;
+    padding-bottom: 13px;
+
+    &--withNumber {
+      padding-left: 40px;
+    }
+  }
+
+  /* postcss-bem-linter: ignore */
+  .Van-Accordion-title {
+    font-size: 18px;
+    font-weight: $font-weight-semibold;
+    padding-bottom: 8px;
+
+    /* postcss-bem-linter: ignore */
+    .Van-Icon {
+      @include color-fill($color-grey);
+
+      vertical-align: top;
+      margin-left: 4px;
+    }
+  }
+
+  /* postcss-bem-linter: ignore */
+  .Van-Accordion-content {
+    font-size: 17px;
+    font-weight: $font-weight-light;
+    line-height: 25px;
+    padding-bottom: 2px;
+  }
+
+  &-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $color-blue-primary;
+    background: $color-white;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    z-index: 2;
+    font-weight: $font-weight-bold;
+    padding: 2px 0;
+  }
+
+  &-dash {
+    position: absolute;
+    top: 0;
+    bottom: 2px;
+    left: 9px;
+    width: 2px;
+    background: #f2f2f2;
+    z-index: 1;
+  }
+}

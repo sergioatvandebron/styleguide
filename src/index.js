@@ -25,3 +25,5 @@ export { default as SkeletonCard } from './components/SkeletonCard';
 export { default as SkeletonBodyText } from './components/SkeletonBodyText';
 export { default as SkeletonDisplayText } from './components/SkeletonDisplayText';
 export { default as HeroImage } from './components/HeroImage';
+export { default as Accordion } from './components/Accordion';
+export { default as AccordionList } from './components/AccordionList';
