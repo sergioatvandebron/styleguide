@@ -37,7 +37,7 @@ Container.propTypes = {
   fluid: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.element,
+    PropTypes.node,
   ]),
 };
 
