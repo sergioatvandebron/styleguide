@@ -108,8 +108,10 @@
 .Van-u-bg-red { background-color: $color-red !important; }
 .Van-u-bg-facebook-blue { background-color: $color-facebook-blue !important; }
 
-.u-margin {
+.Van-u-margin {
   &--flush { margin: 0; }
+
+  &--tiny { margin: 5px; }
 
   &--x-small { margin: 10px; }
 
@@ -127,6 +129,8 @@
 
   &-top {
     &--flush { margin-top: 0; }
+
+    &--tiny { margin-top: 5px; }
 
     &--x-small { margin-top: 10px; }
 
@@ -146,6 +150,8 @@
   &-bottom {
     &--flush { margin-bottom: 0; }
 
+    &--tiny { margin-bottom: 5px; }
+
     &--x-small { margin-bottom: 10px; }
 
     &--small { margin-bottom: 15px; }
@@ -163,6 +169,8 @@
 
   &-left {
     &--flush { margin-left: 0; }
+
+    &--tiny { margin-left: 5px; }
 
     &--x-small { margin-left: 10px; }
 
@@ -182,6 +190,8 @@
   &-right {
     &--flush { margin-right: 0; }
 
+    &--tiny { margin-right: 5px; }
+
     &--x-small { margin-right: 10px; }
 
     &--small { margin-right: 15px; }
@@ -198,8 +208,10 @@
   }
 }
 
-.u-padding {
+.Van-u-padding {
   &--flush { padding: 0; }
+
+  &--tiny { padding: 5px; }
 
   &--x-small { padding: 10px; }
 
@@ -217,6 +229,8 @@
 
   &-top {
     &--flush { padding-top: 0; }
+
+    &--tiny { padding-top: 5px; }
 
     &--x-small { padding-top: 10px; }
 
@@ -236,6 +250,8 @@
   &-bottom {
     &--flush { padding-bottom: 0; }
 
+    &--tiny { padding-bottom: 5px; }
+
     &--x-small { padding-bottom: 10px; }
 
     &--small { padding-bottom: 15px; }
@@ -254,6 +270,8 @@
   &-left {
     &--flush { padding-left: 0; }
 
+    &--tiny { padding-left: 5px; }
+
     &--x-small { padding-left: 10px; }
 
     &--small { padding-left: 15px; }
@@ -271,6 +289,8 @@
 
   &-right {
     &--flush { padding-right: 0; }
+
+    &--tiny { padding-right: 5px; }
 
     &--x-small { padding-right: 10px; }
 
