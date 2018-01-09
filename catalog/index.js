@@ -26,32 +26,11 @@ import {
 } from '../dist/js/bundle';
 import '../dist/css/main.css';
 
-const imports = {
-  Button,
-  Heading,
-  Paragraph,
-  Divider,
-  Span,
-  Link,
-  Label,
-  Grid,
-  Col,
-  Container,
-  List,
-  Table,
-  PhoneCard,
-  Icon,
-  SkeletonBodyText,
-  SkeletonDisplayText,
-  SkeletonCard
-};
-
 const pages = [
   {
     path: '/',
     title: 'Introduction',
-    content: pageLoader(() => import('./pages/intro.md')),
-    imports: imports,
+    content: pageLoader(() => import('./pages/intro.md'))
   },
   {
     title: 'Constants',
@@ -103,67 +82,72 @@ const pages = [
         path: '/elements/buttons',
         title: 'Buttons',
         content: pageLoader(() => import('./pages/elements/buttons.md')),
-        imports: imports,
+        imports: { Button },
       },
       {
         path: '/elements/headings',
         title: 'Typograph',
         content: pageLoader(() => import('./pages/elements/headings.md')),
-        imports: imports,
+        imports: {
+          Heading,
+          Paragraph,
+          Span,
+          Link
+        },
       },
       {
         path: '/elements/divider',
         title: 'Divider',
         content: pageLoader(() => import('./pages/elements/divider.md')),
-        imports: imports,
+        imports: { Divider },
       },
       {
         path: '/elements/label',
         title: 'Label',
         content: pageLoader(() => import('./pages/elements/labels.md')),
-        imports: imports,
+        imports: { Label },
       },
       {
         path: '/elements/grid',
         title: 'Grid',
         content: pageLoader(() => import('./pages/elements/grid.md')),
-        imports: imports,
+        imports: { Grid, Col, Container },
       },
       {
         path: '/elements/list',
         title: 'List',
         content: pageLoader(() => import('./pages/elements/list.md')),
-        imports: imports,
+        imports: { List },
       },
       {
         path: '/elements/table',
         title: 'Table',
         content: pageLoader(() => import('./pages/elements/table.md')),
-        imports: imports,
+        imports: { Table },
       },
       {
         path: '/elements/icon',
         title: 'Icon',
         content: pageLoader(() => import('./pages/elements/icons.md')),
-        imports: imports,
+        imports: { Icon },
       },
       {
         path: '/elements/skeleton-body-text',
         title: 'SkeletonBodyText',
         content: pageLoader(() => import('./pages/elements/skeleton-body-text.md')),
-        imports: imports,
+        imports: { SkeletonBodyText },
       },
       {
         path: '/elements/skeleton-display-text',
         title: 'SkeletonDisplayText',
         content: pageLoader(() => import('./pages/elements/skeleton-display-text.md')),
-        imports: imports,
+        imports: { SkeletonDisplayText },
       },
       {
         path: '/elements/skeleton-card',
         title: 'SkeletonCard',
         content: pageLoader(() => import('./pages/elements/skeleton-card.md')),
-        imports: imports,
+        imports: { SkeletonCard, SkeletonDisplayText, SkeletonBodyText, Grid, Col },
       }
     ]
   },
@@ -174,7 +158,7 @@ const pages = [
         path: '/components/phone-card',
         title: 'PhoneCard',
         content: pageLoader(() => import('./pages/components/phone-card.md')),
-        imports: imports,
+        imports: { PhoneCard },
       }
     ]
   }
