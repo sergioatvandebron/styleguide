@@ -2,26 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Catalog, pageLoader, ReactSpecimen } from "catalog";
 
-import Button from '../src/components/Button';
-import Heading from '../src/components/Heading';
-import Paragraph from '../src/components/Paragraph';
-import Divider from '../src/components/Divider';
-import Input from '../src/components/Input';
-import NumberInput from '../src/components/NumberInput';
-import Switch from '../src/components/Switch';
-import Label from '../src/components/Label';
-import Span from '../src/components/Span';
-import Link from '../src/components/Link';
-import Grid from '../src/components/Grid';
-import Col from '../src/components/Col';
-import Container from '../src/components/Container';
-import List from '../src/components/List';
-import Table from '../src/components/Table';
-import PhoneCard from '../src/components/PhoneCard';
-import Icon from '../src/components/Icon';
-import SkeletonBodyText from '../src/components/SkeletonBodyText';
-import SkeletonDisplayText from '../src/components/SkeletonDisplayText';
-import SkeletonCard from '../src/components/SkeletonCard';
+import {
+  Button,
+  Heading,
+  Paragraph,
+  Divider,
+  Input,
+  NumberInput,
+  Switch,
+  Label,
+  Span,
+  Link,
+  Grid,
+  Col,
+  Container,
+  List,
+  Table,
+  PhoneCard,
+  Icon,
+  SkeletonBodyText,
+  SkeletonDisplayText,
+  SkeletonCard,
+} from '../dist/js/bundle';
+import '../dist/css/main.css';
 
 const imports = {
   Button,
@@ -84,7 +87,7 @@ const pages = [
         path: '/form/switch',
         title: 'Switch',
         content: pageLoader(() => import('./pages/form/switch.md')),
-        imports: { Switch } 
+        imports: { Switch }
       }
     ]
   },
