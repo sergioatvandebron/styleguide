@@ -1,5 +1,7 @@
 ### Grid / Col
 ```react
+dark: true
+---
 <Grid>
   <Col md="4">m2-5</Col>
   <Col md="4">md-2</Col>

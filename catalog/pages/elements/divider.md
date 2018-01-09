@@ -1,10 +1,14 @@
 ### Divider
 ```react
+dark: true
+---
 <Divider></Divider>
 ```
 
 ### Divider with text
 ```react
+dark: true
+---
 <Divider>&</Divider>
 ```
 

@@ -1,10 +1,14 @@
 ### SkeletonBodyText
 ```react
+dark: true
+---
 <SkeletonBodyText />
 ```
 
 ### SkeletonBodyText with specific number of lines
 ```react
+dark: true
+---
 <SkeletonBodyText lines={10} />
 ```
 

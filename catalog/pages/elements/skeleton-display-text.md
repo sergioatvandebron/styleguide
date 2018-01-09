@@ -1,28 +1,40 @@
 ### SkeletonDisplayText
 ```react
+dark: true
+---
 <SkeletonDisplayText />
 ```
 
 ### Sizes
 ```react
+dark: true
+---
 <SkeletonDisplayText size="small" />
 ```
 
 ```react
+dark: true
+---
 <SkeletonDisplayText size="medium" />
 ```
 
 ```react
+dark: true
+---
 <SkeletonDisplayText size="large" />
 ```
 
 ```react
+dark: true
+---
 <SkeletonDisplayText size="extraLarge" />
 ```
 
 
 ### Full width
 ```react
+dark: true
+---
 <SkeletonDisplayText full />
 ```
 
