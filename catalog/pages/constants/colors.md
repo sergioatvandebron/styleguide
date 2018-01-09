@@ -58,3 +58,21 @@ colors:
   - {name: "Blue dark", value: "#0093CA"}
   - {name: "Blue darker", value: "#0083B4"}
 ```
+
+```color-palette|horizontal
+colors:
+  - {name: "Green Primary", value: "#43b02a"}
+  - {name: "Green bright", value: "#7cc869"}
+  - {name: "Green light", value: "#69c054"}
+  - {name: "Green dark", value: "#3c9e26"}
+  - {name: "Green darker", value: "#358c22"}
+```
+
+```color-palette|horizontal
+colors:
+  - {name: "Yellow Primary", value: "#ffb81c"}
+  - {name: "Yellow light", value: "#ffc64a"}
+  - {name: "Yellow bright", value: "#ffd478"}
+  - {name: "Yellow brightst", value: "#ffdb8f"}
+  - {name: "Yellow yelno", value: "#e5a619"}
+```
