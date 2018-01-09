@@ -8,8 +8,10 @@ rm -r docs
 mkdir docs
 mv catalog/build/** docs/
 rm -r catalog/build
+sed -i -e "s/n.p=\"\/\"/n.p=\"\"/g" docs/static/manifest*
 sed -i -e "s/\/static\//static\//g" docs/index.html
 rm docs/index.html-e
+rm docs/static/manifest*-e
 
 git add docs
 git commit -m "Update website"
