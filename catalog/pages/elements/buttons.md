@@ -1,47 +1,47 @@
 ### Colors
 ```react
-<Button type="primary">Primary button</Button>
+<Button theme="primary">Primary button</Button>
 ```
 
 ```react
-<Button type="info">Info button</Button>
+<Button theme="info">Info button</Button>
 ```
 
 ```react
-<Button type="warning">Warning button</Button>
+<Button theme="warning">Warning button</Button>
 ```
 
 ```react
-<Button type="danger">Danger button</Button>
+<Button theme="danger">Danger button</Button>
 ```
 
 ```react
-<Button type="success">Success button</Button>
+<Button theme="success">Success button</Button>
 ```
 
 ```react
-<Button type="primary" inverted>Primary button</Button>
+<Button theme="primary" inverted>Primary button</Button>
 ```
 
 ### Sizes
 ```react
-<Button type="primary" size="large">Large button</Button>
+<Button theme="primary" size="large">Large button</Button>
 ```
 
 ```react
-<Button type="primary" size="small">Small button</Button>
+<Button theme="primary" size="small">Small button</Button>
 ```
 
 ```react
-<Button type="primary" size="tiny">Tiny button</Button>
+<Button theme="primary" size="tiny">Tiny button</Button>
 ```
 
 ```react
-<Button type="primary" size="compact">Compact button</Button>
+<Button theme="primary" size="compact">Compact button</Button>
 ```
 
 ```react
-  <Button type="primary" size="full">Full button</Button>
+  <Button theme="primary" size="full">Full button</Button>
 ```
 
 
@@ -54,7 +54,7 @@ columns:
   - Type
   - Default
 rows:
-  - Property: type
+  - Property: theme
     Description: set heading tag `h1`, `h2`, `h3`, `h4`
     Type: string
     Default: h1
