@@ -1,0 +1,2 @@
+webpackJsonp([9],{595:function(e,n,t){var a=t(6),r=t(32),o=t(210).PageRenderer;o.__esModule&&(o=o.default);var c=r({displayName:"WrappedPageRenderer",getInitialState:function(){return{content:t(614)}},componentWillMount:function(){},render:function(){return a.createElement(o,Object.assign({},this.props,{content:this.state.content}))}});c.__catalog_loader__=!0,e.exports=c},614:function(e,n){e.exports="```react\n  <Label> Lorem ipsum </Label>\n```\n\n### Label\n<Label> Lorem ipsum </Label>\n"}});
+//# sourceMappingURL=9.ba8874ed.chunk.js.map
