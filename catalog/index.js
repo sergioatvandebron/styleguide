@@ -62,9 +62,14 @@ const pages = [
         content: pageLoader(() => import('./pages/constants/colors.md'))
       },
       {
-        path: '/constants/sizes',
-        title: 'Sizes',
-        content: pageLoader(() => import('./pages/constants/sizes.md'))
+        path: '/constants/text',
+        title: 'Text',
+        content: pageLoader(() => import('./pages/constants/text.md'))
+      },
+      {
+        path: '/constants/spacing',
+        title: 'Spacing',
+        content: pageLoader(() => import('./pages/constants/spacing.md'))
       }
     ]
   },
