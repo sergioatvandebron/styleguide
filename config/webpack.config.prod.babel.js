@@ -7,13 +7,18 @@ const FileReplacePlugin = require('replace-in-file-webpack-plugin');
 const cssnano = require('cssnano');
 const paths = require('./paths');
 const { resolve } = require('path');
-const { readdirSync } = require('fs');
+const { readdirSync, existsSync } = require('fs');
 
 // create separated entry points per component
 const components = readdirSync(resolve(__dirname, '..', 'src', 'components'));
 const entries = components.reduce(
   (acc, curr) => {
-    acc[curr] = `${paths.srcDir}/components/${curr}/index.jsx`;
+    const path = `${paths.srcDir}/components/${curr}/index.jsx`;
+
+    if (existsSync(resolve(__dirname, '..', path))) {
+      acc[curr] = path;
+    }
+
     return acc;
   },
   {},
