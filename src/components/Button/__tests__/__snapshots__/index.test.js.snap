@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Button> renders big button size 1`] = `
+<button
+  className="Van-Button Van-Button--big"
+>
+  My button
+</button>
+`;
+
 exports[`<Button> renders compact button size 1`] = `
 <button
   className="Van-Button Van-Button--compact"
@@ -11,6 +19,15 @@ exports[`<Button> renders compact button size 1`] = `
 exports[`<Button> renders danger button 1`] = `
 <button
   className="Van-Button Van-Button--danger"
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders disabled button 1`] = `
+<button
+  className="Van-Button"
+  disabled={true}
 >
   My button
 </button>
@@ -35,14 +52,6 @@ exports[`<Button> renders info button 1`] = `
 exports[`<Button> renders inverted button 1`] = `
 <button
   className="Van-Button Van-Button--inverted"
->
-  My button
-</button>
-`;
-
-exports[`<Button> renders large button size 1`] = `
-<button
-  className="Van-Button Van-Button--large"
 >
   My button
 </button>
@@ -75,14 +84,6 @@ exports[`<Button> renders small button size 1`] = `
 exports[`<Button> renders success button 1`] = `
 <button
   className="Van-Button Van-Button--success"
->
-  My button
-</button>
-`;
-
-exports[`<Button> renders tiny button size 1`] = `
-<button
-  className="Van-Button Van-Button--tiny"
 >
   My button
 </button>

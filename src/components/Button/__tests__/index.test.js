@@ -68,17 +68,17 @@ describe("<Button>", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders large button size", () => {
+  it("renders big button size", () => {
     const tree = renderer.create(
-      <Button size="large">My button</Button>
+      <Button size="big">My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders tiny button size", () => {
+  it("renders disabled button", () => {
     const tree = renderer.create(
-      <Button size="tiny">My button</Button>
+      <Button disabled>My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();

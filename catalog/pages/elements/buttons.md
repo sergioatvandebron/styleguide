@@ -23,17 +23,17 @@
 <Button theme="primary" inverted>Primary button</Button>
 ```
 
+```react
+<Button disabled>Disabled button</Button>
+```
+
 ### Sizes
 ```react
-<Button theme="primary" size="large">Large button</Button>
+<Button theme="primary" size="big">Big button</Button>
 ```
 
 ```react
 <Button theme="primary" size="small">Small button</Button>
-```
-
-```react
-<Button theme="primary" size="tiny">Tiny button</Button>
 ```
 
 ```react
@@ -58,6 +58,9 @@ rows:
     Description: set heading tag `h1`, `h2`, `h3`, `h4`
     Type: string
     Default: h1
+  - Property: size
+    Description: Button size `compact`, `small`, `big`
+    Type: string
   - Property: inverted
     Description: invert colors
     Type: bool

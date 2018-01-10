@@ -26,8 +26,7 @@ class Button extends PureComponent {
 
           'Van-Button--small': size === 'small',
           'Van-Button--compact': size === 'compact',
-          'Van-Button--large': size === 'large',
-          'Van-Button--tiny': size === 'tiny',
+          'Van-Button--big': size === 'big',
 
           'Van-Button--full': full,
 
@@ -66,8 +65,7 @@ Button.propTypes = {
     '',
     'small',
     'compact',
-    'large',
-    'tiny',
+    'big',
   ]),
   full: PropTypes.bool,
   inverted: PropTypes.bool,
