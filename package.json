@@ -8,8 +8,8 @@
   },
   "main": "./dist/js/bundle.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --config ./config/webpack.config.dev.js",
-    "dist": "webpack --config ./config/webpack.config.prod.js",
+    "start": "webpack-dev-server --inline --hot --config ./config/webpack.config.dev.babel.js",
+    "dist": "webpack --config ./config/webpack.config.prod.babel.js",
     "test": "jest",
     "test-watch": "jest --watch",
     "test-watch-coverage": "jest --watch --coverage"
