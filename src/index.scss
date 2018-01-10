@@ -26,7 +26,7 @@
 
   &[class^="Van-"] {
     font-family: "Proxima Nova", sans-serif;
-    font-weight: 300;
+    font-weight: $font-weight-light;
     line-height: initial;
     color: $color-primary;
   }

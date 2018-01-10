@@ -1,9 +1,17 @@
 /** @define Paragraph */
 
-@import "../../css/_global";
+@import "../../css/global";
+@import "../../css/mixins";
 
 .Van-Paragraph {
+  @include color-fill($color-dark);
+
+  font-weight: $font-weight-light;
   font-size: 18px;
-  line-height: 30px;
-  color: $color-dark;
+  line-height: 26px;
+
+  @media (max-width: $container-sm) {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }
