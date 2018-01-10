@@ -53,9 +53,10 @@
   }
 
   &[disabled] {
+    @include color-fill($color-grey);
+
     border-color: $color-grey-bright;
     background-color: $color-grey-bright;
-    color: $color-grey;
     cursor: default;
   }
 
