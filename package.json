@@ -13,7 +13,8 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "test-watch-coverage": "jest --watch --coverage",
-    "prettify": "eslint --fix src/components/**/*.{js,jsx}"
+    "lint": "eslint src/components/**/*.{js,jsx}",
+    "prettify": "yarn lint --fix"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
