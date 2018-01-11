@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './style.scss';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./style.scss";
 
 class Table extends Component {
   getClass() {
-    const classes = ['Van-Table'];
+    const classes = ["Van-Table"];
 
     if (this.props.full) {
-      classes.push('Van-Table--full');
+      classes.push("Van-Table--full");
     }
 
-    return classes.join(' ').trim();
+    return classes.join(" ").trim();
   }
 
   render() {
@@ -19,7 +19,11 @@ class Table extends Component {
         <thead className="Van-Table-head">
           <tr>
             {this.props.columns.map(column => (
-              <th key={column.value} className="Van-Table-headCell" {...column.props}>
+              <th
+                key={column.value}
+                className="Van-Table-headCell"
+                {...column.props}
+              >
                 {column.value}
               </th>
             ))}
@@ -40,7 +44,11 @@ class Table extends Component {
           {this.props.footer.map(row => (
             <tr key={row} className="Van-Table-footerRow" {...row.props}>
               {row.cells.map(cell => (
-                <td key={cell.value} className="Van-Table-footerCell" {...cell.props}>
+                <td
+                  key={cell.value}
+                  className="Van-Table-footerCell"
+                  {...cell.props}
+                >
                   {cell.value}
                 </td>
               ))}
@@ -56,8 +64,8 @@ Table.defaultProps = {
   columns: [],
   rows: [],
   footer: [],
-  className: '',
-  full: false,
+  className: "",
+  full: false
 };
 
 Table.propTypes = {
@@ -65,7 +73,7 @@ Table.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.object),
   rows: PropTypes.arrayOf(PropTypes.object),
   footer: PropTypes.arrayOf(PropTypes.object),
-  full: PropTypes.bool,
+  full: PropTypes.bool
 };
 
 export default Table;

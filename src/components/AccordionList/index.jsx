@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import Accordion from '../Accordion';
-import './style.scss';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
+import Accordion from "../Accordion";
+import "./style.scss";
 
 class AccordionList extends PureComponent {
   render() {
@@ -16,23 +16,21 @@ class AccordionList extends PureComponent {
     } = this.props;
 
     return (
-      <ul
-        className={classnames('Van-AccordionList', className)}
-        {...props}
-      >
+      <ul className={classnames("Van-AccordionList", className)} {...props}>
         {items.map((item, index) => (
           <li
             key={`accordion-list-${item.description.length}`}
-            className={classnames('Van-AccordionList-item', {
-              'Van-AccordionList-item--withNumber': withNumber,
+            className={classnames("Van-AccordionList-item", {
+              "Van-AccordionList-item--withNumber": withNumber
             })}
           >
-            {withNumber &&
+            {withNumber && (
               <span className="Van-AccordionList-number">{index + 1}</span>
-            }
-            {withNumber && index < items.length - 1 &&
-              <span className="Van-AccordionList-dash" />
-            }
+            )}
+            {withNumber &&
+              index < items.length - 1 && (
+                <span className="Van-AccordionList-dash" />
+              )}
 
             <Accordion title={item.title} isOpen={open} disabled={disabled}>
               {item.description}
@@ -45,25 +43,24 @@ class AccordionList extends PureComponent {
 }
 
 AccordionList.defaultProps = {
-  className: '',
+  className: "",
   items: [],
   withNumber: false,
   open: true,
-  disabled: false,
+  disabled: false
 };
 
 AccordionList.propTypes = {
   className: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.node,
-    ]),
-  })),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+    })
+  ),
   withNumber: PropTypes.bool,
   open: PropTypes.bool,
-  disabled: PropTypes.bool,
+  disabled: PropTypes.bool
 };
 
 export default AccordionList;

@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import './style.scss';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import "./style.scss";
 
 class Span extends PureComponent {
   getClass(className) {
-    const classes = ['Van-Span'];
+    const classes = ["Van-Span"];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -12,30 +12,28 @@ class Span extends PureComponent {
 
     classes.push(className);
 
-    return classes.join(' ');
+    return classes.join(" ");
   }
 
   render() {
-    const {
-      className,
-      ...props
-    } = this.props;
+    const { className, ...props } = this.props;
 
-    return <span className={this.getClass()} {...props}>{this.props.children}</span>;
+    return (
+      <span className={this.getClass()} {...props}>
+        {this.props.children}
+      </span>
+    );
   }
 }
 
 Span.defaultProps = {
-  className: '',
-  children: '',
+  className: "",
+  children: ""
 };
 
 Span.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  children: PropTypes.oneOf([PropTypes.string, PropTypes.element])
 };
 
 export default Span;
