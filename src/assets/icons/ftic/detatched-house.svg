@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="35px" height="31px" viewBox="0 0 35 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon_Vrijstaandewoning</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="DESIGNS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Search-Dropdown-2" transform="translate(-535.000000, -542.000000)" fill-rule="nonzero" fill="#333E48">
-            <g id="Verbruik" transform="translate(50.000000, 282.000000)">
-                <g id="Vrijstaande-woning" transform="translate(454.000000, 243.000000)">
-                    <g id="Icon_Vrijstaandewoning" transform="translate(31.000000, 17.000000)">
-                        <path d="M29.4576923,10.6298333 L29.4576923,3.83333333 L23.4865385,3.83333333 L23.4865385,5.7845 L17.3919808,0.23 L0.338365385,15.3563333 L3.12490385,18.0166667 L4.77692308,18.0166667 L4.77692308,30.6666667 L31.05,30.6666667 L31.05,18.0166667 L31.8819808,18.0166667 L34.7799808,15.3563333 L29.4576923,10.6298333 Z M14.7288462,28.3666667 L8.75769231,28.3666667 L8.75769231,21.0833333 L14.7288462,21.0833333 L14.7288462,28.3666667 Z" id="Shape"></path>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 31"><path d="M29.458 10.63V3.833h-5.971v1.952L17.392.23.338 15.356l2.787 2.66h1.652v12.65H31.05v-12.65h.832l2.898-2.66-5.322-4.726zm-14.73 17.737h-5.97v-7.284h5.97v7.284z"/></svg>
