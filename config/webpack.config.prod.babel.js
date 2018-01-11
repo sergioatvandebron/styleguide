@@ -45,8 +45,10 @@ const config = {
   },
 
   externals: {
-    react: 'umd react',
-    'react-dom': 'umd react-dom',
+    react: 'react',
+    'react-dom': 'react-dom',
+    'prop-types': 'prop-types',
+    classnames: 'classnames',
   },
 
   module: {
