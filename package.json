@@ -12,7 +12,8 @@
     "dist": "webpack --config ./config/webpack.config.prod.babel.js",
     "test": "jest",
     "test-watch": "jest --watch",
-    "test-watch-coverage": "jest --watch --coverage"
+    "test-watch-coverage": "jest --watch --coverage",
+    "prettify": "eslint --fix src/components/**/*.jsx"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
