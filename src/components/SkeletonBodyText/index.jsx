@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./styles.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './styles.scss';
 
 class SkeletonBodyText extends PureComponent {
   render() {
@@ -13,7 +13,7 @@ class SkeletonBodyText extends PureComponent {
     }
 
     return (
-      <div className={classnames("Van-SkeletonBodyText", className)} {...props}>
+      <div className={classnames('Van-SkeletonBodyText', className)} {...props}>
         {textLines}
       </div>
     );
@@ -21,7 +21,7 @@ class SkeletonBodyText extends PureComponent {
 }
 
 SkeletonBodyText.defaultProps = {
-  className: "",
+  className: '',
   lines: 3
 };
 

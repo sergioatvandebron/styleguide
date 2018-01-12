@@ -1,10 +1,10 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import './style.scss';
 
 class Label extends PureComponent {
   getClass(className) {
-    const classes = ["Van-Label"];
+    const classes = ['Van-Label'];
 
     if (this.props.className) {
       classes.push(this.props.className);
@@ -12,7 +12,7 @@ class Label extends PureComponent {
 
     classes.push(className);
 
-    return classes.join(" ");
+    return classes.join(' ');
   }
 
   render() {
@@ -21,8 +21,8 @@ class Label extends PureComponent {
 }
 
 Label.defaultProps = {
-  className: "",
-  children: ""
+  className: '',
+  children: ''
 };
 
 Label.propTypes = {

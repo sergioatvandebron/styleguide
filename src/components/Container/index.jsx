@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './style.scss';
 
 class Container extends PureComponent {
   render() {
@@ -12,7 +12,7 @@ class Container extends PureComponent {
         className={classnames(
           {
             container: !fluid,
-            "container-fluid": fluid
+            'container-fluid': fluid
           },
           className
         )}
@@ -25,9 +25,9 @@ class Container extends PureComponent {
 }
 
 Container.defaultProps = {
-  className: "",
+  className: '',
   fluid: false,
-  children: ""
+  children: ''
 };
 
 Container.propTypes = {

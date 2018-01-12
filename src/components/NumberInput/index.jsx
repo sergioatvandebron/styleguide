@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './style.scss';
 
 class NumberInput extends PureComponent {
   static defaultProps = {
@@ -20,13 +20,13 @@ class NumberInput extends PureComponent {
     const { step = 1 } = this.props;
     const val = this.input.value.length ? parseInt(this.input.value, 10) : 0;
 
-    this.input.value = dir === "up" ? val + step : val - step;
+    this.input.value = dir === 'up' ? val + step : val - step;
   };
 
   render() {
     const { input, meta: { error, touched }, ...props } = this.props;
-    const className = classnames("Van-NumberInput", {
-      "Van-NumberInput--error": touched && error
+    const className = classnames('Van-NumberInput', {
+      'Van-NumberInput--error': touched && error
     });
 
     return (
@@ -34,14 +34,14 @@ class NumberInput extends PureComponent {
         <button
           type="button"
           className="Van-NumberInput-ctrl Van-NumberInput-ctrl--down"
-          onClick={() => this.handleClick("down")}
+          onClick={() => this.handleClick('down')}
         >
           -
         </button>
         <button
           type="button"
           className="Van-NumberInput-ctrl Van-NumberInput-ctrl--up"
-          onClick={() => this.handleClick("up")}
+          onClick={() => this.handleClick('up')}
         >
           +
         </button>

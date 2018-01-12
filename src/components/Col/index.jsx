@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './style.scss';
 
 // TODO: https://getbootstrap.com/docs/3.3/css/#responsive-utilities-classes
 
@@ -33,37 +33,29 @@ class Col extends PureComponent {
       <div
         className={classnames(
           {
-            [`col-xs-${xs}`]: typeof xs === "number" || typeof xs === "string",
-            [`col-sm-${sm}`]: typeof sm === "number" || typeof sm === "string",
-            [`col-md-${md}`]: typeof md === "number" || typeof md === "string",
-            [`col-lg-${lg}`]: typeof lg === "number" || typeof lg === "string",
+            [`col-xs-${xs}`]: typeof xs === 'number' || typeof xs === 'string',
+            [`col-sm-${sm}`]: typeof sm === 'number' || typeof sm === 'string',
+            [`col-md-${md}`]: typeof md === 'number' || typeof md === 'string',
+            [`col-lg-${lg}`]: typeof lg === 'number' || typeof lg === 'string',
 
             [`col-xs-offset-${xsOffset}`]:
-              typeof xsOffset === "number" || typeof xsOffset === "string",
+              typeof xsOffset === 'number' || typeof xsOffset === 'string',
             [`col-sm-offset-${smOffset}`]:
-              typeof smOffset === "number" || typeof smOffset === "string",
+              typeof smOffset === 'number' || typeof smOffset === 'string',
             [`col-md-offset-${mdOffset}`]:
-              typeof mdOffset === "number" || typeof mdOffset === "string",
+              typeof mdOffset === 'number' || typeof mdOffset === 'string',
             [`col-lg-offset-${lgOffset}`]:
-              typeof lgOffset === "number" || typeof lgOffset === "string",
+              typeof lgOffset === 'number' || typeof lgOffset === 'string',
 
-            [`col-xs-push-${xsPush}`]:
-              typeof xsPush === "number" || typeof xsPush === "string",
-            [`col-sm-push-${smPush}`]:
-              typeof smPush === "number" || typeof smPush === "string",
-            [`col-md-push-${mdPush}`]:
-              typeof mdPush === "number" || typeof mdPush === "string",
-            [`col-lg-push-${lgPush}`]:
-              typeof lgPush === "number" || typeof lgPush === "string",
+            [`col-xs-push-${xsPush}`]: typeof xsPush === 'number' || typeof xsPush === 'string',
+            [`col-sm-push-${smPush}`]: typeof smPush === 'number' || typeof smPush === 'string',
+            [`col-md-push-${mdPush}`]: typeof mdPush === 'number' || typeof mdPush === 'string',
+            [`col-lg-push-${lgPush}`]: typeof lgPush === 'number' || typeof lgPush === 'string',
 
-            [`col-xs-pull-${xsPull}`]:
-              typeof xsPull === "number" || typeof xsPull === "string",
-            [`col-sm-pull-${smPull}`]:
-              typeof smPull === "number" || typeof smPull === "string",
-            [`col-md-pull-${mdPull}`]:
-              typeof mdPull === "number" || typeof mdPull === "string",
-            [`col-lg-pull-${lgPull}`]:
-              typeof lgPull === "number" || typeof lgPull === "string"
+            [`col-xs-pull-${xsPull}`]: typeof xsPull === 'number' || typeof xsPull === 'string',
+            [`col-sm-pull-${smPull}`]: typeof smPull === 'number' || typeof smPull === 'string',
+            [`col-md-pull-${mdPull}`]: typeof mdPull === 'number' || typeof mdPull === 'string',
+            [`col-lg-pull-${lgPull}`]: typeof lgPull === 'number' || typeof lgPull === 'string'
           },
           className
         )}
@@ -76,7 +68,7 @@ class Col extends PureComponent {
 }
 
 Col.defaultProps = {
-  className: "",
+  className: '',
   xs: undefined,
   sm: undefined,
   md: undefined,
@@ -93,7 +85,7 @@ Col.defaultProps = {
   smPush: undefined,
   mdPush: undefined,
   lgPush: undefined,
-  children: ""
+  children: ''
 };
 
 Col.propTypes = {

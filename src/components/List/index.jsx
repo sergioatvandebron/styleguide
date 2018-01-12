@@ -1,8 +1,8 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import Icon from "../Icon";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import Icon from '../Icon';
+import './style.scss';
 
 class List extends PureComponent {
   render() {
@@ -11,9 +11,9 @@ class List extends PureComponent {
     return (
       <ul
         className={classnames(
-          "Van-List",
+          'Van-List',
           {
-            "Van-List--unstyled": unstyled
+            'Van-List--unstyled': unstyled
           },
           className
         )}
@@ -31,7 +31,7 @@ class List extends PureComponent {
 }
 
 List.defaultProps = {
-  className: "",
+  className: '',
   items: [],
   unstyled: false
 };

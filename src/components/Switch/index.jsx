@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./style.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './style.scss';
 
 const Switch = ({ input, meta, ...props }) => (
   <div className="Van-Switch">
@@ -23,8 +23,8 @@ const Switch = ({ input, meta, ...props }) => (
 Switch.defaultProps = {
   meta: {},
   input: {},
-  id: "",
-  name: ""
+  id: '',
+  name: ''
 };
 
 Switch.propTypes = {

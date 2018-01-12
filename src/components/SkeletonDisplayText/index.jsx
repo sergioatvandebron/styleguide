@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./styles.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './styles.scss';
 
 class SkeletonDisplayText extends PureComponent {
   render() {
@@ -9,13 +9,13 @@ class SkeletonDisplayText extends PureComponent {
     return (
       <div
         className={classnames(
-          "Van-SkeletonDisplayText",
+          'Van-SkeletonDisplayText',
           {
-            "Van-SkeletonDisplayText--small": size === "small",
-            "Van-SkeletonDisplayText--medium": size === "medium",
-            "Van-SkeletonDisplayText--large": size === "large",
-            "Van-SkeletonDisplayText--extraLarge": size === "extraLarge",
-            "Van-SkeletonDisplayText--full": full
+            'Van-SkeletonDisplayText--small': size === 'small',
+            'Van-SkeletonDisplayText--medium': size === 'medium',
+            'Van-SkeletonDisplayText--large': size === 'large',
+            'Van-SkeletonDisplayText--extraLarge': size === 'extraLarge',
+            'Van-SkeletonDisplayText--full': full
           },
           className
         )}
@@ -26,14 +26,14 @@ class SkeletonDisplayText extends PureComponent {
 }
 
 SkeletonDisplayText.defaultProps = {
-  className: "",
-  size: "medium",
+  className: '',
+  size: 'medium',
   full: false
 };
 
 SkeletonDisplayText.propTypes = {
   className: PropTypes.string,
-  size: PropTypes.oneOf(["small", "medium", "large", "extraLarge"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'extraLarge']),
   full: PropTypes.bool
 };
 

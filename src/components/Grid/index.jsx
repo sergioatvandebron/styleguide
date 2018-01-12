@@ -1,14 +1,14 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './style.scss';
 
 class Grid extends PureComponent {
   render() {
     const { className, children, ...props } = this.props;
 
     return (
-      <div className={classnames("row", className)} {...props}>
+      <div className={classnames('row', className)} {...props}>
         {children}
       </div>
     );
@@ -16,8 +16,8 @@ class Grid extends PureComponent {
 }
 
 Grid.defaultProps = {
-  className: "",
-  children: ""
+  className: '',
+  children: ''
 };
 
 Grid.propTypes = {

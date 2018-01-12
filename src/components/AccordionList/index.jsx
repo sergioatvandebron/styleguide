@@ -1,36 +1,24 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import Accordion from "../Accordion";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import Accordion from '../Accordion';
+import './style.scss';
 
 class AccordionList extends PureComponent {
   render() {
-    const {
-      className,
-      items,
-      withNumber,
-      open,
-      disabled,
-      ...props
-    } = this.props;
+    const { className, items, withNumber, open, disabled, ...props } = this.props;
 
     return (
-      <ul className={classnames("Van-AccordionList", className)} {...props}>
+      <ul className={classnames('Van-AccordionList', className)} {...props}>
         {items.map((item, index) => (
           <li
             key={`accordion-list-${item.description.length}`}
-            className={classnames("Van-AccordionList-item", {
-              "Van-AccordionList-item--withNumber": withNumber
+            className={classnames('Van-AccordionList-item', {
+              'Van-AccordionList-item--withNumber': withNumber
             })}
           >
-            {withNumber && (
-              <span className="Van-AccordionList-number">{index + 1}</span>
-            )}
-            {withNumber &&
-              index < items.length - 1 && (
-                <span className="Van-AccordionList-dash" />
-              )}
+            {withNumber && <span className="Van-AccordionList-number">{index + 1}</span>}
+            {withNumber && index < items.length - 1 && <span className="Van-AccordionList-dash" />}
 
             <Accordion title={item.title} isOpen={open} disabled={disabled}>
               {item.description}
@@ -43,7 +31,7 @@ class AccordionList extends PureComponent {
 }
 
 AccordionList.defaultProps = {
-  className: "",
+  className: '',
   items: [],
   withNumber: false,
   open: true,

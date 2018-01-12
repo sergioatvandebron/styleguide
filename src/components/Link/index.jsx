@@ -1,7 +1,7 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './style.scss';
 
 class Link extends PureComponent {
   render() {
@@ -9,8 +9,8 @@ class Link extends PureComponent {
 
     return (
       <a
-        className={classnames("Van-Link", className, {
-          "Van-Link--secondary": type === "secondary"
+        className={classnames('Van-Link', className, {
+          'Van-Link--secondary': type === 'secondary'
         })}
         {...props}
       >
@@ -21,14 +21,14 @@ class Link extends PureComponent {
 }
 
 Link.defaultProps = {
-  className: "",
-  type: "",
-  children: ""
+  className: '',
+  type: '',
+  children: ''
 };
 
 Link.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf(["", "secondary"]),
+  type: PropTypes.oneOf(['', 'secondary']),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 

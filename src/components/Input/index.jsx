@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import Icon from "../Icon";
-import "./style.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import Icon from '../Icon';
+import './style.scss';
 
 const Input = ({ meta, input, className, type, ...props }) => {
   const { error, warning, touched } = meta;
   const classNames = classnames(
-    "Van-TextInput",
+    'Van-TextInput',
     className,
-    { "Van-TextInput--error": touched && error },
-    { "Van-TextInput--warning": touched && warning },
-    { "Van-TextInput--success": touched && !error && !warning }
+    { 'Van-TextInput--error': touched && error },
+    { 'Van-TextInput--warning': touched && warning },
+    { 'Van-TextInput--success': touched && !error && !warning }
   );
 
   return (
@@ -24,17 +24,12 @@ const Input = ({ meta, input, className, type, ...props }) => {
         {...input}
       />
 
-      {touched &&
-        error && <Icon source="close" className="Van-TextInput-icon" />}
+      {touched && error && <Icon source="close" className="Van-TextInput-icon" />}
+
+      {touched && !error && !warning && <Icon source="check" className="Van-TextInput-icon" />}
 
       {touched &&
-        !error &&
-        !warning && <Icon source="check" className="Van-TextInput-icon" />}
-
-      {touched &&
-        typeof error === "string" && (
-          <div className="Van-TextInput-error-message">{error}</div>
-        )}
+        typeof error === 'string' && <div className="Van-TextInput-error-message">{error}</div>}
     </div>
   );
 };
@@ -50,9 +45,9 @@ Input.propTypes = {
 Input.defaultProps = {
   meta: {},
   input: {},
-  className: "",
-  id: "",
-  type: "text"
+  className: '',
+  id: '',
+  type: 'text'
 };
 
 export default Input;

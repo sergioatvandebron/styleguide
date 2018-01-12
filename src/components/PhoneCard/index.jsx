@@ -1,8 +1,8 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import Icon from "../Icon";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import Icon from '../Icon';
+import './style.scss';
 
 class PhoneCard extends PureComponent {
   render() {
@@ -11,9 +11,9 @@ class PhoneCard extends PureComponent {
     return (
       <div
         className={classnames(
-          "Van-PhoneCard",
+          'Van-PhoneCard',
           {
-            "Van-PhoneCard--withBorder": withBorder
+            'Van-PhoneCard--withBorder': withBorder
           },
           className
         )}
@@ -23,9 +23,7 @@ class PhoneCard extends PureComponent {
           <Icon source="phone" />
           {this.props.number}
         </span>
-        <span className="Van-PhoneCard-description">
-          {this.props.description}
-        </span>
+        <span className="Van-PhoneCard-description">{this.props.description}</span>
       </div>
     );
   }
@@ -33,9 +31,9 @@ class PhoneCard extends PureComponent {
 
 PhoneCard.defaultProps = {
   withBorder: false,
-  className: "",
-  number: "",
-  description: ""
+  className: '',
+  number: '',
+  description: ''
 };
 
 PhoneCard.propTypes = {

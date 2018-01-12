@@ -1,14 +1,14 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import "./style.scss";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import './style.scss';
 
 class Paragraph extends PureComponent {
   render() {
     const { className, children, ...props } = this.props;
 
     return (
-      <p className={classnames("Van-Paragraph", className)} {...props}>
+      <p className={classnames('Van-Paragraph', className)} {...props}>
         {children}
       </p>
     );
@@ -16,8 +16,8 @@ class Paragraph extends PureComponent {
 }
 
 Paragraph.defaultProps = {
-  className: "",
-  children: ""
+  className: '',
+  children: ''
 };
 
 Paragraph.propTypes = {

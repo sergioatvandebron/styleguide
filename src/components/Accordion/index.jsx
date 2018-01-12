@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
-import Icon from "../Icon";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import Icon from '../Icon';
 
-import "./styles.scss";
+import './styles.scss';
 
 class Accordion extends PureComponent {
   constructor(props) {
@@ -29,11 +29,7 @@ class Accordion extends PureComponent {
   }
 
   getIconMarkup() {
-    return this.state.isOpen ? (
-      <Icon source="angleUp" />
-    ) : (
-      <Icon source="angleDown" />
-    );
+    return this.state.isOpen ? <Icon source="angleUp" /> : <Icon source="angleDown" />;
   }
 
   updateAccordionState(state) {
@@ -53,9 +49,9 @@ class Accordion extends PureComponent {
 
     return (
       <div
-        className={classnames("Van-Accordion", {
-          "Van-Accordion--disabled": disabled,
-          "Van-Accordion--open": this.state.isOpen
+        className={classnames('Van-Accordion', {
+          'Van-Accordion--disabled': disabled,
+          'Van-Accordion--open': this.state.isOpen
         })}
       >
         <span onClick={this.toggle} className="Van-Accordion-title">
