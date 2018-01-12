@@ -5,17 +5,10 @@ import './styles.scss';
 
 class SkeletonCard extends PureComponent {
   render() {
-    const {
-      className,
-      children,
-      ...props
-    } = this.props;
+    const { className, children, ...props } = this.props;
 
     return (
-      <div
-        className={classnames('Van-SkeletonCard', className)}
-        {...props}
-      >
+      <div className={classnames('Van-SkeletonCard', className)} {...props}>
         {children}
       </div>
     );
@@ -24,15 +17,12 @@ class SkeletonCard extends PureComponent {
 
 SkeletonCard.defaultProps = {
   className: '',
-  children: '',
+  children: ''
 };
 
 SkeletonCard.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
 export default SkeletonCard;

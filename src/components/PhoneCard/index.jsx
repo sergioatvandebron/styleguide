@@ -6,17 +6,17 @@ import './style.scss';
 
 class PhoneCard extends PureComponent {
   render() {
-    const {
-      className,
-      withBorder,
-      ...props
-    } = this.props;
+    const { className, withBorder, ...props } = this.props;
 
     return (
       <div
-        className={classnames('Van-PhoneCard', {
-          'Van-PhoneCard--withBorder': withBorder,
-        }, className)}
+        className={classnames(
+          'Van-PhoneCard',
+          {
+            'Van-PhoneCard--withBorder': withBorder
+          },
+          className
+        )}
         {...props}
       >
         <span className="Van-PhoneCard-number">
@@ -33,14 +33,14 @@ PhoneCard.defaultProps = {
   withBorder: false,
   className: '',
   number: '',
-  description: '',
+  description: ''
 };
 
 PhoneCard.propTypes = {
   withBorder: PropTypes.bool,
   className: PropTypes.string,
   number: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.string
 };
 
 export default PhoneCard;

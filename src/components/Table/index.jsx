@@ -57,7 +57,7 @@ Table.defaultProps = {
   rows: [],
   footer: [],
   className: '',
-  full: false,
+  full: false
 };
 
 Table.propTypes = {
@@ -65,7 +65,7 @@ Table.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.object),
   rows: PropTypes.arrayOf(PropTypes.object),
   footer: PropTypes.arrayOf(PropTypes.object),
-  full: PropTypes.bool,
+  full: PropTypes.bool
 };
 
 export default Table;

@@ -5,17 +5,12 @@ import './style.scss';
 
 class Link extends PureComponent {
   render() {
-    const {
-      className,
-      type,
-      children,
-      ...props
-    } = this.props;
+    const { className, type, children, ...props } = this.props;
 
     return (
       <a
         className={classnames('Van-Link', className, {
-          'Van-Link--secondary': type === 'secondary',
+          'Van-Link--secondary': type === 'secondary'
         })}
         {...props}
       >
@@ -28,19 +23,13 @@ class Link extends PureComponent {
 Link.defaultProps = {
   className: '',
   type: '',
-  children: '',
+  children: ''
 };
 
 Link.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf([
-    '',
-    'secondary',
-  ]),
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  type: PropTypes.oneOf(['', 'secondary']),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 
 export default Link;

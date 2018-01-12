@@ -5,27 +5,24 @@ import './style.scss';
 
 class Grid extends PureComponent {
   render() {
-    const {
-      className,
-      children,
-      ...props
-    } = this.props;
+    const { className, children, ...props } = this.props;
 
-    return <div className={classnames('row', className)} {...props}>{children}</div>;
+    return (
+      <div className={classnames('row', className)} {...props}>
+        {children}
+      </div>
+    );
   }
 }
 
 Grid.defaultProps = {
   className: '',
-  children: '',
+  children: ''
 };
 
 Grid.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
 export default Grid;

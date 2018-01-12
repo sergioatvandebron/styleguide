@@ -16,23 +16,18 @@ class Label extends PureComponent {
   }
 
   render() {
-    return (
-      <label className={this.getClass()}>{this.props.children}</label>
-    );
+    return <label className={this.getClass()}>{this.props.children}</label>;
   }
 }
 
 Label.defaultProps = {
   className: '',
-  children: '',
+  children: ''
 };
 
 Label.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 
 export default Label;

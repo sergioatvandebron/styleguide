@@ -5,17 +5,10 @@ import './style.scss';
 
 class Paragraph extends PureComponent {
   render() {
-    const {
-      className,
-      children,
-      ...props
-    } = this.props;
+    const { className, children, ...props } = this.props;
 
     return (
-      <p
-        className={classnames('Van-Paragraph', className)}
-        {...props}
-      >
+      <p className={classnames('Van-Paragraph', className)} {...props}>
         {children}
       </p>
     );
@@ -24,15 +17,12 @@ class Paragraph extends PureComponent {
 
 Paragraph.defaultProps = {
   className: '',
-  children: '',
+  children: ''
 };
 
 Paragraph.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 
 export default Paragraph;

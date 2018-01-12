@@ -5,11 +5,7 @@ import './styles.scss';
 
 class SkeletonBodyText extends PureComponent {
   render() {
-    const {
-      className,
-      lines,
-      ...props
-    } = this.props;
+    const { className, lines, ...props } = this.props;
     const textLines = [];
 
     for (let i = 0; i < lines; i += 1) {
@@ -17,10 +13,7 @@ class SkeletonBodyText extends PureComponent {
     }
 
     return (
-      <div
-        className={classnames('Van-SkeletonBodyText', className)}
-        {...props}
-      >
+      <div className={classnames('Van-SkeletonBodyText', className)} {...props}>
         {textLines}
       </div>
     );
@@ -29,12 +22,12 @@ class SkeletonBodyText extends PureComponent {
 
 SkeletonBodyText.defaultProps = {
   className: '',
-  lines: 3,
+  lines: 3
 };
 
 SkeletonBodyText.propTypes = {
   className: PropTypes.string,
-  lines: PropTypes.number,
+  lines: PropTypes.number
 };
 
 export default SkeletonBodyText;

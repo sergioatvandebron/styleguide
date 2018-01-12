@@ -5,17 +5,10 @@ import './style.scss';
 
 class Divider extends PureComponent {
   render() {
-    const {
-      className,
-      children,
-      ...props
-    } = this.props;
+    const { className, children, ...props } = this.props;
 
     return (
-      <span
-        className={classnames('Van-Divider', className)}
-        {...props}
-      >
+      <span className={classnames('Van-Divider', className)} {...props}>
         <span className="Van-Divider-content">{children}</span>
       </span>
     );
@@ -24,15 +17,12 @@ class Divider extends PureComponent {
 
 Divider.defaultProps = {
   className: '',
-  children: '',
+  children: ''
 };
 
 Divider.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 
 export default Divider;

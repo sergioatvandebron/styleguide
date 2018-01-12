@@ -17,11 +17,7 @@ class Icon extends PureComponent {
   }
 
   render() {
-    const {
-      className,
-      source,
-      ...props
-    } = this.props;
+    const { className, source, ...props } = this.props;
 
     return (
       <span
@@ -35,12 +31,12 @@ class Icon extends PureComponent {
 
 Icon.defaultProps = {
   className: '',
-  source: '',
+  source: ''
 };
 
 Icon.propTypes = {
   className: PropTypes.string,
-  source: PropTypes.string,
+  source: PropTypes.string
 };
 
 export default Icon;

@@ -7,34 +7,27 @@ class NumberInput extends PureComponent {
   static defaultProps = {
     input: {},
     meta: {},
-    step: 1,
+    step: 1
   };
 
   static propTypes = {
     input: PropTypes.object,
     meta: PropTypes.object,
-    step: PropTypes.number,
+    step: PropTypes.number
   };
 
-  handleClick = (dir) => {
+  handleClick = dir => {
     const { step = 1 } = this.props;
     const val = this.input.value.length ? parseInt(this.input.value, 10) : 0;
 
-    this.input.value = dir === 'up'
-      ? val + step
-      : val - step;
-  }
+    this.input.value = dir === 'up' ? val + step : val - step;
+  };
 
   render() {
-    const {
-      input,
-      meta: { error, touched },
-      ...props
-    } = this.props;
-    const className = classnames(
-      'Van-NumberInput',
-      { 'Van-NumberInput--error': touched && error },
-    );
+    const { input, meta: { error, touched }, ...props } = this.props;
+    const className = classnames('Van-NumberInput', {
+      'Van-NumberInput--error': touched && error
+    });
 
     return (
       <div className={className}>
@@ -56,7 +49,9 @@ class NumberInput extends PureComponent {
         <input
           {...props}
           {...input}
-          ref={(numinput) => { this.input = numinput; }}
+          ref={numinput => {
+            this.input = numinput;
+          }}
           type="number"
           className="Van-NumberInput-input"
         />

@@ -5,15 +5,7 @@ import './style.scss';
 
 class Button extends PureComponent {
   render() {
-    const {
-      className,
-      theme,
-      size,
-      full,
-      inverted,
-      children,
-      ...props
-    } = this.props;
+    const { className, theme, size, full, inverted, children, ...props } = this.props;
 
     return (
       <button
@@ -30,13 +22,13 @@ class Button extends PureComponent {
 
           'Van-Button--full': full,
 
-          'Van-Button--inverted': inverted,
+          'Van-Button--inverted': inverted
         })}
         {...props}
       >
-        {children instanceof Array ? children.map(c => (
-          (typeof c === 'string') ? <span key={c}>{c}</span> : c
-        )) : children}
+        {children instanceof Array
+          ? children.map(c => (typeof c === 'string' ? <span key={c}>{c}</span> : c))
+          : children}
       </button>
     );
   }
@@ -48,31 +40,16 @@ Button.defaultProps = {
   size: '',
   full: false,
   inverted: false,
-  children: '',
+  children: ''
 };
 
 Button.propTypes = {
   className: PropTypes.string,
-  theme: PropTypes.oneOf([
-    '',
-    'primary',
-    'info',
-    'warning',
-    'danger',
-    'success',
-  ]),
-  size: PropTypes.oneOf([
-    '',
-    'small',
-    'compact',
-    'big',
-  ]),
+  theme: PropTypes.oneOf(['', 'primary', 'info', 'warning', 'danger', 'success']),
+  size: PropTypes.oneOf(['', 'small', 'compact', 'big']),
   full: PropTypes.bool,
   inverted: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 };
 
 export default Button;

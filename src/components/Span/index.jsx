@@ -16,26 +16,24 @@ class Span extends PureComponent {
   }
 
   render() {
-    const {
-      className,
-      ...props
-    } = this.props;
+    const { className, ...props } = this.props;
 
-    return <span className={this.getClass()} {...props}>{this.props.children}</span>;
+    return (
+      <span className={this.getClass()} {...props}>
+        {this.props.children}
+      </span>
+    );
   }
 }
 
 Span.defaultProps = {
   className: '',
-  children: '',
+  children: ''
 };
 
 Span.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  children: PropTypes.oneOf([PropTypes.string, PropTypes.element])
 };
 
 export default Span;

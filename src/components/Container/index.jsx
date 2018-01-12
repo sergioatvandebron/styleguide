@@ -5,19 +5,17 @@ import './style.scss';
 
 class Container extends PureComponent {
   render() {
-    const {
-      className,
-      children,
-      fluid,
-      ...props
-    } = this.props;
+    const { className, children, fluid, ...props } = this.props;
 
     return (
       <div
-        className={classnames({
-          container: !fluid,
-          'container-fluid': fluid,
-        }, className)}
+        className={classnames(
+          {
+            container: !fluid,
+            'container-fluid': fluid
+          },
+          className
+        )}
         {...props}
       >
         {children}
@@ -29,16 +27,13 @@ class Container extends PureComponent {
 Container.defaultProps = {
   className: '',
   fluid: false,
-  children: '',
+  children: ''
 };
 
 Container.propTypes = {
   className: PropTypes.string,
   fluid: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-  ]),
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
 export default Container;
