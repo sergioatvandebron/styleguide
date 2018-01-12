@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="12px" height="34px" viewBox="0 0 12 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
-    <title>Men</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="DESIGNS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Home--aantal-Personen" transform="translate(-122.000000, -552.000000)" fill-rule="nonzero" fill="#333E48">
-            <g id="1" transform="translate(80.000000, 525.000000)">
-                <g id="Men" transform="translate(42.000000, 27.000000)">
-                    <ellipse id="Oval" cx="6" cy="3.51460674" rx="3.1125" ry="3.17078652"></ellipse>
-                    <path d="M8.925,9.16853933 C7.3125,9.16853933 6.5625,9.16853933 6.225,9.16853933 C6.225,9.16853933 6.1875,9.16853933 5.925,9.16853933 C5.55,9.16853933 4.8,9.16853933 3.15,9.16853933 C0.3375,9.16853933 0.3,12.2629213 0.3,12.2629213 L0.3,21.6988764 L2.4375,21.6988764 L2.4375,33.6561798 L5.925,33.6561798 L6.225,33.6561798 L9.6375,33.6561798 L9.6375,21.6988764 L11.7375,21.6988764 L11.7375,12.2629213 C11.7,12.2629213 11.7,9.16853933 8.925,9.16853933 Z" id="Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 34"><ellipse cx="6" cy="3.515" rx="3.112" ry="3.171"/><path d="M8.925 9.169H3.15C.337 9.169.3 12.263.3 12.263v9.436h2.138v11.957h7.199V21.7h2.1v-9.436c-.037 0-.037-3.094-2.812-3.094z"/></svg>

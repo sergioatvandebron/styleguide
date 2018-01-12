@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="12px" height="15px" viewBox="0 0 12 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-    <title>Fill 1</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Contract" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Contract-details-desktop" transform="translate(-58.000000, -1038.000000)" fill="#24B6EB">
-            <g id="Page-1" transform="translate(58.000000, 1038.000000)">
-                <path d="M6.49913623,7.50116477 C6.49913623,4.35411932 8.8920058,1.75514205 11.9917159,1.3559375 C10.7601797,0.519176136 9.2653971,0.0283806818 7.65333913,0.0283806818 C3.44255652,0.0283806818 0.0289913043,3.3740625 0.0289913043,7.50116477 C0.0289913043,11.628267 3.44255652,14.9739489 7.65333913,14.9739489 C9.26533913,14.9739489 10.7601797,14.4831534 11.9917159,13.646392 C8.8920058,13.2471875 6.49913623,10.6482102 6.49913623,7.50116477" id="Fill-1"></path>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 15"><path d="M6.5 7.501c0-3.147 2.392-5.746 5.492-6.145A7.696 7.696 0 0 0 7.653.028C3.443.028.03 3.374.03 7.501s3.414 7.473 7.624 7.473c1.612 0 3.107-.49 4.339-1.328-3.1-.399-5.493-2.998-5.493-6.145"/></svg>
