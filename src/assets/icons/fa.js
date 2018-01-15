@@ -11,7 +11,9 @@ export { default as alignLeft } from './fa/align-left.svg';
 export { default as alignRight } from './fa/align-right.svg';
 export { default as amazon } from './fa/amazon.svg';
 export { default as ambulance } from './fa/ambulance.svg';
-export { default as americanSignLanguageInterpreting } from './fa/american-sign-language-interpreting.svg';
+export {
+  default as americanSignLanguageInterpreting
+} from './fa/american-sign-language-interpreting.svg';
 export { default as anchorIcon } from './fa/anchor.svg';
 export { default as android } from './fa/android.svg';
 export { default as angellist } from './fa/angellist.svg';
