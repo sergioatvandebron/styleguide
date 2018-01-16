@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
+    "is-svg": "^2.1.0",
     "prop-types": "^15.6.0"
   },
   "main": "./dist/js/bundle.js",

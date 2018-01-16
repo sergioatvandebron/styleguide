@@ -2,27 +2,23 @@
 
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import * as ICONS from '../../assets/icons';
+import classnames from 'classnames';
+import isSVG from 'is-svg';
+
 import './style.scss';
 
 class Icon extends PureComponent {
-  getClass() {
-    const classes = ['Van-Icon'];
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    return classes.join(' ').trim();
-  }
-
   render() {
     const { className, source, ...props } = this.props;
 
+    if (!isSVG(source)) {
+      return null;
+    }
+
     return (
       <span
-        className={this.getClass()}
-        dangerouslySetInnerHTML={{ __html: ICONS[source] }}
+        className={classnames('Van-Icon', className)}
+        dangerouslySetInnerHTML={{ __html: source }}
         {...props}
       />
     );

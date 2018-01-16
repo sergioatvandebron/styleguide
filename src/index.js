@@ -1,3 +1,5 @@
+import './assets/icons';
+
 export { default as indexStyles } from './index.scss';
 
 if (process.env.NODE_ENV === 'development') {

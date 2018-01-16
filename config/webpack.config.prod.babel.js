@@ -85,9 +85,12 @@ const config = {
         ],
       },
       {
+        // load media files - need to be injected without a prefixing slash
         test: /\.svg$/,
-        loader: 'svg-inline-loader',
-      },
+        use: [
+          'file-loader?name=icons/[name].[ext]',
+        ],
+      }
     ],
   },
 
