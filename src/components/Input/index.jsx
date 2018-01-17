@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import checkIcon from '../../assets/icons/fa/check.svg';
+import closeIcon from '../../assets/icons/fa/close.svg';
 import Icon from '../Icon';
 import './style.scss';
 
@@ -24,9 +26,9 @@ const Input = ({ meta, input, className, type, ...props }) => {
         {...input}
       />
 
-      {touched && error && <Icon source="close" className="Van-TextInput-icon" />}
+      {touched && error && <Icon source={closeIcon} className="Van-TextInput-icon" />}
 
-      {touched && !error && !warning && <Icon source="check" className="Van-TextInput-icon" />}
+      {touched && !error && !warning && <Icon source={checkIcon} className="Van-TextInput-icon" />}
 
       {touched &&
         typeof error === 'string' && <div className="Van-TextInput-error-message">{error}</div>}

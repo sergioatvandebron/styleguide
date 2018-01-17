@@ -3,6 +3,8 @@ import renderer from 'react-test-renderer';
 import Icon from '../../Icon';
 import Button from '../';
 
+const facebookIcon = '<svg xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759H734V905H479V609h255V391q0-186 104-288.5T1115 0q147 0 228 12z"/></svg>';
+
 describe("<Button>", () => {
   it("renders primary button if does not pass a theme", () => {
     const tree = renderer.create(
@@ -120,7 +122,7 @@ describe("<Button>", () => {
     const tree = renderer.create(
       <Button>
         My button
-        <Icon source="facebook" />
+        <Icon source={facebookIcon} />
       </Button>
     ).toJSON();
 
@@ -130,7 +132,7 @@ describe("<Button>", () => {
   it("renders with button on the left", () => {
     const tree = renderer.create(
       <Button>
-        <Icon source="facebook" />
+        <Icon source={facebookIcon} />
         My button
       </Button>
     ).toJSON();

@@ -9,14 +9,6 @@ exports[`<Input/> renders error input 1`] = `
     id=""
     type="text"
   />
-  <span
-    className="Van-Icon Van-TextInput-icon"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "test-file-stub",
-      }
-    }
-  />
 </div>
 `;
 
@@ -28,14 +20,6 @@ exports[`<Input/> renders error input with error message 1`] = `
     className="Van-TextInput-input"
     id=""
     type="text"
-  />
-  <span
-    className="Van-Icon Van-TextInput-icon"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "test-file-stub",
-      }
-    }
   />
   <div
     className="Van-TextInput-error-message"
@@ -53,14 +37,6 @@ exports[`<Input/> renders success input 1`] = `
     className="Van-TextInput-input"
     id=""
     type="text"
-  />
-  <span
-    className="Van-Icon Van-TextInput-icon"
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "test-file-stub",
-      }
-    }
   />
 </div>
 `;
