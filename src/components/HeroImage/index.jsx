@@ -5,16 +5,17 @@ import './style.scss';
 
 class HeroImage extends PureComponent {
   render() {
-    const { className, image, ...props } = this.props;
+    const { className, image, children, ...props } = this.props;
 
     return (
       <div className={classnames('Van-HeroImage', className)} {...props}>
         <div
-          className="Van-HeroImage-content"
+          className="Van-HeroImage-image"
           style={{
             backgroundImage: `url(${image})`
           }}
         />
+        {children ? <div className="Van-HeroImage-content">{children}</div> : null}
       </div>
     );
   }
@@ -22,12 +23,14 @@ class HeroImage extends PureComponent {
 
 HeroImage.defaultProps = {
   className: '',
-  image: ''
+  image: '',
+  children: undefined
 };
 
 HeroImage.propTypes = {
   className: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 
 export default HeroImage;
