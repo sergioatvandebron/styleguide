@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from '../Icon';
+import angleUpIcon from '../../assets/icons/fa/angle-up.svg';
+import angleDownIcon from '../../assets/icons/fa/angle-down.svg';
 
 import './styles.scss';
 
@@ -29,7 +31,7 @@ class Accordion extends PureComponent {
   }
 
   getIconMarkup() {
-    return this.state.isOpen ? <Icon source="angleUp" /> : <Icon source="angleDown" />;
+    return this.state.isOpen ? <Icon source={angleUpIcon} /> : <Icon source={angleDownIcon} />;
   }
 
   updateAccordionState(state) {
