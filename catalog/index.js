@@ -22,7 +22,9 @@ import {
   Icon,
   SkeletonBodyText,
   SkeletonDisplayText,
-  SkeletonCard,
+  SkeletonCard
+  Thunder,
+  Thunderballoon,
 } from '../dist/js/bundle';
 import '../dist/css/main.css';
 

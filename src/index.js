@@ -29,3 +29,5 @@ export { default as SkeletonDisplayText } from './components/SkeletonDisplayText
 export { default as HeroImage } from './components/HeroImage';
 export { default as Accordion } from './components/Accordion';
 export { default as AccordionList } from './components/AccordionList';
+export { default as Thunder } from './components/Thunder';
+export { default as Thunderballoon } from './components/Thunderballoon';
