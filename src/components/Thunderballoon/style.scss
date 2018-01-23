@@ -1,0 +1,186 @@
+// Speech balloon with a thunder-shaped tail
+//
+//  Example HTML:
+//
+//  <div class="thunderballoon __blue __to-left __medium">
+//    Content
+//    <icon type="thunderballoon-tail"></icon>
+//  </div>
+
+.Van-Thunderballoon {
+  border-radius: 20px;
+  color: #fff;
+  font-family: $proxima-nova;
+  font-weight: $light;
+  position: absolute;
+  text-align: center;
+
+  .static-page-nav-title {
+    font-size: 26px !important;
+    margin-bottom: 26px;
+  }
+
+  .__thunderballoon-heading {
+    @include font-height(34px, 46px);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .icon.__thunderballoon-tail {
+    position: absolute;
+  }
+
+  .icon.__thunderballoon-tail-flipped {
+    position: absolute;
+  }
+
+
+  // Colors
+
+  &.__blue {
+    background: #00a0dd;
+
+    .icon.__thunderballoon-tail > path {
+      fill: #00a0dd;
+    }
+
+    .icon.__thunderballoon-tail-flipped > path {
+      fill: #00a0dd;
+    }
+  }
+
+  &.__green {
+    background: #40ae49;
+
+    .icon.__thunderballoon-tail > path {
+      fill: #40ae49;
+    }
+
+    .icon.__thunderballoon-tail-flipped > path {
+      fill: #40ae49;
+    }
+  }
+
+  &.__pink {
+    background: #e83c7b;
+
+    .icon.__thunderballoon-tail > path {
+      fill: #e83c7b;
+    }
+
+    .icon.__thunderballoon-tail-flipped > path {
+      fill: #e83c7b;
+    }
+  }
+
+  &.__yellow {
+    background: #fdb525;
+
+    .icon.__thunderballoon-tail > path {
+      fill: #fdb525;
+    }
+
+    .icon.__thunderballoon-tail-flipped > path {
+      fill: #fdb525;
+    }
+  }
+
+
+  // Directions
+
+  &.__to-top-side .icon.__thunderballoon-tail {
+    @include position(none 50% 100% none);
+    margin-top: -2px;
+    transform: scaleX(-1) rotate(270deg);
+  }
+
+  &.__to-right-side .icon.__thunderballoon-tail {
+    @include position(none none 7px 100%);
+    margin-left: -2px;
+  }
+
+  &.__to-right-top-side .icon.__thunderballoon-tail {
+    @include position(100px none none 100%);
+    margin-left: -2px;
+  }
+
+  &.__to-bottom-middle .icon.__thunderballoon-tail {
+    @include position(100% none none 50%);
+    margin-bottom: -2px;
+    transform: scaleX(-1) rotate(90deg);
+  }
+
+  &.__to-left-side .icon.__thunderballoon-tail {
+    @include position(none 100% 7px none);
+    margin-right: -2px;
+    transform: scaleX(-1);
+  }
+  &.__to-top-left-side .icon.__thunderballoon-tail {
+    @include position(-34px 100% none none);
+    margin-right: -2px;
+    transform: scaleX(-1) scaleY(-1);
+  }
+
+  //Directions Flipped
+
+  &.__to-top-side .icon.__thunderballoon-tail-flipped {
+    @include position(none 50% 100% none);
+    margin-top: -2px;
+    transform: scaleX(-1) rotate(270deg);
+  }
+
+  &.__to-right-side .icon.__thunderballoon-tail-flipped {
+    @include position(none none 7px 100%);
+    margin-left: -2px;
+  }
+
+  &.__to-bottom-side .icon.__thunderballoon-tail-flipped {
+    @include position(100% none none 50%);
+    margin-bottom: -2px;
+    transform: scaleX(-1) rotate(270deg);
+  }
+
+  &.__to-left-side .icon.__thunderballoon-tail-flipped {
+    @include position(none 100% 7px none);
+    margin-right: -2px;
+    transform: scaleX(-1);
+  }
+
+  // Directions Flipped Vertically
+  // TODO: add styles for all sides
+  &.__to-right-side.__flipped-vertically .icon.__thunderballoon-tail {
+    @include position(none none 7px 100%);
+    margin-left: -2px;
+    transform: scaleY(-1);
+  }
+  &.__to-left-side.__flipped-vertically .icon.__thunderballoon-tail {
+    transform: scaleX(-1) scaleY(-1);
+  }
+
+  // Sizes
+
+  &.__medium {
+    @include font-height(34px, 48px);
+    padding: 11px 28px 9px;
+
+    .icon.__thunderballoon-tail {
+      @include size(69px 65px);
+    }
+
+    .icon.__thunderballoon-tail-flipped {
+      @include size(69px 65px);
+    }
+  }
+
+  &.__large {
+    @include font-height(40px, 48px);
+    padding: 20px 28px 18px;
+
+    .icon.__thunderballoon-tail {
+      @include size(92px 87px);
+    }
+    .icon.__thunderballoon-tail-flipped {
+      @include size(92px 87px);
+    }
+  }
+}

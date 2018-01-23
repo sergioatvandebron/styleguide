@@ -22,8 +22,7 @@ import {
   Icon,
   SkeletonBodyText,
   SkeletonDisplayText,
-  SkeletonCard
-  Thunder,
+  SkeletonCard,
   Thunderballoon,
 } from '../dist/js/bundle';
 import '../dist/css/main.css';
@@ -161,6 +160,12 @@ const pages = [
         title: 'PhoneCard',
         content: pageLoader(() => import('./pages/components/phone-card.md')),
         imports: { PhoneCard },
+      },
+      {
+        path: '/components/thunderballoon',
+        title: 'Thunderballoon',
+        content: pageLoader(() => import('./pages/components/thunderballoon.md')),
+        imports: { Thunderballoon },
       }
     ]
   }

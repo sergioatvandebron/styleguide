@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import './style.scss';
 
 /*
  * This component is used by the ThunderBalloon component to draw the arrow
@@ -15,7 +16,7 @@ import classNames from 'classnames';
 
 function Thunder(props) {
   const { side, arrow, positionClasses } = props;
-  const thunderClasses = classNames('thunder', `${side}-side-${arrow}-arrow`, positionClasses);
+  const thunderClasses = classNames('Van-Thunder', `${side}-side-${arrow}-arrow`, positionClasses);
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 80" className={thunderClasses}>
       <path d="M83.239 56.733l-24.434-18.777c-1.547-1.192-3.805-.087-3.805 1.866v.178h.011l-1.109

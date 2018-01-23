@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Thunder from '../Thunder';
+import './style.scss';
 
 /*
  * TODO: not fully finished for all cases, fix is needed for some combinations.
@@ -55,7 +56,7 @@ import Thunder from '../Thunder';
  * */
 
 const Thunderballoon = props => {
-  const thunderballoonClasses = classNames('thunderballoon', props.classValue);
+  const thunderballoonClasses = classNames('Van-Thunderballoon', props.classValue);
   const thunderPositionClasses = classNames(`${props.side}-side`, `${props.corner}-corner`);
 
   return (

@@ -1,0 +1,75 @@
+@import "../../css/_global";
+@import "../../css/mixins";
+
+.Van-Thunder {
+  position: absolute;
+
+  &.top-side-left-arrow {
+    transform: rotate(90deg) scaleX(-1) ;
+  }
+
+  &.top-side-right-arrow {
+    transform: rotate(-90deg)
+  }
+
+  &.right-side-top-arrow {
+    transform: scaleY(-1);
+  }
+
+  &.right-side-bottom-arrow {
+    //  No need for transformations
+  }
+
+  &.bottom-side-left-arrow {
+    transform: rotate(90deg);
+  }
+
+  &.bottom-side-right-arrow {
+    transform: scaleX(-1) rotate(90deg);
+  }
+
+  &.left-side-top-arrow {
+    transform: rotate(180deg);
+  }
+
+  &.left-side-bottom-arrow {
+    transform: scaleX(-1);
+  }
+
+  &.bottom-side {
+    top: 100%;
+  }
+
+  &.top-side {
+    bottom: 100%;
+  }
+
+  &.left-side {
+    right: 100%;
+    margin-left: 1%;
+  }
+
+  &.right-side{
+    left: 100%;
+  }
+
+  &.bottom-corner {
+    top: 62%;
+  }
+
+  &.top-corner {
+    top: 8%;
+  }
+
+  &.left-corner {
+    right: 62%;
+  }
+
+  &.right-corner {
+    left: 62%;
+  }
+
+  &.middle-corner {
+    left: 33%;
+  }
+}
