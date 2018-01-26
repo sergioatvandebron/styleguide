@@ -1,5 +1,8 @@
 /** @define Heading */
 
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
 @import "../../css/global";
 
 .Van-Heading {
@@ -30,7 +33,7 @@
     line-height: 22px;
   }
 
-  @media (max-width: $container-sm) {
+  @include media-breakpoint-down(sm) {
     &--h1 {
       font-size: 26px;
       line-height: 34px;

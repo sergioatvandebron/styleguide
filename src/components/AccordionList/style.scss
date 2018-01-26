@@ -1,8 +1,10 @@
 /** @define AccordionList */
 
-@import "../../css/_global";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../css/global";
 @import "../../css/mixins";
-@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 
 .Van-AccordionList {
   list-style-type: none;
@@ -66,7 +68,7 @@
     z-index: 1;
   }
 
-  @media (max-width: $container-sm) {
+  @include media-breakpoint-down(sm) {
     /* postcss-bem-linter: ignore */
     .Van-Accordion-title,
     .Van-Accordion-content {

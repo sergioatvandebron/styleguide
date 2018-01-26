@@ -1,5 +1,8 @@
 /** @define Paragraph */
 
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
 @import "../../css/global";
 @import "../../css/mixins";
 
@@ -10,7 +13,7 @@
   font-size: 18px;
   line-height: 26px;
 
-  @media (max-width: $container-sm) {
+  @include media-breakpoint-down(sm) {
     font-size: 16px;
     line-height: 22px;
   }
