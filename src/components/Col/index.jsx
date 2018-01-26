@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './style.scss';
 
-// TODO: https://getbootstrap.com/docs/3.3/css/#responsive-utilities-classes
+const ALLOWED_ORDERS = ['first', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
 class Col extends PureComponent {
   render() {
@@ -12,18 +12,29 @@ class Col extends PureComponent {
       sm,
       md,
       lg,
+      xl,
       xsOffset,
       smOffset,
       mdOffset,
       lgOffset,
+      xlOffset,
       xsPull,
       smPull,
       mdPull,
       lgPull,
+      xlPull,
       xsPush,
       smPush,
       mdPush,
       lgPush,
+      xlPush,
+      align,
+      order,
+      xsOrder,
+      smOrder,
+      mdOrder,
+      lgOrder,
+      xlOrder,
       className,
       children,
       ...props
@@ -33,29 +44,40 @@ class Col extends PureComponent {
       <div
         className={classnames(
           {
-            [`col-xs-${xs}`]: typeof xs === 'number' || typeof xs === 'string',
-            [`col-sm-${sm}`]: typeof sm === 'number' || typeof sm === 'string',
-            [`col-md-${md}`]: typeof md === 'number' || typeof md === 'string',
-            [`col-lg-${lg}`]: typeof lg === 'number' || typeof lg === 'string',
+            col: !xs && !sm && !md && !lg && !xl,
 
-            [`col-xs-offset-${xsOffset}`]:
-              typeof xsOffset === 'number' || typeof xsOffset === 'string',
-            [`col-sm-offset-${smOffset}`]:
-              typeof smOffset === 'number' || typeof smOffset === 'string',
-            [`col-md-offset-${mdOffset}`]:
-              typeof mdOffset === 'number' || typeof mdOffset === 'string',
-            [`col-lg-offset-${lgOffset}`]:
-              typeof lgOffset === 'number' || typeof lgOffset === 'string',
+            [`col-${xs}`]: xs,
+            [`col-sm-${sm}`]: sm,
+            [`col-md-${md}`]: md,
+            [`col-lg-${lg}`]: lg,
+            [`col-xl-${xl}`]: xl,
 
-            [`col-xs-push-${xsPush}`]: typeof xsPush === 'number' || typeof xsPush === 'string',
-            [`col-sm-push-${smPush}`]: typeof smPush === 'number' || typeof smPush === 'string',
-            [`col-md-push-${mdPush}`]: typeof mdPush === 'number' || typeof mdPush === 'string',
-            [`col-lg-push-${lgPush}`]: typeof lgPush === 'number' || typeof lgPush === 'string',
+            [`col-offset-${xsOffset}`]: xsOffset,
+            [`col-sm-offset-${smOffset}`]: smOffset,
+            [`col-md-offset-${mdOffset}`]: mdOffset,
+            [`col-lg-offset-${lgOffset}`]: lgOffset,
+            [`col-xl-offset-${xlOffset}`]: xlOffset,
 
-            [`col-xs-pull-${xsPull}`]: typeof xsPull === 'number' || typeof xsPull === 'string',
-            [`col-sm-pull-${smPull}`]: typeof smPull === 'number' || typeof smPull === 'string',
-            [`col-md-pull-${mdPull}`]: typeof mdPull === 'number' || typeof mdPull === 'string',
-            [`col-lg-pull-${lgPull}`]: typeof lgPull === 'number' || typeof lgPull === 'string'
+            [`col-push-${xsPush}`]: xsPush,
+            [`col-sm-push-${smPush}`]: smPush,
+            [`col-md-push-${mdPush}`]: mdPush,
+            [`col-lg-push-${lgPush}`]: lgPush,
+            [`col-xl-push-${xlPush}`]: xlPush,
+
+            [`col-pull-${xsPull}`]: xsPull,
+            [`col-sm-pull-${smPull}`]: smPull,
+            [`col-md-pull-${mdPull}`]: mdPull,
+            [`col-lg-pull-${lgPull}`]: lgPull,
+            [`col-xl-pull-${xlPull}`]: xlPull,
+
+            [`align-self-${align}`]: align,
+
+            [`order-${order}`]: order,
+            [`order-xs-${xsOrder}`]: xsOrder,
+            [`order-sm-${smOrder}`]: smOrder,
+            [`order-md-${mdOrder}`]: mdOrder,
+            [`order-lg-${lgOrder}`]: lgOrder,
+            [`order-xl-${xlOrder}`]: xlOrder
           },
           className
         )}
@@ -73,18 +95,29 @@ Col.defaultProps = {
   sm: undefined,
   md: undefined,
   lg: undefined,
+  xl: undefined,
   xsOffset: undefined,
   smOffset: undefined,
   mdOffset: undefined,
   lgOffset: undefined,
+  xlOffset: undefined,
   xsPull: undefined,
   smPull: undefined,
   mdPull: undefined,
   lgPull: undefined,
+  xlPull: undefined,
   xsPush: undefined,
   smPush: undefined,
   mdPush: undefined,
   lgPush: undefined,
+  xlPush: undefined,
+  align: undefined,
+  order: undefined,
+  xsOrder: undefined,
+  smOrder: undefined,
+  mdOrder: undefined,
+  lgOrder: undefined,
+  xlOrder: undefined,
   children: ''
 };
 
@@ -94,18 +127,29 @@ Col.propTypes = {
   sm: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   md: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   lg: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  xl: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   xsOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   smOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   mdOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   lgOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  xlOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   xsPush: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   smPush: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   mdPush: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   lgPush: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  xlPush: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   xsPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   smPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   mdPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   lgPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  xlPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  align: PropTypes.oneOf(['start', 'center', 'end']),
+  order: PropTypes.oneOf(ALLOWED_ORDERS),
+  xsOrder: PropTypes.oneOf(ALLOWED_ORDERS),
+  smOrder: PropTypes.oneOf(ALLOWED_ORDERS),
+  mdOrder: PropTypes.oneOf(ALLOWED_ORDERS),
+  lgOrder: PropTypes.oneOf(ALLOWED_ORDERS),
+  xlOrder: PropTypes.oneOf(ALLOWED_ORDERS),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
