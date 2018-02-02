@@ -33,6 +33,11 @@ const pages = [
     content: pageLoader(() => import('./pages/intro.md'))
   },
   {
+    path: '/getting-started',
+    title: 'Getting started',
+    content: pageLoader(() => import('./pages/getting-started.md'))
+  },
+  {
     title: 'Constants',
     pages: [
       {
