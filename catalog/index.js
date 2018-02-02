@@ -109,7 +109,7 @@ const pages = [
       },
       {
         path: '/elements/grid',
-        title: 'Grid',
+        title: 'Grid system',
         content: pageLoader(() => import('./pages/elements/grid.md')),
         imports: { Grid, Col, Container },
       },
