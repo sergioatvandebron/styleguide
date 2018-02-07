@@ -1,4 +1,4 @@
-@import "../../css/_global.scss";
+@import "../../css/global";
 
 .Van-Divider {
   position: relative;
@@ -8,6 +8,15 @@
   display: block;
   margin: 20px 0;
   text-align: center;
+
+  &--vertical {
+    margin: 0 8px;
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    vertical-align: middle;
+    top: -0.06em;
+  }
 
   &-content {
     position: relative;
