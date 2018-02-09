@@ -24,6 +24,7 @@ import {
   SkeletonDisplayText,
   SkeletonCard,
 } from '../dist/js/bundle';
+import checkIcon from '../dist/icons/check.svg';
 import '../dist/css/main.css';
 
 const pages = [
@@ -117,7 +118,7 @@ const pages = [
         path: '/elements/list',
         title: 'List',
         content: pageLoader(() => import('./pages/elements/list.md')),
-        imports: { List },
+        imports: { List, checkIcon, Icon },
       },
       {
         path: '/elements/table',

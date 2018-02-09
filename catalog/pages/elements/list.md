@@ -1,46 +1,31 @@
 ### Normal list
 ```react
-<List
-  items={[
-    { text: 'Item 1' },
-    { text: 'Item 2' },
-  ]}
-/>
+<List>
+  <List.Item>Item 1</List.Item>
+  <List.Item>Item 2</List.Item>
+</List>
 ```
 
 ### Unstyled list
 ```react
-<List
-  items={[
-    { text: 'Item 1' },
-    { text: 'Item 2' },
-  ]}
-  unstyled
-/>
+<List unstyled>
+  <List.Item>Item 1</List.Item>
+  <List.Item>Item 2</List.Item>
+</List>
 ```
 
 ### List with icons
 ```react
-<List
-  items={[
-    {
-      text: 'Item 1',
-      icon: 'check',
-    },
-    {
-      text: 'Item 2',
-      icon: 'close',
-    },
-    {
-      text: 'Item 3',
-      icon: 'facebook',
-    },
-    {
-      text: 'Item 4',
-      icon: 'instagram',
-    },
-  ]}
-/>
+<List unstyled>
+  <List.Item>
+    <Icon source={checkIcon} />
+    asdsad sadasdasdas
+  </List.Item>
+  <List.Item>
+    <Icon source={checkIcon} />
+    asdsad sadasdasdas
+  </List.Item>
+</List>
 ```
 
 ### API
