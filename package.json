@@ -5,6 +5,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "html-comment-regex": "^1.1.1",
+    "react-bootstrap": "^0.32.1",
     "prop-types": "^15.6.0"
   },
   "main": "./dist/js/bundle.js",
