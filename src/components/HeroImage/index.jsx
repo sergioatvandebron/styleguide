@@ -30,7 +30,7 @@ HeroImage.defaultProps = {
 HeroImage.propTypes = {
   className: PropTypes.string,
   image: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+  children: PropTypes.node
 };
 
 export default HeroImage;
