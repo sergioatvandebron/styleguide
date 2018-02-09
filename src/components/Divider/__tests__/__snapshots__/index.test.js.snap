@@ -24,6 +24,18 @@ exports[`<Divider> renders Divider with content 1`] = `
 </span>
 `;
 
+exports[`<Divider> renders vertical Divider 1`] = `
+<span
+  className="Van-Divider Van-Divider--vertical"
+>
+  <span
+    className="Van-Divider-content"
+  >
+    
+  </span>
+</span>
+`;
+
 exports[`<Divider> renders with specific attributes 1`] = `
 <span
   className="Van-Divider"

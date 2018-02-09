@@ -19,6 +19,14 @@ describe('<Divider>', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it("renders vertical Divider", () => {
+    const tree = renderer.create(
+      <Divider vertical />
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it("renders with specific className", () => {
     const tree = renderer.create(
       <Divider className="my-class" />
