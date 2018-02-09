@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Item> renders regular Item 1`] = `
+<li
+  className="Van-List-item"
+>
+  test
+</li>
+`;
+
+exports[`<Item> renders with specific attributes 1`] = `
+<li
+  className="Van-List-item"
+  data-id="0"
+>
+  test
+</li>
+`;
+
+exports[`<Item> renders with specific className 1`] = `
+<li
+  className="Van-List-item my-class"
+>
+  test
+</li>
+`;

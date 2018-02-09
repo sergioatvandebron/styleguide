@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Icon from '../Icon';
+import Item from './Item';
 import './style.scss';
 
 class List extends PureComponent {
   render() {
-    const { className, unstyled, ...props } = this.props;
+    const { className, unstyled, children, ...props } = this.props;
 
     return (
       <ul
@@ -19,31 +19,23 @@ class List extends PureComponent {
         )}
         {...props}
       >
-        {this.props.items.map(item => (
-          <li className="Van-List-item" key={item.text}>
-            {item.icon && <Icon source={item.icon} className="Van-List-icon" />}
-            {item.text}
-          </li>
-        ))}
+        {children}
       </ul>
     );
   }
 }
 
+List.Item = Item;
+
 List.defaultProps = {
   className: '',
-  items: [],
+  children: [],
   unstyled: false
 };
 
 List.propTypes = {
   className: PropTypes.string,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.string,
-      text: PropTypes.string
-    })
-  ),
+  children: PropTypes.node,
   unstyled: PropTypes.bool
 };
 
