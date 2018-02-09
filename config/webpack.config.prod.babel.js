@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const FileReplacePlugin = require('replace-in-file-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const cssnano = require('cssnano');
 const paths = require('./paths');
 const { resolve } = require('path');
@@ -85,11 +86,8 @@ const config = {
         ],
       },
       {
-        // load media files - need to be injected without a prefixing slash
         test: /\.svg$/,
-        use: [
-          'file-loader?name=icons/[name].[ext]',
-        ],
+        loader: 'svg-inline-loader'
       }
     ],
   },
@@ -145,6 +143,14 @@ const config = {
         ],
       },
     ]),
+
+    new CopyWebpackPlugin([
+      {
+        from: `${paths.srcDir}/assets/icons/**/*.svg`,
+        to: `${paths.distDir}/icons/`,
+        flatten: true
+      }
+    ])
   ],
 };
 
