@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select> renders Select 1`] = `
+<div
+  className="Van-Select"
+>
+  <select>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Select> renders with specific attributes 1`] = `
+<div
+  className="Van-Select"
+  data-id="0"
+>
+  <select>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+</div>
+`;
+
+exports[`<Select> renders with specific className 1`] = `
+<div
+  className="Van-Select my-class"
+>
+  <select>
+    <option>
+      Option 1
+    </option>
+    <option>
+      Option 2
+    </option>
+    <option>
+      Option 3
+    </option>
+  </select>
+</div>
+`;
