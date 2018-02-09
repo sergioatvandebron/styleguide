@@ -5,7 +5,7 @@ exports[`<HeroImage> renders  HeroImage with an image 1`] = `
   className="Van-HeroImage"
 >
   <div
-    className="Van-HeroImage-content"
+    className="Van-HeroImage-image"
     style={
       Object {
         "backgroundImage": "url(my-image-path)",
@@ -20,7 +20,7 @@ exports[`<HeroImage> renders HeroImage without an image 1`] = `
   className="Van-HeroImage"
 >
   <div
-    className="Van-HeroImage-content"
+    className="Van-HeroImage-image"
     style={
       Object {
         "backgroundImage": "url()",
@@ -36,7 +36,7 @@ exports[`<HeroImage> renders with specific attributes 1`] = `
   data-id="0"
 >
   <div
-    className="Van-HeroImage-content"
+    className="Van-HeroImage-image"
     style={
       Object {
         "backgroundImage": "url()",
@@ -51,7 +51,7 @@ exports[`<HeroImage> renders with specific className 1`] = `
   className="Van-HeroImage my-class"
 >
   <div
-    className="Van-HeroImage-content"
+    className="Van-HeroImage-image"
     style={
       Object {
         "backgroundImage": "url()",
