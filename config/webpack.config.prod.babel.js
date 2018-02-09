@@ -9,6 +9,7 @@ const cssnano = require('cssnano');
 const paths = require('./paths');
 const { resolve } = require('path');
 const { readdirSync, existsSync } = require('fs');
+const { cloneDeep } = require('lodash');
 
 // create separated entry points per component
 const components = readdirSync(resolve(__dirname, '..', 'src', 'components'));
@@ -69,16 +70,6 @@ const config = {
         loader: 'babel-loader',
       },
       {
-        test: /\.scss|\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            'sass-loader',
-          ],
-        }),
-      },
-      {
         // load media files - need to be injected without a prefixing slash
         test: /(proxima-nova(.)*svg|\.woff|\.eot|\.ttf|\.png|\.gif|\.jpg)/,
         use: [
@@ -96,27 +87,9 @@ const config = {
   target: 'node',
 
   plugins: [
-    new StyleLintPlugin({
-      syntax: 'scss',
-      configFile: `${paths.appDir}/config/stylelint.js`,
-    }),
-
-    // create a css file instead of setting styles inline
-    new ExtractTextPlugin({
-      filename: 'css/main.css',
-      disable: false,
-      allChunks: true,
-    }),
-
     // set the environment variable
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
-    }),
-
-    new OptimizeCssAssetsPlugin({
-      cssProcessor: cssnano,
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: true,
     }),
 
     new webpack.optimize.UglifyJsPlugin({
@@ -129,46 +102,76 @@ const config = {
         warnings: false,
         screw_ie8: true,
       },
-    }),
-
-    new FileReplacePlugin([
-      {
-        dir: 'dist',
-        files: ['css/main.css'],
-        rules: [
-          {
-            search: /\/media\//g,
-            replace: '../media/',
-          },
-        ],
-      },
-    ]),
-
-    new CopyWebpackPlugin([
-      {
-        from: `${paths.srcDir}/assets/icons/**/*.svg`,
-        to: `${paths.distDir}/icons/`,
-        flatten: true
-      }
-    ])
+    })
   ],
 };
 
 // clone the config object and add the multiple entries
-const multipleEntries = Object.assign(
-  {},
-  config,
-  { entry: entries },
-  {
-    output: {
-      ...config.output,
-      filename: 'js/[name].js',
-    },
-  },
-);
+const multipleEntries = cloneDeep(config);
+multipleEntries.entry = entries;
+multipleEntries.output = {
+  ...config.output,
+  filename: 'js/[name].js',
+};
 
-// add the CleanPlugin only once, since we don't want to remove /dist
-// on every run
-config.plugins.push(new CleanWebpackPlugin('dist', { root: paths.appDir }));
+multipleEntries.module.rules.push({
+  test: /\.scss|\.css$/,
+  loader: 'null-loader'
+});
+
+config.module.rules.push({
+  test: /\.scss|\.css$/,
+  loader: ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    use: [
+      'css-loader',
+      'sass-loader',
+    ],
+  }),
+});
+
+
+// Config
+config.plugins.unshift(new CleanWebpackPlugin('dist', { root: paths.appDir }));
+config.plugins.push(
+  new StyleLintPlugin({
+    syntax: 'scss',
+    configFile: `${paths.appDir}/config/stylelint.js`,
+  }),
+
+  // create a css file instead of setting styles inline
+  new ExtractTextPlugin({
+    filename: 'css/main.css',
+    disable: false,
+    allChunks: true,
+  }),
+
+  new OptimizeCssAssetsPlugin({
+    cssProcessor: cssnano,
+    cssProcessorOptions: { discardComments: { removeAll: true } },
+    canPrint: true,
+  }),
+
+  new FileReplacePlugin([
+    {
+      dir: 'dist',
+      files: ['css/main.css'],
+      rules: [
+        {
+          search: /\/media\//g,
+          replace: '../media/',
+        },
+      ],
+    },
+  ]),
+
+  new CopyWebpackPlugin([
+    {
+      from: `${paths.srcDir}/assets/icons/**/*.svg`,
+      to: `${paths.distDir}/icons/`,
+      flatten: true
+    }
+  ]),
+);
 
 module.exports = [config, multipleEntries];
