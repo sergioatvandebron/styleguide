@@ -25,6 +25,7 @@
     /* postcss-bem-linter: ignore */
     &-header {
       border-bottom: 0;
+      padding: 35px 40px 25px;
     }
 
     /* postcss-bem-linter: ignore */
@@ -35,6 +36,11 @@
     /* postcss-bem-linter: ignore */
     &-content {
       border-radius: 0;
+    }
+
+    /* postcss-bem-linter: ignore */
+    &-body {
+      padding: 0 40px 40px;
     }
   }
 }
