@@ -34,7 +34,7 @@ Modal.defaultProps = {
 
 Modal.propTypes = {
   show: PropTypes.bool,
-  size: PropTypes.oneOf(['lg', 'large', 'sm', 'small']),
+  size: PropTypes.oneOf(['large', 'small']),
   onEnter: PropTypes.func,
   onEntering: PropTypes.func,
   onEntered: PropTypes.func,
