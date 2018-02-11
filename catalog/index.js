@@ -20,6 +20,7 @@ import {
   Table,
   PhoneCard,
   Icon,
+  Modal,
   SkeletonBodyText,
   SkeletonDisplayText,
   SkeletonCard,
@@ -128,6 +129,12 @@ const pages = [
         title: 'Table',
         content: pageLoader(() => import('./pages/elements/table.md')),
         imports: { Table },
+      },
+      {
+        path: '/elements/modal',
+        title: 'Modal',
+        content: pageLoader(() => import('./pages/elements/modal.md')),
+        imports: { Modal, Paragraph, Button },
       },
       {
         path: '/elements/icon',
