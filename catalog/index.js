@@ -23,9 +23,8 @@ import {
   SkeletonBodyText,
   SkeletonDisplayText,
   SkeletonCard,
-} from '../dist/js/bundle';
+} from '../src';
 import checkIcon from '../dist/icons/check.svg';
-import '../dist/css/main.css';
 
 const pages = [
   {
