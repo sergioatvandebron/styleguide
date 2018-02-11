@@ -1,6 +1,6 @@
 export { default as indexStyles } from './index.scss';
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' && process.env.DEV_SERVER !== 'catalog-dev-server') {
   import('./index.dev');
 }
 
