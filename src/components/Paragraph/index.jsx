@@ -22,7 +22,7 @@ Paragraph.defaultProps = {
 
 Paragraph.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+  children: PropTypes.node
 };
 
 export default Paragraph;
