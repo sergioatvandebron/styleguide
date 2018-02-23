@@ -5,7 +5,7 @@ import './style.scss';
 
 class Button extends PureComponent {
   render() {
-    const { className, theme, size, full, inverted, children, ...props } = this.props;
+    const { className, theme, size, full, inverted, grayscale, children, ...props } = this.props;
 
     return (
       <button
@@ -22,7 +22,9 @@ class Button extends PureComponent {
 
           'Van-Button--full': full,
 
-          'Van-Button--inverted': inverted
+          'Van-Button--inverted': inverted,
+
+          'Van-Button--grayscale': grayscale
         })}
         {...props}
       >
@@ -40,6 +42,7 @@ Button.defaultProps = {
   size: '',
   full: false,
   inverted: false,
+  grayscale: false,
   children: ''
 };
 
@@ -49,7 +52,8 @@ Button.propTypes = {
   size: PropTypes.oneOf(['', 'small', 'compact', 'big']),
   full: PropTypes.bool,
   inverted: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+  grayscale: PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default Button;

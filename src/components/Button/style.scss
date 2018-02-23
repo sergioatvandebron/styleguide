@@ -15,41 +15,58 @@
   padding: 0 15px;
   margin: 0;
   cursor: pointer;
-  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+  transition: background-color 100ms ease-in-out, border-color 100ms ease-in-out, color 100ms ease-in-out;
   border-radius: 5px;
   min-height: 40px;
   border: 2px solid $color-grey-bright;
   background-color: $color-grey-bright;
+
+  > .Van-Icon {
+    /* postcss-bem-linter: ignore */
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+
+    /* postcss-bem-linter: ignore */
+    &:last-child {
+      margin-left: 0.5rem;
+    }
+  }
 
   // Colors
   &--primary {
     @include background-color($color-white, $color-pink-primary);
 
     &.Van-Button--inverted { @include background-color($color-white, $color-pink-primary, true); }
+    &.Van-Button--grayscale { @include background-color($color-white, $color-pink-primary, false, true); }
   }
 
   &--info {
     @include background-color($color-white, $color-blue-primary);
 
     &.Van-Button--inverted { @include background-color($color-white, $color-blue-primary, true); }
+    &.Van-Button--grayscale { @include background-color($color-white, $color-blue-primary, false, true); }
   }
 
   &--warning {
     @include background-color($color-white, $color-orange);
 
     &.Van-Button--inverted { @include background-color($color-white, $color-orange, true); }
+    &.Van-Button--grayscale { @include background-color($color-white, $color-orange, false, true); }
   }
 
   &--danger {
     @include background-color($color-white, $color-red);
 
     &.Van-Button--inverted { @include background-color($color-white, $color-red, true); }
+    &.Van-Button--grayscale { @include background-color($color-white, $color-red, false, true); }
   }
 
   &--success {
     @include background-color($color-white, $color-green-primary);
 
     &.Van-Button--inverted { @include background-color($color-white, $color-green-primary, true); }
+    &.Van-Button--grayscale { @include background-color($color-white, $color-green-primary, false, true); }
   }
 
   &[disabled] {
@@ -79,17 +96,5 @@
 
   &--full {
     width: 100%;
-  }
-
-  > .Van-Icon {
-    /* postcss-bem-linter: ignore */
-    &:first-child {
-      margin-right: 0.5rem;
-    }
-
-    /* postcss-bem-linter: ignore */
-    &:last-child {
-      margin-left: 0.5rem;
-    }
   }
 }

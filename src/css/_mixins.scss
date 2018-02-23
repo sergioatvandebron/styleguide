@@ -24,12 +24,30 @@
   }
 }
 
-@mixin background-color($text-color, $bg-color, $inverted: false) {
+@mixin background-color($text-color, $bg-color, $inverted: false, $grayscale: false) {
   @if $inverted {
     @include color-fill($bg-color);
 
     background-color: $color-white;
     border-color: $color-grey;
+
+    &:hover {
+      border-color: lighten($bg-color, 6);
+    }
+  }
+
+  @else if $grayscale {
+    @include color-fill($color-primary);
+
+    background-color: $text-color;
+    border-color: $color-grey;
+
+    &:hover {
+      @include color-fill($text-color);
+
+      background-color: $bg-color;
+      border-color: $bg-color;
+    }
   }
 
   @else {
@@ -40,11 +58,8 @@
 
     &:hover {
       background-color: lighten($bg-color, 6);
+      border-color: lighten($bg-color, 6);
     }
-  }
-
-  &:hover {
-    border-color: lighten($bg-color, 6);
   }
 }
 
