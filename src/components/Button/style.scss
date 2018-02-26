@@ -97,4 +97,46 @@
   &--full {
     width: 100%;
   }
+
+  &--square {
+    width: 96px;
+    height: 89px;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: $font-weight-light;
+    line-height: 13px;
+
+    &.Van-Button--small {
+      width: 50px;
+      height: 40px;
+
+      /* postcss-bem-linter: ignore */
+      > span {
+        display: none;
+      }
+
+      /* postcss-bem-linter: ignore */
+      > .Van-Icon {
+        display: block;
+        height: 25px;
+      }
+    }
+
+    /* postcss-bem-linter: ignore */
+    > .Van-Icon {
+      width: auto;
+      height: 32px;
+      margin: 5px 0;
+
+      /* postcss-bem-linter: ignore */
+      &:first-child {
+        margin-right: 0;
+      }
+
+      /* postcss-bem-linter: ignore */
+      &:last-child {
+        margin-left: 0;
+      }
+    }
+  }
 }

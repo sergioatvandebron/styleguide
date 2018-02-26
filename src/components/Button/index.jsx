@@ -5,7 +5,7 @@ import './style.scss';
 
 class Button extends PureComponent {
   render() {
-    const { className, theme, size, full, inverted, grayscale, children, ...props } = this.props;
+    const { className, theme, size, full, inverted, shape, grayscale, children, ...props } = this.props;
 
     return (
       <button
@@ -21,6 +21,8 @@ class Button extends PureComponent {
           'Van-Button--big': size === 'big',
 
           'Van-Button--full': full,
+
+          'Van-Button--square': shape === 'square',
 
           'Van-Button--inverted': inverted,
 
