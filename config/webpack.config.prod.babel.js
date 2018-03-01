@@ -85,25 +85,6 @@ const config = {
 
   bail: true,
   target: 'node',
-
-  plugins: [
-    // set the environment variable
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'production',
-    }),
-
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      beautify: false,
-      comments: false,
-      compress: {
-        unused: true,
-        dead_code: true,
-        warnings: false,
-        screw_ie8: true,
-      },
-    })
-  ],
 };
 
 // clone the config object and add the multiple entries
