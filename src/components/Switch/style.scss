@@ -8,7 +8,44 @@
   position: relative;
   width: 60px;
 
-  .Van-Switch-input {
+  &-toggle {
+    background: $color-white;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 16px;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    transition: all 0.25s;
+    width: 16px;
+    z-index: 3;
+  }
+
+  &-label {
+    bottom: 0;
+    color: $color-white;
+    cursor: pointer;
+    font-size: 13px;
+    left: 0;
+    line-height: 16px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &--on {
+      background: $color-green-primary;
+      opacity: 0;
+      transition: all 0.25s;
+      z-index: 2;
+    }
+
+    &--off {
+      text-align: right;
+    }
+  }
+
+  &-input {
     display: none;
 
     &:checked + .Van-Switch-wrapper {
@@ -22,42 +59,5 @@
         transition: all 0.25s;
       }
     }
-  }
-
-  .Van-Switch-toggle {
-    background: $color-white;
-    border-radius: 50%;
-    cursor: pointer;
-    height: 16px;
-    left: 5px;
-    position: absolute;
-    top: 5px;
-    transition: all 0.25s;
-    width: 16px;
-    z-index: 3;
-  }
-
-  .Van-Switch-label {
-    bottom: 0;
-    color: $color-white;
-    cursor: pointer;
-    font-size: 13px;
-    left: 0;
-    line-height: 16px;
-    padding: 5px 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .Van-Switch-label--on {
-    background: $color-green-primary;
-    opacity: 0;
-    transition: all 0.25s;
-    z-index: 2;
-  }
-
-  .Van-Switch-label--off {
-    text-align: right;
   }
 }
