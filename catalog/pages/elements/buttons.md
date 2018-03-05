@@ -72,7 +72,7 @@
 ```
 
 ```react
-  <Button theme="primary" size="full">Full button</Button>
+  <Button theme="primary" full>Full button</Button>
 ```
 
 
