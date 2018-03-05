@@ -5,7 +5,17 @@ import './style.scss';
 
 class Button extends PureComponent {
   render() {
-    const { className, theme, size, full, inverted, shape, grayscale, children, ...props } = this.props;
+    const {
+      className,
+      theme,
+      size,
+      full,
+      inverted,
+      shape,
+      grayscale,
+      children,
+      ...props
+    } = this.props;
 
     return (
       <button
@@ -31,7 +41,16 @@ class Button extends PureComponent {
         {...props}
       >
         {children instanceof Array
-          ? children.map(c => (typeof c === 'string' ? <span key={c}>{c}</span> : c))
+          ? children.map(
+              c =>
+                typeof c === 'string' ? (
+                  <span key={c} className="Van-Button-text">
+                    {c}
+                  </span>
+                ) : (
+                  c
+                )
+            )
           : children}
       </button>
     );
@@ -45,6 +64,7 @@ Button.defaultProps = {
   full: false,
   inverted: false,
   grayscale: false,
+  shape: '',
   children: ''
 };
 
@@ -55,6 +75,7 @@ Button.propTypes = {
   full: PropTypes.bool,
   inverted: PropTypes.bool,
   grayscale: PropTypes.bool,
+  shape: PropTypes.string,
   children: PropTypes.node
 };
 
