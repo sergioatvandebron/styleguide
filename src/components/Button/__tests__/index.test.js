@@ -139,4 +139,41 @@ describe("<Button>", () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it("renders grayscale button", () => {
+    const tree = renderer.create(
+      <Button grayscale>My button</Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders square button", () => {
+    const tree = renderer.create(
+      <Button square>My button</Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders square button with an Icon", () => {
+    const tree = renderer.create(
+      <Button square>
+        <Icon source={facebookIcon} />
+        My button
+      </Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders small square button with an Icon", () => {
+    const tree = renderer.create(
+      <Button square>
+        <Icon source={facebookIcon} />
+      </Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
