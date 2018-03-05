@@ -3,7 +3,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import isSVG from 'is-svg';
+import isSVG from '../../utils/is-svg';
 
 import './style.scss';
 
