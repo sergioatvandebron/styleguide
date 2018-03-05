@@ -82,7 +82,7 @@ const pages = [
         path: '/elements/buttons',
         title: 'Buttons',
         content: pageLoader(() => import('./pages/elements/buttons.md')),
-        imports: { Button },
+        imports: { Button, Icon, checkIcon },
       },
       {
         path: '/elements/headings',

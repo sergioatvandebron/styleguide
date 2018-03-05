@@ -27,6 +27,37 @@
 <Button disabled>Disabled button</Button>
 ```
 
+### Shape
+
+```react
+<Button theme="primary" shape="square">
+  <Icon source={checkIcon} />
+  Hello
+</Button>
+```
+
+```react
+<Button theme="primary" shape="square">
+  Hello
+  <Icon source={checkIcon} />
+</Button>
+```
+
+```react
+<Button theme="primary" shape="square" size="small">
+  <Icon source={checkIcon} />
+</Button>
+```
+
+### Grayscale
+
+```react
+<Button theme="primary" shape="square" grayscale>
+  <Icon source={checkIcon} />
+  Hello
+</Button>
+```
+
 ### Sizes
 ```react
 <Button theme="primary" size="big">Big button</Button>
