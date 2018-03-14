@@ -1,7 +1,7 @@
 /** @define NumberInput */
 
-@import "../../css/_global.scss";
-@import "../../css/_form-globals.scss";
+@import "../../css/variables";
+@import "../../css/form-globals";
 
 $number-input-ctrl-width:       50px;
 $number-input-color:            $color-pink-primary;

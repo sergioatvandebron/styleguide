@@ -1,4 +1,4 @@
-@import "../../css/_form-globals.scss";
+@import "../../css/form-globals";
 
 @mixin input-message($state-name, $color, $border-color) {
   .Van-TextInput-input {
