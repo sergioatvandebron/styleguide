@@ -170,6 +170,10 @@ config.plugins.push(
       from: `${paths.srcDir}/assets/icons/**/*.svg`,
       to: `${paths.distDir}/icons/`,
       flatten: true
+    },
+    {
+      from: `${paths.srcDir}/css/_variables.scss`,
+      to: `${paths.distDir}/css/`
     }
   ]),
 );
