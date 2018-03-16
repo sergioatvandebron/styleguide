@@ -1,0 +1,17 @@
+/** @define Card */
+
+@import "../../css/variables";
+
+.Van-Card {
+  padding: 25px 40px;
+  background-color: $color-white;
+
+  &--withShadow {
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: $container-sm) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

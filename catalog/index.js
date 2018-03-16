@@ -23,6 +23,7 @@ import {
   SkeletonBodyText,
   SkeletonDisplayText,
   SkeletonCard,
+  Card,
 } from '../src';
 import checkIcon from '../dist/icons/check.svg';
 
@@ -148,6 +149,12 @@ const pages = [
         title: 'SkeletonCard',
         content: pageLoader(() => import('./pages/elements/skeleton-card.md')),
         imports: { SkeletonCard, SkeletonDisplayText, SkeletonBodyText, Grid, Col },
+      },
+      {
+        path: '/elements/card',
+        title: 'Card',
+        content: pageLoader(() => import('./pages/elements/card.md')),
+        imports: { Card, Grid, Col },
       }
     ]
   },
