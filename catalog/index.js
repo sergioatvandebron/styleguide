@@ -24,6 +24,7 @@ import {
   SkeletonDisplayText,
   SkeletonCard,
   Card,
+  Popover,
 } from '../src';
 import checkIcon from '../dist/icons/check.svg';
 
@@ -166,6 +167,12 @@ const pages = [
         title: 'PhoneCard',
         content: pageLoader(() => import('./pages/components/phone-card.md')),
         imports: { PhoneCard },
+      },
+      {
+        path: '/components/popover',
+        title: 'Popover',
+        content: pageLoader(() => import('./pages/components/popover.md')),
+        imports: { Popover, Button },
       }
     ]
   }
