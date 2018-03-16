@@ -22,7 +22,7 @@ Grid.defaultProps = {
 
 Grid.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  children: PropTypes.node
 };
 
 export default Grid;
