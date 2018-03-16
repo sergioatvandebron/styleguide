@@ -30,3 +30,4 @@ export { default as AccordionList } from './components/AccordionList';
 export { default as Select } from './components/Select';
 export { default as Card } from './components/Card';
 export { default as Popover } from './components/Popover';
+export { default as Sticker } from './components/Sticker';

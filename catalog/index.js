@@ -25,6 +25,7 @@ import {
   SkeletonCard,
   Card,
   Popover,
+  Sticker,
 } from '../src';
 import checkIcon from '../dist/icons/check.svg';
 
@@ -173,6 +174,12 @@ const pages = [
         title: 'Popover',
         content: pageLoader(() => import('./pages/components/popover.md')),
         imports: { Popover, Button },
+      },
+      {
+        path: '/components/sticker',
+        title: 'Sticker',
+        content: pageLoader(() => import('./pages/components/sticker.md')),
+        imports: { Sticker },
       }
     ]
   }
