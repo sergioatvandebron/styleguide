@@ -4,7 +4,7 @@ exports[`<Sticker> renders default Sticker 1`] = `
 <span
   className="Van-Sticker"
 >
-  My card
+  My sticker
 </span>
 `;
 
