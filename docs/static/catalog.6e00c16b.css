@@ -163,9 +163,17 @@
   font-size: 18px;
   line-height: 22px; }
 
+.Van-u-text--normal {
+  font-size: 16px;
+  line-height: 1.4; }
+
 .Van-u-text--small {
   font-size: 12px;
   line-height: 21px; }
+
+.Van-u-text--tiny {
+  font-size: 10px;
+  line-height: 14px; }
 
 /* Colors */
 .Van-u-color-white {
@@ -2955,5 +2963,171 @@
     height: auto;
     width: 14px;
     top: 13px; }
+/** @define Card */
+.Van-Card {
+  position: relative;
+  padding: 25px 40px;
+  background-color: #fff; }
+  .Van-Card--withShadow {
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25); }
+  @media (max-width: 768px) {
+    .Van-Card {
+      padding-left: 15px;
+      padding-right: 15px; } }
+/** @define Popover */
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1060;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.42857;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  font-size: 16px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+  .popover.top {
+    margin-top: -10px; }
+  .popover.right {
+    margin-left: 10px; }
+  .popover.bottom {
+    margin-top: 10px; }
+  .popover.left {
+    margin-left: -10px; }
 
-/*# sourceMappingURL=catalog.51f57ee7.css.map*/
+.popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 16px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0; }
+
+.popover-content {
+  padding: 9px 14px; }
+
+.popover > .arrow, .popover > .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid; }
+
+.popover > .arrow {
+  border-width: 11px; }
+
+.popover > .arrow:after {
+  border-width: 10px;
+  content: ""; }
+
+.popover.top > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px; }
+  .popover.top > .arrow:after {
+    content: " ";
+    bottom: 1px;
+    margin-left: -10px;
+    border-bottom-width: 0;
+    border-top-color: #fff; }
+
+.popover.right > .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25); }
+  .popover.right > .arrow:after {
+    content: " ";
+    left: 1px;
+    bottom: -10px;
+    border-left-width: 0;
+    border-right-color: #fff; }
+
+.popover.bottom > .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px; }
+  .popover.bottom > .arrow:after {
+    content: " ";
+    top: 1px;
+    margin-left: -10px;
+    border-top-width: 0;
+    border-bottom-color: #fff; }
+
+.popover.left > .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25); }
+  .popover.left > .arrow:after {
+    content: " ";
+    right: 1px;
+    border-right-width: 0;
+    border-left-color: #fff;
+    bottom: -10px; }
+
+.Van-Popover {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 300;
+  line-height: initial;
+  color: #333d47;
+  border-radius: 5px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+  /* postcss-bem-linter: ignore */ }
+  .Van-Popover .popover-content {
+    padding: 12px 16px;
+    font-size: 14px; }
+/** @define Sticker */
+.Van-Sticker {
+  position: relative;
+  z-index: 10;
+  width: 106px;
+  height: 106px;
+  background-color: #00a3e0;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* postcss-bem-linter: ignore */ }
+  .Van-Sticker > span,
+  .Van-Sticker > div {
+    line-height: 1.1; }
+  @media (max-width: 768px) {
+    .Van-Sticker {
+      width: 100px;
+      height: 100px; } }
+
+/*# sourceMappingURL=catalog.6e00c16b.css.map*/
