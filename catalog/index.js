@@ -24,6 +24,7 @@ import {
   SkeletonDisplayText,
   SkeletonCard,
   Card,
+  Spinner,
   Popover,
   Sticker,
 } from '../src';
@@ -157,6 +158,12 @@ const pages = [
         title: 'Card',
         content: pageLoader(() => import('./pages/elements/card.md')),
         imports: { Card, Grid, Col },
+      },
+      {
+        path: '/elements/spinner',
+        title: 'Spinner',
+        content: pageLoader(() => import('./pages/elements/spinner.md')),
+        imports: { Spinner, Heading },
       }
     ]
   },
