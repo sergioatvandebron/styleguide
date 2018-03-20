@@ -2,10 +2,10 @@
 
 exports[`<Spinner /> renders a full screen spinner 1`] = `
 <div
-  className="Van-Spinner Van-Spinner--FullScreen"
+  className="Van-Spinner Van-Spinner--fullScreen"
 >
   <div
-    className="Van-Spinner-IconContainer"
+    className="Van-Spinner-iconContainer"
   />
 </div>
 `;
@@ -15,7 +15,7 @@ exports[`<Spinner /> renders a spinner 1`] = `
   className="Van-Spinner"
 >
   <div
-    className="Van-Spinner-IconContainer"
+    className="Van-Spinner-iconContainer"
   />
 </div>
 `;
@@ -25,10 +25,10 @@ exports[`<Spinner /> renders a spinner with children 1`] = `
   className="Van-Spinner"
 >
   <div
-    className="Van-Spinner-IconContainer"
+    className="Van-Spinner-iconContainer"
   />
   <div
-    className="Van-Spinner-Content"
+    className="Van-Spinner-content"
   >
     <strong>
       i am a child
