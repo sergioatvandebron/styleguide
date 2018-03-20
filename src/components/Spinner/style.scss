@@ -45,17 +45,20 @@ $animation-duration: 4s;
 
   &-wind {
     @include color-fill($color-pink-primary);
-    animation-delay: $animation-duration * .25;
+
+    animation-delay: $animation-duration * 0.25;
   }
 
   &-hydro {
     @include color-fill($color-blue-primary);
+
     animation-delay: $animation-duration / 2;
   }
 
   &-bio {
     @include color-fill($color-green-primary);
-    animation-delay: $animation-duration * .75;
+
+    animation-delay: $animation-duration * 0.75;
   }
 }
 
