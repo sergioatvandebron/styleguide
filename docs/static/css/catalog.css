@@ -2974,6 +2974,64 @@
     .Van-Card {
       padding-left: 15px;
       padding-right: 15px; } }
+@keyframes skeletonShimmerAnimation {
+  0% {
+    opacity: 0.45; }
+  100% {
+    opacity: 0.9; } }
+
+.Van-Spinner {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  padding: 25px;
+  text-align: center;
+  width: 100%; }
+  .Van-Spinner--fullScreen {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 9; }
+  .Van-Spinner-iconContainer {
+    height: 50px; }
+  .Van-Spinner-icon {
+    animation: zoom-in-out 4s ease-out infinite;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: scale(0);
+    transform-origin: 50% 100%;
+    width: 100%; }
+    .Van-Spinner-icon > svg {
+      height: 250%; }
+  .Van-Spinner-sun {
+    color: #ffb81c;
+    fill: #ffb81c; }
+  .Van-Spinner-wind {
+    color: #e83f7a;
+    fill: #e83f7a;
+    animation-delay: 1s; }
+  .Van-Spinner-hydro {
+    color: #00a3e0;
+    fill: #00a3e0;
+    animation-delay: 2s; }
+  .Van-Spinner-bio {
+    color: #43b02a;
+    fill: #43b02a;
+    animation-delay: 3s; }
+
+@keyframes zoom-in-out {
+  0% {
+    transform: scale(0); }
+  15% {
+    transform: scale(1); }
+  18% {
+    transform: scale(1); }
+  30% {
+    transform: scale(0); } }
 /** @define Popover */
 .popover {
   position: absolute;
