@@ -9,15 +9,15 @@ import iconWind from '../../assets/icons/ftic/wind.svg';
 import './style.scss';
 
 const Spinner = ({ children, fullScreen }) => (
-  <div className={classnames('Van-Spinner', { 'Van-Spinner--FullScreen': fullScreen })}>
-    <div className="Van-Spinner-IconContainer">
-      <Icon source={iconBio} className="Van-Spinner-Icon Van-Spinner-Bio" />
-      <Icon source={iconHydro} className="Van-Spinner-Icon Van-Spinner-Hydro" />
-      <Icon source={iconSun} className="Van-Spinner-Icon Van-Spinner-Sun" />
-      <Icon source={iconWind} className="Van-Spinner-Icon Van-Spinner-Wind" />
+  <div className={classnames('Van-Spinner', { 'Van-Spinner--fullScreen': fullScreen })}>
+    <div className="Van-Spinner-iconContainer">
+      <Icon source={iconBio} className="Van-Spinner-icon Van-Spinner-bio" />
+      <Icon source={iconHydro} className="Van-Spinner-icon Van-Spinner-hydro" />
+      <Icon source={iconSun} className="Van-Spinner-icon Van-Spinner-sun" />
+      <Icon source={iconWind} className="Van-Spinner-icon Van-Spinner-wind" />
     </div>
 
-    {children && <div className="Van-Spinner-Content">{children}</div>}
+    {children && <div className="Van-Spinner-content">{children}</div>}
   </div>
 );
 

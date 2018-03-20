@@ -13,7 +13,7 @@ $animation-duration: 4s;
   text-align: center;
   width: 100%;
 
-  &--FullScreen {
+  &--fullScreen {
     height: 100vh;
     position: fixed;
     top: 0;
@@ -21,13 +21,11 @@ $animation-duration: 4s;
     z-index: 9; // the react-header has z-index: 10
   }
 
-  &-IconContainer {
+  &-iconContainer {
     height: 50px;
   }
 
-  // &-Content {}
-
-  &-Icon {
+  &-icon {
     animation: zoom-in-out $animation-duration ease-out infinite;
     left: 0;
     position: absolute;
@@ -41,21 +39,21 @@ $animation-duration: 4s;
     }
   }
 
-  &-Sun {
+  &-sun {
     @include color-fill($color-yellow-primary);
   }
 
-  &-Wind {
+  &-wind {
     @include color-fill($color-pink-primary);
     animation-delay: $animation-duration * .25;
   }
 
-  &-Hydro {
+  &-hydro {
     @include color-fill($color-blue-primary);
     animation-delay: $animation-duration / 2;
   }
 
-  &-Bio {
+  &-bio {
     @include color-fill($color-green-primary);
     animation-delay: $animation-duration * .75;
   }
@@ -78,4 +76,3 @@ $animation-duration: 4s;
     transform: scale(0);
   }
 }
-
