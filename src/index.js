@@ -29,3 +29,4 @@ export { default as Accordion } from './components/Accordion';
 export { default as AccordionList } from './components/AccordionList';
 export { default as Select } from './components/Select';
 export { default as Card } from './components/Card';
+export { default as Spinner } from './components/Spinner';

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Spinner /> renders a full screen spinner 1`] = `
+<div
+  className="Van-Spinner Van-Spinner--FullScreen"
+>
+  <div
+    className="Van-Spinner-IconContainer"
+  />
+</div>
+`;
+
+exports[`<Spinner /> renders a spinner 1`] = `
+<div
+  className="Van-Spinner"
+>
+  <div
+    className="Van-Spinner-IconContainer"
+  />
+</div>
+`;
+
+exports[`<Spinner /> renders a spinner with children 1`] = `
+<div
+  className="Van-Spinner"
+>
+  <div
+    className="Van-Spinner-IconContainer"
+  />
+  <div
+    className="Van-Spinner-Content"
+  >
+    <strong>
+      i am a child
+    </strong>
+  </div>
+</div>
+`;
