@@ -33,7 +33,7 @@ Container.defaultProps = {
 Container.propTypes = {
   className: PropTypes.string,
   fluid: PropTypes.bool,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  children: PropTypes.node
 };
 
 export default Container;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sticker> renders default Sticker 1`] = `
+<span
+  className="Van-Sticker"
+>
+  My sticker
+</span>
+`;
+
+exports[`<Sticker> renders with specific attributes 1`] = `
+<span
+  className="Van-Sticker"
+  data-id="0"
+>
+  My sticker
+</span>
+`;
+
+exports[`<Sticker> renders with specific className 1`] = `
+<span
+  className="Van-Sticker my-class"
+>
+  My sticker
+</span>
+`;

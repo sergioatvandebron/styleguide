@@ -1,0 +1,28 @@
+/** @define Sticker */
+
+@import "../../css/variables";
+
+.Van-Sticker {
+  position: relative;
+  z-index: 10;
+  width: 106px;
+  height: 106px;
+  background-color: $color-blue-primary;
+  border-radius: 50%;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* postcss-bem-linter: ignore */
+  > span,
+  > div {
+    line-height: 1.1;
+  }
+
+  @media (max-width: $container-sm) {
+    width: 100px;
+    height: 100px;
+  }
+}

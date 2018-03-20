@@ -106,7 +106,7 @@ Col.propTypes = {
   smPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   mdPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   lgPull: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  children: PropTypes.node
 };
 
 export default Col;

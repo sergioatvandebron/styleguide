@@ -36,9 +36,19 @@ $directionList: top bottom left right;
   line-height: 22px;
 }
 
+.Van-u-text--normal {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
 .Van-u-text--small {
   font-size: $font-size-small;
   line-height: 21px;
+}
+
+.Van-u-text--tiny {
+  font-size: $font-size-tiny;
+  line-height: 14px;
 }
 
 /* Colors */
