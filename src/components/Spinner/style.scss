@@ -21,6 +21,10 @@ $animation-duration: 4s;
     z-index: 9; // the react-header has z-index: 10
   }
 
+  &-content {
+    margin-top: 40px;
+  }
+
   &-iconContainer {
     height: 50px;
   }
