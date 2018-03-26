@@ -21,7 +21,7 @@ class Popover extends PureComponent {
   }
 
   render() {
-    const { trigger, placement, children } = this.props;
+    const { rootClose, trigger, placement, children } = this.props;
     let triggerCopy = trigger;
 
     if (triggerCopy === 'hover') {
@@ -33,6 +33,7 @@ class Popover extends PureComponent {
         trigger={triggerCopy}
         placement={placement}
         overlay={this.getPopoverContent()}
+        rootClose={rootClose}
       >
         {children}
       </OverlayTrigger>
@@ -47,7 +48,8 @@ Popover.defaultProps = {
   content: '',
   children: '',
   placement: 'right',
-  trigger: 'hover'
+  trigger: 'hover',
+  rootClose: true
 };
 
 Popover.propTypes = {
@@ -57,7 +59,8 @@ Popover.propTypes = {
   content: PropTypes.node,
   children: PropTypes.node,
   placement: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
-  trigger: PropTypes.oneOf(['hover', 'focus', 'click'])
+  trigger: PropTypes.oneOf(['hover', 'focus', 'click']),
+  rootClose: PropTypes.bool
 };
 
 export default Popover;
