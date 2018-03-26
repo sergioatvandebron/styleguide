@@ -1,11 +1,15 @@
+/** @define Icon */
+
 .Van-Icon {
   display: inline-block;
   width: 20px;
   height: 20px;
   vertical-align: middle;
 
+  /* postcss-bem-linter: ignore */
   > svg {
     position: relative;
+    top: -2px;
     z-index: 2;
     display: block;
     width: 100%;
