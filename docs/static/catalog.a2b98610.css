@@ -958,13 +958,16 @@
     color: #83898f;
     font-size: 14px;
     font-weight: 600; }
+/** @define Icon */
 .Van-Icon {
   display: inline-block;
   width: 20px;
   height: 20px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  /* postcss-bem-linter: ignore */ }
   .Van-Icon > svg {
     position: relative;
+    top: -2px;
     z-index: 2;
     display: block;
     width: 100%;
@@ -2995,6 +2998,8 @@
     top: 0;
     width: 100vw;
     z-index: 9; }
+  .Van-Spinner-content {
+    margin-top: 40px; }
   .Van-Spinner-iconContainer {
     height: 50px; }
   .Van-Spinner-icon {
@@ -3163,6 +3168,8 @@
   border-radius: 5px;
   box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
   /* postcss-bem-linter: ignore */ }
+  .Van-Popover-trigger {
+    cursor: pointer; }
   .Van-Popover .popover-content {
     padding: 12px 16px;
     font-size: 14px; }
@@ -3172,20 +3179,41 @@
   z-index: 10;
   width: 106px;
   height: 106px;
-  background-color: #00a3e0;
-  border-radius: 50%;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   /* postcss-bem-linter: ignore */ }
   .Van-Sticker > span,
   .Van-Sticker > div {
-    line-height: 1.1; }
+    line-height: 1.1;
+    z-index: 2; }
+  .Van-Sticker--circle {
+    background-color: #00a3e0;
+    border-radius: 50%; }
+  .Van-Sticker--splash {
+    transform: rotate(10deg);
+    /* postcss-bem-linter: ignore */ }
+    .Van-Sticker--splash > span:not(.Van-Sticker-icon),
+    .Van-Sticker--splash > div {
+      width: 90px; }
+  .Van-Sticker-icon {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    z-index: 1; }
   @media (max-width: 768px) {
     .Van-Sticker {
       width: 100px;
-      height: 100px; } }
+      height: 100px; }
+      .Van-Sticker--splash {
+        /* postcss-bem-linter: ignore */ }
+        .Van-Sticker--splash > span:not(.Van-Sticker-icon),
+        .Van-Sticker--splash > div {
+          width: 50px; }
+      .Van-Sticker-icon {
+        width: 90px; } }
 
-/*# sourceMappingURL=catalog.7f78a11a.css.map*/
+/*# sourceMappingURL=catalog.a2b98610.css.map*/
