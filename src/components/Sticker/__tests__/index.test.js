@@ -11,6 +11,14 @@ describe("<Sticker>", () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it("renders splash Sticker", () => {
+    const tree = renderer.create(
+      <Sticker type="splash">My sticker</Sticker>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it("renders with specific className", () => {
     const tree = renderer.create(
       <Sticker className="my-class">My sticker</Sticker>
