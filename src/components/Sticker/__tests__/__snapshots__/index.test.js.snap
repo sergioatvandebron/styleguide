@@ -2,25 +2,41 @@
 
 exports[`<Sticker> renders default Sticker 1`] = `
 <span
-  className="Van-Sticker"
+  className="Van-Sticker Van-Sticker--circle"
 >
-  My sticker
+  <span>
+    My sticker
+  </span>
+</span>
+`;
+
+exports[`<Sticker> renders splash Sticker 1`] = `
+<span
+  className="Van-Sticker Van-Sticker--splash"
+>
+  <span>
+    My sticker
+  </span>
 </span>
 `;
 
 exports[`<Sticker> renders with specific attributes 1`] = `
 <span
-  className="Van-Sticker"
+  className="Van-Sticker Van-Sticker--circle"
   data-id="0"
 >
-  My sticker
+  <span>
+    My sticker
+  </span>
 </span>
 `;
 
 exports[`<Sticker> renders with specific className 1`] = `
 <span
-  className="Van-Sticker my-class"
+  className="Van-Sticker Van-Sticker--circle my-class"
 >
-  My sticker
+  <span>
+    My sticker
+  </span>
 </span>
 `;

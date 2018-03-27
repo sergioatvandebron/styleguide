@@ -7,22 +7,56 @@
   z-index: 10;
   width: 106px;
   height: 106px;
-  background-color: $color-blue-primary;
-  border-radius: 50%;
   color: $color-white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   /* postcss-bem-linter: ignore */
   > span,
   > div {
     line-height: 1.1;
+    z-index: 2;
+  }
+
+  &--circle {
+    background-color: $color-blue-primary;
+    border-radius: 50%;
+  }
+
+  &--splash {
+    transform: rotate(10deg);
+
+    /* postcss-bem-linter: ignore */
+    > span:not(.Van-Sticker-icon),
+    > div {
+      width: 90px;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    z-index: 1;
   }
 
   @media (max-width: $container-sm) {
     width: 100px;
     height: 100px;
+
+    &--splash {
+      /* postcss-bem-linter: ignore */
+      > span:not(.Van-Sticker-icon),
+      > div {
+        width: 50px;
+      }
+    }
+
+    &-icon {
+      width: 90px;
+    }
   }
 }
