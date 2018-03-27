@@ -35,7 +35,7 @@ class Popover extends PureComponent {
         overlay={this.getPopoverContent()}
         rootClose={rootClose}
       >
-        {children}
+        <span className="Van-Popover-trigger">{children}</span>
       </OverlayTrigger>
     );
   }
