@@ -46,5 +46,17 @@
   @media (max-width: $container-sm) {
     width: 100px;
     height: 100px;
+
+    &--splash {
+      /* postcss-bem-linter: ignore */
+      > span:not(.Van-Sticker-icon),
+      > div {
+        width: 50px;
+      }
+    }
+
+    &-icon {
+      width: 90px;
+    }
   }
 }
