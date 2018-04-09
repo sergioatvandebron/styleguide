@@ -75,7 +75,7 @@ Accordion.defaultProps = {
 
 Accordion.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   isOpen: PropTypes.bool,
   disabled: PropTypes.bool
 };
