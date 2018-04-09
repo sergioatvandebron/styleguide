@@ -1,4 +1,4 @@
-### Colors
+### Theme
 ```react
 <Button theme="primary">Primary button</Button>
 ```
@@ -17,6 +17,10 @@
 
 ```react
 <Button theme="success">Success button</Button>
+```
+
+```react
+<Button theme="facebook">Facebook color button</Button>
 ```
 
 ```react

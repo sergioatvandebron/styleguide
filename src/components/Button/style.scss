@@ -69,6 +69,13 @@
     &.Van-Button--grayscale { @include background-color($color-white, $color-green-primary, false, true); }
   }
 
+  &--facebook {
+    @include background-color($color-white, $color-facebook-blue);
+
+    &.Van-Button--inverted { @include background-color($color-white, $color-facebook-blue, true); }
+    &.Van-Button--grayscale { @include background-color($color-white, $color-facebook-blue, false, true); }
+  }
+
   &[disabled] {
     @include color-fill($color-grey);
 
