@@ -87,6 +87,13 @@
   <Button theme="primary" full>Full button</Button>
 ```
 
+### Link
+Make button act like a link.
+
+```react
+<Button theme="primary" href="https://vandebron.nl" target="_blank" link>Big link</Button>
+```
+
 
 ### API
 

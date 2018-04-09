@@ -13,12 +13,15 @@ class Button extends PureComponent {
       inverted,
       shape,
       grayscale,
+      link,
       children,
       ...props
     } = this.props;
 
+    const CustomTag = link ? 'a' : 'button';
+
     return (
-      <button
+      <CustomTag
         className={classnames('Van-Button', className, {
           'Van-Button--primary': theme === 'primary',
           'Van-Button--info': theme === 'info',
@@ -54,7 +57,7 @@ class Button extends PureComponent {
                 )
             )
           : children}
-      </button>
+      </CustomTag>
     );
   }
 }
@@ -67,6 +70,7 @@ Button.defaultProps = {
   inverted: false,
   grayscale: false,
   shape: '',
+  link: false,
   children: ''
 };
 
@@ -78,6 +82,7 @@ Button.propTypes = {
   inverted: PropTypes.bool,
   grayscale: PropTypes.bool,
   shape: PropTypes.oneOf(['', 'square', 'circle']),
+  link: PropTypes.bool,
   children: PropTypes.node
 };
 

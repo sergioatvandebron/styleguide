@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Button> renders a link 1`] = `
+<a
+  className="Van-Button"
+  href="https://vandebron.nl"
+>
+  Button link
+</a>
+`;
+
 exports[`<Button> renders big button size 1`] = `
 <button
   className="Van-Button Van-Button--big"
