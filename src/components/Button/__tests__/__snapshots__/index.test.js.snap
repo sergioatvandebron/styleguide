@@ -8,6 +8,21 @@ exports[`<Button> renders big button size 1`] = `
 </button>
 `;
 
+exports[`<Button> renders circle button 1`] = `
+<button
+  className="Van-Button Van-Button--circle"
+>
+  <span
+    className="Van-Icon"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<svg xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759H734V905H479V609h255V391q0-186 104-288.5T1115 0q147 0 228 12z\\"/></svg>",
+      }
+    }
+  />
+</button>
+`;
+
 exports[`<Button> renders compact button size 1`] = `
 <button
   className="Van-Button Van-Button--compact"
@@ -28,6 +43,14 @@ exports[`<Button> renders disabled button 1`] = `
 <button
   className="Van-Button"
   disabled={true}
+>
+  My button
+</button>
+`;
+
+exports[`<Button> renders facebook button 1`] = `
+<button
+  className="Van-Button Van-Button--facebook"
 >
   My button
 </button>
@@ -91,8 +114,7 @@ exports[`<Button> renders small button size 1`] = `
 
 exports[`<Button> renders small square button with an Icon 1`] = `
 <button
-  className="Van-Button"
-  square={true}
+  className="Van-Button Van-Button--square"
 >
   <span
     className="Van-Icon"
@@ -107,8 +129,7 @@ exports[`<Button> renders small square button with an Icon 1`] = `
 
 exports[`<Button> renders square button 1`] = `
 <button
-  className="Van-Button"
-  square={true}
+  className="Van-Button Van-Button--square"
 >
   My button
 </button>
@@ -116,8 +137,7 @@ exports[`<Button> renders square button 1`] = `
 
 exports[`<Button> renders square button with an Icon 1`] = `
 <button
-  className="Van-Button"
-  square={true}
+  className="Van-Button Van-Button--square"
 >
   <span
     className="Van-Icon"

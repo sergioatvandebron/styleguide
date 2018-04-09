@@ -54,6 +54,14 @@ describe("<Button>", () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it("renders facebook button", () => {
+    const tree = renderer.create(
+      <Button theme="facebook">My button</Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
   it("renders small button size", () => {
     const tree = renderer.create(
       <Button size="small">My button</Button>
@@ -150,7 +158,7 @@ describe("<Button>", () => {
 
   it("renders square button", () => {
     const tree = renderer.create(
-      <Button square>My button</Button>
+      <Button shape="square">My button</Button>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -158,7 +166,7 @@ describe("<Button>", () => {
 
   it("renders square button with an Icon", () => {
     const tree = renderer.create(
-      <Button square>
+      <Button shape="square">
         <Icon source={facebookIcon} />
         My button
       </Button>
@@ -169,7 +177,17 @@ describe("<Button>", () => {
 
   it("renders small square button with an Icon", () => {
     const tree = renderer.create(
-      <Button square>
+      <Button shape="square">
+        <Icon source={facebookIcon} />
+      </Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders circle button", () => {
+    const tree = renderer.create(
+      <Button shape="circle">
         <Icon source={facebookIcon} />
       </Button>
     ).toJSON();

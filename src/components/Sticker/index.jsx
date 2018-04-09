@@ -11,19 +11,19 @@ class Sticker extends PureComponent {
 
     return (
       <span
-        className={classnames('Van-Sticker', {
-          'Van-Sticker--circle': type === 'circle',
-          'Van-Sticker--splash': type === 'splash'
-        },className)}
+        className={classnames(
+          'Van-Sticker',
+          {
+            'Van-Sticker--circle': type === 'circle',
+            'Van-Sticker--splash': type === 'splash'
+          },
+          className
+        )}
         {...props}
       >
-        {
-          type === 'splash' &&
-            <Icon
-              source={sunIcon}
-              className="Van-Sticker-icon Van-u-color-yellow-primary"
-            />
-        }
+        {type === 'splash' && (
+          <Icon source={sunIcon} className="Van-Sticker-icon Van-u-color-yellow-primary" />
+        )}
         {typeof children === 'string' ? <span>{children}</span> : children}
       </span>
     );
@@ -39,7 +39,7 @@ Sticker.defaultProps = {
 Sticker.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  type: PropTypes.oneOf(['circle', 'splash']),
+  type: PropTypes.oneOf(['circle', 'splash'])
 };
 
 export default Sticker;
