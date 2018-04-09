@@ -29,6 +29,7 @@
 
 ### Shape
 
+#### Square
 ```react
 <Button theme="primary" shape="square">
   <Icon source={checkIcon} />
@@ -45,6 +46,13 @@
 
 ```react
 <Button theme="primary" shape="square" size="small">
+  <Icon source={checkIcon} />
+</Button>
+```
+
+#### Circle
+```react
+<Button theme="primary" shape="circle">
   <Icon source={checkIcon} />
 </Button>
 ```
