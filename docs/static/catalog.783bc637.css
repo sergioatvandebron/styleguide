@@ -699,8 +699,11 @@
   border-radius: 5px;
   min-height: 40px;
   border: 2px solid #f1f0ef;
-  background-color: #f1f0ef; }
+  background-color: #f1f0ef;
+  /* postcss-bem-linter: ignore */ }
   .Van-Button > .Van-Icon {
+    position: relative;
+    top: 2px;
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
     .Van-Button > .Van-Icon:first-child {
@@ -832,6 +835,31 @@
         fill: #fff;
         background-color: #43b02a;
         border-color: #43b02a; }
+  .Van-Button--facebook {
+    color: #fff;
+    fill: #fff;
+    background-color: #37528d;
+    border-color: #37528d; }
+    .Van-Button--facebook:hover {
+      background-color: #405fa3;
+      border-color: #405fa3; }
+    .Van-Button--facebook.Van-Button--inverted {
+      color: #37528d;
+      fill: #37528d;
+      background-color: #fff;
+      border-color: #c0bdbd; }
+      .Van-Button--facebook.Van-Button--inverted:hover {
+        border-color: #405fa3; }
+    .Van-Button--facebook.Van-Button--grayscale {
+      color: #333d47;
+      fill: #333d47;
+      background-color: #fff;
+      border-color: #c0bdbd; }
+      .Van-Button--facebook.Van-Button--grayscale:hover {
+        color: #fff;
+        fill: #fff;
+        background-color: #37528d;
+        border-color: #37528d; }
   .Van-Button[disabled] {
     color: #c0bdbd;
     fill: #c0bdbd;
@@ -884,6 +912,10 @@
         margin-right: 0; }
       .Van-Button--square > .Van-Icon:last-child {
         margin-left: 0; }
+  .Van-Button--circle {
+    width: 40px;
+    border-radius: 50%;
+    padding: 0; }
 /** @define Heading */
 .Van-Heading--h1, .Van-Heading--h2, .Van-Heading--h3, .Van-Heading--h4 {
   font-weight: 700; }
@@ -3216,4 +3248,4 @@
       .Van-Sticker-icon {
         width: 90px; } }
 
-/*# sourceMappingURL=catalog.a2b98610.css.map*/
+/*# sourceMappingURL=catalog.783bc637.css.map*/
