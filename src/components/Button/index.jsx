@@ -34,6 +34,7 @@ class Button extends PureComponent {
           'Van-Button--full': full,
 
           'Van-Button--square': shape === 'square',
+          'Van-Button--circle': shape === 'circle',
 
           'Van-Button--inverted': inverted,
 
@@ -76,7 +77,7 @@ Button.propTypes = {
   full: PropTypes.bool,
   inverted: PropTypes.bool,
   grayscale: PropTypes.bool,
-  shape: PropTypes.string,
+  shape: PropTypes.oneOf(['', 'square', 'circle']),
   children: PropTypes.node
 };
 

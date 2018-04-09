@@ -22,6 +22,9 @@
   background-color: $color-grey-bright;
 
   > .Van-Icon {
+    position: relative;
+    top: 2px;
+
     /* postcss-bem-linter: ignore */
     &:first-child {
       margin-right: 0.5rem;
@@ -155,5 +158,11 @@
         margin-left: 0;
       }
     }
+  }
+
+  &--circle {
+    width: 40px;
+    border-radius: 50%;
+    padding: 0;
   }
 }
