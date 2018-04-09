@@ -25,6 +25,7 @@ class Button extends PureComponent {
           'Van-Button--warning': theme === 'warning',
           'Van-Button--danger': theme === 'danger',
           'Van-Button--success': theme === 'success',
+          'Van-Button--facebook': theme === 'facebook',
 
           'Van-Button--small': size === 'small',
           'Van-Button--compact': size === 'compact',
@@ -70,7 +71,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   className: PropTypes.string,
-  theme: PropTypes.oneOf(['', 'primary', 'info', 'warning', 'danger', 'success']),
+  theme: PropTypes.oneOf(['', 'primary', 'info', 'warning', 'danger', 'success', 'facebook']),
   size: PropTypes.oneOf(['', 'small', 'compact', 'big']),
   full: PropTypes.bool,
   inverted: PropTypes.bool,
