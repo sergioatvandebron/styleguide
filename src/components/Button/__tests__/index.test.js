@@ -194,4 +194,12 @@ describe("<Button>", () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it("renders a link", () => {
+    const tree = renderer.create(
+      <Button link href="https://vandebron.nl">Button link</Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
