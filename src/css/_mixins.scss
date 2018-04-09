@@ -57,9 +57,15 @@
     border-color: $bg-color;
 
     &:hover {
+      @include color-fill($text-color);
+
       background-color: lighten($bg-color, 6);
       border-color: lighten($bg-color, 6);
     }
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }
 
