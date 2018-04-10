@@ -39,7 +39,7 @@ Icon.defaultProps = {
 Icon.propTypes = {
   className: PropTypes.string,
   source: PropTypes.string,
-  animation: PropTypes.oneOf(['', 'spin'])
+  animation: PropTypes.oneOf(['', 'spin', 'pulse'])
 };
 
 export default Icon;
