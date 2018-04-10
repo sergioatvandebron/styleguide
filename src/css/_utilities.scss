@@ -135,3 +135,11 @@ $directionList: top bottom left right;
     @include spacing('padding', $direction);
   }
 }
+
+.Van-u-animation--spin {
+  animation: spin 2s infinite linear;
+}
+
+.Van-u-animation--pulse {
+  animation: spin 1s infinite steps(8);
+}
