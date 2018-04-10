@@ -34,6 +34,10 @@
     &:hover {
       border-color: lighten($bg-color, 6);
     }
+
+    &:focus {
+      @include color-fill($bg-color);
+    }
   }
 
   @else if $grayscale {
@@ -48,6 +52,10 @@
       background-color: $bg-color;
       border-color: $bg-color;
     }
+
+    &:focus {
+      @include color-fill($text-color);
+    }
   }
 
   @else {
@@ -61,6 +69,10 @@
 
       background-color: lighten($bg-color, 6);
       border-color: lighten($bg-color, 6);
+    }
+
+    &:focus {
+      @include color-fill($text-color);
     }
   }
 
