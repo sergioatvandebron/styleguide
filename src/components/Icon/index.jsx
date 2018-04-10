@@ -9,7 +9,7 @@ import './style.scss';
 
 class Icon extends PureComponent {
   render() {
-    const { className, source, ...props } = this.props;
+    const { className, source, animation, ...props } = this.props;
 
     if (!isSVG(source)) {
       return null;
@@ -18,7 +18,12 @@ class Icon extends PureComponent {
     return (
       <span
         className={classnames('Van-Icon', className)}
-        dangerouslySetInnerHTML={{ __html: source }}
+        dangerouslySetInnerHTML={{
+          __html:
+            animation === ''
+              ? source
+              : source.replace('<svg ', `<svg class="Van-u-animation--${animation}" `)
+        }}
         {...props}
       />
     );
@@ -27,12 +32,14 @@ class Icon extends PureComponent {
 
 Icon.defaultProps = {
   className: '',
-  source: ''
+  source: '',
+  animation: ''
 };
 
 Icon.propTypes = {
   className: PropTypes.string,
-  source: PropTypes.string
+  source: PropTypes.string,
+  animation: PropTypes.oneOf(['', 'spin', 'pulse'])
 };
 
 export default Icon;
