@@ -40,8 +40,8 @@ PhoneCard.defaultProps = {
 PhoneCard.propTypes = {
   withBorder: PropTypes.bool,
   className: PropTypes.string,
-  number: PropTypes.string,
-  description: PropTypes.string
+  number: PropTypes.node,
+  description: PropTypes.node
 };
 
 export default PhoneCard;
