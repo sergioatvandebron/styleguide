@@ -34,16 +34,6 @@
       }
     }
 
-    @keyframes scale {
-      from {
-        transform: scale(0);
-      }
-
-      to {
-        transform: scale(1);
-      }
-    }
-
     &:checked + .Van-InputRadio-styled {
       /* postcss-bem-linter: ignore */
       &::after {
