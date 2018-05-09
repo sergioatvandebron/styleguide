@@ -18,11 +18,16 @@
 @include font-face("black-italic", 900, "italic");
 
 * {
-  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
 
   &[class^="Van-"] {
     font-family: "Proxima Nova", sans-serif;
