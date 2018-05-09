@@ -168,3 +168,13 @@
     transform: rotate(359deg);
   }
 }
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
