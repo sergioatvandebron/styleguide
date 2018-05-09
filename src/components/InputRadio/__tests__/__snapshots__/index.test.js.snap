@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputRadio> renders the correct markup 1`] = `
+<span
+  className="Van-InputRadio"
+>
+  <input
+    className="Van-InputRadio-input"
+    type="radio"
+  />
+  <span
+    className="Van-InputRadio-styled"
+  />
+</span>
+`;
+
+exports[`<InputRadio> renders with specific attributes 1`] = `
+<span
+  className="Van-InputRadio"
+>
+  <input
+    className="Van-InputRadio-input"
+    data-id="0"
+    type="radio"
+    value="on"
+  />
+  <span
+    className="Van-InputRadio-styled"
+  />
+</span>
+`;
+
+exports[`<InputRadio> renders with specific className 1`] = `
+<span
+  className="Van-InputRadio my-class"
+>
+  <input
+    className="Van-InputRadio-input"
+    type="radio"
+  />
+  <span
+    className="Van-InputRadio-styled"
+  />
+</span>
+`;
