@@ -6,20 +6,20 @@
 .Van-Link {
   @include color-fill($color-primary-bright);
 
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @include color-fill($color-pink-primary);
   }
 
   &--secondary {
     @include color-fill($color-green-primary);
 
-    &:hover {
-      @include color-fill($color-green-primary);
-
-      text-decoration: underline;
+    &:hover,
+    &:focus {
+      @include color-fill($color-green-darker);
     }
   }
 }
