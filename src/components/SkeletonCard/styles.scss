@@ -3,6 +3,7 @@
 @import "../../css/variables";
 
 .Van-SkeletonCard {
+  position: relative;
   border: 2px solid $color-grey-bright;
   background-color: $color-white;
   padding: 20px;
