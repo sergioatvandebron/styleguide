@@ -33,3 +33,4 @@ export { default as Spinner } from './components/Spinner';
 export { default as Popover } from './components/Popover';
 export { default as Sticker } from './components/Sticker';
 export { default as InputRadio } from './components/InputRadio';
+export { default as InputCheckbox } from './components/InputCheckbox';
