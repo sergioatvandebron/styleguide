@@ -1,0 +1,51 @@
+@import "../../css/form-globals";
+
+@mixin input-message($state-name, $color, $border-color) {
+  .Van-TextInput-input {
+    border-color: $border-color;
+    padding-right: 30px;
+  }
+
+  .Van-TextInput-#{$state-name}-message {
+    color: $color;
+    font-size: 13px;
+    padding-top: 3px;
+  }
+
+  .Van-TextInput-icon {
+    fill: $color;
+  }
+}
+
+.Van-TextInput {
+  position: relative;
+
+  &-input {
+    background-color: $input-bg;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: $input-color;
+    display: block;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    width: 100%;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    top: 11px;
+    right: 8px;
+  }
+
+  &--error {
+    @include input-message("error", $input-error-color, $input-error-border);
+  }
+
+  &--success {
+    @include input-message("success", $input-success-color, $input-success-border);
+  }
+}
