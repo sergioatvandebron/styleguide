@@ -5,11 +5,11 @@ import './style.scss';
 
 class InputCheckbox extends PureComponent {
   render() {
-    const { className, ...props } = this.props;
+    const { meta, input, className, ...props } = this.props;
 
     return (
       <span className={classnames('Van-InputCheckbox', className)}>
-        <input type="checkbox" className="Van-InputCheckbox-input" {...props} />
+        <input type="checkbox" className="Van-InputCheckbox-input" {...props} {...input} />
         <span className="Van-InputCheckbox-styled" />
       </span>
     );
@@ -17,11 +17,15 @@ class InputCheckbox extends PureComponent {
 }
 
 InputCheckbox.defaultProps = {
-  className: ''
+  className: '',
+  meta: {},
+  input: {}
 };
 
 InputCheckbox.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  meta: PropTypes.object,
+  input: PropTypes.object
 };
 
 export default InputCheckbox;
