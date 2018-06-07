@@ -17,11 +17,15 @@ class InputRadio extends PureComponent {
 }
 
 InputRadio.defaultProps = {
-  className: ''
+  className: '',
+  meta: {},
+  input: {}
 };
 
 InputRadio.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  meta: PropTypes.object,
+  input: PropTypes.object
 };
 
 export default InputRadio;
