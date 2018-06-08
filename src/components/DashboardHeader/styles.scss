@@ -1,0 +1,287 @@
+@import '../../css/variables';
+
+.Van-DashboardHeader {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 -15px;
+  padding: 0 10px;
+
+  @media (min-width: $container-sm) {
+    padding: 0 15px;
+  }
+
+  &-logoWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 15px 0;
+  }
+
+  &-logoText {
+    margin-right: 5px;
+    font-size: 23.1px;
+    font-weight: lighter;
+
+    @media (min-width: $container-sm) {
+      font-size: 25px;
+    }
+  }
+
+  &-logo {
+    margin-top: 5px;
+    width: 109px;
+
+    @media (min-width: $container-sm) {
+      width: 135px;
+    }
+  }
+
+  &-addons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.Van-DashboardHeaderDropdown {
+  padding: 0 10px;
+  height: 100%;
+  display: flex;
+  position: relative;
+
+  @media (min-width: $container-sm) {
+    padding: 0 15px;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &--active {
+    background-color: $color-grey-bright;
+  }
+
+  &-iconWrapper {
+    margin-right: 15px;
+
+    svg {
+      fill: $color-grey-nobel;
+    }
+  }
+
+  &-captionWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &-caption {
+    text-align: left;
+  }
+
+  &-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &-subtitle {
+    color: $color-grey;
+    font-size: 14px;
+    font-weight: lighter;
+    margin-top: 2px;
+  }
+
+  &-toggle {
+    margin-left: 30px;
+
+    // svg {
+    //   fill: $color-grey;
+    // }
+  }
+
+  &-optionWrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 20;
+
+    > * {
+      border: 1px solid $color-grey-bright;
+
+      &:not(:first-child) {
+        border-top: 0;
+      }
+    }
+  }
+
+  &-sectionHeader {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $color-grey;
+  }
+
+  @media (max-width: $container-sm) {
+    &-iconWrapper {
+      margin: 0;
+    }
+
+    &-optionWrapper {
+      left: initial;
+      width: 216px;
+    }
+
+    &-caption,
+    &-toggle {
+      display: none;
+    }
+  }
+}
+
+.Van-DashboardHeaderDropdownEntry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 20;
+
+  &-iconWrapper {
+    margin-right: 15px;
+
+    svg {
+      fill: $color-grey-nobel;
+    }
+  }
+
+  &-caption {
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+  }
+
+  &-subcaption {
+    color: $color-grey;
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: $color-green-primary;
+    border-color: $color-green-primary;
+
+    > .Van-DashboardHeaderDropdownEntry-iconWrapper svg {
+      fill: white;
+    }
+
+    > .Van-DashboardHeaderDropdownEntry-option {
+      > .Van-DashboardHeaderDropdownEntry-subcaption {
+        color: white;
+      }
+
+      > .Van-DashboardHeaderDropdownEntry-caption {
+        color: white;
+      }
+    }
+  }
+}
+
+.Van-DashboardHeaderNotifications {
+  height: 100%;
+  position: relative;
+
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  &--hasContent {
+    > .Van-DashboardHeaderNotifications-toggle {
+      cursor: pointer;
+    }
+  }
+
+  &--active {
+    background-color: $color-grey-bright;
+  }
+
+  svg {
+    fill: $color-grey-nobel;
+  }
+
+  &-toggle {
+    padding: 0 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &-count {
+    $size: 15px;
+
+    align-items: center;
+    background-color: $color-blue-primary;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px #666;
+    color: white;
+    display: flex;
+    font-size: 10px;
+    font-weight: 600;
+    height: $size;
+    justify-content: center;
+    left: 12px;
+    max-height: $size;
+    max-width: $size;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    width: $size;
+    z-index: 21;
+  }
+
+  &-listWrapper {
+    background-color: transparent;
+    position: absolute;
+    top: 80%;
+    max-width: calc(100vw - 40px);
+    width: 320px;
+    right: 10px;
+  }
+
+  &-title {
+    font-weight: 600;
+    margin-top: 0;
+    padding-right: 25px;
+  }
+
+  &-notification {
+    background-color: $color-blue-bright;
+    border-radius: 5px;
+    padding: 15px;
+    color: white;
+    font-weight: normal;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 21;
+
+    &Close {
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+
+      svg {
+        fill: $color-facebook-blue;
+      }
+    }
+  }
+}

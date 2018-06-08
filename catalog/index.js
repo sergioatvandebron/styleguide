@@ -28,8 +28,14 @@ import {
   Spinner,
   Popover,
   Sticker,
+  DashboardHeader,
+  DashboardHeaderDropdown,
+  DashboardHeaderNotifications,
 } from '../src';
 import checkIcon from '../dist/icons/check.svg';
+import treeIcon from '../dist/icons/tree-ftic.svg';
+import drinksIcon from '../dist/icons/drinks.svg';
+import gearIcon from '../dist/icons/gear.svg';
 
 const pages = [
   {
@@ -194,7 +200,20 @@ const pages = [
         title: 'Sticker',
         content: pageLoader(() => import('./pages/components/sticker.md')),
         imports: { Sticker },
-      }
+      },
+      {
+        path: '/components/dashboard-header',
+        title: 'DashboardHeader',
+        content: pageLoader(() => import('./pages/components/dashboard-header.md')),
+        imports: {
+          DashboardHeader,
+          DashboardHeaderDropdown,
+          treeIcon,
+          drinksIcon,
+          gearIcon,
+          DashboardHeaderNotifications
+        },
+      },
     ]
   }
 ];
