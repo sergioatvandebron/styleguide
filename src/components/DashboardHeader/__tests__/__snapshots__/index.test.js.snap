@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardHeader /> correctly renders children 1`] = `
+<header
+  className="Van-DashboardHeader"
+>
+  <section
+    className="Van-DashboardHeader-logoWrapper"
+  >
+    <div
+      className="Van-DashboardHeader-logoText"
+    >
+      Mijn
+    </div>
+    <span
+      className="Van-DashboardHeader-logo"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+    />
+  </section>
+  <section
+    className="Van-DashboardHeader-addons"
+  >
+    <div
+      className="Van-DashboardHeaderDropdown"
+    >
+      <div
+        className="Van-DashboardHeaderDropdown-captionWrapper"
+        onBlur={[Function]}
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="Van-DashboardHeaderDropdown-iconWrapper"
+        />
+        <div
+          className="Van-DashboardHeaderDropdown-caption"
+        >
+          <div
+            className="Van-DashboardHeaderDropdown-title"
+          >
+            One dropdown
+          </div>
+        </div>
+        <div
+          className="Van-DashboardHeaderDropdown-toggle"
+        />
+      </div>
+    </div>
+    <div
+      className="Van-DashboardHeaderDropdown"
+    >
+      <div
+        className="Van-DashboardHeaderDropdown-captionWrapper"
+        onBlur={[Function]}
+        onClick={[Function]}
+        tabIndex="0"
+      >
+        <div
+          className="Van-DashboardHeaderDropdown-iconWrapper"
+        />
+        <div
+          className="Van-DashboardHeaderDropdown-caption"
+        >
+          <div
+            className="Van-DashboardHeaderDropdown-title"
+          >
+            Two dropdowns
+          </div>
+        </div>
+        <div
+          className="Van-DashboardHeaderDropdown-toggle"
+        />
+      </div>
+    </div>
+    <div
+      className="Van-DashboardHeaderNotifications Van-DashboardHeaderNotifications--hasContent"
+      onBlur={[Function]}
+      tabIndex="0"
+    >
+      <div
+        className="Van-DashboardHeaderNotifications-toggle"
+        onClick={[Function]}
+      >
+        <div
+          className="Van-DashboardHeaderNotifications-count"
+        >
+          1
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+`;
+
+exports[`<DashboardHeader /> renders the correct markup 1`] = `
+<header
+  className="Van-DashboardHeader"
+>
+  <section
+    className="Van-DashboardHeader-logoWrapper"
+  >
+    <div
+      className="Van-DashboardHeader-logoText"
+    >
+      Mijn
+    </div>
+    <span
+      className="Van-DashboardHeader-logo"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "test-file-stub",
+        }
+      }
+    />
+  </section>
+</header>
+`;
