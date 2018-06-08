@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
@@ -12,13 +13,13 @@ class DashboardHeaderDropdown extends React.Component {
     icon: PropTypes.string,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    children: PropTypes.node,
+    children: PropTypes.node
   };
 
   static defaultProps = {
     subtitle: null,
     children: null,
-    icon: null,
+    icon: null
   };
 
   state = {
@@ -66,10 +67,15 @@ class DashboardHeaderDropdown extends React.Component {
           </div>
         </div>
 
-        {children && isActive && (
-          <div className="Van-DashboardHeaderDropdown-optionWrapper" onMouseDown={this.preventDefault}>
-            {children}
-          </div>)}
+        {children &&
+          isActive && (
+            <div
+              className="Van-DashboardHeaderDropdown-optionWrapper"
+              onMouseDown={this.preventDefault}
+            >
+              {children}
+            </div>
+          )}
       </div>
     );
   }

@@ -20,11 +20,11 @@ const Notification = ({ close, title, children }) => (
 Notification.propTypes = {
   close: PropTypes.func,
   children: PropTypes.node.isRequired,
-  title: PropTypes.node.isRequired,
+  title: PropTypes.node.isRequired
 };
 
 Notification.defaultProps = {
-  close: null,
+  close: null
 };
 
 export default Notification;

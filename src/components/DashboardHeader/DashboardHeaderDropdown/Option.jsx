@@ -24,7 +24,7 @@ Option.propTypes = {
   icon: PropTypes.string,
   caption: PropTypes.node.isRequired,
   subcaption: PropTypes.string,
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired
 };
 
 Option.defaultProps = {
