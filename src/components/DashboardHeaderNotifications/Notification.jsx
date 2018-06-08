@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../../Icon';
-import iconClose from '../../../assets/icons/fa/close.svg';
+import Icon from '../Icon';
+import iconClose from '../../assets/icons/fa/close.svg';
 
 const Notification = ({ close, title, children }) => (
   <div className="Van-DashboardHeaderNotifications-notification">

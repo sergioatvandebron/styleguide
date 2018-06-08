@@ -36,8 +36,6 @@ export { default as InputRadio } from './components/InputRadio';
 export { default as InputCheckbox } from './components/InputCheckbox';
 export { default as Modal } from './components/Modal';
 export { default as Textarea } from './components/Textarea';
-export {
-  default as DashboardHeader,
-  DashboardHeaderDropdown,
-  DashboardHeaderNotifications
-} from './components/DashboardHeader';
+export { default as DashboardHeader } from './components/DashboardHeader';
+export { default as DashboardHeaderDropdown } from './components/DashboardHeaderDropdown';
+export { default as DashboardHeaderNotifications } from './components/DashboardHeaderNotifications';

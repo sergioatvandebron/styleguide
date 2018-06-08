@@ -24,5 +24,3 @@ DashboardHeader.propTypes = {
 };
 
 export default DashboardHeader;
-export { default as DashboardHeaderDropdown } from './DashboardHeaderDropdown';
-export { default as DashboardHeaderNotifications } from './DashboardHeaderNotifications';

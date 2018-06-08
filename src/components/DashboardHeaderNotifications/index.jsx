@@ -2,8 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../../Icon';
-import bell from '../../../assets/icons/fa/bell.svg';
+import Icon from '../Icon';
+import bell from '../../assets/icons/fa/bell.svg';
 import Notification from './Notification';
 
 class DashboardHeaderNotifications extends React.Component {
