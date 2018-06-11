@@ -8,11 +8,11 @@ import './style.scss';
 
 class Select extends PureComponent {
   render() {
-    const { className, children, ...props } = this.props;
+    const { className, children, value, ...props } = this.props;
 
     return (
       <div className={classnames('Van-Select', className)} {...props}>
-        <select>{children}</select>
+        <select value={value}>{children}</select>
         <Icon source={arrowDownIcon} />
       </div>
     );
@@ -21,12 +21,14 @@ class Select extends PureComponent {
 
 Select.defaultProps = {
   className: '',
-  children: ''
+  children: '',
+  value: undefined
 };
 
 Select.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  value: PropTypes.string
 };
 
 export default Select;
