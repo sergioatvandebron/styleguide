@@ -4,7 +4,9 @@ exports[`<Select> renders Select 1`] = `
 <div
   className="Van-Select"
 >
-  <select>
+  <select
+    value={undefined}
+  >
     <option>
       Option 1
     </option>
@@ -23,7 +25,9 @@ exports[`<Select> renders with specific attributes 1`] = `
   className="Van-Select"
   data-id="0"
 >
-  <select>
+  <select
+    value={undefined}
+  >
     <option>
       Option 1
     </option>
@@ -41,7 +45,9 @@ exports[`<Select> renders with specific className 1`] = `
 <div
   className="Van-Select my-class"
 >
-  <select>
+  <select
+    value={undefined}
+  >
     <option>
       Option 1
     </option>
