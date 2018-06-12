@@ -8,6 +8,8 @@
   background-color: $color-white;
   border-top: 1px solid $color-grey-bright;
   border-bottom: 1px solid $color-grey-bright;
+  margin-left: -15px;
+  margin-right: -15px;
 
   &-nav {
     margin: 0;
@@ -24,17 +26,13 @@
 
     &--active {
       .Van-DashboardMenu-link {
-        &,
-        &:hover,
-        &:active,
-        &:focus {
-          color: $color-green-bright;
-        }
+        color: $color-green-bright;
       }
     }
   }
 
   &-link {
+    color: $color-dark;
     font-size: $font-size-normal;
     font-weight: $font-weight-semibold;
     text-decoration: none;
@@ -42,11 +40,11 @@
     height: 100%;
     line-height: 50px;
 
-    &,
     &:hover,
     &:active,
     &:focus {
-      color: $color-dark;
+      color: $color-green-bright;
+      text-decoration: none;
     }
   }
 
