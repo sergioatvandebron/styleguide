@@ -31,6 +31,7 @@ import {
   DashboardHeader,
   DashboardHeaderDropdown,
   DashboardHeaderNotifications,
+  DashboardMenu,
 } from '../src';
 import checkIcon from '../dist/icons/check.svg';
 import treeIcon from '../dist/icons/tree-ftic.svg';
@@ -214,6 +215,12 @@ const pages = [
           DashboardHeaderNotifications
         },
       },
+      {
+        path: '/components/dashboard-menu',
+        title: 'DashboardMenu',
+        content: pageLoader(() => import('./pages/components/dashboard-menu.md')),
+        imports: { DashboardMenu },
+      }
     ]
   }
 ];

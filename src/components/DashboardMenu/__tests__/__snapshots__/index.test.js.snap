@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardMenu> renders DashboardMenu 1`] = `
+<nav
+  className="Van-DashboardMenu"
+>
+  <ul
+    className="Van-DashboardMenu-nav"
+  >
+    <li
+      className="Van-DashboardMenu-item"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/overzicht"
+        title="Overzicht"
+      >
+        Overzicht
+      </a>
+    </li>
+    <li
+      className="Van-DashboardMenu-item"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/laadpassen"
+        title="Laadpassen"
+      >
+        Laadpassen
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`<DashboardMenu> renders active item 1`] = `
+<nav
+  className="Van-DashboardMenu"
+>
+  <ul
+    className="Van-DashboardMenu-nav"
+  >
+    <li
+      className="Van-DashboardMenu-item Van-DashboardMenu-item--active"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/overzicht"
+        title="Overzicht"
+      >
+        Overzicht
+      </a>
+    </li>
+    <li
+      className="Van-DashboardMenu-item"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/laadpassen"
+        title="Laadpassen"
+      >
+        Laadpassen
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`<DashboardMenu> renders with specific attributes 1`] = `
+<nav
+  className="Van-DashboardMenu"
+  data-id="0"
+>
+  <ul
+    className="Van-DashboardMenu-nav"
+  >
+    <li
+      className="Van-DashboardMenu-item"
+      data-id="0"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/overzicht"
+        title="Overzicht"
+      >
+        Overzicht
+      </a>
+    </li>
+    <li
+      className="Van-DashboardMenu-item"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/laadpassen"
+        title="Laadpassen"
+      >
+        Laadpassen
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`<DashboardMenu> renders with specific className 1`] = `
+<nav
+  className="my-class"
+>
+  <ul
+    className="Van-DashboardMenu-nav"
+  >
+    <li
+      className="Van-DashboardMenu-item my-class"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/overzicht"
+        title="Overzicht"
+      >
+        Overzicht
+      </a>
+    </li>
+    <li
+      className="Van-DashboardMenu-item"
+      role="presentation"
+    >
+      <a
+        className="Van-DashboardMenu-link"
+        href="/ev/laadpassen"
+        title="Laadpassen"
+      >
+        Laadpassen
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
