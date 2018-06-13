@@ -8,8 +8,6 @@
   background-color: $color-white;
   border-top: 1px solid $color-grey-bright;
   border-bottom: 1px solid $color-grey-bright;
-  margin-left: -15px;
-  margin-right: -15px;
 
   &-nav {
     margin: 0;
@@ -23,28 +21,34 @@
   &-item {
     display: inline-block;
     margin-right: 45px;
-
-    &--active {
-      .Van-DashboardMenu-link {
-        color: $color-green-bright;
-      }
-    }
-  }
-
-  &-link {
-    color: $color-dark;
     font-size: $font-size-normal;
     font-weight: $font-weight-semibold;
-    text-decoration: none;
-    display: block;
+    color: $color-dark;
     height: 100%;
     line-height: 50px;
+    cursor: pointer;
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: $color-green-bright;
+    /* postcss-bem-linter: ignore */
+    > a {
+      color: $color-dark;
       text-decoration: none;
+      display: block;
+
+      /* postcss-bem-linter: ignore */
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color-green-bright;
+        text-decoration: none;
+      }
+    }
+
+    &--active {
+      /* postcss-bem-linter: ignore */
+      &,
+      > a {
+        color: $color-green-bright !important;
+      }
     }
   }
 

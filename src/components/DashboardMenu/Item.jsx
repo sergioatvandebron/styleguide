@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './styles.scss';
 
-const Item = ({ active, href, className, title, children, ...props }) => (
+const Item = ({ active, className, onClick, children, ...props }) => (
   <li
     className={classnames(
       'Van-DashboardMenu-item',
@@ -11,27 +11,24 @@ const Item = ({ active, href, className, title, children, ...props }) => (
       className
     )}
     role="presentation"
+    onClick={onClick}
     {...props}
   >
-    <a className="Van-DashboardMenu-link" href={href} title={title}>
-      {children}
-    </a>
+    {children}
   </li>
 );
 
 Item.defaultProps = {
   children: null,
-  href: '',
   active: false,
-  className: '',
-  title: ''
+  onClick: undefined,
+  className: ''
 };
 
 Item.propTypes = {
   children: PropTypes.node,
-  href: PropTypes.string,
   className: PropTypes.string,
-  title: PropTypes.string,
+  onClick: PropTypes.func,
   active: PropTypes.bool
 };
 

@@ -6,10 +6,10 @@ describe('<DashboardMenu>', () => {
   it("renders DashboardMenu", () => {
     const tree = renderer.create(
       <DashboardMenu>
-        <DashboardMenu.Item href="/ev/overzicht" title="Overzicht">
+        <DashboardMenu.Item>
           Overzicht
         </DashboardMenu.Item>
-        <DashboardMenu.Item href="/ev/laadpassen" title="Laadpassen">
+        <DashboardMenu.Item>
           Laadpassen
         </DashboardMenu.Item>
       </DashboardMenu>
@@ -21,11 +21,26 @@ describe('<DashboardMenu>', () => {
   it("renders active item", () => {
     const tree = renderer.create(
       <DashboardMenu>
-        <DashboardMenu.Item href="/ev/overzicht" title="Overzicht" active>
+        <DashboardMenu.Item active>
           Overzicht
         </DashboardMenu.Item>
-        <DashboardMenu.Item href="/ev/laadpassen" title="Laadpassen">
+        <DashboardMenu.Item>
           Laadpassen
+        </DashboardMenu.Item>
+      </DashboardMenu>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders menu with a link element", () => {
+    const tree = renderer.create(
+      <DashboardMenu>
+        <DashboardMenu.Item>
+          <a href="#">Overzicht</a>
+        </DashboardMenu.Item>
+        <DashboardMenu.Item>
+          <a href="#">Laadpassen</a>
         </DashboardMenu.Item>
       </DashboardMenu>
     ).toJSON();
@@ -36,10 +51,10 @@ describe('<DashboardMenu>', () => {
   it("renders with specific className", () => {
     const tree = renderer.create(
       <DashboardMenu className="my-class">
-        <DashboardMenu.Item className="my-class" href="/ev/overzicht" title="Overzicht">
+        <DashboardMenu.Item className="my-class">
           Overzicht
         </DashboardMenu.Item>
-        <DashboardMenu.Item href="/ev/laadpassen" title="Laadpassen">
+        <DashboardMenu.Item>
           Laadpassen
         </DashboardMenu.Item>
       </DashboardMenu>
@@ -51,10 +66,10 @@ describe('<DashboardMenu>', () => {
   it("renders with specific attributes", () => {
     const tree = renderer.create(
       <DashboardMenu data-id="0">
-        <DashboardMenu.Item data-id="0" href="/ev/overzicht" title="Overzicht">
+        <DashboardMenu.Item data-id="0">
           Overzicht
         </DashboardMenu.Item>
-        <DashboardMenu.Item href="/ev/laadpassen" title="Laadpassen">
+        <DashboardMenu.Item>
           Laadpassen
         </DashboardMenu.Item>
       </DashboardMenu>

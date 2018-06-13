@@ -9,27 +9,17 @@ exports[`<DashboardMenu> renders DashboardMenu 1`] = `
   >
     <li
       className="Van-DashboardMenu-item"
+      onClick={undefined}
       role="presentation"
     >
-      <a
-        className="Van-DashboardMenu-link"
-        href="/ev/overzicht"
-        title="Overzicht"
-      >
-        Overzicht
-      </a>
+      Overzicht
     </li>
     <li
       className="Van-DashboardMenu-item"
+      onClick={undefined}
       role="presentation"
     >
-      <a
-        className="Van-DashboardMenu-link"
-        href="/ev/laadpassen"
-        title="Laadpassen"
-      >
-        Laadpassen
-      </a>
+      Laadpassen
     </li>
   </ul>
 </nav>
@@ -44,24 +34,47 @@ exports[`<DashboardMenu> renders active item 1`] = `
   >
     <li
       className="Van-DashboardMenu-item Van-DashboardMenu-item--active"
+      onClick={undefined}
+      role="presentation"
+    >
+      Overzicht
+    </li>
+    <li
+      className="Van-DashboardMenu-item"
+      onClick={undefined}
+      role="presentation"
+    >
+      Laadpassen
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`<DashboardMenu> renders menu with a link element 1`] = `
+<nav
+  className="Van-DashboardMenu"
+>
+  <ul
+    className="Van-DashboardMenu-nav"
+  >
+    <li
+      className="Van-DashboardMenu-item"
+      onClick={undefined}
       role="presentation"
     >
       <a
-        className="Van-DashboardMenu-link"
-        href="/ev/overzicht"
-        title="Overzicht"
+        href="#"
       >
         Overzicht
       </a>
     </li>
     <li
       className="Van-DashboardMenu-item"
+      onClick={undefined}
       role="presentation"
     >
       <a
-        className="Van-DashboardMenu-link"
-        href="/ev/laadpassen"
-        title="Laadpassen"
+        href="#"
       >
         Laadpassen
       </a>
@@ -81,27 +94,17 @@ exports[`<DashboardMenu> renders with specific attributes 1`] = `
     <li
       className="Van-DashboardMenu-item"
       data-id="0"
+      onClick={undefined}
       role="presentation"
     >
-      <a
-        className="Van-DashboardMenu-link"
-        href="/ev/overzicht"
-        title="Overzicht"
-      >
-        Overzicht
-      </a>
+      Overzicht
     </li>
     <li
       className="Van-DashboardMenu-item"
+      onClick={undefined}
       role="presentation"
     >
-      <a
-        className="Van-DashboardMenu-link"
-        href="/ev/laadpassen"
-        title="Laadpassen"
-      >
-        Laadpassen
-      </a>
+      Laadpassen
     </li>
   </ul>
 </nav>
@@ -109,34 +112,24 @@ exports[`<DashboardMenu> renders with specific attributes 1`] = `
 
 exports[`<DashboardMenu> renders with specific className 1`] = `
 <nav
-  className="my-class"
+  className="Van-DashboardMenu my-class"
 >
   <ul
     className="Van-DashboardMenu-nav"
   >
     <li
       className="Van-DashboardMenu-item my-class"
+      onClick={undefined}
       role="presentation"
     >
-      <a
-        className="Van-DashboardMenu-link"
-        href="/ev/overzicht"
-        title="Overzicht"
-      >
-        Overzicht
-      </a>
+      Overzicht
     </li>
     <li
       className="Van-DashboardMenu-item"
+      onClick={undefined}
       role="presentation"
     >
-      <a
-        className="Van-DashboardMenu-link"
-        href="/ev/laadpassen"
-        title="Laadpassen"
-      >
-        Laadpassen
-      </a>
+      Laadpassen
     </li>
   </ul>
 </nav>
