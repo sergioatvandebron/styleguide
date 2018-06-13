@@ -51,6 +51,9 @@ rows:
     Description: This attribute indicates if the menu item is active
     Type: Boolean
     Default: 'false'
+  - Property: onClick
+    Description: Callback function called on item is clicked
+    Type: Function
   - Property: children
     Description: Menu item text
     Type: Node
