@@ -4131,5 +4131,48 @@ button.close {
       top: 15px; }
       .Van-DashboardHeaderNotifications-notificationClose svg {
         fill: #37528d; }
+/** @define DashboardMenu */
+.Van-DashboardMenu {
+  position: relative;
+  height: 50px;
+  background-color: #fff;
+  border-top: 1px solid #f1f0ef;
+  border-bottom: 1px solid #f1f0ef; }
+  .Van-DashboardMenu-nav {
+    margin: 0;
+    display: block;
+    height: 50px;
+    list-style: none;
+    white-space: nowrap;
+    padding: 0 15px; }
+  .Van-DashboardMenu-item {
+    display: inline-block;
+    margin-right: 45px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #363639;
+    height: 100%;
+    line-height: 50px;
+    cursor: pointer;
+    /* postcss-bem-linter: ignore */ }
+    .Van-DashboardMenu-item > a {
+      color: #363639;
+      text-decoration: none;
+      display: block;
+      /* postcss-bem-linter: ignore */ }
+      .Van-DashboardMenu-item > a:hover, .Van-DashboardMenu-item > a:active, .Van-DashboardMenu-item > a:focus {
+        color: #7cc869;
+        text-decoration: none; }
+    .Van-DashboardMenu-item--active {
+      /* postcss-bem-linter: ignore */ }
+      .Van-DashboardMenu-item--active,
+      .Van-DashboardMenu-item--active > a {
+        color: #7cc869 !important; }
+  @media (max-width: 768px) {
+    .Van-DashboardMenu {
+      overflow-y: hidden;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: -ms-autohiding-scrollbar; } }
 
 /*# sourceMappingURL=catalog.css.map*/
