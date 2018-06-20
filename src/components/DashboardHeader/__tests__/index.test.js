@@ -48,14 +48,16 @@ describe('<DashboardHeader />', () => {
 });
 
 describe('<DashboardHeaderDropdown.Option', () => {
-  it('calls the callback `handleClick` when an option is clicked', () => {
-    const mock = jest.fn();
+  it('calls the callback `handleClick` and closes the menu when an option is clicked', () => {
+    const handleClick = jest.fn();
+    const closeMenu = jest.fn();
     const component = mount(
-      <DashboardHeaderDropdown.Option handleClick={mock} caption="test" />
+      <DashboardHeaderDropdown.Option handleClick={handleClick} closeMenu={closeMenu} caption="test" />
     );
 
     component.find('.Van-DashboardHeaderDropdownEntry').simulate('click');
-    expect(mock.mock.calls.length).toBe(1);
+    expect(handleClick.mock.calls.length).toBe(1);
+    expect(closeMenu.mock.calls.length).toBe(1);
   });
 });
 
