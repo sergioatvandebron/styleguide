@@ -6,7 +6,7 @@ class Option extends React.Component {
   handleClickAndClose = ev => {
     this.props.handleClick(ev);
     this.props.closeMenu();
-  }
+  };
 
   render() {
     const { icon, caption, subcaption } = this.props;
