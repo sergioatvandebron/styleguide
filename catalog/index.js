@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Catalog, pageLoader, ReactSpecimen } from "catalog";
+import { Catalog, pageLoader, ReactSpecimen } from 'catalog';
+import ClipboardJS from 'clipboard';
 
 import {
   Button,
@@ -37,6 +38,16 @@ import checkIcon from '../dist/icons/check.svg';
 import treeIcon from '../dist/icons/tree-ftic.svg';
 import drinksIcon from '../dist/icons/drinks.svg';
 import gearIcon from '../dist/icons/gear.svg';
+
+const svgs = require.context('../dist/icons', true, /\.svg$/);
+const icons = svgs.keys().map(key => {
+  const iconName = key.split('./')[1];
+
+  return {
+    name: iconName,
+    svg: require(`../dist/icons/${iconName}`)
+  }
+});
 
 const pages = [
   {
@@ -147,7 +158,7 @@ const pages = [
         path: '/elements/icon',
         title: 'Icon',
         content: pageLoader(() => import('./pages/elements/icons.md')),
-        imports: { Icon },
+        imports: { Icon, gearIcon, icons, ClipboardJS },
       },
       {
         path: '/elements/skeleton-body-text',

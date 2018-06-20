@@ -1,27 +1,14 @@
-### Font awesome
-We have all font awesome icons available. If the icon name has multiple words, you must write it in camel case, eg. `user-circle` must be `userCircle`.
+### How to use
+To use an icon you have to import the `Icon` component and also the `.svg` file.
 
-http://fontawesome.io/icons/
+```code
+lang: jsx
+---
+import { Icon } from 'vandebron-styleguide';
+import gearIcon from 'vandebron-styleguide/dist/icons/gear.svg';
 
-```react
-<Icon source="userCircle" />
+<Icon source={gearIcon} />
 ```
-
-Or if you want you can list all available icons.
-```
-import * as ICONS from 'styleguide/icons/fa';
-```
-
-### Ftic
-```react
-<Icon source="bio" />
-```
-
-You want you can list all available icons.
-```
-import * as ICONS from 'styleguide/icons/ftic';
-```
-
 
 ### API
 
@@ -32,14 +19,33 @@ columns:
   - Type
   - Default
 rows:
-  - Property: type
-    Description: set heading tag `h1`, `h2`, `h3`, `h4`
+  - Property: source
+    Description: the SVG file content
     Type: string
-    Default: h1
-  - Property: inverted
-    Description: invert colors
-    Type: bool
-  - Property: className
-    Description: sdfdsf
+  - Property: animation
+    Description: the type of animation, one of `spin`, `pulse`
     Type: string
+```
+
+### Available Icons
+Click at the icon that you want to use to copy the importing code to your clipboard.
+
+```react
+noSource
+---
+new ClipboardJS('.catalog-icon', {
+  text: function(trigger) {
+    const iconName = trigger.querySelector('.icon-name').innerHTML;
+    return `import icon from 'vandebron-styleguide/dist/icons/${iconName}';`;
+  }
+});
+
+<div className="catalog-icons">
+  {icons.map((i, idx) => (
+    <div className="catalog-icon" key={`icon-${idx}`}>
+      <Icon source={i.svg} />
+      <span className="icon-name">{i.name}</span>
+    </div>
+  ))}
+</div>
 ```
