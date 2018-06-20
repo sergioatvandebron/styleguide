@@ -43,6 +43,11 @@ class DashboardHeaderDropdown extends React.Component {
       'Van-DashboardHeaderDropdown--active': this.state.isActive
     });
 
+    // pass closeMenu() down to all props
+    const cloned = React.Children.map(children, child =>
+      React.cloneElement(child, { closeMenu: this.closeMenu })
+    );
+
     return (
       <div className={classes}>
         <div
@@ -73,7 +78,7 @@ class DashboardHeaderDropdown extends React.Component {
               className="Van-DashboardHeaderDropdown-optionWrapper"
               onMouseDown={this.preventDefault}
             >
-              {children}
+              {cloned}
             </div>
           )}
       </div>
