@@ -44,7 +44,7 @@
     @include color-fill($color-primary);
 
     background-color: $text-color;
-    border-color: $color-grey;
+    border-color: $color-grey-bright;
 
     &:hover {
       @include color-fill($text-color);
