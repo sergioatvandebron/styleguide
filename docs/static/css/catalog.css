@@ -747,6 +747,8 @@
   .Van-Button > .Van-Icon {
     position: relative;
     top: 2px;
+    width: 17px;
+    height: 17px;
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
     .Van-Button > .Van-Icon:first-child {
@@ -784,15 +786,12 @@
       color: #333d47;
       fill: #333d47;
       background-color: #fff;
-      border-color: #c0bdbd; }
+      border-color: #f1f0ef; }
       .Van-Button--primary.Van-Button--grayscale:hover {
         color: #fff;
         fill: #fff;
         background-color: #e83f7a;
         border-color: #e83f7a; }
-      .Van-Button--primary.Van-Button--grayscale:focus {
-        color: #fff;
-        fill: #fff; }
       .Van-Button--primary.Van-Button--grayscale:hover {
         text-decoration: none; }
   .Van-Button--info {
@@ -826,15 +825,12 @@
       color: #333d47;
       fill: #333d47;
       background-color: #fff;
-      border-color: #c0bdbd; }
+      border-color: #f1f0ef; }
       .Van-Button--info.Van-Button--grayscale:hover {
         color: #fff;
         fill: #fff;
         background-color: #00a3e0;
         border-color: #00a3e0; }
-      .Van-Button--info.Van-Button--grayscale:focus {
-        color: #fff;
-        fill: #fff; }
       .Van-Button--info.Van-Button--grayscale:hover {
         text-decoration: none; }
   .Van-Button--warning {
@@ -868,15 +864,12 @@
       color: #333d47;
       fill: #333d47;
       background-color: #fff;
-      border-color: #c0bdbd; }
+      border-color: #f1f0ef; }
       .Van-Button--warning.Van-Button--grayscale:hover {
         color: #fff;
         fill: #fff;
         background-color: #ff761c;
         border-color: #ff761c; }
-      .Van-Button--warning.Van-Button--grayscale:focus {
-        color: #fff;
-        fill: #fff; }
       .Van-Button--warning.Van-Button--grayscale:hover {
         text-decoration: none; }
   .Van-Button--danger {
@@ -910,15 +903,12 @@
       color: #333d47;
       fill: #333d47;
       background-color: #fff;
-      border-color: #c0bdbd; }
+      border-color: #f1f0ef; }
       .Van-Button--danger.Van-Button--grayscale:hover {
         color: #fff;
         fill: #fff;
         background-color: #d9483b;
         border-color: #d9483b; }
-      .Van-Button--danger.Van-Button--grayscale:focus {
-        color: #fff;
-        fill: #fff; }
       .Van-Button--danger.Van-Button--grayscale:hover {
         text-decoration: none; }
   .Van-Button--success {
@@ -952,15 +942,12 @@
       color: #333d47;
       fill: #333d47;
       background-color: #fff;
-      border-color: #c0bdbd; }
+      border-color: #f1f0ef; }
       .Van-Button--success.Van-Button--grayscale:hover {
         color: #fff;
         fill: #fff;
         background-color: #43b02a;
         border-color: #43b02a; }
-      .Van-Button--success.Van-Button--grayscale:focus {
-        color: #fff;
-        fill: #fff; }
       .Van-Button--success.Van-Button--grayscale:hover {
         text-decoration: none; }
   .Van-Button--facebook {
@@ -994,15 +981,12 @@
       color: #333d47;
       fill: #333d47;
       background-color: #fff;
-      border-color: #c0bdbd; }
+      border-color: #f1f0ef; }
       .Van-Button--facebook.Van-Button--grayscale:hover {
         color: #fff;
         fill: #fff;
         background-color: #37528d;
         border-color: #37528d; }
-      .Van-Button--facebook.Van-Button--grayscale:focus {
-        color: #fff;
-        fill: #fff; }
       .Van-Button--facebook.Van-Button--grayscale:hover {
         text-decoration: none; }
   .Van-Button[disabled] {
