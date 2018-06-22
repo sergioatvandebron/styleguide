@@ -52,10 +52,6 @@
       background-color: $bg-color;
       border-color: $bg-color;
     }
-
-    &:focus {
-      @include color-fill($text-color);
-    }
   }
 
   @else {
