@@ -1,3 +1,13 @@
+# Vandebron Style Guide
+
+This project is a collection of React components built on top of [React Bootstrap](https://react-bootstrap.github.io/).
+
+To run in development mode, run
+
+    yarn start-catalog
+
+then open [http://localhost:4000/](http://localhost:4000/).
+
 ## Elements
 - [x] Headings
 - [x] Paragraph

@@ -13,6 +13,7 @@
   "main": "./dist/js/bundle.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --config ./config/webpack.config.dev.babel.js",
+    "start-catalog": "catalog start",
     "dist": "webpack --config ./config/webpack.config.prod.babel.js",
     "test": "jest",
     "test-watch": "jest --watch",
