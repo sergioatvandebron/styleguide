@@ -33,7 +33,7 @@ Span.defaultProps = {
 
 Span.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.oneOf([PropTypes.string, PropTypes.element])
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 };
 
 export default Span;
