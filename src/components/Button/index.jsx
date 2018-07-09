@@ -13,12 +13,21 @@ class Button extends PureComponent {
       inverted,
       shape,
       grayscale,
+      plain,
       link,
       children,
       ...props
     } = this.props;
 
-    const CustomTag = link ? 'a' : 'button';
+    let CustomTag;
+
+    if (plain) {
+      CustomTag = 'span';
+    } else if (link) {
+      CustomTag = 'a';
+    } else {
+      CustomTag = 'button';
+    }
 
     return (
       <CustomTag
@@ -71,6 +80,7 @@ Button.defaultProps = {
   grayscale: false,
   shape: '',
   link: false,
+  plain: false,
   children: ''
 };
 
@@ -83,6 +93,7 @@ Button.propTypes = {
   grayscale: PropTypes.bool,
   shape: PropTypes.oneOf(['', 'square', 'circle']),
   link: PropTypes.bool,
+  plain: PropTypes.bool,
   children: PropTypes.node
 };
 

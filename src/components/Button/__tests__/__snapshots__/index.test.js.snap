@@ -172,6 +172,14 @@ exports[`<Button> renders success button 1`] = `
 </button>
 `;
 
+exports[`<Button> renders the button as a span 1`] = `
+<span
+  className="Van-Button"
+>
+  My span button
+</span>
+`;
+
 exports[`<Button> renders warning button 1`] = `
 <button
   className="Van-Button Van-Button--warning"

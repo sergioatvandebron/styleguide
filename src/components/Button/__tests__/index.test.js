@@ -202,4 +202,12 @@ describe("<Button>", () => {
 
     expect(tree).toMatchSnapshot();
   });
+
+  it("renders the button as a span", () => {
+    const tree = renderer.create(
+      <Button plain>My span button</Button>
+    ).toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
