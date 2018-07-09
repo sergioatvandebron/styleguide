@@ -3893,7 +3893,12 @@ button.close {
       border-bottom: 0;
       padding: 35px 40px 25px; }
     .Van-Modal .modal-content {
-      border-radius: 0; }
+      border-radius: 0;
+      box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+      border: 0; }
+      @media (min-width: 768px) {
+        .Van-Modal .modal-content {
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); } }
     .Van-Modal .modal-body {
       padding: 0 40px 40px; }
 .Van-TextInput {
@@ -4159,4 +4164,4 @@ button.close {
       -webkit-overflow-scrolling: touch;
       -ms-overflow-style: -ms-autohiding-scrollbar; } }
 
-/*# sourceMappingURL=catalog.3570e5f6.css.map*/
+/*# sourceMappingURL=catalog.18564088.css.map*/
