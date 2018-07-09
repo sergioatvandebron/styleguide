@@ -94,6 +94,13 @@ Make button act like a link.
 <Button theme="primary" href="https://vandebron.nl" target="_blank" link>Big link</Button>
 ```
 
+### Plain
+Renders Button as a `span` tag instead of `button`.
+
+```react
+<Button theme="primary" plain>Plain button</Button>
+```
+
 
 ### API
 
@@ -111,10 +118,24 @@ rows:
   - Property: size
     Description: Button size `compact`, `small`, `big`
     Type: string
+    Default: small
+  - Property: shape
+    Description: Button shape `square`, `circle`
+    Type: string
   - Property: inverted
     Description: invert colors
     Type: bool
-  - Property: className
-    Description: sdfdsf
-    Type: string
+    Default: 'false'
+  - Property: grayscale
+    Description: Default button style should be grayscale
+    Type: bool
+    Default: 'false'
+  - Property: link
+    Description: renders as a link element
+    Type: bool
+    Default: 'false'
+  - Property: plain
+    Description: renders with a `span` tag
+    Type: bool
+    Default: 'false'
 ```
