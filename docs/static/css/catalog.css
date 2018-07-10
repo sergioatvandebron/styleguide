@@ -730,11 +730,11 @@
   align-items: center;
   font-size: 18px;
   font-weight: 600;
-  line-height: 22px;
+  line-height: 1.5;
   justify-content: center;
   text-align: center;
   white-space: nowrap;
-  padding: 0 15px;
+  padding: 5px 15px;
   margin: 0;
   text-decoration: none;
   cursor: pointer;
@@ -1019,13 +1019,15 @@
     .Van-Button--square.Van-Button--small {
       width: 50px;
       height: 40px;
+      padding: 0 5px;
       /* postcss-bem-linter: ignore */
       /* postcss-bem-linter: ignore */ }
       .Van-Button--square.Van-Button--small > span {
         display: none; }
       .Van-Button--square.Van-Button--small > .Van-Icon {
-        display: block;
-        height: 25px; }
+        display: inline-block;
+        width: 35px;
+        max-height: 25px; }
     .Van-Button--square .Van-Button-text {
       margin-bottom: 10px; }
     .Van-Button--square > .Van-Icon {
