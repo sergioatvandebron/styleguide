@@ -1,19 +1,19 @@
 ```react
 <DashboardMenu>
-  <DashboardMenu.Item href="/overzicht" title="Overzicht" active>
-    Overzicht
+  <DashboardMenu.Item active>
+    <a href="#/components/dashboard-menu" title="Overzicht">Overzicht</a>
   </DashboardMenu.Item>
-  <DashboardMenu.Item href="/laadpassen" title="Laadpassen">
-    Laadpassen
+  <DashboardMenu.Item>
+    <a href="#/components/dashboard-menu" title="Laadpassen">Laadpassen</a>
   </DashboardMenu.Item>
-  <DashboardMenu.Item href="/laadsessies" title="Laadsessies">
-    Laadsessies
+  <DashboardMenu.Item>
+    <a href="#/components/dashboard-menu" title="Laadsessies">Laadsessies</a>
   </DashboardMenu.Item>
-  <DashboardMenu.Item href="/facturen" title="Facturen">
-    Facturen
+  <DashboardMenu.Item>
+    <a href="#/components/dashboard-menu" title="Facturen">Facturen</a>
   </DashboardMenu.Item>
-  <DashboardMenu.Item href="/gegevens" title="Gegevens">
-    Gegevens
+  <DashboardMenu.Item>
+    <a href="#/components/dashboard-menu" title="Gegevens">Gegevens</a>
   </DashboardMenu.Item>
 </DashboardMenu>
 ```
