@@ -6,6 +6,7 @@ exports[`<DashboardMenu> renders DashboardMenu 1`] = `
 >
   <ul
     className="Van-DashboardMenu-nav"
+    onScroll={[Function]}
   >
     <li
       className="Van-DashboardMenu-item"
@@ -31,6 +32,7 @@ exports[`<DashboardMenu> renders active item 1`] = `
 >
   <ul
     className="Van-DashboardMenu-nav"
+    onScroll={[Function]}
   >
     <li
       className="Van-DashboardMenu-item Van-DashboardMenu-item--active"
@@ -56,6 +58,7 @@ exports[`<DashboardMenu> renders menu with a link element 1`] = `
 >
   <ul
     className="Van-DashboardMenu-nav"
+    onScroll={[Function]}
   >
     <li
       className="Van-DashboardMenu-item"
@@ -90,6 +93,7 @@ exports[`<DashboardMenu> renders with specific attributes 1`] = `
 >
   <ul
     className="Van-DashboardMenu-nav"
+    onScroll={[Function]}
   >
     <li
       className="Van-DashboardMenu-item"
@@ -116,6 +120,7 @@ exports[`<DashboardMenu> renders with specific className 1`] = `
 >
   <ul
     className="Van-DashboardMenu-nav"
+    onScroll={[Function]}
   >
     <li
       className="Van-DashboardMenu-item my-class"

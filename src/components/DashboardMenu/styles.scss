@@ -29,6 +29,10 @@
     line-height: 50px;
     cursor: pointer;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     /* postcss-bem-linter: ignore */
     > a {
       color: $color-dark;
@@ -69,16 +73,29 @@
       height: 100%;
       top: 0;
       pointer-events: none;
+      opacity: 0;
     }
 
     &::after {
-      background: linear-gradient(to right, $color-white, transparent 80%);
+      background: linear-gradient(to right, $color-grey-bright, transparent 90%);
       left: 0;
     }
 
     &::before {
-      background: linear-gradient(to left, $color-white, transparent 80%);
+      background: linear-gradient(to left, $color-grey-bright, transparent 90%);
       right: 0;
+    }
+
+    &--startShadow {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &--endShadow {
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }
