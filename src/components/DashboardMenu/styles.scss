@@ -8,6 +8,7 @@
   background-color: $color-white;
   border-top: 1px solid $color-grey-bright;
   border-bottom: 1px solid $color-grey-bright;
+  overflow: hidden;
 
   &-nav {
     margin: 0;
@@ -52,10 +53,32 @@
     }
   }
 
-  @media (max-width: $container-sm) {
-    overflow-y: hidden;
-    overflow-x: scroll;
+  @media (max-width: $container-xs) {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    &-nav {
+      overflow-x: scroll;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      width: 3em;
+      height: 100%;
+      top: 0;
+      pointer-events: none;
+    }
+
+    &::after {
+      background: linear-gradient(to right, $color-white, transparent 80%);
+      left: 0;
+    }
+
+    &::before {
+      background: linear-gradient(to left, $color-white, transparent 80%);
+      right: 0;
+    }
   }
 }
