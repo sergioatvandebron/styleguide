@@ -4129,7 +4129,8 @@ button.close {
   height: 50px;
   background-color: #fff;
   border-top: 1px solid #f1f0ef;
-  border-bottom: 1px solid #f1f0ef; }
+  border-bottom: 1px solid #f1f0ef;
+  overflow: hidden; }
   .Van-DashboardMenu-nav {
     margin: 0;
     display: block;
@@ -4147,6 +4148,8 @@ button.close {
     line-height: 50px;
     cursor: pointer;
     /* postcss-bem-linter: ignore */ }
+    .Van-DashboardMenu-item:last-child {
+      margin-right: 0; }
     .Van-DashboardMenu-item > a {
       color: #363639;
       text-decoration: none;
@@ -4160,11 +4163,29 @@ button.close {
       .Van-DashboardMenu-item--active,
       .Van-DashboardMenu-item--active > a {
         color: #7cc869 !important; }
-  @media (max-width: 768px) {
+  @media (max-width: 412px) {
     .Van-DashboardMenu {
-      overflow-y: hidden;
-      overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
-      -ms-overflow-style: -ms-autohiding-scrollbar; } }
+      -ms-overflow-style: -ms-autohiding-scrollbar; }
+      .Van-DashboardMenu-nav {
+        overflow-x: scroll; }
+      .Van-DashboardMenu::after, .Van-DashboardMenu::before {
+        content: "";
+        position: absolute;
+        width: 3em;
+        height: 100%;
+        top: 0;
+        pointer-events: none;
+        opacity: 0; }
+      .Van-DashboardMenu::after {
+        background: linear-gradient(to right, #f1f0ef, transparent 90%);
+        left: 0; }
+      .Van-DashboardMenu::before {
+        background: linear-gradient(to left, #f1f0ef, transparent 90%);
+        right: 0; }
+      .Van-DashboardMenu--startShadow::after {
+        opacity: 1; }
+      .Van-DashboardMenu--endShadow::before {
+        opacity: 1; } }
 
-/*# sourceMappingURL=catalog.6fb0a7d3.css.map*/
+/*# sourceMappingURL=catalog.f778f444.css.map*/
