@@ -69,20 +69,21 @@
     &::before {
       content: "";
       position: absolute;
-      width: 3em;
+      width: 2em;
       height: 100%;
       top: 0;
       pointer-events: none;
       opacity: 0;
+      z-index: 80;
     }
 
     &::after {
-      background: linear-gradient(to right, $color-grey-bright, transparent 90%);
+      background: linear-gradient(to right, $color-grey-light, $color-white 90%);
       left: 0;
     }
 
     &::before {
-      background: linear-gradient(to left, $color-grey-bright, transparent 90%);
+      background: linear-gradient(to left, $color-grey-light, $color-white 90%);
       right: 0;
     }
 
