@@ -4172,16 +4172,17 @@ button.close {
       .Van-DashboardMenu::after, .Van-DashboardMenu::before {
         content: "";
         position: absolute;
-        width: 3em;
+        width: 2em;
         height: 100%;
         top: 0;
         pointer-events: none;
-        opacity: 0; }
+        opacity: 0;
+        z-index: 80; }
       .Van-DashboardMenu::after {
-        background: linear-gradient(to right, #f1f0ef, transparent 90%);
+        background: linear-gradient(to right, #d2d2d2, #fff 90%);
         left: 0; }
       .Van-DashboardMenu::before {
-        background: linear-gradient(to left, #f1f0ef, transparent 90%);
+        background: linear-gradient(to left, #d2d2d2, #fff 90%);
         right: 0; }
       .Van-DashboardMenu--startShadow::after {
         opacity: 1; }
