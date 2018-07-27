@@ -1,6 +1,6 @@
 {
   "name": "vandebron-styleguide",
-  "version": "0.19.7",
+  "version": "0.19.8",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
