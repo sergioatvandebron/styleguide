@@ -77,6 +77,7 @@ $directionList: top bottom left right;
 .Van-u-color-green-primary { @include color-fill($color-green-primary); }
 .Van-u-color-green-light { @include color-fill($color-green-light); }
 .Van-u-color-green-bright { @include color-fill($color-green-bright); }
+.Van-u-color-green-brightst { @include color-fill($color-green-brightst); }
 .Van-u-color-yelno { @include color-fill($color-yelno); }
 .Van-u-color-yellow-primary { @include color-fill($color-yellow-primary); }
 .Van-u-color-yellow-light { @include color-fill($color-yellow-light); }
@@ -111,6 +112,7 @@ $directionList: top bottom left right;
 .Van-u-bg-green-primary { background-color: $color-green-primary !important; }
 .Van-u-bg-green-light { background-color: $color-green-light !important; }
 .Van-u-bg-green-bright { background-color: $color-green-bright !important; }
+.Van-u-bg-green-brightst { background-color: $color-green-brightst !important; }
 .Van-u-bg-yelno { background-color: $color-yelno !important; }
 .Van-u-bg-yellow-primary { background-color: $color-yellow-primary !important; }
 .Van-u-bg-yellow-light { background-color: $color-yellow-light !important; }
