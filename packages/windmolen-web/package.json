@@ -1,0 +1,16 @@
+{
+  "name": "windmolen-web",
+  "version": "2.0.0",
+  "description": "vandebron's styleguide for web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vandebron",
+    "styleguide",
+    "web"
+  ],
+  "author": "",
+  "license": "ISC"
+}
