@@ -61,7 +61,7 @@ $directionList: top bottom left right;
 .Van-u-color-primary { @include color-fill($color-primary); }
 .Van-u-color-primary-light { @include color-fill($color-primary-light); }
 .Van-u-color-primary-bright { @include color-fill($color-primary-bright); }
-.Van-u-color-primary-brightst { @include color-fill($color-primary-brightst); }
+.Van-u-color-primary-brightest { @include color-fill($color-primary-brightest); }
 .Van-u-color-pink-darker { @include color-fill($color-pink-darker); }
 .Van-u-color-pink-dark { @include color-fill($color-pink-dark); }
 .Van-u-color-pink-primary { @include color-fill($color-pink-primary); }
@@ -77,12 +77,12 @@ $directionList: top bottom left right;
 .Van-u-color-green-primary { @include color-fill($color-green-primary); }
 .Van-u-color-green-light { @include color-fill($color-green-light); }
 .Van-u-color-green-bright { @include color-fill($color-green-bright); }
-.Van-u-color-green-brightst { @include color-fill($color-green-brightst); }
+.Van-u-color-green-brightest { @include color-fill($color-green-brightest); }
 .Van-u-color-yelno { @include color-fill($color-yelno); }
 .Van-u-color-yellow-primary { @include color-fill($color-yellow-primary); }
 .Van-u-color-yellow-light { @include color-fill($color-yellow-light); }
 .Van-u-color-yellow-bright { @include color-fill($color-yellow-bright); }
-.Van-u-color-yellow-brightst { @include color-fill($color-yellow-brightst); }
+.Van-u-color-yellow-brightest { @include color-fill($color-yellow-brightest); }
 .Van-u-color-orange { @include color-fill($color-orange); }
 .Van-u-color-red { @include color-fill($color-red); }
 .Van-u-color-facebook-blue { @include color-fill($color-facebook-blue); }
@@ -96,7 +96,7 @@ $directionList: top bottom left right;
 .Van-u-bg-primary { background-color: $color-primary !important; }
 .Van-u-bg-primary-light { background-color: $color-primary-light !important; }
 .Van-u-bg-primary-bright { background-color: $color-primary-bright !important; }
-.Van-u-bg-primary-brightst { background-color: $color-primary-brightst !important; }
+.Van-u-bg-primary-brightest { background-color: $color-primary-brightest !important; }
 .Van-u-bg-pink-darker { background-color: $color-pink-darker !important; }
 .Van-u-bg-pink-dark { background-color: $color-pink-dark !important; }
 .Van-u-bg-pink-primary { background-color: $color-pink-primary !important; }
@@ -112,12 +112,12 @@ $directionList: top bottom left right;
 .Van-u-bg-green-primary { background-color: $color-green-primary !important; }
 .Van-u-bg-green-light { background-color: $color-green-light !important; }
 .Van-u-bg-green-bright { background-color: $color-green-bright !important; }
-.Van-u-bg-green-brightst { background-color: $color-green-brightst !important; }
+.Van-u-bg-green-brightest { background-color: $color-green-brightest !important; }
 .Van-u-bg-yelno { background-color: $color-yelno !important; }
 .Van-u-bg-yellow-primary { background-color: $color-yellow-primary !important; }
 .Van-u-bg-yellow-light { background-color: $color-yellow-light !important; }
 .Van-u-bg-yellow-bright { background-color: $color-yellow-bright !important; }
-.Van-u-bg-yellow-brightst { background-color: $color-yellow-brightst !important; }
+.Van-u-bg-yellow-brightest { background-color: $color-yellow-brightest !important; }
 .Van-u-bg-orange { background-color: $color-orange !important; }
 .Van-u-bg-red { background-color: $color-red !important; }
 .Van-u-bg-facebook-blue { background-color: $color-facebook-blue !important; }

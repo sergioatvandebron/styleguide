@@ -35,7 +35,7 @@ value: "#FFB81C"
 ```color-palette|horizontal
 colors:
   - {name: "Primary", value: "#333D47"}
-  - {name: "Primary brightst", value: "#83898F"}
+  - {name: "Primary brightest", value: "#83898F"}
   - {name: "Primary bright", value: "#5B636B"}
   - {name: "Primary light", value: "#475059"}
   - {name: "Primary darker", value: "#293139"}
@@ -62,6 +62,7 @@ colors:
 ```color-palette|horizontal
 colors:
   - {name: "Green Primary", value: "#43b02a"}
+  - {name: "Green brightest", value: "#e5f4e1"}
   - {name: "Green bright", value: "#7cc869"}
   - {name: "Green light", value: "#69c054"}
   - {name: "Green dark", value: "#3c9e26"}
@@ -73,6 +74,6 @@ colors:
   - {name: "Yellow Primary", value: "#ffb81c"}
   - {name: "Yellow light", value: "#ffc64a"}
   - {name: "Yellow bright", value: "#ffd478"}
-  - {name: "Yellow brightst", value: "#ffdb8f"}
+  - {name: "Yellow brightest", value: "#ffdb8f"}
   - {name: "Yellow yelno", value: "#e5a619"}
 ```
