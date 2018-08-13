@@ -236,7 +236,7 @@
   color: #5b636b;
   fill: #5b636b; }
 
-.Van-u-color-primary-brightst {
+.Van-u-color-primary-brightest {
   color: #83898f;
   fill: #83898f; }
 
@@ -300,6 +300,10 @@
   color: #7cc869;
   fill: #7cc869; }
 
+.Van-u-color-green-brightest {
+  color: #e5f4e1;
+  fill: #e5f4e1; }
+
 .Van-u-color-yelno {
   color: #e5a619;
   fill: #e5a619; }
@@ -316,7 +320,7 @@
   color: #ffd478;
   fill: #ffd478; }
 
-.Van-u-color-yellow-brightst {
+.Van-u-color-yellow-brightest {
   color: #ffdb8f;
   fill: #ffdb8f; }
 
@@ -359,7 +363,7 @@
 .Van-u-bg-primary-bright {
   background-color: #5b636b !important; }
 
-.Van-u-bg-primary-brightst {
+.Van-u-bg-primary-brightest {
   background-color: #83898f !important; }
 
 .Van-u-bg-pink-darker {
@@ -407,6 +411,9 @@
 .Van-u-bg-green-bright {
   background-color: #7cc869 !important; }
 
+.Van-u-bg-green-brightest {
+  background-color: #e5f4e1 !important; }
+
 .Van-u-bg-yelno {
   background-color: #e5a619 !important; }
 
@@ -419,7 +426,7 @@
 .Van-u-bg-yellow-bright {
   background-color: #ffd478 !important; }
 
-.Van-u-bg-yellow-brightst {
+.Van-u-bg-yellow-brightest {
   background-color: #ffdb8f !important; }
 
 .Van-u-bg-orange {
@@ -4188,5 +4195,19 @@ button.close {
         opacity: 1; }
       .Van-DashboardMenu--endShadow::before {
         opacity: 1; } }
+/** @define Ribbon */
+.Van-Ribbon {
+  overflow: hidden;
+  min-width: 250px;
+  height: 47px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #3c9e26;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(45deg);
+  background-color: #e5f4e1; }
 
-/*# sourceMappingURL=catalog.d9122e9f.css.map*/
+/*# sourceMappingURL=catalog.f1a0643a.css.map*/
