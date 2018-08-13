@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean-dist": "rimraf dist/**",
-    "build": "yarn clean-dist && cross-env NODE_ENV=production rollup -c rollup.config.js",
+    "build": "yarn clean-dist && rollup -c rollup.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
