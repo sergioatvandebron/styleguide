@@ -12,5 +12,13 @@
     "native"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "rimraf": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^16.4.2",
+    "styled-components": "^3.4.2"
+  }
 }
