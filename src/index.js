@@ -40,3 +40,4 @@ export { default as DashboardHeader } from './components/DashboardHeader';
 export { default as DashboardHeaderDropdown } from './components/DashboardHeaderDropdown';
 export { default as DashboardHeaderNotifications } from './components/DashboardHeaderNotifications';
 export { default as DashboardMenu } from './components/DashboardMenu';
+export { default as Ribbon } from './components/Ribbon';
