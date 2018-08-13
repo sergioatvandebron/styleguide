@@ -4,6 +4,12 @@
     "start": "echo 'Nothing here.'"
   },
   "devDependencies": {
-    "lerna": "^3.0.3"
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.78.0",
+    "jest": "^23.5.0",
+    "lerna": "^3.0.3",
+    "react": "^16.4.2",
+    "styled-components": "^3.4.2"
   }
 }
