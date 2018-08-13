@@ -2,5 +2,10 @@
   "packages": [
     "packages/*"
   ],
+  "command": {
+    "bootstrap": {
+      "npmClient": "yarn"
+    }
+  },
   "version": "independent"
 }
