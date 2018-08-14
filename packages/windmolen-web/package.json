@@ -6,7 +6,8 @@
   "scripts": {
     "clean-dist": "rimraf dist/**",
     "build": "yarn clean-dist && rollup -c rollup.config.js",
-    "test": "jest"
+    "test": "jest",
+    "docz:start": "cross-env HTTPS=false docz dev"
   },
   "keywords": [
     "vandebron",
@@ -19,6 +20,7 @@
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "cross-env": "^5.2.0",
+    "docz": "^0.9.6",
     "flow-bin": "^0.78.0",
     "jest": "^23.5.0",
     "rimraf": "^2.6.2",
