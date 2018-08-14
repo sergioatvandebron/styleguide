@@ -6,6 +6,7 @@
   "scripts": {
     "clean-dist": "rimraf dist/**",
     "build": "yarn clean-dist && rollup -c rollup.config.js",
+    "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
     "docz:start": "cross-env HTTPS=false docz dev"
   },
