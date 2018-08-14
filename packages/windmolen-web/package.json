@@ -1,6 +1,6 @@
 {
   "name": "windmolen-web",
-  "version": "2.0.1-3",
+  "version": "2.0.1-4",
   "description": "vandebron's styleguide for web",
   "main": "index.js",
   "scripts": {
