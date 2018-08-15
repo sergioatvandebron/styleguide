@@ -8,7 +8,8 @@
     "build": "yarn clean-dist && rollup -c rollup.config.js",
     "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
-    "docz:start": "cross-env HTTPS=false docz dev"
+    "website:start": "cross-env HTTPS=false docz dev",
+    "website:build": "docz build"
   },
   "keywords": [
     "vandebron",
@@ -35,7 +36,9 @@
     "rollup-plugin-terser": "^1.0.1"
   },
   "peerDependencies": {
-    "react": "^16.4.2",
+    "react": "^16.4.2"
+  },
+  "dependencies": {
     "styled-components": "^3.4.2"
   }
 }

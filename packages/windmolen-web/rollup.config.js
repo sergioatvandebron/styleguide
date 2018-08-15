@@ -19,7 +19,10 @@ export default {
       extensions: ['.js'],
     }),
 
-    babel({ exclude: 'node_modules/**' }),
+    babel({
+      exclude: 'node_modules/**',
+      plugins: ['external-helpers']
+    }),
 
     terser({
       warnings: 'verbose'
