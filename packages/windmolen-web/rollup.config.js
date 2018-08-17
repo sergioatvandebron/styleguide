@@ -1,7 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
-import svg from 'rollup-plugin-svg';
+import html from 'rollup-plugin-html';
 
 export default {
   input: 'src/index.js',
@@ -29,6 +29,8 @@ export default {
       warnings: 'verbose'
     }),
 
-    svg()
+    html({
+      include: '**/icons/*.svg'
+    })
   ]
 }
