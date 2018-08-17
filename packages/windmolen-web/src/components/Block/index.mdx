@@ -1,0 +1,24 @@
+---
+name: Block
+menu: Base
+route: /Base/Block
+---
+
+import { Playground, PropsTable } from 'docz'
+import Block from './'
+import { colors } from '../../globals';
+
+# Block
+
+## Basic usage
+<Playground style={{ backgroundColor: colors.charcoalGray, padding: 75 }}>
+  <Block>
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+  </Block>
+</Playground>
+
+<Playground style={{ padding: 75 }}>
+  <Block withShadow>
+    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+  </Block>
+</Playground>
