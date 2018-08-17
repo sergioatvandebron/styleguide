@@ -1,6 +1,6 @@
 {
   "name": "@vandebron/windmolen-web",
-  "version": "2.0.1-5.3",
+  "version": "2.0.1-5.5",
   "description": "vandebron's styleguide for web",
   "main": "index.js",
   "publishConfig": {
@@ -46,5 +46,6 @@
   },
   "peerDependencies": {
     "react": "^16.4.2"
-  }
+  },
+  "gitHead": "5cd7e2f7858630daad93b7cdd8adbcaed93a68ca"
 }
