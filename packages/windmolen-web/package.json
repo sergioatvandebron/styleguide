@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "clean-dist": "rimraf dist/**",
-    "build": "yarn clean-dist && rollup -c rollup.config.js",
+    "copy-assets": "cd src && cpy --parents assets/ ../dist/",
+    "build": "yarn clean-dist && yarn copy-assets && rollup -c rollup.config.js",
     "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
     "website:start": "cross-env HTTPS=false docz dev",
@@ -22,6 +23,7 @@
     "babel-eslint": "^8.2.6",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.7.0",
+    "cpy-cli": "^2.0.0",
     "cross-env": "^5.2.0",
     "docz": "^0.9.6",
     "eslint": "^5.3.0",
