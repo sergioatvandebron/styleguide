@@ -1,7 +1,7 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
-import html from 'rollup-plugin-html';
+import svgo from 'rollup-plugin-svgo';
 
 export default {
   input: 'src/index.js',
@@ -20,17 +20,15 @@ export default {
       extensions: ['.js'],
     }),
 
+    svgo(),
+
     babel({
       exclude: 'node_modules/**',
       plugins: ['external-helpers']
     }),
 
-    terser({
-      warnings: 'verbose'
-    }),
-
-    html({
-      include: '**/icons/*.svg'
-    })
+    // terser({
+    //   warnings: 'verbose'
+    // }),
   ]
 }
