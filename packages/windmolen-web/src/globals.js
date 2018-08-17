@@ -54,4 +54,11 @@ const colors = {
 colors.primary = colors.charcoalGray;
 colors.alternate = colors.warmGray;
 
-export { colors };
+const breakingPoints = {
+  small: 576,
+  medium: 768,
+  large: 992,
+  extraLarge: 1200
+};
+
+export { colors, breakingPoints };
