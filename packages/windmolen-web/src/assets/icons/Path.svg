@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sprite-sheet" transform="translate(-11.000000, -8.000000)" fill="#333D47" fill-rule="nonzero">
+            <g id="black/facebook">
+                <path d="M18.254925,10.5912 L17.012475,10.592025 C16.03815,10.592025 15.849225,11.05485 15.849225,11.733825 L15.849225,13.232025 L18.17325,13.232025 L17.870475,15.57915 L15.849225,15.57915 L15.849225,21.6 L13.4262,21.6 L13.4262,15.57915 L11.4,15.57915 L11.4,13.232025 L13.4262,13.232025 L13.4262,11.502 C13.4262,9.493125 14.652975,8.4 16.44405,8.4 C17.30205,8.4 18.0396,8.463525 18.254925,8.4924 L18.254925,10.5912 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
