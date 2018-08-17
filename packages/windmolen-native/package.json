@@ -1,6 +1,6 @@
 {
   "name": "@vandebron/windmolen-native",
-  "version": "1.0.1-2.8",
+  "version": "1.0.1-2.9",
   "description": "vandebron's styleguide for native",
   "main": "index.js",
   "publishConfig": {
@@ -32,5 +32,5 @@
     "react": "^16.4.2",
     "styled-components": "^3.4.2"
   },
-  "gitHead": "77d8dc50dc3173565edcb57a5f946e6cabd24405"
+  "gitHead": "49ea270b7b3cc97232fbe76da1fd07846e56d140"
 }
