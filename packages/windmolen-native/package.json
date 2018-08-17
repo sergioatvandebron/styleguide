@@ -1,5 +1,5 @@
 {
-  "name": "windmolen-native",
+  "name": "@vandebron/windmolen-native",
   "version": "1.0.1-1",
   "description": "vandebron's styleguide for native",
   "main": "index.js",
