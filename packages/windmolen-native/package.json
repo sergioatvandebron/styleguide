@@ -1,6 +1,6 @@
 {
   "name": "@vandebron/windmolen-native",
-  "version": "1.0.1-2.2",
+  "version": "1.0.1-2.3",
   "description": "vandebron's styleguide for native",
   "main": "index.js",
   "publishConfig": {
