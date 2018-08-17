@@ -2,7 +2,7 @@
   "name": "@vandebron/windmolen-web",
   "version": "2.0.1-5.15",
   "description": "vandebron's styleguide for web",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "publishConfig": {
     "access": "public"
   },
@@ -13,7 +13,8 @@
     "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
     "website:start": "cross-env HTTPS=false docz dev",
-    "website:build": "docz build"
+    "website:build": "docz build",
+    "prepack": "yarn build"
   },
   "keywords": [
     "vandebron",
@@ -47,5 +48,5 @@
   "peerDependencies": {
     "react": "^16.4.2"
   },
-  "gitHead": "a15c7f34319d157d75092117d49409519f287cad"
+  "gitHead": "d90b3be863a48d73d179fd4ef1b8d007d2767df0"
 }
