@@ -1,0 +1,40 @@
+---
+name: Button
+menu: Controls
+route: /Controls/Button
+---
+
+import { Playground, PropsTable } from 'docz'
+import Button from './'
+import { colors } from '../../globals';
+import windmill from '../../assets/icons/windmill.svg';
+
+# Button
+
+## Props
+<PropsTable of={Button} />
+
+## Primary
+<Playground>
+  <Button>Primary</Button>
+</Playground>
+
+## Secondary
+<Playground style={{ backgroundColor: colors.charcoalGray }}>
+  <Button type="secondary">Secondary</Button>
+</Playground>
+
+## Small
+<Playground>
+  <Button small>Small</Button>
+</Playground>
+
+## With icon
+<Playground>
+  <Button withIcon={windmill}>With icon</Button>
+</Playground>
+
+## Text button
+<Playground>
+  <Button asTextButton>Text button</Button>
+</Playground>
