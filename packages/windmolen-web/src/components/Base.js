@@ -9,6 +9,7 @@ export type BaseProps = {
 const Base = styled.div`
   background-color: inherit;
   box-shadow: ${props => props.withShadow ? '-22px 16px 22px 0 rgba(0, 0, 0, 0.18)' : 'unset'};
+  box-sizing: border-box;
   color: inherit;
   fill: inherit;
   font-family: inherit;
