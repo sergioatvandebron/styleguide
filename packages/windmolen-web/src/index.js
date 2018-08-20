@@ -5,3 +5,4 @@ export { default as Icon } from './components/Icon';
 export { default as Image } from './components/Image';
 export { default as Paragraph } from './components/Paragraph';
 export { default as Span } from './components/Span';
+export { default as Wrapper } from './components/Wrapper';
