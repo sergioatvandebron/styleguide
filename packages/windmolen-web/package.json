@@ -13,7 +13,8 @@
     "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
     "website:start": "cross-env HTTPS=false docz dev",
-    "website:build": "docz build"
+    "website:build": "docz build",
+    "prepack": "yarn build"
   },
   "keywords": [
     "vandebron",
