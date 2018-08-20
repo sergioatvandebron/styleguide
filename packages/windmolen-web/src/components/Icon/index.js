@@ -1,12 +1,12 @@
 // @flow
 import type { Node } from 'react';
-import type { Theme } from '../Base';
+// import type { Theme } from '../Base';
 import React from 'react';
 import Span from '../Span';
 
 type Props = {
   source: any,
-  theme?: Theme,
+  theme?: any,
   width?: number,
   height?: number,
 };

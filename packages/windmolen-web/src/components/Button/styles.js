@@ -1,38 +1,51 @@
 // @flow
-import type { Props } from './';
+import type { Props, ButtonTheme } from './';
 import styled from 'styled-components';
 import { colors } from '../../globals';
 import Base from '../Base';
 import Icon from '../Icon';
 import Span from '../Span';
 
-const isPrimary = (props) => props.type === 'primary';
-
-// Background-color property for the different kinds of buttons
-const buttonBackgroundColor = (props: Props, onHover: boolean = false) => {
-  if (props.asTextButton) {
-    return 'transparent';
-  }
-
-  if (isPrimary(props)) {
-    return onHover ? colors.charcoalGrayHover : colors.charcoalGray;
-  }
-
-  // secondary, non-text button
-  return colors.white;
+/**
+ * Themes
+ */
+type DefaultThemes = {
+  [theme_name: string]: ButtonTheme
 };
 
-const buttonColor = (props: Props, onHover: boolean = false) => {
-  if (props.asTextButton) {
-    return onHover ? colors.warmGrayHover : colors.warmGray;
+const themes: DefaultThemes = {
+  primary: {
+    color: colors.white,
+    backgroundColor: colors.charcoalGray,
+    hoverColor: colors.white,
+    hoverBackgroundColor: colors.shuttleGray,
+    shadow: '0 0 8px 0 rgba(0, 0, 0, 0.12)'
+  },
+
+  alternate: {
+    color: colors.charcoalGray,
+    backgroundColor: colors.white,
+    hoverColor: colors.bermudaGray,
+    hoverBackgroundColor: colors.white,
+    shadow: '0 0 8px 0 rgba(51, 61, 71, 0.12)'
+  },
+
+
+  text: {
+    color: colors.warmGray,
+    backgroundColor: colors.transparent,
+    hoverColor: colors.silver,
+    hoverBackgroundColor: colors.transparent,
+    shadow: 'none'
+  }
+};
+
+const getThemeProp = (props: Props, property): string => {
+  if (typeof props.theme !== 'string') {
+    return props.theme[property];
   }
 
-  if (isPrimary(props)) {
-    return colors.white;
-  }
-
-  // secondary, non-text button
-  return onHover ? colors.bermudaGray : colors.charcoalGray;
+  return themes[props.theme][property];
 };
 
 export const ButtonText = Span.extend`
@@ -46,24 +59,24 @@ export const ButtonText = Span.extend`
 `;
 
 export const StyledButton = Base.withComponent('button').extend`
-  background-color: ${props => buttonBackgroundColor(props)};
+  background-color: ${props => getThemeProp(props, 'backgroundColor')};
   border: 0;
-  color: ${props => buttonColor(props)};
-  fill: ${props => buttonColor(props)};
+  color: ${props => getThemeProp(props, 'color')};
+  fill: ${props => getThemeProp(props, 'color')};
   padding: ${props => props.small ? '4px 15px' : '9px 20px'};
   line-height: 1.6;
-  text-decoration: ${props => props.asTextButton ? 'underline' : 'none'};
+  text-decoration: ${props => props.theme === 'text' ? 'underline' : 'none'};
 
   &:hover {
-    background-color: ${props => buttonBackgroundColor(props, true)};
-    color: ${props => buttonColor(props, true)}
-    fill: ${props => buttonColor(props, true)};
+    background-color: ${props => getThemeProp(props, 'hoverBackgroundColor')};
+    color: ${props => getThemeProp(props, 'hoverColor')}
+    fill: ${props => getThemeProp(props, 'hoverColor')};
   }
 `;
 
 export const StyledIcon = styled(Icon)`
   background-color: inherit;
-  display: ${props => props.asTextButton ? 'none' : 'inline-block'};
+  display: ${props => props.hide ? 'none' : 'inline-block'};
   fill: inherit;
   margin-top: 2px;
   margin-right: ${props => props.withIcon ? '15px' : 0};

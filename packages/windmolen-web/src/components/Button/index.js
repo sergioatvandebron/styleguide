@@ -4,21 +4,31 @@ import React from 'react';
 import { StyledButton, ButtonText, StyledIcon } from './styles';
 import arrowright from '../../assets/icons/arrowright.svg';
 
-export type Props = {
-  /** Either `primary` or `secondary` */
-  type?: 'primary' | 'secondary',
+export type ButtonTheme = 'primary'
+  | 'alternate'
+  | 'text'
+  | {
+    color: string,
+    backgroundColor: string,
+    hoverColor: string,
+    hoverBackgroundColor: string,
+    shadow: string
+  };
 
+export type Props = {
   /** The actual icon to use, same as <Icon /> */
   withIcon?: Node,
-  asTextButton: boolean,
   children?: Node,
-  small?: boolean
+  small?: boolean,
+
+  /** Either `primary`, `alternate`, 'text', or a theme object */
+  theme?: ButtonTheme
 };
 
 const Button = (props: Props) => props.withIcon
   ? (
     <StyledButton {...props}>
-      <StyledIcon source={props.withIcon} withIcon asTextButton={props.asTextButton} />
+      <StyledIcon source={props.withIcon} withIcon hide={props.theme === 'text'} />
       <ButtonText withIcon>
         {props.children}
       </ButtonText>
@@ -28,7 +38,7 @@ const Button = (props: Props) => props.withIcon
       <ButtonText>
         {props.children}
       </ButtonText>
-      <StyledIcon source={arrowright} asTextButton={props.asTextButton} />
+      <StyledIcon source={arrowright} hide={props.theme === 'text'} />
     </StyledButton>
   );
 
@@ -36,7 +46,8 @@ Button.defaultProps = {
   type: 'primary',
   withIcon: null,
   asTextButton: false,
-  small: false
+  small: false,
+  theme: 'primary'
 };
 
 export default Button;

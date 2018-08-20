@@ -42,17 +42,13 @@ injectGlobal`
 /** Colors */
 const colors = {
   charcoalGray: '#333d47',
-  charcoalGrayHover: '#50606f',
+  shuttleGray: '#50606f',
   warmGray: '#717171',
-  warmGrayHover: '#c1c1c1',
+  silver: '#c1c1c1',
   bermudaGray: '#778ea6',
   white: '#ffffff',
-  primary: '',
-  alternate: ''
+  transparent: 'transparent'
 };
-
-colors.primary = colors.charcoalGray;
-colors.alternate = colors.warmGray;
 
 const breakingPoints = {
   small: 576,

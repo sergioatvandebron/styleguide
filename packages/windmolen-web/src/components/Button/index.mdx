@@ -5,6 +5,7 @@ route: /Controls/Button
 ---
 
 import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
 import Button from './'
 import { colors } from '../../globals';
 import windmill from '../../assets/icons/windmill.svg';
@@ -15,26 +16,26 @@ import windmill from '../../assets/icons/windmill.svg';
 <PropsTable of={Button} />
 
 ## Primary
-<Playground>
+<Playground wrapper={Wrapper}>
   <Button>Primary</Button>
 </Playground>
 
-## Secondary
-<Playground style={{ backgroundColor: colors.charcoalGray }}>
-  <Button type="secondary">Secondary</Button>
+## Alternate
+<Playground style={{ backgroundColor: colors.charcoalGray }} wrapper={Wrapper}>
+  <Button theme="alternate">Secondary</Button>
 </Playground>
 
 ## Small
-<Playground>
+<Playground wrapper={Wrapper}>
   <Button small>Small</Button>
 </Playground>
 
 ## With icon
-<Playground>
+<Playground wrapper={Wrapper}>
   <Button withIcon={windmill}>With icon</Button>
 </Playground>
 
 ## Text button
-<Playground>
-  <Button asTextButton>Text button</Button>
+<Playground wrapper={Wrapper}>
+  <Button theme="text">Text button</Button>
 </Playground>
