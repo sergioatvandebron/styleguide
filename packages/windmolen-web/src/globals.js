@@ -31,13 +31,7 @@ injectGlobal`
   ${fontFace(700, 'bold')}
   ${fontFace(800, 'extrabold')}
   ${fontFace(900, 'black')}
-
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-}`;
+`;
 
 /** Colors */
 const colors = {
