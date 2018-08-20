@@ -20,12 +20,13 @@ export default {
       extensions: ['.js'],
     }),
 
-    svgo(),
-
     babel({
-      exclude: 'node_modules/**',
+      exclude: ['node_modules/**'],
+      include: ['**/*.js'],
       plugins: ['external-helpers']
     }),
+
+    svgo(),
 
     // terser({
     //   warnings: 'verbose'
