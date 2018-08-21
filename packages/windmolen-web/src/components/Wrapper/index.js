@@ -13,6 +13,7 @@ type WrapperProps = {
   children?: Node
 };
 
+// themes
 const primary = {
   color: colors.warmGray,
   backgroundColor: colors.white
@@ -24,12 +25,11 @@ const StyledContainer = styled.div`
   fill: ${props => props.theme.color};
   background-color: ${props => props.theme.backgroundColor};
 
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
-  }`;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+`;
 
 const Wrapper = (props: WrapperProps) => (
   <ThemeProvider theme={props.theme}>
