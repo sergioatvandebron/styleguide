@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import { largeUp } from '../utils';
+import { largeUp } from '../../utils';
 
 export type BaseProps = {
   withShadow?: boolean
