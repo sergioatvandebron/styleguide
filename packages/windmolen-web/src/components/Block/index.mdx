@@ -6,6 +6,8 @@ route: /Base/Block
 
 import { Playground, PropsTable } from 'docz'
 import Wrapper from '../Wrapper';
+import { DarkWrapper } from '../../helpers/docz';
+import { colors } from '../../globals';
 import Block from './'
 
 # Block
@@ -17,8 +19,18 @@ import Block from './'
   </Block>
 </Playground>
 
+## With drop shadow
 <Playground wrapper={Wrapper} style={{ padding: 75 }}>
   <Block withShadow>
     Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+  </Block>
+</Playground>
+
+## With outline
+<Playground wrapper={DarkWrapper} style={{ backgroundColor: colors.charcoalGray }}>
+  <Block outline>
+    <Wrapper theme={{ color: colors.white }}>
+      Some text
+    </Wrapper>
   </Block>
 </Playground>
