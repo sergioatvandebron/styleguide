@@ -19,6 +19,7 @@ export type ButtonTheme = 'primary'
 export type Props = {
   /** The actual icon to use, same as <Icon /> */
   withIcon?: Node,
+  hideArrow?: boolean,
   children?: Node,
   small?: boolean,
 
@@ -29,17 +30,17 @@ export type Props = {
 const Button = (props: Props) => props.withIcon
   ? (
     <StyledButton {...props}>
-      <StyledIcon source={props.withIcon} withIcon hide={props.theme === 'text'} />
+      <StyledIcon source={props.withIcon} withIcon hide={props.theme === 'text' || props.hideArrow} />
       <ButtonText withIcon>
         {props.children}
       </ButtonText>
     </StyledButton>
   ) : (
     <StyledButton {...props}>
-      <ButtonText>
+      <ButtonText hideArrow={props.hideArrow}>
         {props.children}
       </ButtonText>
-      <StyledIcon source={arrowright} hide={props.theme === 'text'} />
+      <StyledIcon source={arrowright} hide={props.theme === 'text' || props.hideArrow} />
     </StyledButton>
   );
 
@@ -48,7 +49,8 @@ Button.defaultProps = {
   withIcon: null,
   asTextButton: false,
   small: false,
-  theme: 'primary'
+  theme: 'primary',
+  hideArrow: false
 };
 
 export default Button;

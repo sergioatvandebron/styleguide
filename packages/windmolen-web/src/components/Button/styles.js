@@ -5,6 +5,7 @@ import { colors } from '../../globals';
 import Base from '../Base';
 import Icon from '../Icon';
 import Span from '../Span';
+import { px } from '../../utils';
 
 /**
  * Themes
@@ -59,15 +60,26 @@ const getThemeProp = (props: Props, property: string): string => {
   return themes[props.theme][property];
 };
 
+const buttonTextMarginRight = (props: Props): string => {
+  if (props.withIcon) {
+    return px(25);
+  }
+
+  if (props.hideArrow) {
+    return '0';
+  }
+
+  return px(50);
+};
+
 export const ButtonText = styled(Span).attrs({
   fontSize: 'button'
 })`
-  font-weight: semibold;
-  line-height: 2;
-  margin-right: ${props => props.withIcon ? '25px' : '50px'};
   background-color: inherit;
   color: inherit;
+  font-weight: 600;
   line-height: inherit;
+  margin-right: ${props => buttonTextMarginRight(props)};
 `;
 
 export const StyledButton = Base.withComponent('button').extend`
