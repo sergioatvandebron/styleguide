@@ -44,11 +44,3 @@ Wrapper.defaultProps = {
 };
 
 export default Wrapper;
-
-//
-{/* <Wrapper theme={jsdf}>
-  <Block>
-    <Button>something</Button>
-    <Button theme="dark23">something</Button>
-  </Block>
-</Wrapper>  */}
