@@ -12,7 +12,8 @@ export type ButtonTheme = 'primary'
     backgroundColor: string,
     hoverColor: string,
     hoverBackgroundColor: string,
-    shadow: string
+    shadow: string,
+    border: string
   };
 
 export type Props = {

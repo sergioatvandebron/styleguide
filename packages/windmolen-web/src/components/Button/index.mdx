@@ -6,6 +6,8 @@ route: /Controls/Button
 
 import { Playground, PropsTable } from 'docz'
 import Wrapper from '../Wrapper';
+import Paragraph from '../Paragraph';
+import { DarkWrapper } from '../../helpers/docz';
 import Button from './'
 import { colors } from '../../globals';
 import windmill from '../../assets/icons/windmill.svg';
@@ -22,7 +24,12 @@ import windmill from '../../assets/icons/windmill.svg';
 
 ## Alternate
 <Playground wrapper={Wrapper}>
-  <Button theme="alternate">Secondary</Button>
+  <Button theme="alternate">Alternate</Button>
+</Playground>
+
+## With outline
+<Playground wrapper={DarkWrapper} style={{ backgroundColor: colors.charcoalGray }}>
+    <Button theme="outline">With outline</Button>
 </Playground>
 
 ## Small

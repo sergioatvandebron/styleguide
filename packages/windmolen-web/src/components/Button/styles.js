@@ -19,7 +19,8 @@ const themes: DefaultThemes = {
     backgroundColor: colors.charcoalGray,
     hoverColor: colors.white,
     hoverBackgroundColor: colors.shuttleGray,
-    shadow: '0 0 8px 0 rgba(0, 0, 0, 0.12)'
+    shadow: '0 0 8px 0 rgba(0, 0, 0, 0.12)',
+    border: '0'
   },
 
   alternate: {
@@ -27,20 +28,30 @@ const themes: DefaultThemes = {
     backgroundColor: colors.white,
     hoverColor: colors.bermudaGray,
     hoverBackgroundColor: colors.white,
-    shadow: '0 0 8px 0 rgba(51, 61, 71, 0.12)'
+    shadow: '0 0 8px 0 rgba(51, 61, 71, 0.12)',
+    border: '0'
   },
-
 
   text: {
     color: colors.warmGray,
     backgroundColor: colors.transparent,
     hoverColor: colors.silver,
     hoverBackgroundColor: colors.transparent,
-    shadow: 'none'
+    shadow: 'none',
+    border: '0'
+  },
+
+  outline: {
+    color: colors.white,
+    backgroundColor: colors.transparent,
+    hoverColor: colors.white,
+    hoverBackgroundColor: colors.transparent,
+    shadow: 'none',
+    border: `solid 1px ${colors.white}`
   }
 };
 
-const getThemeProp = (props: Props, property): string => {
+const getThemeProp = (props: Props, property: string): string => {
   if (typeof props.theme !== 'string') {
     return props.theme[property];
   }
@@ -61,7 +72,7 @@ export const ButtonText = styled(Span).attrs({
 
 export const StyledButton = Base.withComponent('button').extend`
   background-color: ${props => getThemeProp(props, 'backgroundColor')};
-  border: 0;
+  border: ${props => getThemeProp(props, 'border')};
   box-shadow: ${props => getThemeProp(props, 'shadow')};
   color: ${props => getThemeProp(props, 'color')};
   fill: ${props => getThemeProp(props, 'color')};
