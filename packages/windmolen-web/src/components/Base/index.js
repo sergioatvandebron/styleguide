@@ -7,8 +7,10 @@ export type FontSize = 'h1'
   | 'h3'
   | 'h4'
   | 'h5'
+  | 'button'
   | 'body-xsmall'
   | 'lead'
+  | 'body'
   | 'regular'
   | 'super-huge';
 
@@ -25,9 +27,11 @@ const fontSize = (props: BaseProps) => {
   case 'h3': return px(40);
   case 'h4': return px(24);
   case 'h5': return px(18);
+  case 'button':
   case 'body-xsmall': return px(16);
   case 'lead': return px(24);
   case 'super-huge': return px(100);
+  case 'body':
   case 'regular': 
   default:
     return px(20);
@@ -41,9 +45,11 @@ const lineHeight = (props: BaseProps) => {
   case 'h3': return px(50);
   case 'h4': return px(30);
   case 'h5': return px(30);
+  case 'button':
   case 'body-xsmall': return px(32);
   case 'lead': return px(40);
   case 'super-huge': return px(110);
+  case 'body':
   case 'regular': 
   default:
     return px(40);

@@ -48,8 +48,9 @@ const getThemeProp = (props: Props, property): string => {
   return themes[props.theme][property];
 };
 
-export const ButtonText = Span.extend`
-  font-size: 16px;
+export const ButtonText = styled(Span).attrs({
+  fontSize: 'button'
+})`
   font-weight: semibold;
   line-height: 2;
   margin-right: ${props => props.withIcon ? '25px' : '50px'};
