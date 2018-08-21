@@ -62,6 +62,7 @@ export const ButtonText = styled(Span).attrs({
 export const StyledButton = Base.withComponent('button').extend`
   background-color: ${props => getThemeProp(props, 'backgroundColor')};
   border: 0;
+  box-shadow: ${props => getThemeProp(props, 'shadow')};
   color: ${props => getThemeProp(props, 'color')};
   fill: ${props => getThemeProp(props, 'color')};
   padding: ${props => props.small ? '4px 15px' : '9px 20px'};
