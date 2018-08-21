@@ -32,7 +32,7 @@ const StyledContainer = styled.div`
 `;
 
 const Wrapper = (props: WrapperProps) => (
-  <ThemeProvider theme={props.theme}>
+  <ThemeProvider theme={props.theme || 'primary'}>
     <StyledContainer>
       {props.children}
     </StyledContainer>
