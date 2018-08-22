@@ -5,10 +5,14 @@ route: /Controls/Input
 ---
 
 import { Playground, PropsTable } from 'docz'
+import windmill from '../../assets/icons/windmill.svg';
 import Wrapper from '../Wrapper';
 import Input from './';
 
 # Input
+
+## Props
+<PropsTable of={Input} />
 
 ## Basic usage
 <Playground>
@@ -47,4 +51,9 @@ import Input from './';
 ## With placeholder to the right
 <Playground>
   <Input placeholder="kg" placeholderRight />
+</Playground>
+
+## With icon
+<Playground>
+  <Input withIcon={windmill} />
 </Playground>

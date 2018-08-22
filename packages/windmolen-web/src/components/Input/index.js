@@ -1,6 +1,8 @@
 // @flow
 import React, { type Node } from 'react';
+import styled from 'styled-components';
 import Base from '../Base';
+import Icon from '../Icon';
 import { colors } from '../../globals';
 import { mediumUp } from '../../utils';
 
@@ -9,7 +11,10 @@ type InputProps = {
   touched?: boolean,
   isValid?: boolean,
   placeholderRight?: boolean,
-  label?: Node
+  label?: Node,
+  withIcon?: Node,
+  iconWidth?: number,
+  iconHeight?: number
 };
 
 const getInputState = (props: InputProps) => {
@@ -36,6 +41,7 @@ const StyledInput = Base.withComponent('input').extend`
   font-size: 16px;
   outline: 0;
   padding: 9px 20px;
+  padding-right: ${props => props.withIcon ? '53px' : '20px'};
   width: 100%;
 
   &:active,
@@ -48,6 +54,10 @@ const StyledInput = Base.withComponent('input').extend`
     color: ${props => props.disabled ? colors.silver : colors.warmGray};
     text-align: ${props => props.placeholderRight ? 'right' : 'left'}
   }
+`;
+
+const Container = Base.extend`
+  position: relative;
 `;
 
 const StyledLabel = Base.extend`
@@ -64,12 +74,23 @@ const StyledErrorMessage = Base.extend`
   line-height: 2;
 `;
 
+const StyledIcon = styled(Icon).attrs({
+  width: props => props.iconWidth ? props.iconWidth : 15,
+  height: props => props.iconHeight ? props.iconHeight : 15
+})`
+  fill: ${colors.charcoalGray};
+  position: absolute;
+  right: 20px;
+  top: 24px;
+`;
+
 const Input = (props: InputProps) => (
-  <div>
+  <Container>
     {props.label && (<StyledLabel>{props.label}</StyledLabel>)}
     <StyledInput {...props} />
     {props.error && (<StyledErrorMessage>{props.error}</StyledErrorMessage>)}
-  </div>
+    {props.withIcon && (<StyledIcon width={props.iconWidth} height={props.iconHeight} source={props.withIcon} />)}
+  </Container>
 );
 
 export default Input;
