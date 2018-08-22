@@ -7,3 +7,4 @@ export { default as Paragraph } from './components/Paragraph';
 export { default as Span } from './components/Span';
 export { default as Wrapper } from './components/Wrapper';
 export { H1, H2, H3, H4, H5 } from './components/Headings';
+export { default as Input } from './components/Input';
