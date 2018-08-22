@@ -2,6 +2,7 @@
 import React, { type Node } from 'react';
 import Base from '../Base';
 import { colors } from '../../globals';
+import { mediumUp } from '../../utils';
 
 type InputProps = {
   error?: Node,
@@ -30,7 +31,7 @@ const StyledInput = Base.withComponent('input').extend`
   border: 0;
   border-bottom: 1px solid ${props => getInputState(props)};
   box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
-    color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
+  color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
   display: block;
   font-size: 16px;
   outline: 0;
@@ -50,8 +51,11 @@ const StyledInput = Base.withComponent('input').extend`
 `;
 
 const StyledLabel = Base.extend`
+  font-size: 16px;
   color: ${colors.charcoalGray};
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+
+  ${mediumUp('font-size: 20px; margin-bottom: 10px;')}
 `;
 
 const StyledErrorMessage = Base.extend`
