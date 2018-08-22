@@ -1,0 +1,50 @@
+---
+name: Input
+menu: Controls
+route: /Controls/Input
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import Input from './';
+
+# Input
+
+## Basic usage
+<Playground>
+  <Input />
+</Playground>
+
+## With label
+<Playground>
+  <Input label="Input with label" />
+</Playground>
+
+## Valid input
+<Playground>
+  <Input touched={true} isValid={true} />
+</Playground>
+
+## Input with error
+<Playground>
+  <Input touched={true} isValid={false} />
+</Playground>
+
+<Playground>
+  <Input touched={true} error="Oops. You messed up." />
+</Playground>
+
+## Disabled
+<Playground>
+  <Input disabled value="Disabled input" />
+</Playground>
+
+## With placeholder
+<Playground>
+  <Input placeholder="Type on me" />
+</Playground>
+
+## With placeholder to the right
+<Playground>
+  <Input placeholder="kg" placeholderRight />
+</Playground>

@@ -40,6 +40,9 @@ const colors = {
   warmGray: '#717171',
   silver: '#c1c1c1',
   bermudaGray: '#778ea6',
+  alabaster: '#fcfcfc',
+  red: '#d0021b',
+  green: '#6fd300',
   white: '#ffffff',
   transparent: 'transparent'
 };
