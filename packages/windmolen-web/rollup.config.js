@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import svgo from 'rollup-plugin-svgo';
+import fileUrl from 'rollup-plugin-url';
 
 export default {
   input: 'src/index.js',
@@ -12,7 +13,7 @@ export default {
     sourcemap: true
   },
 
-  external: ['react', 'styled-components'],
+  external: ['classnames', 'react', 'styled-components'],
 
   plugins: [
     resolve({
@@ -27,6 +28,12 @@ export default {
     }),
 
     svgo(),
+
+    fileUrl({
+      limit: 100 * 1024,
+      include: ['**/*.png'],
+      emitFiles: true
+    })
 
     // terser({
     //   warnings: 'verbose'
