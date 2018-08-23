@@ -26,8 +26,6 @@ export default {
       plugins: ['external-helpers', 'babel-plugin-transform-object-rest-spread']
     }),
 
-    svgo(),
-
     fileUrl({
       limit: 100 * 1024,
       emitFiles: true
