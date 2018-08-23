@@ -14,7 +14,10 @@ type InputProps = {
   label?: Node,
   withIcon?: Node,
   iconWidth?: number,
-  iconHeight?: number
+  iconHeight?: number,
+
+  /** CSS class for the container around `<input />` */
+  className?: string
 };
 
 const getInputState = (props: InputProps) => {
@@ -84,8 +87,8 @@ const StyledIcon = styled(Icon).attrs({
   top: 24px;
 `;
 
-const Input = (props: InputProps) => (
-  <Container>
+const Input = ({ className, ...props }: InputProps) => (
+  <Container className={className}>
     {props.label && (<StyledLabel>{props.label}</StyledLabel>)}
     <StyledInput {...props} />
     {props.error && (<StyledErrorMessage>{props.error}</StyledErrorMessage>)}
