@@ -23,7 +23,7 @@ export default {
     babel({
       exclude: ['node_modules/**'],
       include: ['**/*.js'],
-      plugins: ['external-helpers']
+      plugins: ['external-helpers', 'babel-plugin-transform-object-rest-spread']
     }),
 
     svgo(),
