@@ -27,7 +27,8 @@ export default {
     }),
 
     fileUrl({
-      limit: 100 * 1024,
+      limit: 1,
+      include: ['**/*.svg', '**/*.png'],
       emitFiles: true
     })
 
