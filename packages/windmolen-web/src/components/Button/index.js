@@ -2,7 +2,6 @@
 import type { Node } from 'react';
 import React from 'react';
 import { StyledButton, ButtonText, StyledIcon } from './styles';
-import arrowright from '../../assets/icons/arrowright.svg';
 
 export type ButtonTheme = 'primary'
   | 'alternate'
@@ -18,7 +17,7 @@ export type ButtonTheme = 'primary'
 
 export type Props = {
   /** The actual icon to use, same as <Icon /> */
-  withIcon?: Node,
+  icon?: string,
   hideArrow?: boolean,
   children?: Node,
   small?: boolean,
@@ -27,10 +26,10 @@ export type Props = {
   theme?: ButtonTheme
 };
 
-const Button = (props: Props) => props.withIcon
+const Button = (props: Props) => props.icon
   ? (
     <StyledButton {...props}>
-      <StyledIcon source={props.withIcon} withIcon hide={props.theme === 'text' || props.hideArrow} />
+      <StyledIcon name={props.icon} hide={props.theme === 'text' || props.hideArrow} />
       <ButtonText withIcon>
         {props.children}
       </ButtonText>
@@ -40,13 +39,13 @@ const Button = (props: Props) => props.withIcon
       <ButtonText hideArrow={props.hideArrow}>
         {props.children}
       </ButtonText>
-      <StyledIcon source={arrowright} hide={props.theme === 'text' || props.hideArrow} />
+      <StyledIcon name="arrow-right" hide={props.theme === 'text' || props.hideArrow} />
     </StyledButton>
   );
 
 Button.defaultProps = {
   type: 'primary',
-  withIcon: null,
+  icon: null,
   asTextButton: false,
   small: false,
   theme: 'primary',

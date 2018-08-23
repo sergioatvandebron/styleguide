@@ -10,7 +10,6 @@ import Paragraph from '../Paragraph';
 import { DarkWrapper } from '../../helpers/docz';
 import Button from './'
 import { colors } from '../../globals';
-import windmill from '../../assets/icons/windmill.svg';
 
 # Button
 
@@ -19,7 +18,7 @@ import windmill from '../../assets/icons/windmill.svg';
 
 ## Primary
 <Playground wrapper={Wrapper}>
-  <Button>Primary</Button>
+  <Button icon="">Primary</Button>
 </Playground>
 
 ## Alternate
@@ -44,7 +43,7 @@ import windmill from '../../assets/icons/windmill.svg';
 
 ## With icon
 <Playground wrapper={Wrapper}>
-  <Button withIcon={windmill}>With icon</Button>
+  <Button icon="windmill">With icon</Button>
 </Playground>
 
 ## Text button

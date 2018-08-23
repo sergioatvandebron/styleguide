@@ -21,7 +21,9 @@ const themes: DefaultThemes = {
     hoverColor: colors.white,
     hoverBackgroundColor: colors.shuttleGray,
     shadow: '0 0 8px 0 rgba(0, 0, 0, 0.12)',
-    border: '0'
+    border: '0',
+    iconVariant: 1,
+    hoverIconVariant: 1,
   },
 
   alternate: {
@@ -30,7 +32,9 @@ const themes: DefaultThemes = {
     hoverColor: colors.bermudaGray,
     hoverBackgroundColor: colors.white,
     shadow: '0 0 8px 0 rgba(51, 61, 71, 0.12)',
-    border: '0'
+    border: '0',
+    iconVariant: 0,
+    hoverIconVariant: 2,
   },
 
   text: {
@@ -39,7 +43,9 @@ const themes: DefaultThemes = {
     hoverColor: colors.silver,
     hoverBackgroundColor: colors.transparent,
     shadow: 'none',
-    border: '0'
+    border: '0',
+    iconVariant: 0,
+    hoverIconVariant: 0,
   },
 
   outline: {
@@ -48,7 +54,9 @@ const themes: DefaultThemes = {
     hoverColor: colors.white,
     hoverBackgroundColor: colors.transparent,
     shadow: 'none',
-    border: `solid 1px ${colors.white}`
+    border: `solid 1px ${colors.white}`,
+    iconVariant: 1,
+    hoverIconVariant: 1,
   }
 };
 
@@ -87,22 +95,25 @@ export const StyledButton = Base.withComponent('button').extend`
   border: ${props => getThemeProp(props, 'border')};
   box-shadow: ${props => getThemeProp(props, 'shadow')};
   color: ${props => getThemeProp(props, 'color')};
-  fill: ${props => getThemeProp(props, 'color')};
   padding: ${props => props.small ? '4px 15px' : '9px 20px'};
   line-height: 1.6;
   text-decoration: ${props => props.theme === 'text' ? 'underline' : 'none'};
 
+  .icon {
+    background-position-y: -${props => getThemeProp(props, 'iconVariant')}em;
+  }
+
   &:hover {
     background-color: ${props => getThemeProp(props, 'hoverBackgroundColor')};
     color: ${props => getThemeProp(props, 'hoverColor')}
-    fill: ${props => getThemeProp(props, 'hoverColor')};
+
+    .icon {
+      background-position-y: -${props => getThemeProp(props, 'hoverIconVariant')}em;
+    }
   }
 `;
 
 export const StyledIcon = styled(Icon)`
-  background-color: inherit;
   display: ${props => props.hide ? 'none' : 'inline-block'};
-  fill: inherit;
-  margin-top: 2px;
   margin-right: ${props => props.withIcon ? '15px' : 0};
 `;
