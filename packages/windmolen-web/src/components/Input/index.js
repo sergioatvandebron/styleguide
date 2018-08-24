@@ -15,6 +15,7 @@ type InputProps = {
   withIcon?: Node,
   iconWidth?: number,
   iconHeight?: number,
+  type?: string,
 
   /** CSS class for the container around `<input />` */
   className?: string
@@ -91,5 +92,9 @@ const Input = ({ className, ...props }: InputProps) => (
     {props.icon && (<StyledIcon name={props.icon} />)}
   </Container>
 );
+
+Input.defaultProps = {
+  type: 'text'
+}
 
 export default Input;
