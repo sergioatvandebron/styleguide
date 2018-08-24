@@ -56,3 +56,31 @@ import Input from './';
 <Playground>
   <Input icon="search" />
 </Playground>
+
+## With autosuggestions
+The module https://github.com/reactjs/react-autocomplete is being used for the
+autocompletion. Its props can be overwritten using the `autoCompleteProps` prop
+as shown in the example below.
+<Playground>
+  <Input
+    icon="search"
+    suggestions={[
+      { label: 'apple',  id: 1 },
+      { label: 'banana', id: 2 },
+      { label: 'pear',   id: 3 },
+    ]}
+    autoCompleteProps={{
+      getItemValue: (item) => item.label,
+      renderItem: (item, isHighlighted) => (
+        <div className={ isHighlighted ? 'highlighted' : '' } key={item.id}>
+          {item.label}
+        </div>
+      ),
+    }}
+  />
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</Playground>

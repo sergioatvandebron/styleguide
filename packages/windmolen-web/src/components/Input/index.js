@@ -1,6 +1,7 @@
 // @flow
 import React, { type Node } from 'react';
 import styled from 'styled-components';
+import Autocomplete from 'react-autocomplete';
 import Base from '../Base';
 import Icon from '../Icon';
 import { colors } from '../../globals';
@@ -48,12 +49,14 @@ const StyledInput = Base.withComponent('input').extend`
   padding-right: ${props => props.icon ? '70px' : '20px'};
   width: 100%;
   height: 50px;
-  ${props => props.touched ? `border-bottom: 1px solid ${getInputState(props)}` : ''}
+  position: relative;
+  z-index: 2;
+  ${props => props.touched && !props.suggestions ? `border-bottom: 1px solid ${getInputState(props)};` : ''}
 
   &:active,
   &:focus {
     outline: 0;
-    border-bottom: 1px solid ${props => !props.disabled ? colors.charcoalGray : colors.transparent};
+    ${props => !props.suggestions && `border-bottom: 1px solid ${!props.disabled ? colors.charcoalGray : colors.transparent};`
   }
 
   &::placeholder {
@@ -93,7 +96,7 @@ const StyledIconContainer = Base.extend`
   bottom: 0;
   width: 50px;
   background-color: ${colors.charcoalGray};
-  z-index: 1;
+  z-index: 3;
 
   &:focus,
   &:active,
@@ -106,13 +109,59 @@ const StyledIconContainer = Base.extend`
   }
 `;
 
+const StyledAutoSuggestion = Base.extend`
+  position: absolute;
+  box-shadow: 0 11px 15px 0 rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding-top: 55px;
+  padding-bottom: 5px;
+
+  & > div {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 32px;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: ${colors.silver};
+    }
+  }
+`;
+
 const Input = ({ className, ...props }: InputProps) => (
   <Container className={className}>
     {props.label && (
       <StyledLabel>{props.label}</StyledLabel>
     )}
 
-    <StyledInput {...props} />
+    {props.suggestions ? (
+      <Autocomplete
+        items={props.suggestions}
+        wrapperStyle={{  }}
+        renderInput={({ ref, value, ...inputProps }) => (
+          <StyledInput
+            innerRef={(node) => ref(node)}
+            {...inputProps}
+            {...props}
+          />
+        )}
+        renderMenu={(children) => (
+          <StyledAutoSuggestion>
+            {children}
+          </StyledAutoSuggestion>
+        )}
+        {...props.autoCompleteProps}
+      />
+    ) : (
+      <StyledInput {...props} />
+    )}
 
     {props.error && (
       <StyledErrorMessage>{props.error}</StyledErrorMessage>
