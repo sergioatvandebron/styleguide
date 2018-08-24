@@ -12,11 +12,12 @@ type InputProps = {
   isValid?: boolean,
   placeholderRight?: boolean,
   label?: Node,
-  withIcon?: Node,
-  iconWidth?: number,
-  iconHeight?: number,
+  onIconClick?: func,
 
-  /** CSS class for the container around `<input />` */
+  /** The name of the icon. */
+  icon?: string,
+
+  /** CSS class for the container around `<input />`. */
   className?: string
 };
 
@@ -37,20 +38,21 @@ const getInputState = (props: InputProps) => {
 const StyledInput = Base.withComponent('input').extend`
   background-color: ${colors.alabaster};
   border: 0;
-  border-bottom: 1px solid ${props => getInputState(props)};
   box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
   color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
   display: block;
   font-size: 16px;
   outline: 0;
   padding: 9px 20px;
-  padding-right: ${props => props.icon ? '60px' : '20px'};
+  padding-right: ${props => props.icon ? '70px' : '20px'};
   width: 100%;
+  height: 50px;
+  ${props => props.touched ? `border-bottom: 1px solid ${getInputState(props)}` : ''}
 
   &:active,
   &:focus {
     outline: 0;
-    border-bottom-color: ${props => !props.disabled ? colors.charcoalGray : colors.transparent};
+    border-bottom: 1px solid ${props => !props.disabled ? colors.charcoalGray : colors.transparent};
   }
 
   &::placeholder {
@@ -79,16 +81,47 @@ const StyledErrorMessage = Base.extend`
 
 const StyledIcon = styled(Icon)`
   position: absolute;
-  right: 20px;
-  top: 15px;
+  right: 5px;
+  top: 5px;
+`;
+
+const StyledIconContainer = Base.extend`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  background-color: ${colors.charcoalGray};
+  z-index: 1;
+
+  &:focus,
+  &:active,
+  &:hover {
+    background-color: ${colors.shuttleGray};
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Input = ({ className, ...props }: InputProps) => (
   <Container className={className}>
-    {props.label && (<StyledLabel>{props.label}</StyledLabel>)}
-    <StyledInput {...props} />
-    {props.error && (<StyledErrorMessage>{props.error}</StyledErrorMessage>)}
-    {props.icon && (<StyledIcon name={props.icon} />)}
+    {props.label && (
+      <StyledLabel>{props.label}</StyledLabel>
+    )}
+
+    <StyledInput type="text" {...props} />
+
+    {props.error && (
+      <StyledErrorMessage>{props.error}</StyledErrorMessage>
+    )}
+
+    {props.icon && (
+      <StyledIconContainer onClick={props.onIconClick}>
+        <StyledIcon variant={1} name={props.icon} fontSize="40px" />
+      </StyledIconContainer>
+    )}
   </Container>
 );
 

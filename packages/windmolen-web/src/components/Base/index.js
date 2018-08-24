@@ -32,7 +32,7 @@ const fontSize = (props: BaseProps) => {
   case 'lead': return px(24);
   case 'super-huge': return px(100);
   case 'body':
-  case 'regular': 
+  case 'regular':
   default:
     return px(20);
   }
@@ -50,7 +50,7 @@ const lineHeight = (props: BaseProps) => {
   case 'lead': return px(40);
   case 'super-huge': return px(110);
   case 'body':
-  case 'regular': 
+  case 'regular':
   default:
     return px(40);
   }
@@ -72,8 +72,8 @@ const Base = styled.div`
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
-  line-height: ${props => lineHeight(props)};
 
+  ${props => props.fontSize ? `line-height: ${props => lineHeight(props)}` : ''}
   ${props => props.margin ? `margin: ${props.margin}` : ''}
   ${props => props.withShadow ? largeUp('box-shadow: -40px 28px 40px 0 rgba(0, 0, 0, 0.18)') : ''}
 `;
