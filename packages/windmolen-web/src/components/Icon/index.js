@@ -36,6 +36,12 @@ spritesheet.names = [
   'bio',
   'send',
   'sun',
+  'user',
+  'phone',
+  'app--left',
+  'laadpas--left',
+  'laadpaal--left',
+  'slim-laden--left',
 ];
 
 const StyledSpan = Span.extend`
