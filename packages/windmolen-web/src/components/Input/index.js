@@ -13,6 +13,7 @@ type InputProps = {
   placeholderRight?: boolean,
   label?: Node,
   onIconClick?: func,
+  type?: string,
 
   /** The name of the icon. */
   icon?: string,
@@ -111,7 +112,7 @@ const Input = ({ className, ...props }: InputProps) => (
       <StyledLabel>{props.label}</StyledLabel>
     )}
 
-    <StyledInput type="text" {...props} />
+    <StyledInput {...props} />
 
     {props.error && (
       <StyledErrorMessage>{props.error}</StyledErrorMessage>
@@ -124,5 +125,9 @@ const Input = ({ className, ...props }: InputProps) => (
     )}
   </Container>
 );
+
+Input.defaultProps = {
+  type: 'text'
+}
 
 export default Input;
