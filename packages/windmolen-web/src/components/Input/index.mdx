@@ -5,6 +5,7 @@ route: /Controls/Input
 ---
 
 import { Playground, PropsTable } from 'docz'
+import classNames from 'classnames';
 import Wrapper from '../Wrapper';
 import Input from './';
 
@@ -71,11 +72,17 @@ as shown in the example below.
     ]}
     autoCompleteProps={{
       getItemValue: (item) => item.label,
-      renderItem: (item, isHighlighted) => (
-        <div className={ isHighlighted ? 'highlighted' : '' } key={item.id}>
-          {item.label}
-        </div>
-      ),
+      renderItem: (item, isHighlighted) => {
+        // Use the 'suggestion' class to inherit the styleguide's style.
+        const suggestionClasses = classNames('suggestion', {
+          highlighted: isHighlighted,
+        })
+        return (
+          <div className={suggestionClasses} key={item.id}>
+            {item.label}
+          </div>
+        );
+      },
     }}
   />
   <br/>

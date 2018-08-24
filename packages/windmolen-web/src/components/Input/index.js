@@ -119,7 +119,7 @@ const StyledAutoSuggestion = Base.extend`
   padding-top: 55px;
   padding-bottom: 5px;
 
-  & > div {
+  .suggestion {
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 5px;
