@@ -132,51 +132,57 @@ const StyledAutoSuggestion = Base.extend`
     &:hover {
       color: ${colors.silver};
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
 
-const Input = ({ className, ...props }: InputProps) => (
-  <Container className={className}>
-    {props.label && (
-      <StyledLabel>{props.label}</StyledLabel>
-    )}
+const Input = ({ className, autoCompleteProps, ...props }: InputProps) => {
+  return (
+    <Container className={className}>
+      {props.label && (
+        <StyledLabel>{props.label}</StyledLabel>
+      )}
 
-    {props.suggestions ? (
-      <Autocomplete
-        items={props.suggestions}
-        wrapperStyle={{  }}
-        renderInput={({ ref, value, ...inputProps }) => (
-          <StyledInput
-            innerRef={(node) => ref(node)}
-            {...inputProps}
-            {...props}
-          />
-        )}
-        renderMenu={(children) => (
-          <StyledAutoSuggestion>
-            {children}
-          </StyledAutoSuggestion>
-        )}
-        {...props.autoCompleteProps}
-      />
-    ) : (
-      <StyledInput {...props} />
-    )}
+      {props.suggestions ? (
+        <Autocomplete
+          items={props.suggestions}
+          wrapperStyle={{  }}
+          renderInput={({ ref, value, ...inputProps }) => (
+            <StyledInput
+              innerRef={(node) => ref(node)}
+              {...inputProps}
+              {...props}
+            />
+          )}
+          renderMenu={(children) => (
+            <StyledAutoSuggestion>
+              {children}
+            </StyledAutoSuggestion>
+          )}
+          {...autoCompleteProps}
+        />
+      ) : (
+        <StyledInput {...props} />
+      )}
 
-    {props.error && (
-      <StyledErrorMessage>{props.error}</StyledErrorMessage>
-    )}
+      {props.error && (
+        <StyledErrorMessage>{props.error}</StyledErrorMessage>
+      )}
 
-    {props.icon && (
-      <StyledIconContainer onClick={props.onIconClick}>
-        <StyledIcon variant={1} name={props.icon} fontSize="40px" />
-      </StyledIconContainer>
-    )}
-  </Container>
-);
+      {props.icon && (
+        <StyledIconContainer onClick={props.onIconClick}>
+          <StyledIcon variant={1} name={props.icon} fontSize="40px" />
+        </StyledIconContainer>
+      )}
+    </Container>
+  );
+};
 
 Input.defaultProps = {
   type: 'text'
-}
+};
 
 export default Input;
