@@ -12,7 +12,7 @@ export default {
     sourcemap: true
   },
 
-  external: ['classnames', 'react', 'styled-components'],
+  external: ['classnames', 'react', 'react-autocomplete', 'styled-components'],
 
   plugins: [
     resolve({
