@@ -1,7 +1,10 @@
 // @flow
 import React, { type Node } from 'react';
 import styled, { ThemeProvider, type Theme } from 'styled-components';
+import { injectLayoutBaseCSS, GridThemeProvider } from 'styled-bootstrap-grid';
 import { colors } from '../../globals';
+
+injectLayoutBaseCSS();
 
 type WindmolenTheme = Theme & {
   color: string,
@@ -11,6 +14,35 @@ type WindmolenTheme = Theme & {
 type WrapperProps = {
   theme: WindmolenTheme,
   children?: Node
+};
+
+// bootstrap
+const gridTheme = {
+  breakpoints: {
+    wide: 1200,
+    xl: 1200,
+
+    desktop: 992,
+    lg: 992,
+
+    tablet: 768,
+    md: 768,
+
+    phone: 576,
+    sm: 576,
+
+    smaller: 575,
+    xs: 575,
+  },
+  row: {
+    padding: 15,
+  },
+  col: {
+    padding: 15,
+  },
+  container: {
+    padding: 15,
+  },
 };
 
 // themes
@@ -33,9 +65,11 @@ const StyledContainer = styled.div`
 
 const Wrapper = (props: WrapperProps) => (
   <ThemeProvider theme={props.theme || 'primary'}>
-    <StyledContainer>
-      {props.children}
-    </StyledContainer>
+    <GridThemeProvider gridTheme={gridTheme}>
+      <StyledContainer>
+        {props.children}
+      </StyledContainer>
+    </GridThemeProvider>
   </ThemeProvider>
 );
 

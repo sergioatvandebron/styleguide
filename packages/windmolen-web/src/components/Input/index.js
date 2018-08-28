@@ -5,7 +5,7 @@ import Autocomplete from 'react-autocomplete';
 import Base from '../Base';
 import Icon from '../Icon';
 import { colors } from '../../globals';
-import { mediumUp } from '../../utils';
+import { media } from 'styled-bootstrap-grid';
 
 type InputProps = {
   error?: Node,
@@ -74,7 +74,10 @@ const StyledLabel = Base.extend`
   color: ${colors.charcoalGray};
   margin-bottom: 5px;
 
-  ${mediumUp('font-size: 20px; margin-bottom: 10px;')}
+  ${media.desktop`
+    font-size: 20px;
+    margin-bottom: 10px;
+  `}
 `;
 
 const StyledErrorMessage = Base.extend`

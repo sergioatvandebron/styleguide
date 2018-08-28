@@ -75,7 +75,7 @@ const Base = styled.div`
   line-height: ${props => lineHeight(props)};
 
   ${props => props.margin ? `margin: ${props.margin}` : ''}
-  ${props => props.withShadow ? largeUp('box-shadow: -40px 28px 40px 0 rgba(0, 0, 0, 0.18)') : ''}
+  ${props => props.withShadow ? media.desktop`box-shadow: -40px 28px 40px 0 rgba(0, 0, 0, 0.18)` : ''}
 `;
 
 export default Base;
