@@ -77,7 +77,7 @@ const buttonTextMarginRight = (props: Props): string => {
     return '0';
   }
 
-  return px(50);
+  return px(20);
 };
 
 export const ButtonText = styled(Span).attrs({
