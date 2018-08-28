@@ -72,8 +72,8 @@ const Base = styled.div`
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
+  line-height: ${props => lineHeight(props)};
 
-  ${props => props.fontSize ? `line-height: ${props => lineHeight(props)}` : ''}
   ${props => props.margin ? `margin: ${props.margin}` : ''}
   ${props => props.withShadow ? largeUp('box-shadow: -40px 28px 40px 0 rgba(0, 0, 0, 0.18)') : ''}
 `;
