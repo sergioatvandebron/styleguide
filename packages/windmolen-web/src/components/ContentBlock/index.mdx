@@ -1,5 +1,5 @@
 ---
-name:
+name: ContentBlock
 menu: Base
 route: /Base/ContentBlock
 ---
@@ -17,7 +17,7 @@ import Button from '../Button';
 ## Props
 <PropsTable of={ContentBlock} />
 
-## Default
+## Single image
 <Playground wrapper={Wrapper}>
   <ContentBlock
     images={[
@@ -25,11 +25,6 @@ import Button from '../Button';
         title: 'A test placeholder',
         alt: 'A test placeholder',
         src: 'https://via.placeholder.com/1440x800/888/fff',
-      },
-      {
-        title: 'A test placeholder',
-        alt: 'A test placeholder',
-        src: 'https://via.placeholder.com/800x800',
       },
     ]}
   >
@@ -45,5 +40,79 @@ import Button from '../Button';
 </Playground>
 
 ## Flipped
+<Playground wrapper={Wrapper}>
+  <ContentBlock
+    flipped
+    images={[
+      {
+        title: 'A test placeholder',
+        alt: 'A test placeholder',
+        src: 'https://via.placeholder.com/1440x800/888/fff',
+      },
+    ]}
+  >
+    <H2>Het ontstaan Vandebron</H2>
+    <Paragraph>
+      Vandebron is ontstaan vanuit het geloof in positieve verandering: het
+      versnellen van de transitie naar 100% duurzame energie. Bijdragen aan
+      deze verandering hoeft helemaal niet ingewikkeld te zijn. We bieden
+      slimme energietoepassingen die goed zijn voor de wereld en goed voor jou.
+    </Paragraph>
+    <Button theme="alternate">Lees meer</Button>
+  </ContentBlock>
+</Playground>
+
 ## Two images
+<Playground wrapper={Wrapper}>
+  <ContentBlock
+    images={[
+      {
+        title: 'A test placeholder',
+        alt: 'A test placeholder',
+        src: 'https://via.placeholder.com/1440x800/888/fff',
+      },
+      {
+        title: 'A test placeholder 2',
+        alt: 'A test placeholder 2',
+        src: 'https://via.placeholder.com/800x800',
+      },
+    ]}
+  >
+    <H2>Het ontstaan Vandebron</H2>
+    <Paragraph>
+      Vandebron is ontstaan vanuit het geloof in positieve verandering: het
+      versnellen van de transitie naar 100% duurzame energie. Bijdragen aan
+      deze verandering hoeft helemaal niet ingewikkeld te zijn. We bieden
+      slimme energietoepassingen die goed zijn voor de wereld en goed voor jou.
+    </Paragraph>
+    <Button theme="alternate">Lees meer</Button>
+  </ContentBlock>
+</Playground>
+
 ## Two images + flipped
+<Playground wrapper={Wrapper}>
+  <ContentBlock
+    flipped
+    images={[
+      {
+        title: 'A test placeholder',
+        alt: 'A test placeholder',
+        src: 'https://via.placeholder.com/1440x800/888/fff',
+      },
+      {
+        title: 'A test placeholder 2',
+        alt: 'A test placeholder 2',
+        src: 'https://via.placeholder.com/800x800',
+      },
+    ]}
+  >
+    <H2>Het ontstaan Vandebron</H2>
+    <Paragraph>
+      Vandebron is ontstaan vanuit het geloof in positieve verandering: het
+      versnellen van de transitie naar 100% duurzame energie. Bijdragen aan
+      deze verandering hoeft helemaal niet ingewikkeld te zijn. We bieden
+      slimme energietoepassingen die goed zijn voor de wereld en goed voor jou.
+    </Paragraph>
+    <Button theme="alternate">Lees meer</Button>
+  </ContentBlock>
+</Playground>
