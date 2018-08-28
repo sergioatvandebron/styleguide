@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import { px, largeUp } from '../../utils';
+import { px, mediumUp, largeUp } from '../../utils';
 
 export type FontSize = 'h1'
   | 'h2'
@@ -20,39 +20,39 @@ export type BaseProps = {
   margin?: string
 };
 
-const fontSize = (props: BaseProps) => {
+const fontSize = (props: BaseProps, isMobile: boolean = true) => {
   switch (props.fontSize) {
-  case 'h1': return px(80);
-  case 'h2': return px(55);
-  case 'h3': return px(40);
-  case 'h4': return px(24);
+  case 'h1': return px(isMobile ? 40 : 80);
+  case 'h2': return px(isMobile ? 35 : 55);
+  case 'h3': return px(isMobile ? 28 : 40);
+  case 'h4': return px(isMobile ? 18 : 24);
   case 'h5': return px(18);
   case 'button':
   case 'body-xsmall': return px(16);
-  case 'lead': return px(24);
-  case 'super-huge': return px(100);
+  case 'lead': return px(isMobile ? 20 : 24);
+  case 'super-huge': return px(isMobile ? 80 : 100);
   case 'body':
-  case 'regular':
+  case 'regular': 
   default:
-    return px(20);
+    return px(isMobile ? 18 : 20);
   }
 };
 
-const lineHeight = (props: BaseProps) => {
+const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
   switch (props.fontSize) {
-  case 'h1': return px(85);
-  case 'h2': return px(60);
-  case 'h3': return px(50);
-  case 'h4': return px(30);
+  case 'h1': return px(isMobile ? 45 : 85);
+  case 'h2': return px(isMobile ? 45 : 60);
+  case 'h3': return px(isMobile ? 40 : 50);
+  case 'h4': return px(isMobile ? 24 : 30);
   case 'h5': return px(30);
-  case 'button':
+  case 'button': return px(isMobile ? 20 : 32);
   case 'body-xsmall': return px(32);
-  case 'lead': return px(40);
-  case 'super-huge': return px(110);
+  case 'lead': return px(isMobile ? 32 : 40);
+  case 'super-huge': return px(isMobile ? 53 : 110);
   case 'body':
   case 'regular':
   default:
-    return px(40);
+    return px(isMobile ? 32 : 40);
   }
 };
 
@@ -76,6 +76,9 @@ const Base = styled.div`
 
   ${props => props.margin ? `margin: ${props.margin}` : ''}
   ${props => props.withShadow ? largeUp('box-shadow: -40px 28px 40px 0 rgba(0, 0, 0, 0.18)') : ''}
+
+  ${props => mediumUp(`font-size: ${fontSize(props, false)};`)}
+  ${props => mediumUp(`line-height: ${lineHeight(props, false)};`)}
 `;
 
 export default Base;
