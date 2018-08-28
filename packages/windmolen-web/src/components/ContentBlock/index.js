@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import Base from '../Base';
-import classNames from 'classnames';
 import { media, Container, Row, Col } from 'styled-bootstrap-grid';
 
 export type Props = {
@@ -54,7 +53,6 @@ const StyledContentBlock = Base.withComponent('div').extend`
         width: 200px;
         height: 200px;
         object-fit: cover;
-        //top: -120px;
       `}
     }
   }
@@ -87,7 +85,7 @@ const StyledContentBlock = Base.withComponent('div').extend`
     ${media.desktop`
       margin-bottom: 0;
       position: absolute;
-      left: 50%;
+      ${props => props.flipped ? 'right: 50%' : 'left: 50%'};
       width: 50%;
     `}
   }
@@ -110,12 +108,15 @@ const ContentBlock = ({
   children,
   ...props
 }: Props) => {
-  const classes = classNames({
-    flipped: flipped,
-  });
+  const colAttrs = flipped ? {
+    lg: 5,
+    mdOffset: 7,
+  } : {
+    lg: 5,
+  };
 
   return (
-    <StyledContentBlock className={classes}>
+    <StyledContentBlock flipped={flipped}>
       <div className="content-block--images-container">
         {images.map(({ src, ...props, }) => (
           <div className="content-block--image-wrapper">
@@ -129,7 +130,7 @@ const ContentBlock = ({
       </div>
       <Container>
         <Row>
-          <Col className="content-block--content-wrapper" lg={5} mdPush={7}>
+          <Col className="content-block--content-wrapper" {...colAttrs}>
             {children}
           </Col>
         </Row>
