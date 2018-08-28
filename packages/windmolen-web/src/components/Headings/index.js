@@ -1,45 +1,62 @@
 import styled from 'styled-components';
 import Base from '../Base';
 import { colors } from '../../globals';
+import { media } from 'styled-bootstrap-grid';
 
 const H1 = styled(Base.withComponent('h1')).attrs({
   fontSize: 'h1',
-  margin: '0 0 50px'
 })`
   color: ${colors.charcoalGray};
   font-weight: 800;
+  margin: 0 0 10px;
+
+  ${media.desktop`
+    margin: 0 0 50px;
+  `}
 `;
 
 const H2 = styled(Base.withComponent('h2')).attrs({
   fontSize: 'h2',
-  margin: '0 0 20px'
 })`
   color: ${colors.charcoalGray};
   font-weight: 800;
+  margin: 0 0 10px
+
+  ${media.desktop`
+    margin: 0 0 20px;
+  `}
 `;
 
 const H3 = styled(Base.withComponent('h3')).attrs({
   fontSize: 'h3',
-  margin: '0 0 20px'
 })`
   color: ${colors.charcoalGray};
   font-weight: 800;
+  margin: 0 0 10px
+
+  ${media.desktop`
+    margin: 0 0 20px;
+  `}
 `;
 
 const H4 = styled(Base.withComponent('h4')).attrs({
   fontSize: 'h4',
-  margin: '0 0 10px'
 })`
   color: ${colors.charcoalGray};
   font-weight: 800;
+  margin: 0 0 10px
 `;
 
 const H5 = styled(Base.withComponent('h5')).attrs({
   fontSize: 'h5',
-  margin: '0 0 20px'
 })`
   color: ${colors.charcoalGray};
   font-weight: 700;
+  margin: 0 0 10px
+
+  ${media.desktop`
+    margin: 0 0 20px;
+  `}
 `;
 
 export { H1, H2, H3, H4, H5 };
