@@ -56,10 +56,6 @@ const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
   }
 };
 
-const margin = (props: BaseProps): string => props.margin !== undefined
-  ? props.margin
-  : '0';
-
 const Base = styled.div`
   background-color: inherit;
   box-shadow: ${props => props.withShadow ? '-22px 16px 22px 0 rgba(0, 0, 0, 0.18)' : 'unset'};
