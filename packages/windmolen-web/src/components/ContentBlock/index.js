@@ -1,7 +1,8 @@
 // @flow
-import React from 'react';
+import React, { Fragment } from 'react';
 import Base from '../Base';
 import { media, Container, Row, Col } from 'styled-bootstrap-grid';
+import styled from 'styled-components';
 
 export type Props = {
   images?: array,
@@ -19,7 +20,7 @@ const StyledContentBlock = Base.withComponent('div').extend`
   /* one image */
   .content-block--image-wrapper:first-child:nth-last-child(1) {
     ${media.desktop`
-      max-height: 540px;
+      height: 540px;
     `}
   }
 
@@ -102,6 +103,10 @@ const StyledContentBlock = Base.withComponent('div').extend`
   }
 `;
 
+const StyledContainer = styled(Container)`
+  position: relative;
+`;
+
 const ContentBlock = ({
   images,
   flipped,
@@ -115,26 +120,58 @@ const ContentBlock = ({
     lg: 5,
   };
 
+  const renderContent = (images) => {
+    if (images.length == 2) {
+      return (
+        <StyledContainer>
+          <Row>
+            <div className="content-block--images-container">
+              {images.map(({ src, ...props, }) => (
+                <div className="content-block--image-wrapper">
+                  <img
+                    className="content-block--image"
+                    src={src}
+                    {...props}
+                  />
+                </div>
+              ))}
+            </div>
+            <Col className="content-block--content-wrapper" {...colAttrs}>
+              {children}
+            </Col>
+          </Row>
+        </StyledContainer>
+      );
+    }
+
+    // Single image
+    return (
+      <Fragment>
+        <div className="content-block--images-container">
+          {images.map(({ src, ...props, }) => (
+            <div className="content-block--image-wrapper">
+              <img
+                className="content-block--image"
+                src={src}
+                {...props}
+              />
+            </div>
+          ))}
+        </div>
+        <StyledContainer>
+          <Row>
+            <Col className="content-block--content-wrapper" {...colAttrs}>
+              {children}
+            </Col>
+          </Row>
+        </StyledContainer>
+      </Fragment>
+    )
+  };
+
   return (
     <StyledContentBlock flipped={flipped}>
-      <div className="content-block--images-container">
-        {images.map(({ src, ...props, }) => (
-          <div className="content-block--image-wrapper">
-            <img
-              className="content-block--image"
-              src={src}
-              {...props}
-            />
-          </div>
-        ))}
-      </div>
-      <Container>
-        <Row>
-          <Col className="content-block--content-wrapper" {...colAttrs}>
-            {children}
-          </Col>
-        </Row>
-      </Container>
+      {renderContent(images)}
     </StyledContentBlock>
   );
 };
