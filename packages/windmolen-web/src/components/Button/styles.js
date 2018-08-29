@@ -116,4 +116,5 @@ export const StyledButton = Base.withComponent('button').extend`
 export const StyledIcon = styled(Icon)`
   display: ${props => props.hide ? 'none' : 'inline-block'};
   margin-right: ${props => props.withIcon ? '15px' : 0};
+  font-size: 150%;
 `;
