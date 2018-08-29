@@ -2,9 +2,11 @@
 import type { Node } from 'react';
 import React from 'react';
 import classNames from 'classnames';
+import styled from 'styled-components';
 import Span from '../Span';
 import SpritesheetSVG from '../../assets/icons/sprite-sheet.svg';
 import SpritesheetPNG from '../../assets/icons/sprite-sheet.png';
+import { colors } from '../../globals';
 
 type Props = {
   name: string,
@@ -44,12 +46,14 @@ spritesheet.names = [
   'slim-laden--left',
 ];
 
-const StyledSpan = Span.extend`
+const StyledSpan = styled(Span).attrs({
+  fontSize: '50px'
+})`
   background-image: url('${SpritesheetPNG}');
   background-image: url('${SpritesheetSVG}');
   background-position: -${props => spritesheet.names.indexOf(props.name)}em -${props => props.variant}em;
   background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: ${colors.transparent};
   background-size: ${spritesheet.names.length}em ${spritesheet.rows}em;
   display: inline-block;
   font-size: ${props => props.fontSize};
