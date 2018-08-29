@@ -96,6 +96,7 @@ const StyledContentBlock = Base.withComponent('div').extend`
     width: 100%;
     max-width: 100%;
     object-fit: cover;
+    float: ${props => props.flipped ? 'right' : 'left'};
 
     ${media.desktop`
       width: auto;
