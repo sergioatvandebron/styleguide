@@ -4055,6 +4055,8 @@ button.close {
     font-size: 18px;
     color: black;
     font-weight: 600; }
+    .inactive .Van-DashboardHeaderDropdownEntry-caption {
+      color: #717171; }
   .Van-DashboardHeaderDropdownEntry-subcaption {
     color: #c0bdbd;
     font-size: 14px; }
@@ -4067,6 +4069,17 @@ button.close {
       color: white; }
     .Van-DashboardHeaderDropdownEntry:hover > .Van-DashboardHeaderDropdownEntry-option > .Van-DashboardHeaderDropdownEntry-caption {
       color: white; }
+  .Van-DashboardHeaderDropdownEntry.inactive {
+    cursor: default; }
+    .Van-DashboardHeaderDropdownEntry.inactive:hover {
+      background-color: #fff;
+      border-color: #f1f0ef; }
+      .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-iconWrapper svg {
+        color: #979797; }
+      .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-option > .Van-DashboardHeaderDropdownEntry-subcaption {
+        color: #c0bdbd; }
+      .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-option > .Van-DashboardHeaderDropdownEntry-caption {
+        color: #717171; }
 
 .Van-DashboardHeaderNotifications {
   height: 100%;
