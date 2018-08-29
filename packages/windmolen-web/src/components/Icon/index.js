@@ -2,7 +2,6 @@
 import type { Node } from 'react';
 import React from 'react';
 import classNames from 'classnames';
-import styled from 'styled-components';
 import Span from '../Span';
 import SpritesheetSVG from '../../assets/icons/sprite-sheet.svg';
 import SpritesheetPNG from '../../assets/icons/sprite-sheet.png';
@@ -46,9 +45,7 @@ spritesheet.names = [
   'slim-laden--left',
 ];
 
-const StyledSpan = styled(Span).attrs({
-  fontSize: '50px'
-})`
+const StyledSpan = Span.extend`
   background-image: url('${SpritesheetPNG}');
   background-image: url('${SpritesheetSVG}');
   background-position: -${props => spritesheet.names.indexOf(props.name)}em -${props => props.variant}em;
@@ -56,10 +53,13 @@ const StyledSpan = styled(Span).attrs({
   background-color: ${colors.transparent};
   background-size: ${spritesheet.names.length}em ${spritesheet.rows}em;
   display: inline-block;
-  font-size: ${props => props.fontSize};
   height: 1em;
   width: 1em;
   vertical-align: middle;
+
+  &&& {
+    font-size: ${props => props.fontSize};
+  }
 }`;
 
 const Icon = (props: Props): Node => (
