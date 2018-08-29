@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import Span from '../Span';
 import SpritesheetSVG from '../../assets/icons/sprite-sheet.svg';
 import SpritesheetPNG from '../../assets/icons/sprite-sheet.png';
+import { colors } from '../../globals';
 
 type Props = {
   name: string,
@@ -49,13 +50,16 @@ const StyledSpan = Span.extend`
   background-image: url('${SpritesheetSVG}');
   background-position: -${props => spritesheet.names.indexOf(props.name)}em -${props => props.variant}em;
   background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: ${colors.transparent};
   background-size: ${spritesheet.names.length}em ${spritesheet.rows}em;
   display: inline-block;
-  font-size: ${props => props.fontSize};
   height: 1em;
   width: 1em;
   vertical-align: middle;
+
+  &&& {
+    font-size: ${props => props.fontSize};
+  }
 }`;
 
 const Icon = (props: Props): Node => (
