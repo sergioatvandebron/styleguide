@@ -9,6 +9,12 @@
     <DashboardHeaderDropdown title="One dropdown" icon={treeIcon}>
       <DashboardHeaderDropdown.Option caption="One level" handleClick={() => {}} />
       <DashboardHeaderDropdown.Option caption="Two levels" subcaption="With a subcaption" handleClick={() => {}} />
+      <DashboardHeaderDropdown.Option
+        inactive={true}
+        caption="Inactive item"
+        subcaption="Inactive item with a subcaption"
+        handleClick={() => {}}
+      />
     </DashboardHeaderDropdown>
 
     <DashboardHeaderDropdown title="Two dropdowns" icon={drinksIcon}>

@@ -1,18 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Icon from '../Icon';
 
 class Option extends React.Component {
-  handleClickAndClose = ev => {
+  handleClickAndClose = (ev, inactive) => {
+    if (inactive) {
+      return;
+    }
     this.props.handleClick(ev);
     this.props.closeMenu();
   };
 
   render() {
-    const { icon, caption, subcaption } = this.props;
+    const { icon, caption, subcaption, inactive } = this.props;
+    const className = {
+      inactive
+    };
 
     return (
-      <div className="Van-DashboardHeaderDropdownEntry" onClick={this.handleClickAndClose}>
+      <div
+        className={classnames('Van-DashboardHeaderDropdownEntry', className)}
+        onClick={ev => this.handleClickAndClose(ev, inactive)}
+      >
         {icon !== null && (
           <div className="Van-DashboardHeaderDropdownEntry-iconWrapper">
             <Icon source={icon} />
@@ -36,13 +46,15 @@ Option.propTypes = {
   caption: PropTypes.node.isRequired,
   subcaption: PropTypes.string,
   handleClick: PropTypes.func.isRequired,
-  closeMenu: PropTypes.func
+  closeMenu: PropTypes.func,
+  inactive: PropTypes.bool
 };
 
 Option.defaultProps = {
   icon: null,
   subcaption: null,
-  closeMenu() {}
+  closeMenu() {},
+  inactive: undefined
 };
 
 export default Option;
