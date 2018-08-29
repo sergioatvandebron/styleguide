@@ -168,6 +168,10 @@
     font-size: 18px;
     color: black;
     font-weight: 600;
+
+    .inactive & {
+      color: $color-grey-dark;
+    }
   }
 
   &-subcaption {
@@ -190,6 +194,29 @@
 
       > .Van-DashboardHeaderDropdownEntry-caption {
         color: white;
+      }
+    }
+  }
+
+  &.inactive {
+    cursor: default;
+
+    &:hover {
+      background-color: $color-white;
+      border-color: $color-grey-bright;
+
+      > .Van-DashboardHeaderDropdownEntry-iconWrapper svg {
+        color: $color-grey-nobel;
+      }
+
+      > .Van-DashboardHeaderDropdownEntry-option {
+        > .Van-DashboardHeaderDropdownEntry-subcaption {
+          color: $color-grey;
+        }
+
+        > .Van-DashboardHeaderDropdownEntry-caption {
+          color: $color-grey-dark;
+        }
       }
     }
   }

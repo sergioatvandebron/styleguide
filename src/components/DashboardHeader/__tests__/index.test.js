@@ -59,6 +59,25 @@ describe('<DashboardHeaderDropdown.Option', () => {
     expect(handleClick.mock.calls.length).toBe(1);
     expect(closeMenu.mock.calls.length).toBe(1);
   });
+
+  it('renders inactive dropdown icon', () => {
+    const handleClick = jest.fn();
+    const closeMenu = jest.fn();
+    const component = mount(
+      <DashboardHeaderDropdown.Option
+        inactive={true}
+        caption="Inactive item"
+        subcaption="Inactive item with a subcaption"
+        handleClick={() => {}}
+      />
+    );
+
+    const inactiveDropdownItem = component.find('.Van-DashboardHeaderDropdownEntry');
+    expect(inactiveDropdownItem.hasClass('inactive')).toBe(true);
+    component.find('.Van-DashboardHeaderDropdownEntry').simulate('click');
+    expect(handleClick.mock.calls.length).toBe(0);
+    expect(closeMenu.mock.calls.length).toBe(0);
+  });
 });
 
 describe('<DashboardHeaderNotifications.Notification', () => {
