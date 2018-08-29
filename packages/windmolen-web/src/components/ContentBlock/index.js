@@ -107,6 +107,13 @@ const StyledContainer = styled(Container)`
   position: relative;
 `;
 
+const StyledRow = styled(Row)`
+  ${media.desktop`
+    display: flex;
+    align-items: center;
+  `}
+`;
+
 const ContentBlock = ({
   images,
   flipped,
@@ -115,7 +122,7 @@ const ContentBlock = ({
 }: Props) => {
   const colAttrs = flipped ? {
     lg: 5,
-    mdOffset: 7,
+    lgOffset: 7,
   } : {
     lg: 5,
   };
@@ -124,7 +131,7 @@ const ContentBlock = ({
     if (images.length == 2) {
       return (
         <StyledContainer>
-          <Row>
+          <StyledRow>
             <div className="content-block--images-container">
               {images.map(({ src, ...props, }) => (
                 <div className="content-block--image-wrapper">
@@ -139,7 +146,7 @@ const ContentBlock = ({
             <Col className="content-block--content-wrapper" {...colAttrs}>
               {children}
             </Col>
-          </Row>
+          </StyledRow>
         </StyledContainer>
       );
     }
