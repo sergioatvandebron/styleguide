@@ -90,13 +90,12 @@ export const ButtonText = styled(Span).attrs({
   margin-right: ${props => buttonTextMarginRight(props)};
 `;
 
-export const StyledButton = Base.withComponent('button').extend`
+export const StyledButton = styled(Base.withComponent('button')).attrs({ fontSize: 'button' })`
   background-color: ${props => getThemeProp(props, 'backgroundColor')};
   border: ${props => getThemeProp(props, 'border')};
   box-shadow: ${props => getThemeProp(props, 'shadow')};
   color: ${props => getThemeProp(props, 'color')};
   padding: ${props => props.small ? '4px 15px' : '9px 20px'};
-  line-height: 1.6;
   text-decoration: ${props => props.theme === 'text' ? 'underline' : 'none'};
 
   .icon {
@@ -116,5 +115,8 @@ export const StyledButton = Base.withComponent('button').extend`
 export const StyledIcon = styled(Icon)`
   display: ${props => props.hide ? 'none' : 'inline-block'};
   margin-right: ${props => props.withIcon ? '15px' : 0};
-  font-size: 150%;
+
+  &&& {
+    font-size: 200%;
+  }
 `;
