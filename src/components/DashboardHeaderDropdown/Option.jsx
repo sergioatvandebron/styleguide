@@ -53,7 +53,7 @@ Option.propTypes = {
 Option.defaultProps = {
   icon: null,
   subcaption: null,
-  closeMenu() {},
+  closeMenu: () => {},
   inactive: undefined
 };
 
