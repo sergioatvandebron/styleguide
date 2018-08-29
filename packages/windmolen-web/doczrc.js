@@ -6,6 +6,16 @@ export default {
   base: '/web/',
   plugins: [babel()],
 
+  themeConfig: {
+    styles: {
+      container: {
+        width: '100%',
+      },
+    },
+  },
+
+
+
   modifyBundlerConfig: (config) => {
     return config;
   }
