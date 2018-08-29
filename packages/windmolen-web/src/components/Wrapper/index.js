@@ -48,7 +48,7 @@ const gridTheme = {
 // themes
 const primary = {
   color: colors.warmGray,
-  backgroundColor: colors.white
+  backgroundColor: colors.white,
 };
 
 const StyledContainer = styled.div`
