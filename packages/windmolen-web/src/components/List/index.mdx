@@ -1,0 +1,39 @@
+---
+name: List
+menu: Base
+route: /Base/List
+---
+
+import { Playground, PropsTable } from 'docz';
+import Wrapper from '../Wrapper';
+import List from './';
+
+# List
+
+## Props (`List` & `List.Item`)
+<PropsTable of={List} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <List>
+    <List.Item>One item</List.Item>
+    <List.Item>Another item</List.Item>
+  </List>
+</Playground>
+
+## Override list icon
+<Playground wrapper={Wrapper}>
+  <List icon="arrow-left">
+    <List.Item>Where?</List.Item>
+    <List.Item>To the left</List.Item>
+  </List>
+</Playground>
+
+## Override item icon
+<Playground wrapper={Wrapper}>
+  <List icon="windmill">
+    <List.Item>Wind energy</List.Item>
+    <List.Item icon="sun">Solar energy</List.Item>
+    <List.Item icon="bio">Bio energy</List.Item>
+  </List>
+</Playground>
