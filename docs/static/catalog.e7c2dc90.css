@@ -4075,7 +4075,7 @@ button.close {
       background-color: #fff;
       border-color: #f1f0ef; }
       .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-iconWrapper svg {
-        color: #979797; }
+        fill: #979797; }
       .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-option > .Van-DashboardHeaderDropdownEntry-subcaption {
         color: #c0bdbd; }
       .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-option > .Van-DashboardHeaderDropdownEntry-caption {
@@ -4223,4 +4223,4 @@ button.close {
   transform: rotate(45deg);
   background-color: #e5f4e1; }
 
-/*# sourceMappingURL=catalog.8b581635.css.map*/
+/*# sourceMappingURL=catalog.e7c2dc90.css.map*/

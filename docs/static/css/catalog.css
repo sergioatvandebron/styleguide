@@ -4075,7 +4075,7 @@ button.close {
       background-color: #fff;
       border-color: #f1f0ef; }
       .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-iconWrapper svg {
-        color: #979797; }
+        fill: #979797; }
       .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-option > .Van-DashboardHeaderDropdownEntry-subcaption {
         color: #c0bdbd; }
       .Van-DashboardHeaderDropdownEntry.inactive:hover > .Van-DashboardHeaderDropdownEntry-option > .Van-DashboardHeaderDropdownEntry-caption {
