@@ -12,7 +12,13 @@ export default {
     sourcemap: true
   },
 
-  external: ['classnames', 'react', 'react-autocomplete', 'styled-components'],
+  external: [
+    'classnames',
+    'react',
+    'react-autocomplete',
+    'styled-components',
+    'styled-bootstrap-grid'
+  ],
 
   plugins: [
     resolve({
