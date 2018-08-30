@@ -1,5 +1,6 @@
 // @flow
 import type { Node } from 'react';
+import styled from 'styled-components';
 import React from 'react';
 import Base from '../Base';
 import { colors } from '../../globals';
@@ -33,6 +34,7 @@ export type Props = {
   /** Expect the placement of the separator. */
   separatorPlacement?: SeparatorPlacement,
 
+  wrapper?: string,
   children: Node,
 };
 
@@ -65,16 +67,23 @@ const getSeparator = (type, placement) => {
   }
 };
 
-const StyledComponentGroup = Base.withComponent('div').extend`
-  ${props => getSeparator(props.separator, props.separatorPlacement)}
-  ${props => getSpacing('mobile', props.divider, props.spacing, 'margin', 'top-bottom')}
-  ${props => getSpacing('mobile', props.divider, props.padding, 'padding', 'top-bottom')}
+const StyledComponentGroup = ({ wrapper, children, ...props }) => {
+  const Group = styled(Base.withComponent(wrapper)).attrs(props)`
+    ${props => getSeparator(props.separator, props.separatorPlacement)}
+    ${props => getSpacing('mobile', props.divider, props.spacing, 'margin', 'top-bottom')}
+    ${props => getSpacing('mobile', props.divider, props.padding, 'padding', 'top-bottom')}
 
-  ${media.desktop`
-    ${props => getSpacing('desktop', props.divider, props.spacing, 'margin', 'top-bottom')}
-    ${props => getSpacing('desktop', props.divider, props.padding, 'padding', 'top-bottom')}
-  `}
-`;
+    ${media.desktop`
+      ${props => getSpacing('desktop', props.divider, props.spacing, 'margin', 'top-bottom')}
+      ${props => getSpacing('desktop', props.divider, props.padding, 'padding', 'top-bottom')}
+    `}
+  `;
+  return (
+    <Group>
+      {children}
+    </Group>
+  );
+};
 
 const StyledComponentChild = Base.withComponent('div').extend`
   & + & {
@@ -100,6 +109,7 @@ const ComponentGroup = ({ children, ...props }: Props) => {
 
 ComponentGroup.defaultProps = {
   divider: 1,
+  wrapper: 'div',
 };
 
 export default ComponentGroup;
