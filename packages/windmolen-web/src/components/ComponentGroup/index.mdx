@@ -1,0 +1,36 @@
+---
+name: ComponentGroup
+menu: Base
+route: /Base/ComponentGroup
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import ComponentGroup from './';
+
+# ComponentGroup
+
+## Props
+<PropsTable of={ComponentGroup} />
+
+## Example
+<Playground wrapper={Wrapper}>
+  <ComponentGroup padding="large">
+    <section>
+      <h1>Lorem ipsum</h1>
+    </section>
+    <section>
+      <h1>Lorem ipsum spaced</h1>
+    </section>
+  </ComponentGroup>
+
+  <ComponentGroup
+    padding="large"
+    separator="border"
+    separatorPlacement="top"
+  >
+    <section>
+      <h1>Lorem ipsum</h1>
+    </section>
+  </ComponentGroup>
+</Playground>

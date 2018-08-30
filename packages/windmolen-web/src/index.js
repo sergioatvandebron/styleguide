@@ -10,3 +10,4 @@ export { H1, H2, H3, H4, H5 } from './components/Headings';
 export { default as Input } from './components/Input';
 export { default as ContentBlock } from './components/ContentBlock';
 export { default as List } from './components/List';
+export { default as ComponentGroup } from './components/ComponentGroup';
