@@ -1,7 +1,6 @@
 // @flow
 import type { Node } from 'react';
 import React from 'react';
-import classNames from 'classnames';
 import Span from '../Span';
 import SpritesheetSVG from '../../assets/icons/sprite-sheet.svg';
 import SpritesheetPNG from '../../assets/icons/sprite-sheet.png';
@@ -65,7 +64,6 @@ const StyledSpan = Span.extend`
 const Icon = (props: Props): Node => (
   <StyledSpan
     {...props}
-    className={classNames('icon', `icon-${props.name}`, props.className)}
   />
 );
 

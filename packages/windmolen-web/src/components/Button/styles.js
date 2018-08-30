@@ -95,7 +95,7 @@ export const getStyledButton = (componentType: string) => styled(Base.withCompon
     padding: ${props => props.small ? '4px 15px' : '9px 20px'};
     text-decoration: ${props => props.theme === 'text' ? 'underline' : 'none'};
 
-    .icon {
+    ${StyledIcon} {
       background-position-y: -${props => getThemeProp(props, 'iconVariant')}em;
     }
 
@@ -103,7 +103,7 @@ export const getStyledButton = (componentType: string) => styled(Base.withCompon
       background-color: ${props => getThemeProp(props, 'hoverBackgroundColor')};
       color: ${props => getThemeProp(props, 'hoverColor')}
 
-      .icon {
+      ${StyledIcon} {
         background-position-y: -${props => getThemeProp(props, 'hoverIconVariant')}em;
       }
     }
