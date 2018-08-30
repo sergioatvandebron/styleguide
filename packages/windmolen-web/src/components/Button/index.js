@@ -1,7 +1,7 @@
 // @flow
 import type { Node } from 'react';
 import React from 'react';
-import { StyledButton, ButtonText, StyledIcon } from './styles';
+import { getStyledButton, ButtonText, StyledIcon } from './styles';
 
 export type ButtonTheme = 'primary'
   | 'alternate'
@@ -25,6 +25,8 @@ export type Props = {
   /** Either `primary`, `alternate`, 'text', or a theme object */
   theme?: ButtonTheme
 };
+
+const StyledButton = getStyledButton('button');
 
 const Button = (props: Props) => props.icon
   ? (

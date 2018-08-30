@@ -1,0 +1,42 @@
+---
+name: Link
+menu: Base
+route: /Base/Link
+---
+
+import { Playground, PropsTable } from 'docz';
+import Wrapper from '../Wrapper';
+import Link from './';
+
+## Props
+<PropsTable of={Link} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <Link href="#basic-usage">A link</Link>
+</Playground>
+
+## As button
+<Playground wrapper={Wrapper}>
+  <Link href="#as-button" asButton>A button-looking link</Link>
+</Playground>
+
+## As alternate button
+<Playground wrapper={Wrapper}>
+  <Link
+    href="#as-alternate-button"
+    theme="alternate"
+    asButton
+  >Different button-looking link</Link>
+</Playground>
+
+## As small button
+<Playground wrapper={Wrapper}>
+  <Link href="#as-small-button" asButton small>Small button</Link>
+</Playground>
+
+## As button with icon
+<Playground wrapper={Wrapper}>
+  <Link href="#as-button-with-icon" asButton icon="windmill">With icon</Link>
+</Playground>
+
