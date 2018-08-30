@@ -13,7 +13,7 @@ type InputProps = {
   isValid?: boolean,
   placeholderRight?: boolean,
   label?: Node,
-  onIconClick?: func,
+  onIconClick?: Function,
   type?: string,
 
   /** The name of the icon. */
@@ -56,7 +56,7 @@ const StyledInput = Base.withComponent('input').extend`
   &:active,
   &:focus {
     outline: 0;
-    ${props => !props.suggestions && `border-bottom: 1px solid ${!props.disabled ? colors.charcoalGray : colors.transparent};`
+    ${props => !props.suggestions && `border-bottom: 1px solid ${!props.disabled ? colors.charcoalGray : colors.transparent};`}
   }
 
   &::placeholder {

@@ -18,6 +18,10 @@ type LinkProps = {
 const StyledLink = Base.withComponent('a');
 const StyledLinkAsButton = getStyledButton('a').extend`
   display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 const Link = (props: LinkProps) => props.asButton
