@@ -4,7 +4,7 @@ import Base from '../Base';
 import { media, Container, Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-export type Props = {
+type Props = {
   images?: array,
   flipped?: boolean,
 };

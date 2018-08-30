@@ -17,10 +17,10 @@ const spacings = {
   },
 };
 
-export type Spacing            = 'large' | 'medium';
-export type Padding            = 'large' | 'medium';
-export type SeparatorPlacement = 'top'   | 'bottom';
-export type Separator          = 'border';
+type Spacing            = 'large' | 'medium';
+type Padding            = 'large' | 'medium';
+type SeparatorPlacement = 'top'   | 'bottom';
+type Separator          = 'border';
 
 export type Props = {
   /** Expects a certain size of spacing given, such as: 'large' or 'medium'. */

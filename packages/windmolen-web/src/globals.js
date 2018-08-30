@@ -44,7 +44,10 @@ const colors = {
   red: '#d0021b',
   green: '#6fd300',
   white: '#ffffff',
-  transparent: 'transparent'
+  black: '#000000',
+
+  // Specify rgba value instead of the word 'transparent' because of IE.
+  transparent: 'rga(255, 255, 255, 0)',
 };
 
 const breakingPoints = {
