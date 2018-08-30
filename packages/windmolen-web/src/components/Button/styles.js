@@ -69,10 +69,6 @@ const getThemeProp = (props: Props, property: string): string => {
 };
 
 const buttonTextMarginRight = (props: Props): string => {
-  if (props.withIcon) {
-    return px(25);
-  }
-
   if (props.hideArrow) {
     return '0';
   }
@@ -90,31 +86,32 @@ export const ButtonText = styled(Span).attrs({
   margin-right: ${props => buttonTextMarginRight(props)};
 `;
 
-export const StyledButton = styled(Base.withComponent('button')).attrs({ fontSize: 'button' })`
-  background-color: ${props => getThemeProp(props, 'backgroundColor')};
-  border: ${props => getThemeProp(props, 'border')};
-  box-shadow: ${props => getThemeProp(props, 'shadow')};
-  color: ${props => getThemeProp(props, 'color')};
-  padding: ${props => props.small ? '4px 15px' : '9px 20px'};
-  text-decoration: ${props => props.theme === 'text' ? 'underline' : 'none'};
-
-  .icon {
-    background-position-y: -${props => getThemeProp(props, 'iconVariant')}em;
-  }
-
-  &:hover {
-    background-color: ${props => getThemeProp(props, 'hoverBackgroundColor')};
-    color: ${props => getThemeProp(props, 'hoverColor')}
+export const getStyledButton = (componentType: string) => styled(Base.withComponent(componentType))
+  .attrs({ fontSize: 'button' })`
+    background-color: ${props => getThemeProp(props, 'backgroundColor')};
+    border: ${props => getThemeProp(props, 'border')};
+    box-shadow: ${props => getThemeProp(props, 'shadow')};
+    color: ${props => getThemeProp(props, 'color')};
+    padding: ${props => props.small ? '4px 15px' : '9px 20px'};
+    text-decoration: ${props => props.theme === 'text' ? 'underline' : 'none'};
 
     .icon {
-      background-position-y: -${props => getThemeProp(props, 'hoverIconVariant')}em;
+      background-position-y: -${props => getThemeProp(props, 'iconVariant')}em;
     }
-  }
+
+    &:hover {
+      background-color: ${props => getThemeProp(props, 'hoverBackgroundColor')};
+      color: ${props => getThemeProp(props, 'hoverColor')}
+
+      .icon {
+        background-position-y: -${props => getThemeProp(props, 'hoverIconVariant')}em;
+      }
+    }
 `;
 
 export const StyledIcon = styled(Icon)`
   display: ${props => props.hide ? 'none' : 'inline-block'};
-  margin-right: ${props => props.withIcon ? '15px' : 0};
+  margin-right: ${props => props.icon ? '15px' : 0};
 
   &&& {
     font-size: 200%;
