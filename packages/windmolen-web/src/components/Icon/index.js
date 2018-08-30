@@ -15,7 +15,7 @@ type Props = {
 const spritesheet = {};
 
 // Define the amount of rows (1-index based).
-spritesheet.rows = 3;
+spritesheet.rows = 5;
 
 // Define the icons from left to right in the sheet using a human-readable name.
 spritesheet.names = [
@@ -42,6 +42,19 @@ spritesheet.names = [
   'laadpas--left',
   'laadpaal--left',
   'slim-laden--left',
+  'leaf',
+  'windmill-blades',
+  'caret-right',
+  'star',
+  'play',
+  'pause',
+  'enter-fullscreen',
+  'exit-fullscreen',
+  'volume-muted',
+  'volume-low',
+  'volume-mid',
+  'volume-low',
+  'wind-indication',
 ];
 
 const StyledSpan = Span.extend`
