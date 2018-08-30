@@ -3,10 +3,17 @@ import type { Node } from 'react';
 import React from 'react';
 import Base from '../Base';
 import { colors } from '../../globals';
+import { media } from 'styled-bootstrap-grid';
 
 const spacings = {
-  large: 120,
-  medium: 80,
+  mobile: {
+    large: 50,
+    medium: 30,
+  },
+  desktop: {
+    large: 120,
+    medium: 80,
+  },
 };
 
 export type Spacing            = 'large' | 'medium';
@@ -29,9 +36,9 @@ export type Props = {
   children: Node,
 };
 
-const getSpacing = (divider, size, property, placement) => {
-  if (spacings[size]) {
-    const value = spacings[size] / divider;
+const getSpacing = (breakpoint, divider, size, property, placement) => {
+  if (spacings[breakpoint][size]) {
+    const value = (spacings[breakpoint][size] / divider) || 0;
     switch (placement) {
     case 'top':
     case 'bottom':
@@ -48,7 +55,6 @@ const getSpacing = (divider, size, property, placement) => {
 };
 
 const getSeparator = (type, placement) => {
-  console.log('type', type, placement);
   switch (type) {
   case 'border':
     if (placement) {
@@ -60,14 +66,23 @@ const getSeparator = (type, placement) => {
 };
 
 const StyledComponentGroup = Base.withComponent('div').extend`
-  ${props => getSpacing(props.divider, props.spacing, 'margin', 'top-bottom')}
-  ${props => getSpacing(props.divider, props.padding, 'padding', 'top-bottom')}
   ${props => getSeparator(props.separator, props.separatorPlacement)}
+  ${props => getSpacing('mobile', props.divider, props.spacing, 'margin', 'top-bottom')}
+  ${props => getSpacing('mobile', props.divider, props.padding, 'padding', 'top-bottom')}
+
+  ${media.desktop`
+    ${props => getSpacing('desktop', props.divider, props.spacing, 'margin', 'top-bottom')}
+    ${props => getSpacing('desktop', props.divider, props.padding, 'padding', 'top-bottom')}
+  `}
 `;
 
 const StyledComponentChild = Base.withComponent('div').extend`
   & + & {
-    ${props => getSpacing(1, 'medium', 'margin', 'top')}
+    ${props => getSpacing('mobile', 1, 'medium', 'margin', 'top')}
+
+    ${media.desktop`
+      ${props => getSpacing('desktop', 1, 'medium', 'margin', 'top')}
+    `}
   }
 `;
 
