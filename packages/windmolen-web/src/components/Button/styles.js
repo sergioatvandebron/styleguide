@@ -84,6 +84,10 @@ export const ButtonText = styled(Span).attrs({
   font-weight: 600;
   line-height: inherit;
   margin-right: ${props => buttonTextMarginRight(props)};
+
+  &:hover {
+    text-decoration: none;
+  }
 `;
 
 export const getStyledButton = (componentType: string) => styled(Base.withComponent(componentType))
