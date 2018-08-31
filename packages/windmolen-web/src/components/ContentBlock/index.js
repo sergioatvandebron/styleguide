@@ -4,7 +4,7 @@ import Base from '../Base';
 import { media, Container, Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-type Props = {
+export type Props = {
   images?: array,
   flipped?: boolean,
 };
@@ -96,7 +96,6 @@ const StyledContentBlock = Base.withComponent('div').extend`
     width: 100%;
     max-width: 100%;
     object-fit: cover;
-    float: ${props => props.flipped ? 'right' : 'left'};
 
     ${media.desktop`
       width: auto;
@@ -156,8 +155,8 @@ const ContentBlock = ({
     return (
       <Fragment>
         <div className="content-block--images-container">
-          {images.map(({ src, ...props, }) => (
-            <div className="content-block--image-wrapper">
+          {images.map(({ src, key, ...props, }) => (
+            <div className="content-block--image-wrapper" key={key}>
               <img
                 className="content-block--image"
                 src={src}
