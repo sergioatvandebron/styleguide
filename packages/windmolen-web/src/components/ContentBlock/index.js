@@ -100,6 +100,7 @@ const StyledContentBlock = Base.withComponent('div').extend`
 
     ${media.desktop`
       width: auto;
+      float: ${props => props.flipped ? 'right' : 'left'};
     `}
   }
 `;

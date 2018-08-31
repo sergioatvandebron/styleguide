@@ -4,7 +4,7 @@ import Base from '../Base';
 import { media } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-export type Props = {
+type Props = {
   /** Will make the image not overflow its parent. */
   responsive?: boolean,
 };
