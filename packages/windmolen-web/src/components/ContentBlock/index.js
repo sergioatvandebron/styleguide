@@ -1,8 +1,9 @@
 // @flow
 import React, { Fragment } from 'react';
-import Base from '../Base';
 import { media, Container, Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
+
+import Base from '../Base';
 
 export type Props = {
   images?: array,
