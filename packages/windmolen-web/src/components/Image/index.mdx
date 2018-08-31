@@ -1,0 +1,29 @@
+---
+name: Image
+menu: Elements
+route: /Elements/Image
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import Image from './';
+import { Container } from 'styled-bootstrap-grid';
+
+# Image
+
+## Props
+<PropsTable of={Image} />
+
+## Responsive
+<Playground wrapper={Wrapper}>
+  <Container>
+    <Image src="https://via.placeholder.com/1440x500" />
+  </Container>
+</Playground>
+
+## Non-responsive
+<Playground wrapper={Wrapper}>
+  <Container>
+    <Image src="https://via.placeholder.com/1440x500" responsive={false} />
+  </Container>
+</Playground>
