@@ -75,9 +75,7 @@ const StyledSpan = Span.extend`
 }`;
 
 const Icon = (props: Props): Node => (
-  <StyledSpan
-    {...props}
-  />
+  <StyledSpan {...props} />
 );
 
 Icon.defaultProps = {
