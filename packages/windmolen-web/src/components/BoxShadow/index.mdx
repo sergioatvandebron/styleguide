@@ -1,0 +1,33 @@
+---
+name: BoxShadow
+menu: Elements
+route: /Elements/BoxShadow
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import BoxShadow from './';
+import { Container } from 'styled-bootstrap-grid';
+
+# BoxShadow
+
+## Props
+<PropsTable of={BoxShadow} />
+
+## Example
+<Playground wrapper={Wrapper}>
+  <Container>
+    <BoxShadow>
+      <iframe
+        src="https://www.youtube.com/embed/_AxFTxsxuyI?rel=0&amp;controls=0&amp;showinfo=0"
+        frameBorder="0"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+      />
+    </BoxShadow>
+
+    <BoxShadow>
+      <img src="https://via.placeholder.com/1440x500" />
+    </BoxShadow>
+  </Container>
+</Playground>
