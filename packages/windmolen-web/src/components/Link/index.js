@@ -3,6 +3,7 @@ import React from 'react';
 import type ButtonTheme from '../Button';
 import Base from '../Base';
 import { getStyledButton, StyledIcon, ButtonText as StyledSpan } from '../Button/styles';
+import { colors } from '../../globals';
 
 type LinkProps = {
   asButton?: boolean,
@@ -15,7 +16,18 @@ type LinkProps = {
   small?: boolean
 };
 
-const StyledLink = Base.withComponent('a');
+const StyledLink = Base.withComponent('a').extend`
+  color: ${colors.warmGray};
+  background-color: ${colors.transparent};
+  text-decoration: underline;
+
+  &:hover {
+    color: ${colors.silver};
+    background-color: ${colors.transparent};
+    text-decoration: underline;
+  }
+`;
+
 const StyledLinkAsButton = getStyledButton('a').extend`
   display: inline-block;
 
