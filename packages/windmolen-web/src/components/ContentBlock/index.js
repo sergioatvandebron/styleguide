@@ -138,6 +138,7 @@ const ContentBlock = ({
               {images.map(({ src, ...props, }) => (
                 <div className="content-block--image-wrapper">
                   <img
+                    key={src}
                     className="content-block--image"
                     src={src}
                     {...props}
