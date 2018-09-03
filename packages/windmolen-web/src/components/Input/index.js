@@ -116,7 +116,6 @@ const StyledIconContainer = Base.extend`
 `;
 
 const StyledAutoSuggestion = Base.extend`
-  background-color: colors.white;
   box-shadow: 0 11px 15px 0 rgba(0, 0, 0, 0.1);
   left: 0;
   padding-bottom: 5px;
@@ -125,6 +124,10 @@ const StyledAutoSuggestion = Base.extend`
   right: 0;
   top: 0;
   z-index: 1;
+
+  &&& {
+    background-color: colors.white;
+  }
 
   .suggestion {
     padding-left: 20px;
