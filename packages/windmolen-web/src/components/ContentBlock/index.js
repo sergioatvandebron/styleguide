@@ -1,5 +1,5 @@
 // @flow
-import React, { Fragment } from 'react';
+import React, { Fragment, type Node } from 'react';
 import { media, Container, Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
@@ -8,6 +8,7 @@ import Base from '../Base';
 export type Props = {
   images?: array,
   flipped?: boolean,
+  children?: Node
 };
 
 const StyledContentBlock = Base.withComponent('div').extend`
@@ -131,7 +132,6 @@ const ContentBlock = ({
   images,
   flipped,
   children,
-  ...props
 }: Props) => {
   const colAttrs = flipped ? {
     lg: 5,
@@ -146,8 +146,8 @@ const ContentBlock = ({
         <StyledContainer>
           <StyledRow>
             <div className="content-block--images-container">
-              {images.map(({ src, ...props, }) => (
-                <div className="content-block--image-wrapper">
+              {images.map(({ src, key, ...props, }) => (
+                <div className="content-block--image-wrapper" key={key}>
                   <img
                     className="content-block--image"
                     src={src}
@@ -186,7 +186,7 @@ const ContentBlock = ({
           </Row>
         </StyledContainer>
       </Fragment>
-    )
+    );
   };
 
   return (
