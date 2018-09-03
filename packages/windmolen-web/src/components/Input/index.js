@@ -126,7 +126,7 @@ const StyledAutoSuggestion = Base.extend`
   z-index: 1;
 
   &&& {
-    background-color: colors.white;
+    background-color: ${colors.white};
   }
 
   .suggestion {
@@ -160,7 +160,7 @@ const Input = ({ className, autoCompleteProps, ...props }: InputProps) => {
         <Autocomplete
           items={props.suggestions}
           wrapperStyle={{  }}
-          renderInput={({ ref, ...inputProps }) => (
+          renderInput={({ ref, value, ...inputProps }) => ( 
             <StyledInput
               innerRef={(node) => ref(node)}
               {...inputProps}
