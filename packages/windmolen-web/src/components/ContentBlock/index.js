@@ -23,11 +23,34 @@ const StyledContentBlock = Base.withComponent('div').extend`
     ${media.desktop`
       height: 540px;
     `}
+
+    .content-block--image {
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
+
+      ${media.desktop`
+        width: auto;
+        float: ${props => props.flipped ? 'right' : 'left'};
+      `}
+    }
   }
 
   /* two images */
   .content-block--image-wrapper:first-child:nth-last-child(2),
   .content-block--image-wrapper:first-child:nth-last-child(2) ~ .content-block--image-wrapper {
+    .content-block--image {
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
+
+      ${media.desktop`
+        float: ${props => props.flipped ? 'right' : 'left'};
+      `}
+    }
+
     &:nth-child(1) {
       margin-top: -50px;
       width: 100%;
@@ -89,18 +112,6 @@ const StyledContentBlock = Base.withComponent('div').extend`
       position: absolute;
       ${props => props.flipped ? 'right: 50%' : 'left: 50%'};
       width: 50%;
-    `}
-  }
-
-  .content-block--image {
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-
-    ${media.desktop`
-      width: auto;
-      float: ${props => props.flipped ? 'right' : 'left'};
     `}
   }
 `;
