@@ -15,6 +15,7 @@ type InputProps = {
   label?: Node,
   onIconClick?: Function,
   type?: string,
+  suggestions?: Array<Object>,
 
   /** The name of the icon. */
   icon?: string,
@@ -23,7 +24,7 @@ type InputProps = {
   className?: string
 };
 
-const getInputState = (props: InputProps) => {
+const getInputState = (props: InputProps): string => {
   if (!props.touched) {
     return colors.transparent;
   }
@@ -35,6 +36,8 @@ const getInputState = (props: InputProps) => {
   if (props.error || props.isValid === false) {
     return colors.red;
   }
+
+  return colors.charcoalGray;
 };
 
 const StyledInput = Base.withComponent('input').extend`
@@ -113,14 +116,15 @@ const StyledIconContainer = Base.extend`
 `;
 
 const StyledAutoSuggestion = Base.extend`
-  position: absolute;
+  background-color: colors.white;
   box-shadow: 0 11px 15px 0 rgba(0, 0, 0, 0.1);
-  top: 0;
   left: 0;
-  right: 0;
-  z-index: 1;
-  padding-top: 55px;
   padding-bottom: 5px;
+  padding-top: 55px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
 
   .suggestion {
     padding-left: 20px;
@@ -153,7 +157,7 @@ const Input = ({ className, autoCompleteProps, ...props }: InputProps) => {
         <Autocomplete
           items={props.suggestions}
           wrapperStyle={{  }}
-          renderInput={({ ref, value, ...inputProps }) => (
+          renderInput={({ ref, ...inputProps }) => (
             <StyledInput
               innerRef={(node) => ref(node)}
               {...inputProps}
