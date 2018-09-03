@@ -14,6 +14,11 @@ type ListProps = {
 // TODO also expose an <ol />
 const Ul = Base.withComponent('ul').extend`
   list-style-type: none;
+  padding: 0;
+
+  ${media.desktop`
+    padding-left: 20px;
+  `}
 `;
 
 const List = ({ children, ...props }: ListProps): Node => {
@@ -34,22 +39,25 @@ type ItemProps = {
 
 // Item
 const Li = Base.extend`
-  padding-left: 0;
   position: relative;
-
-  ${media.desktop`
-    padding-left: 20px;
-  `}
 `;
 
 const StyledIcon = styled(Icon)`
   position: absolute;
-  left: -0.17em;
-  top: 0.05em;
+  left: -5px;
+  top: 1px;
 
   ${media.desktop`
-    left: -0.5em;
-    top: 0.15em;
+    left: 5px;
+    top: 5px;
+  `}
+`;
+
+const StyledItemContent = Span.extend`
+  margin-left: 25px;
+
+  ${media.desktop`
+    margin-left: 40px;
   `}
 `;
 
@@ -59,7 +67,7 @@ const Item = ({ icon, inheritedIcon, children, ...props }: ItemProps) => {
   return (
     <Li {...props}>
       <StyledIcon name={usedIcon} />
-      <Span fontSize="body-xsmall">{children}</Span>
+      <StyledItemContent fontSize="body-xsmall">{children}</StyledItemContent>
     </Li>
   );
 };
