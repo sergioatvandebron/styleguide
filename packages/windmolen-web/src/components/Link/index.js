@@ -47,7 +47,7 @@ const Link = (props: LinkProps) => props.asButton
         <StyledIcon hide={props.hideArrow} name="arrow-right" />
       )}
     </StyledLinkAsButton>
-  ) : <StyledLink {...props} />;
+  ) : <StyledLink fontSize="link" {...props} />;
 
 Link.defaultProps = {
   theme: 'primary',

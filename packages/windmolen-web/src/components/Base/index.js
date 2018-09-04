@@ -32,6 +32,7 @@ const fontSize = (props: BaseProps, isMobile: boolean = true) => {
   case 'body-xsmall': return px(16);
   case 'lead': return px(isMobile ? 20 : 24);
   case 'super-huge': return px(isMobile ? 80 : 100);
+  case 'link': return '100%';
   case 'body':
   case 'regular':
   default:
