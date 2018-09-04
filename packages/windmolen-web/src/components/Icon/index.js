@@ -71,6 +71,7 @@ const StyledSpan = Span.extend`
 
   &&& {
     font-size: ${props => props.fontSize};
+    line-height: 1;
   }
 }`;
 
