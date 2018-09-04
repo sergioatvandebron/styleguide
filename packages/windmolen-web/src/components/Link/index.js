@@ -47,10 +47,11 @@ const Link = (props: LinkProps) => props.asButton
         <StyledIcon hide={props.hideArrow} name="arrow-right" />
       )}
     </StyledLinkAsButton>
-  ) : <StyledLink fontSize="link" {...props} />;
+  ) : <StyledLink {...props} />;
 
 Link.defaultProps = {
   theme: 'primary',
+  fontSize: 'link',
 };
 
 export default Link;
