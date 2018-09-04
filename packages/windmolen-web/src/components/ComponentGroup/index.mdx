@@ -6,10 +6,14 @@ route: /Elements/ComponentGroup
 
 import { Playground, PropsTable } from 'docz'
 import Wrapper from '../Wrapper';
-import ComponentGroup from './';
+import ComponentGroup, { spacings } from './';
 import { H2 } from '../Headings';
 
 # ComponentGroup
+
+A component group is used to add spacing in-between blocks. Component get
+separated by default with a "large" spacing. Components inside a ComponentGroup
+get separated by default with a "medium" spacing.
 
 ## Props
 <PropsTable of={ComponentGroup} />
@@ -26,6 +30,29 @@ import { H2 } from '../Headings';
   </ComponentGroup>
 
   <ComponentGroup
+    padding="large"
+    separator="border"
+    separatorPlacement="top"
+  >
+    <section>
+      <H2>Lorem ipsum</H2>
+    </section>
+  </ComponentGroup>
+</Playground>
+
+## Example with different values on different sides
+<Playground wrapper={Wrapper}>
+  <ComponentGroup padding="large">
+    <section>
+      <H2>Lorem ipsum</H2>
+    </section>
+    <section>
+      <H2>Lorem ipsum spaced</H2>
+    </section>
+  </ComponentGroup>
+
+  <ComponentGroup
+    divider={[ 2, 1 ]}
     padding="large"
     separator="border"
     separatorPlacement="top"

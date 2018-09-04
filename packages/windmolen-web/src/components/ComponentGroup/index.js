@@ -6,7 +6,7 @@ import Base from '../Base';
 import { colors } from '../../globals';
 import { media } from 'styled-bootstrap-grid';
 
-const spacings = {
+export const spacings = {
   mobile: {
     large: 50,
     medium: 30,
@@ -17,6 +17,7 @@ const spacings = {
   },
 };
 
+type Divider            = number | Array<number>;
 type Spacing            = 'large' | 'medium';
 type Padding            = 'large' | 'medium';
 type SeparatorPlacement = 'top'   | 'bottom';
@@ -27,8 +28,13 @@ export type Props = {
   spacing?: Spacing,
   /** Expects a certain size of padding given, such as: 'large' or 'medium'. */
   padding?: Padding,
-  /** A value that will be used to divide against the base value of the spacing or padding specified. */
-  divider?: number,
+  /**
+   * A value that will be used to divide against the base value of the spacing
+   * or padding specified. If a single number is given then this is divided
+   * against the top and bottom spacing. Using an array allows you to set
+   * divider values for specific sides. Example: [2, 1] equals [top, bottom].
+   */
+  divider?: Divider,
   /** Expects a type of separator. */
   separator?: Separator,
   /** Expect the placement of the separator. */
@@ -40,17 +46,22 @@ export type Props = {
 
 const getSpacing = (breakpoint, divider, size, property, placement) => {
   if (spacings[breakpoint][size]) {
-    const value = (spacings[breakpoint][size] / divider) || 0;
+    // A divider can be the following values:
+    //  - number
+    //  - [ number, number ] which equals [ top, bottom ]
+    const dividerTop = Array.isArray(divider) ? divider[0] : divider;
+    const dividerBottom = Array.isArray(divider) ? divider[1] : divider;
+    const topValue = (spacings[breakpoint][size] / dividerTop) || 0;
+    const bottomValue = (spacings[breakpoint][size] / dividerBottom) || 0;
     switch (placement) {
     case 'top':
+        return `${property}-${placement}: ${topValue}px;`;
     case 'bottom':
-      return `
-        ${property}-${placement}: ${value}px;
-      `;
+      return `${property}-${placement}: ${bottomValue}px;`;
     case 'top-bottom':
       return `
-        ${property}-top: ${value}px;
-        ${property}-bottom: ${value}px;
+        ${property}-top: ${topValue}px;
+        ${property}-bottom: ${bottomValue}px;
       `;
     }
   }
