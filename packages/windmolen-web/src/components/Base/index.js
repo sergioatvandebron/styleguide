@@ -51,6 +51,7 @@ const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
   case 'body-xsmall': return px(32);
   case 'lead': return px(isMobile ? 32 : 40);
   case 'super-huge': return px(isMobile ? 53 : 110);
+  case 'link': return '100%';
   case 'body':
   case 'regular':
   default:
