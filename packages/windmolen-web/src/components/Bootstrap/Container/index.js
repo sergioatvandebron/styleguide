@@ -4,7 +4,7 @@ import { px } from '../../../utils';
 import { gridTheme } from '../../../globals';
 import { media, Container as BootstrapContainer } from 'styled-bootstrap-grid';
 
-const CONTAINER_SMALL = 720 + (gridTheme.container.padding * 2);
+const CONTAINER_SMALL = 760 + (gridTheme.container.padding * 2);
 const CONTAINER_MEDIUM = 960 + (gridTheme.container.padding * 2);
 
 const Container = styled(BootstrapContainer)`
