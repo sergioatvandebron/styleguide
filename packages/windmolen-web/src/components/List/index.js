@@ -5,6 +5,7 @@ import { media } from 'styled-bootstrap-grid';
 import Base from '../Base';
 import Span from '../Span';
 import Icon from '../Icon';
+import { colors } from '../../globals';
 
 type ListProps = {
   icon?: string,
@@ -15,14 +16,12 @@ type ListProps = {
 const Ul = Base.withComponent('ul').extend`
   list-style-type: none;
   padding: 0;
-
-  ${media.desktop`
-    padding-left: 20px;
-  `}
 `;
 
 const List = ({ children, ...props }: ListProps): Node => {
-  const withIcon = React.Children.map(children, child => React.cloneElement(child, { inheritedIcon: props.icon }));
+  const withIcon = React.Children.map(children, child => React.cloneElement(child, {
+    inheritedIcon: props.icon,
+  }));
 
   return <Ul {...props}>{withIcon}</Ul>;
 };
@@ -40,16 +39,17 @@ type ItemProps = {
 // Item
 const Li = Base.extend`
   position: relative;
+  color: ${colors.charcoalGray};
 `;
 
 const StyledIcon = styled(Icon)`
   position: absolute;
   left: -5px;
-  top: 1px;
+  top: 3px;
 
   ${media.desktop`
-    left: 5px;
-    top: 5px;
+    left: -8px;
+    top: 6px;
   `}
 `;
 
@@ -57,7 +57,7 @@ const StyledItemContent = Span.extend`
   margin-left: 25px;
 
   ${media.desktop`
-    margin-left: 40px;
+    margin-left: 30px;
   `}
 `;
 
