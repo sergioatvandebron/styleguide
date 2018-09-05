@@ -50,11 +50,33 @@ const colors = {
   transparent: 'rga(255, 255, 255, 0)',
 };
 
-const breakingPoints = {
-  small: 576,
-  medium: 768,
-  large: 992,
-  extraLarge: 1200
+// Bootstrap grid
+const gridTheme = {
+  breakpoints: {
+    giant: 1200,
+    xl: 1200,
+
+    desktop: 992,
+    lg: 992,
+
+    tablet: 768,
+    md: 768,
+
+    phone: 576,
+    sm: 576,
+
+    smaller: 575,
+    xs: 575,
+  },
+  row: {
+    padding: 15,
+  },
+  col: {
+    padding: 15,
+  },
+  container: {
+    padding: 15,
+  },
 };
 
-export { colors, breakingPoints };
+export { colors, gridTheme };

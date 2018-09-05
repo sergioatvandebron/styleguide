@@ -13,3 +13,6 @@ export { default as List } from './components/List';
 export { default as ComponentGroup } from './components/ComponentGroup';
 export { default as Link } from './components/Link';
 export { default as BoxShadow } from './components/BoxShadow';
+export { default as Container } from './components/Bootstrap/Container';
+export { default as Grid } from './components/Bootstrap/Grid';
+export { default as Row } from './components/Bootstrap/Row';
