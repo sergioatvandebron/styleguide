@@ -46,7 +46,6 @@ const StyledInput = Base.withComponent('input').extend`
   box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
   color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
   display: block;
-  font-size: 16px;
   outline: 0;
   padding: 9px 20px;
   padding-right: ${props => props.icon ? '70px' : '20px'};
@@ -73,12 +72,10 @@ const Container = Base.extend`
 `;
 
 const StyledLabel = Base.extend`
-  font-size: 16px;
   color: ${colors.charcoalGray};
   margin-bottom: 5px;
 
   ${media.desktop`
-    font-size: 20px;
     margin-bottom: 10px;
   `}
 `;
@@ -160,7 +157,7 @@ const Input = ({ className, autoCompleteProps, ...props }: InputProps) => {
         <Autocomplete
           items={props.suggestions}
           wrapperStyle={{  }}
-          renderInput={({ ref, value, ...inputProps }) => ( 
+          renderInput={({ ref, value, ...inputProps }) => (
             <StyledInput
               innerRef={(node) => ref(node)}
               {...inputProps}
@@ -192,7 +189,8 @@ const Input = ({ className, autoCompleteProps, ...props }: InputProps) => {
 };
 
 Input.defaultProps = {
-  type: 'text'
+  type: 'text',
+  fontSize: 'body-xsmall',
 };
 
 export default Input;

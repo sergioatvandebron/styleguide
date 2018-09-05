@@ -23,16 +23,34 @@ export type BaseProps = {
 
 const fontSize = (props: BaseProps, isMobile: boolean = true) => {
   switch (props.fontSize) {
-  case 'h1': return px(isMobile ? 40 : 80);
-  case 'h2': return px(isMobile ? 35 : 55);
-  case 'h3': return px(isMobile ? 28 : 40);
-  case 'h4': return px(isMobile ? 18 : 24);
-  case 'h5': return px(18);
+  case 'h1':
+    return px(isMobile ? 40 : 80);
+
+  case 'h2':
+    return px(isMobile ? 35 : 55);
+
+  case 'h3':
+    return px(isMobile ? 28 : 40);
+
+  case 'h4':
+    return px(isMobile ? 18 : 24);
+
+  case 'h5':
+    return px(18);
+
   case 'button':
-  case 'body-xsmall': return px(16);
-  case 'lead': return px(isMobile ? 20 : 24);
-  case 'super-huge': return px(isMobile ? 80 : 100);
-  case 'link': return '100%';
+  case 'body-xsmall':
+    return px(16);
+
+  case 'lead':
+    return px(isMobile ? 20 : 24);
+
+  case 'super-huge':
+    return px(isMobile ? 80 : 100);
+
+  case 'link':
+    return '100%';
+
   case 'body':
   case 'regular':
   default:
@@ -42,16 +60,36 @@ const fontSize = (props: BaseProps, isMobile: boolean = true) => {
 
 const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
   switch (props.fontSize) {
-  case 'h1': return px(isMobile ? 45 : 85);
-  case 'h2': return px(isMobile ? 45 : 60);
-  case 'h3': return px(isMobile ? 40 : 50);
-  case 'h4': return px(isMobile ? 24 : 30);
-  case 'h5': return px(30);
-  case 'button': return px(isMobile ? 20 : 32);
-  case 'body-xsmall': return px(32);
-  case 'lead': return px(isMobile ? 32 : 40);
-  case 'super-huge': return px(isMobile ? 53 : 110);
-  case 'link': return '100%';
+  case 'h1':
+    return px(isMobile ? 45 : 85);
+
+  case 'h2':
+    return px(isMobile ? 45 : 60);
+
+  case 'h3':
+    return px(isMobile ? 40 : 50);
+
+  case 'h4':
+    return px(isMobile ? 24 : 30);
+
+  case 'h5':
+    return px(30);
+
+  case 'button':
+    return px(isMobile ? 20 : 32);
+
+  case 'body-xsmall':
+    return px(32);
+
+  case 'lead':
+    return px(isMobile ? 32 : 40);
+
+  case 'super-huge':
+    return px(isMobile ? 53 : 110);
+
+  case 'link':
+    return '100%';
+
   case 'body':
   case 'regular':
   default:
