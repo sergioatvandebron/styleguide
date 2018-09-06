@@ -64,7 +64,7 @@ const StyledInputLine = styled(Base.withComponent('div'))`
         background-color: ${getInputState(props)};
         width: 100%;
       `;
-    } else if (props.value) {
+    } else if (props.isValid) {
       return `
         width: 100%;
         background-color: ${getInputState(props)};
@@ -140,8 +140,6 @@ class StyledInput extends Component {
     )
   }
 }
-/*const StyledInput = (props) => {
-};*/
 
 const Container = Base.extend`
   position: relative;
