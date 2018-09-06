@@ -7,6 +7,7 @@ route: /Elements/Link
 import { Playground, PropsTable } from 'docz';
 import Wrapper from '../Wrapper';
 import Link from './';
+import Paragraph from '../Paragraph';
 
 ## Props
 <PropsTable of={Link} />
@@ -18,7 +19,12 @@ import Link from './';
 
 ## Different font-size
 <Playground wrapper={Wrapper}>
-  <Link href="#basic-usage" fontSize="large">A link</Link>
+  <Link href="#different-font-size" fontSize="large">A link</Link>
+</Playground>
+
+## ...
+<Playground wrapper={Wrapper}>
+  <Link href="#as-button-with-icon" withComponent={Paragraph}>A link</Link>
 </Playground>
 
 ## As button

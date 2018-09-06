@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 import type ButtonTheme from '../Button';
 import Base from '../Base';
 import { getStyledButton, StyledIcon, ButtonText as StyledSpan } from '../Button/styles';
@@ -13,10 +14,12 @@ type LinkProps = {
   hideArrow?: boolean,
   children?: Node,
   icon?: string,
-  small?: boolean
+  small?: boolean,
+  withComponent?: Node
 };
 
-const StyledLink = Base.withComponent('a').extend`
+const getStyledLink = withComponent =>
+  (withComponent ? styled(withComponent) : Base.withComponent('a').extend)`
   color: ${colors.warmGray};
   background-color: ${colors.transparent};
   text-decoration: underline;
@@ -36,18 +39,24 @@ const StyledLinkAsButton = getStyledButton('a').extend`
   }
 `;
 
-const Link = (props: LinkProps) => props.asButton
-  ? (
-    <StyledLinkAsButton {...props} theme={props.theme}>
-      {props.icon && <StyledIcon name={props.icon} />}
+const Link = (props: LinkProps) => {
+  if (props.asButton) {
+    return (
+      <StyledLinkAsButton {...props} theme={props.theme}>
+        {props.icon && <StyledIcon name={props.icon} />}
 
-      <StyledSpan hideArrow={props.hideArrow}>{props.children}</StyledSpan>
+        <StyledSpan hideArrow={props.hideArrow}>{props.children}</StyledSpan>
 
-      {!props.hideArrow && !props.icon && (
-        <StyledIcon hide={props.hideArrow} name="arrow-right" />
-      )}
-    </StyledLinkAsButton>
-  ) : <StyledLink {...props} />;
+        {!props.hideArrow && !props.icon && (
+          <StyledIcon hide={props.hideArrow} name="arrow-right" />
+        )}
+      </StyledLinkAsButton>
+    );
+  }
+
+  const StyledLink = getStyledLink(props.withComponent);
+  return <StyledLink {...props} />;
+};
 
 Link.defaultProps = {
   theme: 'primary',
