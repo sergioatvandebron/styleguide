@@ -42,7 +42,9 @@ const StyledInputWrapper = styled(Base.withComponent('div'))`
 `;
 
 const StyledInputLine = styled(Base.withComponent('div'))`
-  transition: 0.2s width ease-out;
+  transition-timing-function: ease-out;
+  transition-duration: 0.2s;
+  transition-property: background, width;
   bottom: 0;
   left: 50%;
   pointer-events: none;
@@ -65,6 +67,7 @@ const StyledInputLine = styled(Base.withComponent('div'))`
     } else if (props.value) {
       return `
         width: 100%;
+        background-color: ${getInputState(props)};
       `;
     }
   }}
