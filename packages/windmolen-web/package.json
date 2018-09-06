@@ -12,6 +12,7 @@
     "build": "yarn clean-dist && yarn copy-assets && rollup -c rollup.config.js",
     "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
+    "start": "npm run website:start",
     "website:start": "cross-env HTTPS=false docz dev",
     "website:build": "docz build",
     "prepack": "yarn build"
