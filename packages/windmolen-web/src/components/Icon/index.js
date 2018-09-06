@@ -55,6 +55,22 @@ spritesheet.names = [
   'volume-mid',
   'volume-low',
   'wind-indication',
+  'star-outline-thick',
+  'vdb-logo',
+  'wallet-thick',
+  'meter-thick',
+  'switch-thick',
+  'solarpanel-thick',
+  'thunderstrike-thick',
+  'user-thick',
+  'paper-thick',
+  'label-thick',
+  'bell-thick',
+  'lamp-thick',
+  'meter-switch-thick',
+  'laadpas-thick',
+  'laadpaal-thick',
+  'phone-thick',
 ];
 
 const StyledSpan = Span.extend`
@@ -82,6 +98,10 @@ const Icon = (props: Props): Node => (
 Icon.defaultProps = {
   fontSize: '150%',
   variant: 0,
+};
+
+export {
+  spritesheet,
 };
 
 export default Icon;

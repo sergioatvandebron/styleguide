@@ -5,7 +5,8 @@ route: /Elements/Icon
 ---
 
 import { Playground, PropsTable } from 'docz';
-import Icon from './';
+import Wrapper from '../Wrapper';
+import Icon, { spritesheet } from './';
 
 # Icon
 
@@ -13,11 +14,20 @@ import Icon from './';
 <PropsTable of={Icon} />
 
 ## Basic usage
-<Playground>
+<Playground wrapper={Wrapper}>
   <Icon name="windmill" fontSize="5rem" />
   <Icon name="arrow-right" fontSize="5rem" />
   <Icon name="arrow-left" fontSize="5rem" />
   <Icon name="facebook" fontSize="5rem" />
   <Icon name="twitter" fontSize="5rem" />
   <Icon name="instagram" fontSize="5rem" />
+</Playground>
+
+## Available icons
+<Playground wrapper={Wrapper}>
+  {spritesheet.names.map((name) => (
+    <div>
+      <Icon name={name} fontSize="40px" /> {name}
+    </div>
+  ))}
 </Playground>
