@@ -1,6 +1,9 @@
 // @flow
 import React, { Fragment, type Node } from 'react';
-import { media, Container, Row, Col } from 'styled-bootstrap-grid';
+import { media } from 'styled-bootstrap-grid';
+import Container from '../Bootstrap/Container';
+import Row from '../Bootstrap/Row';
+import Col from '../Bootstrap/Col';
 import styled from 'styled-components';
 
 import Base from '../Base';
