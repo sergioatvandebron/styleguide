@@ -47,7 +47,7 @@ const colors = {
   black: '#000000',
 
   // Specify rgba value instead of the word 'transparent' because of IE.
-  transparent: 'rga(255, 255, 255, 0)',
+  transparent: 'rgba(255, 255, 255, 0)',
 };
 
 // Bootstrap grid

@@ -1,3 +1,4 @@
+
 // @flow
 import React, { type Node } from 'react';
 import styled from 'styled-components';
@@ -25,10 +26,6 @@ type InputProps = {
 };
 
 const getInputState = (props: InputProps): string => {
-  if (!props.touched) {
-    return colors.transparent;
-  }
-
   if (props.isValid) {
     return colors.green;
   }
@@ -40,32 +37,63 @@ const getInputState = (props: InputProps): string => {
   return colors.charcoalGray;
 };
 
-const StyledInput = Base.withComponent('input').extend`
-  background-color: ${colors.alabaster};
-  border: 0;
-  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
-  color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
-  display: block;
-  outline: 0;
-  padding: 9px 20px;
-  padding-right: ${props => props.icon ? '70px' : '20px'};
-  width: 100%;
-  height: 50px;
-  position: relative;
-  z-index: 2;
-  ${props => props.touched && !props.suggestions ? `border-bottom: 1px solid ${getInputState(props)};` : ''}
+const StyledInput = (props) => {
+  const Wrapper = styled(Base.withComponent('div'))`
+    position: relative;
+  `;
 
-  &:active,
-  &:focus {
+  const Line = styled(Base.withComponent('div'))`
+    transition: 0.2s width ease-in-out;
+    bottom: 0;
+    left: 50%;
+    pointer-events: none;
+    height: 1px;
+    z-index: 2;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 0;
+    background-color: ${colors.charcoalGray};
+  `;
+
+  const Input = Base.withComponent('input').extend`
+    background-color: ${colors.alabaster};
+    border: 0;
+    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
+    color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
+    display: block;
     outline: 0;
-    ${props => !props.suggestions && `border-bottom: 1px solid ${!props.disabled ? colors.charcoalGray : colors.transparent};`}
-  }
+    padding: 9px 20px;
+    padding-right: ${props => props.icon ? '70px' : '20px'};
+    width: 100%;
+    height: 50px;
+    position: relative;
+    z-index: 2;
 
-  &::placeholder {
-    color: ${props => props.disabled ? colors.silver : colors.warmGray};
-    text-align: ${props => props.placeholderRight ? 'right' : 'left'}
-  }
-`;
+    &:active,
+    &:focus {
+      outline: 0;
+
+      & + ${Line} {
+        ${props => (!props.suggestions && !props.disabled) && `
+          background-color: ${getInputState(props)};
+          width: 100%;
+        `}
+      }
+    }
+
+    &::placeholder {
+      color: ${props => props.disabled ? colors.silver : colors.warmGray};
+      text-align: ${props => props.placeholderRight ? 'right' : 'left'}
+    }
+  `;
+
+  return (
+    <Wrapper>
+      <Input {...props} />
+      <Line  {...props} />
+    </Wrapper>
+  )
+};
 
 const Container = Base.extend`
   position: relative;
