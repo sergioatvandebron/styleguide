@@ -1,6 +1,6 @@
 
 // @flow
-import React, { type Node } from 'react';
+import React, { type Node, Component } from 'react';
 import styled from 'styled-components';
 import Autocomplete from 'react-autocomplete';
 import Base from '../Base';
@@ -37,63 +37,108 @@ const getInputState = (props: InputProps): string => {
   return colors.charcoalGray;
 };
 
-const StyledInput = (props) => {
-  const Wrapper = styled(Base.withComponent('div'))`
-    position: relative;
-  `;
+const StyledInputWrapper = styled(Base.withComponent('div'))`
+  position: relative;
+`;
 
-  const Line = styled(Base.withComponent('div'))`
-    transition: 0.2s width ease-in-out;
-    bottom: 0;
-    left: 50%;
-    pointer-events: none;
-    height: 1px;
-    z-index: 2;
-    position: absolute;
-    transform: translateX(-50%);
-    width: 0;
-    background-color: ${colors.charcoalGray};
-  `;
+const StyledInputLine = styled(Base.withComponent('div'))`
+  transition: 0.2s width ease-out;
+  bottom: 0;
+  left: 50%;
+  pointer-events: none;
+  height: 1px;
+  z-index: 2;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 0;
+  background-color: ${colors.charcoalGray};
+  ${props => {
+    if (props.disabled) {
+      return;
+    }
 
-  const Input = Base.withComponent('input').extend`
-    background-color: ${colors.alabaster};
-    border: 0;
-    box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
-    color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
-    display: block;
+    if (props.touched && (!props.isValid || props.error)) {
+      return `
+        background-color: ${getInputState(props)};
+        width: 100%;
+      `;
+    } else if (props.value) {
+      return `
+        width: 100%;
+      `;
+    }
+  }}
+`;
+
+const StyledInputElement = styled(Base.withComponent('input'))`
+  background-color: ${colors.alabaster};
+  border: 0;
+  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
+  color: ${props => props.disabled ? colors.silver : colors.charcoalGray};
+  display: block;
+  outline: 0;
+  padding: 9px 20px;
+  padding-right: ${props => props.icon ? '70px' : '20px'};
+  width: 100%;
+  height: 50px;
+  position: relative;
+  z-index: 2;
+
+  &:active,
+  &:focus {
     outline: 0;
-    padding: 9px 20px;
-    padding-right: ${props => props.icon ? '70px' : '20px'};
-    width: 100%;
-    height: 50px;
-    position: relative;
-    z-index: 2;
 
-    &:active,
-    &:focus {
-      outline: 0;
-
-      & + ${Line} {
-        ${props => (!props.suggestions && !props.disabled) && `
-          background-color: ${getInputState(props)};
-          width: 100%;
-        `}
-      }
+    & + ${StyledInputLine} {
+      ${props => (!props.suggestions && !props.disabled) && `
+        background-color: ${getInputState(props)};
+        width: 100%;
+      `}
     }
+  }
 
-    &::placeholder {
-      color: ${props => props.disabled ? colors.silver : colors.warmGray};
-      text-align: ${props => props.placeholderRight ? 'right' : 'left'}
-    }
-  `;
+  &::placeholder {
+    color: ${props => props.disabled ? colors.silver : colors.warmGray};
+    text-align: ${props => props.placeholderRight ? 'right' : 'left'};
+  }
+`;
 
-  return (
-    <Wrapper>
-      <Input {...props} />
-      <Line  {...props} />
-    </Wrapper>
-  )
-};
+
+class StyledInput extends Component {
+  constructor(props:any) {
+    super(props);
+
+    this.state = {
+      value: '',
+    };
+
+    this.input = React.createRef();
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(event) {
+    const { value } = event.target;
+    this.setState({
+      ...this.state,
+      value,
+    });
+  }
+
+  render() {
+    return (
+      <StyledInputWrapper>
+        <StyledInputElement
+          innerRef={this.input}
+          onChange={this.onChange}
+          value={this.state.value}
+          {...this.props}
+        />
+        <StyledInputLine value={this.state.value} {...this.props} />
+      </StyledInputWrapper>
+    )
+  }
+}
+/*const StyledInput = (props) => {
+};*/
 
 const Container = Base.extend`
   position: relative;
