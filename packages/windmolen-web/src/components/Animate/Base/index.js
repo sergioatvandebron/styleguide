@@ -13,6 +13,9 @@ type Props = {
   /** An offset when the actual element should animate in. */
   offset?: number,
 
+  /** An animation delay given in milliseconds. */
+  delay?: number,
+
   animateOnce?: bool,
   onViewportEnter?: func,
 };
@@ -20,8 +23,9 @@ type Props = {
 class AnimateBase extends Component<Props> {
   constructor(props: Props) {
     super(props);
-
     this._frameId;
+    this._delayId;
+
     this.startLoop = this.startLoop.bind(this);
     this.stopLoop = this.stopLoop.bind(this);
     this.loop = this.loop.bind(this);
@@ -64,7 +68,9 @@ class AnimateBase extends Component<Props> {
 
     if (inViewport && this.props.animateOnce) {
       this.stopLoop();
-      this.props.onViewportEnter();
+
+      clearTimeout(this._delayId);
+      this._delayId = setTimeout(this.props.onViewportEnter, this.props.delay);
     } else {
       // Set up next iteration of the loop.
       this._frameId = window.requestAnimationFrame(this.loop)
@@ -72,6 +78,7 @@ class AnimateBase extends Component<Props> {
   }
 
   stopLoop() {
+    clearTimeout(this._delayId);
     window.cancelAnimationFrame(this._frameId);
   }
 
@@ -135,7 +142,7 @@ class AnimateBase extends Component<Props> {
 
   render() {
     return (
-      <div ref={(node) => { this.node = node }}>
+      <div ref={(node) => { this.node = node }} className={this.props.className}>
         {this.props.children}
       </div>
     )
@@ -145,6 +152,7 @@ class AnimateBase extends Component<Props> {
 AnimateBase.defaultProps = {
   scrollableParentSelector: '',
   offset: 0,
+  delay: 0,
   animateOnce: true,
   onViewportEnter: () => {},
 };

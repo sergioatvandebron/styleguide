@@ -52,7 +52,6 @@
     "svg-inline-loader": "^0.8.0"
   },
   "peerDependencies": {
-    "animate.css": "^3.7.0",
     "classnames": "^2.2.6",
     "react": "^16.4.2",
     "styled-bootstrap-grid": "^1.0.4",
@@ -60,6 +59,7 @@
   },
   "gitHead": "c2c87818829bd968dbe54faa686b4a7474c151a9",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "react-autocomplete": "^1.8.1",
     "react-countup": "^4.0.0-alpha.6"
   }
