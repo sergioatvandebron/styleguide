@@ -10,6 +10,7 @@ const StyledBoxShadow = ({ wrapper, ...props }) => {
   const Element = styled(wrapper).attrs(props)`
     box-shadow: -20px 14px 20px 0 rgba(0, 0, 0, 0.18);
     display: inline-block;
+    background-color: #fff;
 
     ${media.desktop`
       box-shadow: -40px 28px 40px 0 rgba(0, 0, 0, 0.18);
