@@ -1,7 +1,6 @@
 // @flow
-import React, { type Node, Component } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import Base from '../../Base';
 import PropTypes from 'prop-types';
 
 type Props = {
@@ -16,7 +15,7 @@ type Props = {
 
   animateOnce?: bool,
   onViewportEnter?: func,
-}
+};
 
 class AnimateBase extends Component<Props> {
   constructor(props: Props) {
@@ -136,7 +135,7 @@ class AnimateBase extends Component<Props> {
 
   render() {
     return (
-      <div ref={(node) => { this.node = node }} {...this.props}>
+      <div ref={(node) => { this.node = node }}>
         {this.props.children}
       </div>
     )

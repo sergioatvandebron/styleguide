@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import AnimateBase from '../Base';
@@ -12,8 +13,8 @@ type Props = {
   suffix?: string,
 };
 
-class AnimateNumber extends Component {
-  constructor(props:any) {
+class AnimateNumber extends Component<Props> {
+  constructor(props: Props) {
     super(props);
 
     this.state = {
@@ -26,7 +27,6 @@ class AnimateNumber extends Component {
   }
 
   onViewportEnter(shouldAnimate = true) {
-    console.log('animated?', shouldAnimate);
     this.setState({
       ...this.state,
       withinViewport: true,
