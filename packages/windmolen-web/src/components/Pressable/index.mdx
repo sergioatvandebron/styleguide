@@ -1,0 +1,39 @@
+---
+name: Pressable
+menu: Base
+route: /Base/Pressable
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import { DarkWrapper } from '../../helpers/docz';
+import { colors } from '../../globals';
+import Pressable from './';
+
+## Props
+<PropsTable of={Pressable} />
+
+## Default (button, variant button-primary)
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="button">A button</Pressable>
+</Playground>
+
+## Anchor (variant text)
+<Playground wrapper={Wrapper}>
+  <Pressable baseElement="a" variant="text" href="#basic-usage" fontSize="body">An anchor</Pressable>
+</Playground>
+
+## Alternate button
+<Playground wrapper={Wrapper}>
+  <Pressable variant="button-alternate" fontSize="button">A button</Pressable>
+</Playground>
+
+## Outline button
+<Playground wrapper={DarkWrapper} style={{ background: colors.charcoalGray }}>
+  <Pressable variant="button-outline" fontSize="button">A button</Pressable>
+</Playground>
+
+## Small button
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="buttom-small" small>Small button</Pressable>
+</Playground>
