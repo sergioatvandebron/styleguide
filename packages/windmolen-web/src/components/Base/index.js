@@ -1,4 +1,5 @@
 // @flow
+import { type ReactComponentFunctionalUndefinedDefaultProps } from 'styled-components';
 import styled from 'styled-components';
 import { px } from '../../utils';
 import { media } from 'styled-bootstrap-grid';
@@ -38,6 +39,9 @@ const fontSize = (props: BaseProps, isMobile: boolean = true) => {
   case 'h5':
     return px(18);
 
+  case 'buttom-small':
+    return px(14);
+
   case 'button':
   case 'body-xsmall':
     return px(16);
@@ -74,6 +78,9 @@ const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
 
   case 'h5':
     return px(30);
+
+  case 'button-small':
+    return isMobile ? 2.29 : 1.57;
 
   case 'button':
     return px(isMobile ? 20 : 32);
@@ -115,5 +122,7 @@ const Base = styled.div`
   ${props => media.desktop`font-size: ${fontSize(props, false)};`}
   ${props => media.desktop`line-height: ${lineHeight(props, false)};`}
 `;
+
+(Base: ReactComponentFunctionalUndefinedDefaultProps<BaseProps>);
 
 export default Base;
