@@ -1,14 +1,28 @@
+// @flow
 import React, { type Node, Component } from 'react';
+import styled from 'styled-components';
+import Base from '../../Base';
 import PropTypes from 'prop-types';
 
 type Props = {
+  /**
+   * The main scrollable element of the page. By default it will use the
+   * 'window' object.
+   */
   scrollableParentSelector?: string,
+
+  /** An offset when the actual element should animate in. */
   offset?: number,
+
+  animateOnce?: bool,
+  onViewportEnter?: func,
 }
 
-class AnimateBase extends Component {
-  constructor(props:any) {
+class AnimateBase extends Component<Props> {
+  constructor(props: Props) {
     super(props);
+
+    this._frameId;
     this.startLoop = this.startLoop.bind(this);
     this.stopLoop = this.stopLoop.bind(this);
     this.loop = this.loop.bind(this);
@@ -28,7 +42,12 @@ class AnimateBase extends Component {
     const parentSelector = this.props.scrollableParentSelector;
     this.scrollableParent = parentSelector ? document.querySelector(parentSelector) : window;
 
-    this.startLoop();
+    const { isAboveViewport } = this.getVisibility();
+    if (isAboveViewport) {
+      this.props.onViewportEnter(false);
+    } else {
+      this.startLoop();
+    }
   }
 
   componentWillUnmount() {
@@ -42,10 +61,15 @@ class AnimateBase extends Component {
   }
 
   loop() {
-    this.withinViewport = this.getVisibility();
+    const { inViewport } = this.getVisibility();
 
-    // Set up next iteration of the loop
-    this._frameId = window.requestAnimationFrame(this.loop)
+    if (inViewport && this.props.animateOnce) {
+      this.stopLoop();
+      this.props.onViewportEnter();
+    } else {
+      // Set up next iteration of the loop.
+      this._frameId = window.requestAnimationFrame(this.loop)
+    }
   }
 
   stopLoop() {
@@ -101,15 +125,19 @@ class AnimateBase extends Component {
   }
 
   getVisibility() {
-    const elementTop = this.getElementTop(this.viewportElement) - this.getElementTop(this.scrollableParent);
-    const elementBottom = elementTop + this.viewportElement.clientHeight;
-    return this.inViewport(elementTop, elementBottom);
+    const elementTop = this.getElementTop(this.node) - this.getElementTop(this.scrollableParent);
+    const elementBottom = elementTop + this.node.clientHeight;
+    return {
+      inViewport: this.inViewport(elementTop, elementBottom),
+      isAboveViewport: this.isAboveViewport(elementBottom),
+      isBelowViewport: this.isBelowViewport(elementTop),
+    };
   }
 
   render() {
     return (
-      <div className="AnimateBase">
-        Animate Base.
+      <div ref={(node) => { this.node = node }} {...this.props}>
+        {this.props.children}
       </div>
     )
   }
@@ -118,6 +146,8 @@ class AnimateBase extends Component {
 AnimateBase.defaultProps = {
   scrollableParentSelector: '',
   offset: 0,
+  animateOnce: true,
+  onViewportEnter: () => {},
 };
 
 export default AnimateBase;
