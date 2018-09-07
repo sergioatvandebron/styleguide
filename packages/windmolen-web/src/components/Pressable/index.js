@@ -98,15 +98,20 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   color: ${variant('color')};
   display: ${props => props.variant === 'text' ? 'inline' : 'block'};
   padding: ${props => props.small ? '4px 15px' : '9px 20px'};
-  position: relative;
   text-align: left;
   text-decoration: ${variant('textDecoration')};
   width: 100%;
+  ${props => props.variant !== 'text' && `
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  `}
 
   ${StyledRightIcon} {
-    position: absolute;
-    right: ${props => props.small ? 5 : 10}px;
     background-position-y: -${variant('iconVariant')}em;
+    position: relative;
+    left: ${props => props.small ? 7 : 10}px;
   }
 
   &:hover {
