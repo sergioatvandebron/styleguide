@@ -12,22 +12,7 @@ export type Props = {
   variant?: VariantType
 };
 
-const Button = (props: Props) => {
-  // TODO wait for do expressions to land in ecmascript, because i will NOT do `let`
-  const fontSize = (function(props) {
-    if (props.small) {
-      return 'button-small';
-    }
-
-    if (props.variant === 'text') {
-      return 'inherit';
-    }
-
-    return 'button';
-  })(props);
-
-  return <Pressable fontSize={fontSize} {...props} />;
-};
+const Button = (props: Props) => <Pressable {...props} />;
 
 Button.defaultProps = {
   as: 'button',

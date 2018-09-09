@@ -114,7 +114,7 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   width: ${props => props.variant === 'text' ? 'auto' : '100%'};
 
   ${props => props.variant !== 'text' && `
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -176,8 +176,21 @@ const Pressable = (props: PressableProps) => {
   const showArrowIcon = props.variant !== 'text' && !props.hideArrow;
   const showIcon = props.icon && props.variant !== 'text';
 
+  // TODO wait for do expressions to land in ecmascript, because i will NOT do `let`
+  const fontSize = (function(props) {
+    if (props.small) {
+      return 'button-small';
+    }
+
+    if (props.variant === 'text') {
+      return 'inherit';
+    }
+
+    return 'button';
+  })(props);
+
   return (
-    <Component {...componentProps}>
+    <Component fontSize={fontSize} {...componentProps}>
       {showIcon && <StyledLeftIcon name={icon} />}
       <StyledPressableText>{children}</StyledPressableText>
       {showArrowIcon && <StyledRightIcon name="arrow-right" />}
