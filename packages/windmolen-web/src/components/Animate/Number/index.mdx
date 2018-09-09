@@ -1,0 +1,31 @@
+---
+name: Animate.Number
+menu: Animate
+route: /Animate/Number
+---
+
+import { Playground, PropsTable } from 'docz';
+import Wrapper from '../../Wrapper';
+import Animate from '../';
+import { H1 } from '../../Headings';
+
+# Animate.Number
+
+## Props
+<PropsTable of={Animate.Number} />
+
+## Example
+Take note that you normally would not have to specify "scrollableParent"
+property. The default is "window" which should be good, unless your main
+scrollable element is not "body".
+<Playground wrapper={Wrapper}>
+  <div style={{ height: '100vh', width: '100%', textAlign: 'center', fontWeight: 'bold' }}>Keep scrolling</div>
+  <div style={{ height: '100vh', width: '100%', textAlign: 'center', fontWeight: 'bold' }}>Keep scrolling</div>
+  <H1>
+    <Animate.Number
+      scrollableParentSelector=".css-d9u7f0-Wrapper"
+      end={100}
+      suffix="%"
+    />
+  </H1>
+</Playground>

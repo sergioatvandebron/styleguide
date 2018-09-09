@@ -1,0 +1,42 @@
+---
+name: Animate.Block
+menu: Animate
+route: /Animate/Block
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../../Wrapper';
+import Animate from '../'
+
+# Animate.Block
+
+## Props
+<PropsTable of={Animate.Block} />
+
+## Example
+Take note that you normally would not have to specify "scrollableParent"
+property. The default is "window" which should be good, unless your main
+scrollable element is not "body".
+
+The animation effects come from the famous animation library AnimateCSS.
+For more info about the animations available,
+visit https://daneden.github.io/animate.css
+<Playground wrapper={Wrapper}>
+  <div style={{ height: '100vh', width: '100%', textAlign: 'center', fontWeight: 'bold' }}>Keep scrolling</div>
+  <div style={{ height: '100vh', width: '100%', textAlign: 'center', fontWeight: 'bold' }}>Keep scrolling</div>
+  <Animate.Block scrollableParentSelector=".css-d9u7f0-Wrapper">
+    <div style={{ backgroundColor: '#f0f0f0', padding: 20 }}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent velit
+      turpis, porta et tempor a, gravida tincidunt diam. Integer interdum
+      vulputate interdum.  Integer vitae lacinia massa. Pellentesque et nulla
+      pulvinar, euismod nisl et, lacinia elit. Duis sed leo augue. In maximus
+      facilisis mauris, sit amet tincidunt velit pulvinar non. Curabitur congue
+      rhoncus tortor, sit amet interdum libero feugiat at. Sed dui turpis,
+      accumsan ut commodo ut, fringilla eu augue. Interdum et malesuada fames
+      ac ante ipsum primis in faucibus. Sed tincidunt, nisi a suscipit
+      suscipit, orci est aliquam ex, quis laoreet lectus lectus non dui. Nullam
+      elementum turpis vel velit rutrum viverra. Proin congue leo nec diam
+      condimentum sodales. Mauris malesuada lorem ac mattis rhoncus.
+    </div>
+  </Animate.Block>
+</Playground>

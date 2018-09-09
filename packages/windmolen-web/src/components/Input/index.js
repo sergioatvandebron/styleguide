@@ -1,4 +1,3 @@
-
 // @flow
 import React, { type Node, Component } from 'react';
 import styled from 'styled-components';
