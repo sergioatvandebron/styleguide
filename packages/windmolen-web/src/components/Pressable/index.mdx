@@ -6,6 +6,7 @@ route: /Base/Pressable
 
 import { Playground, PropsTable } from 'docz'
 import Wrapper from '../Wrapper';
+import Paragraph from '../Paragraph';
 import { DarkWrapper } from '../../helpers/docz';
 import { colors } from '../../globals';
 import Pressable from './';
@@ -18,9 +19,18 @@ import Pressable from './';
   <Pressable fontSize="button">A button</Pressable>
 </Playground>
 
+## Anchor-like button
+<Playground wrapper={Wrapper}>
+  <Paragraph>
+    This is an&nbsp;
+    <Pressable variant="text" href="#anchor-like-button" fontSize="body">anchor-ish button</Pressable>
+    &nbsp;that you can press
+  </Paragraph>
+</Playground>
+
 ## Anchor (variant text)
 <Playground wrapper={Wrapper}>
-  <Pressable baseElement="a" variant="text" href="#basic-usage" fontSize="body">An anchor</Pressable>
+  <Pressable as="a" variant="text" href="#basic-usage" fontSize="body">An anchor</Pressable>
 </Playground>
 
 ## Alternate button
@@ -35,5 +45,15 @@ import Pressable from './';
 
 ## Small button
 <Playground wrapper={Wrapper}>
-  <Pressable fontSize="buttom-small" small>Small button</Pressable>
+  <Pressable fontSize="button-small" small>Small button</Pressable>
+</Playground>
+
+## With custom icon
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="button" icon="arrow-left" hideArrow>With custom icon on the left</Pressable>
+</Playground>
+
+## With custom component
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="button" as={Paragraph}>With Paragraph</Pressable>
 </Playground>

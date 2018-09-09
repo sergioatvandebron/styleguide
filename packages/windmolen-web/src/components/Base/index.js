@@ -10,6 +10,7 @@ export type FontSize = 'h1'
   | 'h4'
   | 'h5'
   | 'button'
+  | 'button-small'
   | 'body-xsmall'
   | 'lead'
   | 'body'
@@ -39,7 +40,7 @@ const fontSize = (props: BaseProps, isMobile: boolean = true) => {
   case 'h5':
     return px(18);
 
-  case 'buttom-small':
+  case 'button-small':
     return px(14);
 
   case 'button':

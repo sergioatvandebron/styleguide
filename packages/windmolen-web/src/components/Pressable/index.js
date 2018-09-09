@@ -22,13 +22,17 @@ type VariantList = {
 
 type PressableProps = {
   children?: Node,
-  baseElement: 'a' | 'button',
+
+  /** Either a html element (e.g. "'a'") or a React component */
+  as?: 'string' | Node,
   variant?: VariantName,
 
   /** Used with button* variants */
   small?: boolean,
   /** Used with button* variants */
-  hideArrow?: boolean
+  hideArrow?: boolean,
+  /** Name of the icon to use, same as <Icon /> */
+  icon?: string
 };
 
 // Pressable variant definitions
@@ -41,7 +45,8 @@ const pressableText: Variant = {
   border: '0',
   iconVariant: 0,
   hoverIconVariant: 0,
-  textDecoration: 'underline'
+  textDecoration: 'underline',
+  cursor: 'pointer',
 };
 
 const pressableButtonPrimary: Variant = {
@@ -53,7 +58,8 @@ const pressableButtonPrimary: Variant = {
   border: '0',
   iconVariant: 1,
   hoverIconVariant: 1,
-  textDecoration: 'none'
+  textDecoration: 'none',
+  cursor: 'default',
 };
 
 const pressableButtonAlternate: Variant = {
@@ -65,7 +71,8 @@ const pressableButtonAlternate: Variant = {
   border: '0',
   iconVariant: 0,
   hoverIconVariant: 2,
-  textDecoration: 'none'
+  textDecoration: 'none',
+  cursor: 'default',
 };
 
 const pressableButtonOutline: Variant = {
@@ -77,7 +84,8 @@ const pressableButtonOutline: Variant = {
   border: `solid 1px ${colors.white}`,
   iconVariant: 1,
   hoverIconVariant: 1,
-  textDecoration: 'none'
+  textDecoration: 'none',
+  cursor: 'default',
 };
 
 const pressableVariants: VariantList = {
@@ -96,15 +104,18 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   border: ${variant('border')};
   box-shadow: ${variant('shadow')};
   color: ${variant('color')};
+  cursor: ${variant('cursor')};
   display: ${props => props.variant === 'text' ? 'inline' : 'block'};
-  padding: ${props => props.small ? '4px 15px' : '9px 20px'};
+  font-weight: 600;
+  padding: ${props => props.variant === 'text' ? 0 : '9px 20px'};
   text-align: left;
   text-decoration: ${variant('textDecoration')};
-  width: 100%;
+  width: ${props => props.variant === 'text' ? 'auto' : '100%'};
+
   ${props => props.variant !== 'text' && `
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   `}
 
@@ -114,33 +125,57 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
     left: ${props => props.small ? 7 : 10}px;
   }
 
+  ${StyledLeftIcon} {
+    background-position-y: -${variant('iconVariant')}em;
+    margin-right: 10px;
+  }
+
   &:hover {
     background-color: ${variant('hoverBackgroundColor')};
     color: ${variant('hoverColor')};
+
+    ${StyledRightIcon},
+    ${StyledLeftIcon} {
+      background-position-y: -${variant('hoverIconVariant')}em;
+    }
   }
 `;
 
 const StyledRightIcon = styled(Icon)`
+  flex: 0 0 auto;
+
   &&& {
     font-size: 200%;
   }
 `;
 
+const StyledLeftIcon = styled(Icon)`
+  &&& {
+    font-size: 200%;
+  }
+`;
+
+const StyledPressableText = styled('span')`
+  flex: 1 0 auto;
+`;
+
 const Pressable = (props: PressableProps) => {
-  const { baseElement, children, ...componentProps } = props;
+  const { as: baseElement, children, icon, ...componentProps } = props;
   const Component = pressableFactory(baseElement);
   const showArrowIcon = props.variant !== 'text' && !props.hideArrow;
+  const showIcon = props.icon && props.variant !== 'text';
 
   return (
     <Component {...componentProps}>
-      {children}
+      {showIcon && <StyledLeftIcon name={icon} />}
+      <StyledPressableText>{children}</StyledPressableText>
       {showArrowIcon && <StyledRightIcon name="arrow-right" />}
     </Component>
   );
 };
 
 Pressable.defaultProps = {
-  baseElement: 'button',
+  as: 'button',
   variant: 'button-primary',
   small: false,
   hideArrow: false,
