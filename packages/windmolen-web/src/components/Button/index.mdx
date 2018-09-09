@@ -18,12 +18,12 @@ import { colors } from '../../globals';
 
 ## Primary
 <Playground wrapper={Wrapper}>
-  <Button icon="">Primary</Button>
+  <Button>Primary</Button>
 </Playground>
 
 ## Alternate
 <Playground wrapper={Wrapper}>
-  <Button theme="alternate">Alternate</Button>
+  <Button variant="button-alternate">Alternate</Button>
 </Playground>
 
 ## No icon
@@ -33,7 +33,7 @@ import { colors } from '../../globals';
 
 ## With outline
 <Playground wrapper={DarkWrapper} style={{ backgroundColor: colors.charcoalGray }}>
-  <Button theme="outline">With outline</Button>
+  <Button variant="button-outline">With outline</Button>
 </Playground>
 
 ## Small
@@ -43,10 +43,10 @@ import { colors } from '../../globals';
 
 ## With icon
 <Playground wrapper={Wrapper}>
-  <Button icon="windmill">With icon</Button>
+  <Button icon="arrow-left" hideArrow>With custom icon</Button>
 </Playground>
 
 ## Text button
 <Playground wrapper={Wrapper}>
-  <Button theme="text">Text button</Button>
+  <Button variant="text">Text button</Button>
 </Playground>

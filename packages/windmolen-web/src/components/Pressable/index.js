@@ -8,7 +8,7 @@ import Icon from '../Icon';
 import { colors } from '../../globals';
 import { px } from '../../utils';
 
-type VariantName = 'text'
+export type VariantType= 'text'
   | 'button-primary'
   | 'button-alternate'
   | 'button-outline';
@@ -18,16 +18,15 @@ type Variant = {
 }
 
 type VariantList = {
-  [VariantName]: Variant
+  [VariantType]: Variant
 };
 
 type PressableProps = {
   children?: Node,
+  variant?: VariantType,
 
   /** Either a html element (e.g. "'a'") or a React component */
   as?: 'string' | Node,
-  variant?: VariantName,
-
   /** Used with button* variants */
   small?: boolean,
   /** Used with button* variants */
@@ -43,7 +42,7 @@ const pressableText: Variant = {
   hoverColor: colors.silver,
   hoverBackgroundColor: colors.transparent,
   shadow: 'none',
-  border: '0',
+  border: `1px solid ${colors.transparent}`,
   iconVariant: 0,
   hoverIconVariant: 0,
   textDecoration: 'underline',
@@ -56,7 +55,7 @@ const pressableButtonPrimary: Variant = {
   hoverColor: colors.white,
   hoverBackgroundColor: colors.shuttleGray,
   shadow: '0 0 8px 0 rgba(0, 0, 0, 0.12)',
-  border: '0',
+  border: `1px solid ${colors.charcoalGray}`,
   iconVariant: 1,
   hoverIconVariant: 1,
   textDecoration: 'none',
@@ -69,7 +68,7 @@ const pressableButtonAlternate: Variant = {
   hoverColor: colors.bermudaGray,
   hoverBackgroundColor: colors.white,
   shadow: '0 0 8px 0 rgba(51, 61, 71, 0.12)',
-  border: '0',
+  border: `1px solid ${colors.white}`,
   iconVariant: 0,
   hoverIconVariant: 2,
   textDecoration: 'none',
@@ -97,7 +96,7 @@ const pressableVariants: VariantList = {
 };
 
 // utils to access the property value for a given Pressable variant
-const getVariantProperty = (variant: VariantName, property: string): string | number => pressableVariants[variant][property];
+const getVariantProperty = (variant: VariantType, property: string): string | number => pressableVariants[variant][property];
 const variant = property => props => getVariantProperty(props.variant, property);
 
 const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base.withComponent(element).extend`
@@ -129,7 +128,7 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
 
   ${StyledLeftIcon} {
     background-position-y: -${variant('iconVariant')}em;
-    margin-right: 10px;
+    margin: 0 10px 0 -10px;
   }
 
   &:hover {
@@ -141,6 +140,15 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
       background-position-y: -${variant('hoverIconVariant')}em;
     }
   }
+
+  ${media.desktop`
+    min-width: ${props => props.variant === 'text' ? 'unset' : '155px'};
+    width: auto;
+
+    ${StyledRightIcon} {
+      margin-left: 10px;
+    }
+  `}
 `;
 
 const StyledRightIcon = styled(Icon)`

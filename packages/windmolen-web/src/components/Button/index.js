@@ -1,19 +1,7 @@
 // @flow
 import type { Node } from 'react';
 import React from 'react';
-import { getStyledButton, ButtonText, StyledIcon } from './styles';
-
-export type ButtonTheme = 'primary'
-  | 'alternate'
-  | 'text'
-  | {
-    color: string,
-    backgroundColor: string,
-    hoverColor: string,
-    hoverBackgroundColor: string,
-    shadow: string,
-    border: string
-  };
+import Pressable, { type VariantType } from '../Pressable';
 
 export type Props = {
   /** The actual icon to use, same as <Icon /> */
@@ -21,37 +9,30 @@ export type Props = {
   hideArrow?: boolean,
   children?: Node,
   small?: boolean,
-
-  /** Either `primary`, `alternate`, 'text', or a theme object */
-  theme?: ButtonTheme
+  variant?: VariantType
 };
 
-const StyledButton = getStyledButton('button');
+const Button = (props: Props) => {
+  // TODO wait for do expressions to land in ecmascript, because i will NOT do `let`
+  const fontSize = (function(props) {
+    if (props.small) {
+      return 'button-small';
+    }
 
-const Button = (props: Props) => props.icon
-  ? (
-    <StyledButton {...props}>
-      <StyledIcon name={props.icon} hide={props.theme === 'text' || props.hideArrow} />
-      <ButtonText withIcon>
-        {props.children}
-      </ButtonText>
-    </StyledButton>
-  ) : (
-    <StyledButton {...props}>
-      <ButtonText hideArrow={props.hideArrow}>
-        {props.children}
-      </ButtonText>
-      <StyledIcon name="arrow-right" hide={props.theme === 'text' || props.hideArrow} />
-    </StyledButton>
-  );
+    if (props.variant === 'text') {
+      return 'inherit';
+    }
+
+    return 'button';
+  })(props);
+
+  return <Pressable fontSize={fontSize} {...props} />;
+};
 
 Button.defaultProps = {
-  type: 'primary',
-  icon: null,
-  asTextButton: false,
-  small: false,
-  theme: 'primary',
-  hideArrow: false
+  as: 'button',
+  variant: 'button-primary',
+  hideArrow: false,
 };
 
 export default Button;
