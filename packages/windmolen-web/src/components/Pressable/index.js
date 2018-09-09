@@ -3,6 +3,7 @@
 import React, { type Node } from 'react';
 import styled, { type ReactComponentStyled } from 'styled-components';
 import Base from '../Base';
+import { media } from 'styled-bootstrap-grid';
 import Icon from '../Icon';
 import { colors } from '../../globals';
 import { px } from '../../utils';
@@ -106,6 +107,7 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   color: ${variant('color')};
   cursor: ${variant('cursor')};
   display: ${props => props.variant === 'text' ? 'inline' : 'block'};
+  font-size: inherit;
   font-weight: 600;
   padding: ${props => props.variant === 'text' ? 0 : '9px 20px'};
   text-align: left;
@@ -157,6 +159,7 @@ const StyledLeftIcon = styled(Icon)`
 
 const StyledPressableText = styled('span')`
   flex: 1 0 auto;
+  font-size: inherit;
 `;
 
 const Pressable = (props: PressableProps) => {

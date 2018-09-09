@@ -58,8 +58,9 @@ const fontSize = (props: BaseProps, isMobile: boolean = true) => {
 
   case 'body':
   case 'regular':
-  default:
     return px(isMobile ? 18 : 20);
+  default:
+    return 'inherit';
   }
 };
 
@@ -100,8 +101,9 @@ const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
 
   case 'body':
   case 'regular':
-  default:
     return px(isMobile ? 32 : 40);
+  default:
+      return 'inherit';
   }
 };
 
