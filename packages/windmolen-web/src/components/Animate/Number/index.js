@@ -58,7 +58,7 @@ class AnimateNumber extends Component<Props> {
       suffix,
       prefix,
       duration,
-      ...props,
+      ...props
     } = this.props;
 
     return (
