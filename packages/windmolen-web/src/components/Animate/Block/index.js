@@ -31,6 +31,7 @@ class AnimateBlock extends Component<Props> {
 
   renderBlock(effect) {
     const classes = {};
+
     if (this.state.withinViewport && this.state.shouldAnimate) {
       classes['animated'] = true;
       classes[effect] = true;

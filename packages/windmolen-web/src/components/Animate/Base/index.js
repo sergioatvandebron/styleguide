@@ -19,11 +19,21 @@ type Props = {
   onViewportEnter?: func,
 };
 
+const StyledAnimatedBase = styled.div`
+  opacity: 0;
+  ${props => { console.log('StyledAnimatedBase', props.shouldAnimateIn); }}
+`
+
 class AnimateBase extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this._frameId;
     this._delayId;
+
+    this.state = {
+      withinViewport: false,
+      shouldAnimate: true,
+    };
 
     this.startLoop = this.startLoop.bind(this);
     this.stopLoop = this.stopLoop.bind(this);
@@ -47,6 +57,11 @@ class AnimateBase extends Component<Props> {
     const { isAboveViewport } = this.getVisibility();
     if (isAboveViewport) {
       this.props.onViewportEnter(false);
+      this.setState({
+        ...this.state,
+        withinViewport: true,
+        shouldAnimate: false,
+      });
     } else {
       this.startLoop();
     }
@@ -69,7 +84,14 @@ class AnimateBase extends Component<Props> {
       this.stopLoop();
 
       clearTimeout(this._delayId);
-      this._delayId = setTimeout(this.props.onViewportEnter, this.props.delay);
+      this._delayId = setTimeout(() => {
+        this.props.onViewportEnter();
+        this.setState({
+          ...this.state,
+          withinViewport: true,
+          shouldAnimate: true,
+        });
+      }, this.props.delay);
     } else {
       // Set up next iteration of the loop.
       this._frameId = window.requestAnimationFrame(this.loop)
@@ -140,10 +162,17 @@ class AnimateBase extends Component<Props> {
   }
 
   render() {
+    const { className, ...props } = this.props;
+    console.log('shouldAnimateIn', this.state.shouldAnimateIn);
     return (
-      <div ref={(node) => { this.node = node }} className={this.props.className}>
+      <StyledAnimatedBase
+        ref={(node) => { this.node = node }}
+        className={className}
+        {...props}
+        shouldAnimateIn={this.state.withinViewport}
+      >
         {this.props.children}
-      </div>
+      </StyledAnimatedBase>
     )
   }
 }
