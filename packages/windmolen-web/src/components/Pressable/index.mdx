@@ -1,0 +1,59 @@
+---
+name: Pressable
+menu: Base
+route: /Base/Pressable
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import Paragraph from '../Paragraph';
+import { DarkWrapper } from '../../helpers/docz';
+import { colors } from '../../globals';
+import Pressable from './';
+
+## Props
+<PropsTable of={Pressable} />
+
+## Default (button, variant button-primary)
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="button">A button</Pressable>
+</Playground>
+
+## Anchor-like button
+<Playground wrapper={Wrapper}>
+  <Paragraph fontSize="body-xsmall">
+    This is an&nbsp;
+    <Pressable variant="text" href="#anchor-like-button">anchor-ish button</Pressable>
+    &nbsp;that you can press
+  </Paragraph>
+</Playground>
+
+## Anchor (variant text)
+<Playground wrapper={Wrapper}>
+  <Pressable as="a" variant="text" href="#basic-usage" fontSize="body">An anchor</Pressable>
+</Playground>
+
+## Alternate button
+<Playground wrapper={Wrapper}>
+  <Pressable variant="button-alternate" fontSize="button">A button</Pressable>
+</Playground>
+
+## Outline button
+<Playground wrapper={DarkWrapper} style={{ background: colors.charcoalGray }}>
+  <Pressable variant="button-outline" fontSize="button">A button</Pressable>
+</Playground>
+
+## Small button
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="button-small" small>Small button</Pressable>
+</Playground>
+
+## With custom icon
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="button" icon="arrow-left" hideArrow>With custom icon on the left</Pressable>
+</Playground>
+
+## With custom component
+<Playground wrapper={Wrapper}>
+  <Pressable fontSize="button" as={Paragraph}>With Paragraph</Pressable>
+</Playground>

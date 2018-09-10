@@ -31,6 +31,14 @@ injectGlobal`
   ${fontFace(700, 'bold')}
   ${fontFace(800, 'extrabold')}
   ${fontFace(900, 'black')}
+
+  body {
+    font-size: 18px;
+
+    @media (min-width: 992px) {
+      font-size: 20px;
+    }
+  }
 `;
 
 /** Colors */

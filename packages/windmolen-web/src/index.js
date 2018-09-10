@@ -17,3 +17,4 @@ export { default as Container } from './components/Bootstrap/Container';
 export { default as Col } from './components/Bootstrap/Col';
 export { default as Row } from './components/Bootstrap/Row';
 export { default as Animate } from './components/Animate';
+export { default as Pressable } from './components/Pressable';

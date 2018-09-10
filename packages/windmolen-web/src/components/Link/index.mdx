@@ -17,36 +17,27 @@ import Paragraph from '../Paragraph';
   <Link href="#basic-usage">A link</Link>
 </Playground>
 
-## Different font-size
-<Playground wrapper={Wrapper}>
-  <Link href="#different-font-size" fontSize="large">A link</Link>
-</Playground>
-
-## ...
-<Playground wrapper={Wrapper}>
-  <Link href="#as-button-with-icon" withComponent={Paragraph}>A link</Link>
-</Playground>
-
 ## As button
 <Playground wrapper={Wrapper}>
-  <Link href="#as-button" asButton>A button-looking link</Link>
+  <Link href="#as-button" variant="button-primary">A button-looking link</Link>
 </Playground>
 
 ## As alternate button
 <Playground wrapper={Wrapper}>
-  <Link
-    href="#as-alternate-button"
-    theme="alternate"
-    asButton
-  >Different button-looking link</Link>
+  <Link href="#as-alternate-button" variant="button-alternate">Different button-looking link</Link>
 </Playground>
 
 ## As small button
 <Playground wrapper={Wrapper}>
-  <Link href="#as-small-button" asButton small>Small button</Link>
+  <Link href="#as-small-button" variant="button-primary" small>Small button</Link>
 </Playground>
 
 ## As button with icon
 <Playground wrapper={Wrapper}>
-  <Link href="#as-button-with-icon" asButton icon="windmill">With icon</Link>
+  <Link href="#as-button-with-icon" variant="button-primary" icon="windmill" hideArrow>With icon</Link>
+</Playground>
+
+## With custom component
+<Playground wrapper={Wrapper}>
+  <Link href="#with-custom-component" as={Paragraph}>With custom component</Link>
 </Playground>
