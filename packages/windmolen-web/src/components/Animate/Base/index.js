@@ -21,7 +21,10 @@ type Props = {
 
 const StyledAnimatedBase = styled.div`
   opacity: 0;
-  ${props => { console.log('StyledAnimatedBase', props.shouldAnimateIn); }}
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+  ${props => props.shouldAnimateIn && 'opacity: 1;'}
 `
 
 class AnimateBase extends Component<Props> {
@@ -135,7 +138,7 @@ class AnimateBase extends Component<Props> {
   }
 
   isInViewport(y) {
-    return y >= this.getViewportTop() && y <= this.getViewportBottom();
+    return y > this.getViewportTop() && y < this.getViewportBottom();
   }
 
   isAboveViewport(y) {
@@ -163,10 +166,9 @@ class AnimateBase extends Component<Props> {
 
   render() {
     const { className, ...props } = this.props;
-    console.log('shouldAnimateIn', this.state.shouldAnimateIn);
     return (
       <StyledAnimatedBase
-        ref={(node) => { this.node = node }}
+        innerRef={(node) => { this.node = node }}
         className={className}
         {...props}
         shouldAnimateIn={this.state.withinViewport}
