@@ -37,9 +37,10 @@ type ItemProps = {
 };
 
 // Item
-const Li = Base.extend`
+const Li = Base.withComponent('li').extend`
   position: relative;
   color: ${colors.charcoalGray};
+  padding-left: 30px;
 `;
 
 const StyledIcon = styled(Icon)`
@@ -52,11 +53,8 @@ const StyledIcon = styled(Icon)`
 `;
 
 const StyledItemContent = Span.extend`
-  margin-left: 25px;
-
-  ${media.desktop`
-    margin-left: 30px;
-  `}
+  display: block;
+  margin-left: 0;
 `;
 
 const Item = ({ icon, inheritedIcon, children, ...props }: ItemProps) => {
