@@ -45,11 +45,9 @@ const Li = Base.extend`
 const StyledIcon = styled(Icon)`
   position: absolute;
   left: -5px;
-  top: 3px;
 
   ${media.desktop`
     left: -8px;
-    top: 6px;
   `}
 `;
 
