@@ -1,6 +1,5 @@
 // @flow
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import AnimateBase from '../Base';
 import CountUp from 'react-countup';
 
