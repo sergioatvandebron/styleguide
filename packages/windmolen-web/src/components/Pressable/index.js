@@ -1,12 +1,10 @@
 // @flow
-/* eslint-disable no-unused-vars */
 import React, { type Node } from 'react';
 import styled, { type ReactComponentStyled } from 'styled-components';
 import Base from '../Base';
 import { media } from 'styled-bootstrap-grid';
 import Icon from '../Icon';
 import { colors } from '../../globals';
-import { px } from '../../utils';
 
 export type VariantType= 'text'
   | 'button-primary'
