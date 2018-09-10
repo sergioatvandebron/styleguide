@@ -10,7 +10,6 @@ type LinkProps = {
   children?: Node,
   icon?: string,
   small?: boolean,
-  withComponent?: Node
 };
 
 const Link = (props: LinkProps) => <Pressable {...props} />;
