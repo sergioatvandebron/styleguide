@@ -16,6 +16,8 @@ type InputProps = {
   onIconClick?: Function,
   type?: string,
   suggestions?: Array<Object>,
+  onChange?: Function,
+  autoCompleteProps?: Object,
 
   /** The name of the icon. */
   icon?: string,
@@ -104,36 +106,46 @@ const StyledInputElement = styled(Base.withComponent('input'))`
   }
 `;
 
+class StyledInput extends Component<InputProps, { value: string }> {
+  input: ?mixed;
+  onChange: () => void;
 
-class StyledInput extends Component {
-  constructor(props:any) {
+  constructor(props: InputProps) {
     super(props);
 
-    this.state = {
-      value: '',
-    };
+    this.state = { value: '' };
 
     this.input = React.createRef();
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(event) {
+  onChange(event: SyntheticInputEvent<HTMLInputElement>) {
     const { value } = event.target;
+
+    if (typeof this.props.onChange === 'function') {
+      this.props.onChange(event);
+    }
+
     this.setState({ value });
   }
 
   render() {
+    // don't let props.onChange overwrite this.onChange
+    //
+    // eslint-disable-next-line no-unused-vars
+    const { onChange, ...props } = this.props;
+
     return (
       <StyledInputWrapper>
         <StyledInputElement
           innerRef={this.input}
           value={this.state.value}
-          {...this.props}
           onChange={this.onChange}
+          {...props}
         />
         <StyledInputLine value={this.state.value} {...this.props} />
       </StyledInputWrapper>
-    )
+    );
   }
 }
 
@@ -227,7 +239,7 @@ const Input = ({ className, autoCompleteProps, ...props }: InputProps) => {
         <Autocomplete
           items={props.suggestions}
           wrapperStyle={{  }}
-          renderInput={({ ref, value, ...inputProps }) => (
+          renderInput={({ ref, value, ...inputProps }) => ( // eslint-disable-line no-unused-vars
             <StyledInput
               innerRef={(node) => ref(node)}
               {...inputProps}
