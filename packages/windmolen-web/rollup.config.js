@@ -18,8 +18,7 @@ export default {
     'react-autocomplete',
     'styled-components',
     'styled-bootstrap-grid',
-    'animate.css',
-    'react-contup',
+    'react-countup',
   ],
 
   plugins: [
