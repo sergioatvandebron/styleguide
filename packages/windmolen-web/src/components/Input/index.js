@@ -114,15 +114,11 @@ class StyledInput extends Component {
     };
 
     this.input = React.createRef();
-    this.onChange = this.onChange.bind(this);
   }
 
-  onChange(event) {
+  onChange = (event) => {
     const { value } = event.target;
-    this.setState({
-      ...this.state,
-      value,
-    });
+    this.setState({ value });
   }
 
   render() {
@@ -130,9 +126,9 @@ class StyledInput extends Component {
       <StyledInputWrapper>
         <StyledInputElement
           innerRef={this.input}
-          onChange={this.onChange}
           value={this.state.value}
           {...this.props}
+          onChange={this.onChange}
         />
         <StyledInputLine value={this.state.value} {...this.props} />
       </StyledInputWrapper>
