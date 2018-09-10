@@ -7,9 +7,18 @@ route: /Animate/Number
 import { Playground, PropsTable } from 'docz';
 import Wrapper from '../../Wrapper';
 import Animate from '../';
+import AnimateBase from '../Base';
 import { H1 } from '../../Headings';
 
 # Animate.Number
+
+Animate.Number uses https://www.npmjs.com/package/react-countup for making the
+animation available. All the non base props such as `className` will be passed
+to the `<CountUp />` component. For more info about available props, visit
+https://www.npmjs.com/package/react-countup
+
+## Base Props
+<PropsTable of={AnimateBase} />
 
 ## Props
 <PropsTable of={Animate.Number} />
@@ -25,6 +34,20 @@ scrollable element is not "body".
     <Animate.Number
       scrollableParentSelector=".css-d9u7f0-Wrapper"
       end={100}
+      suffix="%"
+    />
+  </H1>
+</Playground>
+
+# With decimals
+<Playground wrapper={Wrapper}>
+  <div style={{ height: '100vh', width: '100%', textAlign: 'center', fontWeight: 'bold' }}>Keep scrolling</div>
+  <div style={{ height: '100vh', width: '100%', textAlign: 'center', fontWeight: 'bold' }}>Keep scrolling</div>
+  <H1>
+    <Animate.Number
+      scrollableParentSelector=".css-d9u7f0-Wrapper"
+      end={100.5}
+      decimals={1}
       suffix="%"
     />
   </H1>

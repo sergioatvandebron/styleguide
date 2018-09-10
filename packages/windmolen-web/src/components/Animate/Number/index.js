@@ -33,17 +33,15 @@ class AnimateNumber extends Component<Props> {
     });
   }
 
-  renderNumber(start, end, suffix, prefix, duration) {
+  renderNumber(props) {
+    const {
+      prefix,
+      suffix,
+      end,
+      start
+    } = props;
     if (this.state.withinViewport && this.state.shouldAnimate) {
-      return (
-        <CountUp
-          start={start}
-          end={end}
-          prefix={prefix}
-          suffix={suffix}
-          duration={duration}
-        />
-      );
+      return <CountUp {...props} />;
     } else if (this.state.withinViewport && !this.state.shouldAnimate) {
       return `${prefix}${end}${suffix}`;
     }
@@ -53,27 +51,24 @@ class AnimateNumber extends Component<Props> {
 
   render() {
     const {
-      start,
-      end,
-      suffix,
-      prefix,
-      duration,
+      scrollableParentSelector,
       ...props
     } = this.props;
 
     return (
-      <AnimateBase onViewportEnter={this.onViewportEnter} {...props}>
-        {this.renderNumber(start, end, suffix, prefix, duration)}
+      <AnimateBase
+        onViewportEnter={this.onViewportEnter}
+        scrollableParentSelector={scrollableParentSelector}
+      >
+        {this.renderNumber(props)}
       </AnimateBase>
     )
   }
 }
 
 AnimateNumber.defaultProps = {
-  start: 0,
   duration: 1,
-  prefix: '',
-  suffix: '',
+  decimal: ',',
 };
 
 export default AnimateNumber;
