@@ -33,8 +33,10 @@ scrollable element is not "body".
   <H1>
     <Animate.Number
       scrollableParentSelector=".css-d9u7f0-Wrapper"
-      end={100}
-      suffix="%"
+      renderedItemProps={{
+        end: 100,
+        suffix: '%',
+      }}
     />
   </H1>
 </Playground>
@@ -46,9 +48,11 @@ scrollable element is not "body".
   <H1>
     <Animate.Number
       scrollableParentSelector=".css-d9u7f0-Wrapper"
-      end={100.5}
-      decimals={1}
-      suffix="%"
+      renderedItemProps={{
+        end: 275.7,
+        suffix: '%',
+        decimals: 1,
+      }}
     />
   </H1>
 </Playground>

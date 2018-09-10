@@ -4,12 +4,8 @@ import AnimateBase from '../Base';
 import CountUp from 'react-countup';
 
 type Props = {
-  end: number,
-  start?: number,
-  /** Duration in seconds. */
-  duration?: number,
-  prefix?: string,
-  suffix?: string,
+  /** Props given to this will be passed to the <CountUp /> */
+  renderedItemProps?: object,
 };
 
 class AnimateNumber extends Component<Props> {
@@ -51,24 +47,26 @@ class AnimateNumber extends Component<Props> {
 
   render() {
     const {
-      scrollableParentSelector,
+      renderedItemProps,
       ...props
     } = this.props;
 
     return (
-      <AnimateBase
-        onViewportEnter={this.onViewportEnter}
-        scrollableParentSelector={scrollableParentSelector}
-      >
-        {this.renderNumber(props)}
+      <AnimateBase onViewportEnter={this.onViewportEnter} {...props}>
+        {this.renderNumber(renderedItemProps)}
       </AnimateBase>
     )
   }
 }
 
 AnimateNumber.defaultProps = {
-  duration: 1,
-  decimal: ',',
+  renderedItemProps: {
+    start: 0,
+    prefix: '',
+    suffix: '',
+    duration: 1,
+    decimal: ',',
+  },
 };
 
 export default AnimateNumber;
