@@ -114,9 +114,10 @@ class StyledInput extends Component {
     };
 
     this.input = React.createRef();
+    this.onChange = this.onChange.bind(this);
   }
 
-  onChange = (event) => {
+  onChange(event) {
     const { value } = event.target;
     this.setState({ value });
   }
