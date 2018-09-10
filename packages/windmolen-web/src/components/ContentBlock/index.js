@@ -1,10 +1,11 @@
 // @flow
 import React, { Fragment, type Node } from 'react';
 import { media } from 'styled-bootstrap-grid';
+import styled from 'styled-components';
 import Container from '../Bootstrap/Container';
 import Row from '../Bootstrap/Row';
 import Col from '../Bootstrap/Col';
-import styled from 'styled-components';
+import Animate from '../Animate';
 
 import Base from '../Base';
 
@@ -193,9 +194,11 @@ const ContentBlock = ({
   };
 
   return (
-    <StyledContentBlock flipped={flipped}>
-      {renderContent(images)}
-    </StyledContentBlock>
+    <Animate.Block>
+      <StyledContentBlock flipped={flipped}>
+        {renderContent(images)}
+      </StyledContentBlock>
+    </Animate.Block>
   );
 };
 
