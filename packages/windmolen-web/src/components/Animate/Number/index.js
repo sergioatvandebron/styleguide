@@ -51,22 +51,23 @@ class AnimateNumber extends Component<Props> {
       ...props
     } = this.props;
 
+    const itemProps = {
+      start: 0,
+      prefix: '',
+      suffix: '',
+      duration: 1,
+      decimal: ',',
+      ...renderedItemProps,
+    };
+
     return (
       <AnimateBase onViewportEnter={this.onViewportEnter} {...props}>
-        {this.renderNumber(renderedItemProps)}
+        {this.renderNumber(itemProps)}
       </AnimateBase>
     )
   }
 }
 
-AnimateNumber.defaultProps = {
-  renderedItemProps: {
-    start: 0,
-    prefix: '',
-    suffix: '',
-    duration: 1,
-    decimal: ',',
-  },
-};
+AnimateNumber.defaultProps = {};
 
 export default AnimateNumber;
