@@ -1,0 +1,31 @@
+---
+name: RadioGroup
+menu: Forms
+route: /Forms/RadioGroup
+---
+
+import { Playground, PropsTable } from 'docz'
+import classNames from 'classnames';
+import Wrapper from '../../Wrapper';
+import RadioGroup from './';
+import Radio from '../Radio';
+
+# Radio
+
+## Props
+<PropsTable of={Radio} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <RadioGroup
+    name="gender"
+    value="female"
+    onChange={(value) => {
+      console.log('Radio groups - onChange', value);
+    }}
+  >
+    <Radio label="Female" value="female" />
+    <Radio label="Male" value="male" />
+    <Radio label="Unknown" value="unknown" />
+  </RadioGroup>
+</Playground>

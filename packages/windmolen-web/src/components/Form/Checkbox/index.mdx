@@ -1,0 +1,45 @@
+---
+name: Checkbox
+menu: Forms
+route: /Forms/Checkbox
+---
+
+import { Playground, PropsTable } from 'docz'
+import classNames from 'classnames';
+import Wrapper from '../../Wrapper';
+import Checkbox from './';
+import ToggleBase from '../ToggleBase';
+
+# Checkbox
+
+The checkbox component is a wrapper around the `ToggleBase` component.
+
+## ToggleBase Props
+<PropsTable of={ToggleBase} />
+
+## Props
+<PropsTable of={Checkbox} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <Checkbox
+    onChange={(checked) => {
+      console.log('Basic usage - onChange', checked)
+    }}
+  />
+</Playground>
+
+## With label
+<Playground wrapper={Wrapper}>
+  <Checkbox label="Gender" value="my value" />
+</Playground>
+
+## With label on the left
+<Playground wrapper={Wrapper}>
+  <Checkbox label="Gender" labelPlacement="start"value="my value" />
+</Playground>
+
+## Checked on default
+<Playground wrapper={Wrapper}>
+  <Checkbox label="Gender" value="my value" defaultChecked />
+</Playground>

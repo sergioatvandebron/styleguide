@@ -1,0 +1,57 @@
+---
+name: Radio
+menu: Forms
+route: /Forms/Radio
+---
+
+import { Playground, PropsTable } from 'docz'
+import classNames from 'classnames';
+import Wrapper from '../../Wrapper';
+import Radio from './';
+import ToggleBase from '../ToggleBase';
+import RadioGroup from '../RadioGroup';
+
+# Radio
+
+The Radio component is a wrapper around the `ToggleBase` component.
+
+## ToggleBase Props
+<PropsTable of={ToggleBase} />
+
+## Props
+<PropsTable of={Radio} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <Radio
+    value="my value"
+    onChange={(checked) => {
+      console.log('Basic usage - onChange', checked)
+    }}
+  />
+</Playground>
+
+## With label
+<Playground wrapper={Wrapper}>
+  <Radio label="Gender" value="my value" />
+</Playground>
+
+## With label on the left
+<Playground wrapper={Wrapper}>
+  <Radio label="Gender" labelPlacement="start" value="my value" />
+</Playground>
+
+## Radio groups
+<Playground wrapper={Wrapper}>
+  <RadioGroup
+    name="gender"
+    value="female"
+    onChange={(value) => {
+      console.log('Radio groups - onChange', value);
+    }}
+  >
+    <Radio label="Female" value="female" />
+    <Radio label="Male" value="male" />
+    <Radio label="Unknown" value="unknown" />
+  </RadioGroup>
+</Playground>

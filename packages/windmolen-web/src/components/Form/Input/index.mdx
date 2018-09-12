@@ -15,46 +15,46 @@ import Input from './';
 <PropsTable of={Input} />
 
 ## Basic usage
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input />
 </Playground>
 
 ## With label
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input label="Input with label" />
 </Playground>
 
 ## Valid input
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input touched={true} isValid={true} />
 </Playground>
 
 ## Input with error
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input touched={true} isValid={false} />
 </Playground>
 
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input touched={true} error="Oops. You messed up." />
 </Playground>
 
 ## Disabled
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input disabled value="Disabled input" />
 </Playground>
 
 ## With placeholder
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input placeholder="Type on me" />
 </Playground>
 
 ## With placeholder to the right
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input placeholder="kg" placeholderRight />
 </Playground>
 
 ## With icon
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input icon="search" />
 </Playground>
 
@@ -62,7 +62,7 @@ import Input from './';
 The module https://github.com/reactjs/react-autocomplete is being used for the
 autocompletion. Its props can be overwritten using the `autoCompleteProps` prop
 as shown in the example below.
-<Playground>
+<Playground wrapper={Wrapper}>
   <Input
     icon="search"
     suggestions={[
