@@ -2,10 +2,10 @@
 import React, { type Node, Component } from 'react';
 import styled from 'styled-components';
 import Autocomplete from 'react-autocomplete';
-import Base from '../Base';
-import Icon from '../Icon';
-import { colors } from '../../globals';
 import { media } from 'styled-bootstrap-grid';
+import Base from '../../Base';
+import Icon from '../../Icon';
+import { colors } from '../../../globals';
 
 type InputProps = {
   error?: Node,
