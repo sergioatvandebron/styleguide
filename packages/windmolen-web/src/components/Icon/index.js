@@ -109,7 +109,7 @@ spritesheet.names = [
   'checkmark',
 ];
 
-const StyledSpan = Span.extend`
+const StyledSpan = styled(Span)`
   background-image: url('${SpritesheetPNG}');
   background-image: url('${SpritesheetSVG}');
   background-position: -${props => spritesheet.names.indexOf(props.name)}em -${props => props.variant}em;

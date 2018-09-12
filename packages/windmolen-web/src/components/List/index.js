@@ -13,7 +13,7 @@ type ListProps = {
 };
 
 // TODO also expose an <ol />
-const Ul = Base.withComponent('ul').extend`
+const Ul = styled(Base.withComponent('ul'))`
   list-style-type: none;
   padding: 0;
 `;
@@ -37,7 +37,7 @@ type ItemProps = {
 };
 
 // Item
-const Li = Base.withComponent('li').extend`
+const Li = styled(Base.withComponent('li'))`
   position: relative;
   color: ${colors.charcoalGray};
   padding-left: 30px;
@@ -52,7 +52,7 @@ const StyledIcon = styled(Icon)`
   `}
 `;
 
-const StyledItemContent = Span.extend`
+const StyledItemContent = styled(Span)`
   display: block;
   margin-left: 0;
 `;

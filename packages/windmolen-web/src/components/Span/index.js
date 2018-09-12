@@ -1,6 +1,6 @@
 import Base from '../Base';
 
-const Span = Base.withComponent('span').extend`
+const Span = styled(Base.withComponent('span'))`
   display: inline;
 `;
 

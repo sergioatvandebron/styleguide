@@ -97,7 +97,7 @@ const pressableVariants: VariantList = {
 const getVariantProperty = (variant: VariantType, property: string): string | number => pressableVariants[variant][property];
 const variant = property => props => getVariantProperty(props.variant, property);
 
-const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base.withComponent(element).extend`
+const pressableFactory = (element): ReactComponentStyled<PressableProps> => styled(Base.withComponent(element))`
   background-color: ${variant('backgroundColor')};
   border: ${variant('border')};
   box-shadow: ${variant('shadow')};

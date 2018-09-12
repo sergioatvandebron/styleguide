@@ -2,7 +2,7 @@ import Base from '../Base';
 import { colors } from '../../globals';
 import { media } from 'styled-bootstrap-grid';
 
-const Block = Base.withComponent('div').extend`
+const Block = styled(Base.withComponent('div'))`
   padding: 30px;
   border: ${props => props.outline ? `1px solid ${colors.white}` : '0'};
 

@@ -96,7 +96,7 @@ const StyledComponentGroup = ({ wrapper, children, ...props }) => {
   );
 };
 
-const StyledComponentChild = Base.withComponent('div').extend`
+const StyledComponentChild = styled(Base.withComponent('div'))`
   & + & {
     ${props => getSpacing('mobile', 1, 'medium', 'margin', 'top')}
 

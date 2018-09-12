@@ -149,11 +149,11 @@ class StyledInput extends Component<InputProps, { value: string }> {
   }
 }
 
-const Container = Base.extend`
+const Container = styled(Base)`
   position: relative;
 `;
 
-const StyledLabel = Base.extend`
+const StyledLabel = styled(Base)`
   color: ${colors.charcoalGray};
   margin-bottom: 5px;
 
@@ -162,7 +162,7 @@ const StyledLabel = Base.extend`
   `}
 `;
 
-const StyledErrorMessage = Base.extend`
+const StyledErrorMessage = styled(Base)`
   font-size: 14px;
   color: ${colors.red};
   line-height: 2;
@@ -174,7 +174,7 @@ const StyledIcon = styled(Icon)`
   top: 5px;
 `;
 
-const StyledIconContainer = Base.extend`
+const StyledIconContainer = styled(Base)`
   position: absolute;
   top: 0;
   right: 0;
@@ -194,7 +194,7 @@ const StyledIconContainer = Base.extend`
   }
 `;
 
-const StyledAutoSuggestion = Base.extend`
+const StyledAutoSuggestion = styled(Base)`
   box-shadow: 0 11px 15px 0 rgba(0, 0, 0, 0.1);
   left: 0;
   padding-bottom: 5px;

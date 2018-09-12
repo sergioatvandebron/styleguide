@@ -15,7 +15,7 @@ export type Props = {
   children?: Node
 };
 
-const StyledContentBlock = Base.withComponent('div').extend`
+const StyledContentBlock = styled(Base.withComponent('div'))`
   ${media.desktop`
     min-height: 540px;
     position: relative;
