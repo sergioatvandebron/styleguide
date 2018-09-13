@@ -1,13 +1,8 @@
 import React from 'react';
-import ToggleBase from '../ToggleBase';
+import SwitchBase from '../SwitchBase';
 
-const Radio = (props) => {
-  return (
-    <ToggleBase
-      type="radio"
-      {...props}
-    />
-  )
-};
+const Radio = (props) => (
+  <SwitchBase type="radio" {...props} />
+);
 
 export default Radio;

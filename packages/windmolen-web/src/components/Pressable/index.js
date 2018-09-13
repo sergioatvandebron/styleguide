@@ -140,7 +140,6 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => styl
   }
 
   ${media.desktop`
-    min-width: ${props => props.variant === 'text' ? 'unset' : '155px'};
     width: auto;
 
     ${StyledRightIcon} {

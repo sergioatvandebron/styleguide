@@ -40,7 +40,7 @@ const StyledLabel = styled(Base.withComponent('span'))`
   ${props => props.labelPlacement === 'start' ? 'margin-right: 10px;' : 'margin-left: 10px;'}
 `;
 
-const StyledToggleBase = styled.span`
+const StyledSwitchBase = styled.span`
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -54,7 +54,7 @@ const StyledToggleBase = styled.span`
   }
 `;
 
-class ToggleBase extends Component<Props> {
+class SwitchBase extends Component<Props> {
   constructor(props: Props) {
     super(props);
 
@@ -111,7 +111,7 @@ class ToggleBase extends Component<Props> {
     const toggleType = this.getToggleType(this.props.type);
 
     return (
-      <StyledToggleBase
+      <StyledSwitchBase
         onClick={this.toggle}
         {...props}
       >
@@ -135,12 +135,12 @@ class ToggleBase extends Component<Props> {
             {label}
           </StyledLabel>
         )}
-      </StyledToggleBase>
+      </StyledSwitchBase>
     );
   }
 }
 
-ToggleBase.defaultProps = {
+SwitchBase.defaultProps = {
   onChange: () => {},
   inputRef: () => {},
   label: '',
@@ -150,4 +150,4 @@ ToggleBase.defaultProps = {
   name: null,
 };
 
-export default ToggleBase;
+export default SwitchBase;

@@ -1,6 +1,7 @@
 // @flow
 import type { Node } from 'react';
 import React from 'react';
+import styled from 'styled-components';
 import Span from '../Span';
 import SpritesheetSVG from '../../assets/icons/sprite-sheet.svg';
 import SpritesheetPNG from '../../assets/icons/sprite-sheet.png';

@@ -1,13 +1,8 @@
 import React from 'react';
-import ToggleBase from '../ToggleBase';
+import SwitchBase from '../SwitchBase';
 
-const Checkbox = (props) => {
-  return (
-    <ToggleBase
-      type="checkbox"
-      {...props}
-    />
-  )
-};
+const Checkbox = (props) => (
+  <SwitchBase type="checkbox" {...props} />
+);
 
 export default Checkbox;

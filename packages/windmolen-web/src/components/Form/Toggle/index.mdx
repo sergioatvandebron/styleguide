@@ -1,28 +1,28 @@
 ---
-name: Checkbox
+name: Toggle
 menu: Forms
-route: /Forms/Checkbox
+route: /Forms/Toggle
 ---
 
 import { Playground, PropsTable } from 'docz'
 import classNames from 'classnames';
 import Wrapper from '../../Wrapper';
-import Checkbox from './';
+import Toggle from './';
 import SwitchBase from '../SwitchBase';
 
-# Checkbox
+# Toggle
 
-The checkbox component is a wrapper around the `SwitchBase` component.
+The Toggle component is a wrapper around the `SwitchBase` component.
 
 ## SwitchBase Props
 <PropsTable of={SwitchBase} />
 
 ## Props
-<PropsTable of={Checkbox} />
+<PropsTable of={Toggle} />
 
 ## Basic usage
 <Playground wrapper={Wrapper}>
-  <Checkbox
+  <Toggle
     onChange={(checked) => {
       console.log('Basic usage - onChange', checked)
     }}
@@ -31,15 +31,15 @@ The checkbox component is a wrapper around the `SwitchBase` component.
 
 ## With label
 <Playground wrapper={Wrapper}>
-  <Checkbox label="Gender" value="my value" />
+  <Toggle label="Gender" value="my value" />
 </Playground>
 
 ## With label on the left
 <Playground wrapper={Wrapper}>
-  <Checkbox label="Gender" labelPlacement="start" value="my value" />
+  <Toggle label="Gender" labelPlacement="start" value="my value" />
 </Playground>
 
 ## Checked on default
 <Playground wrapper={Wrapper}>
-  <Checkbox label="Gender" value="my value" defaultChecked />
+  <Toggle label="Gender" value="my value" defaultChecked />
 </Playground>

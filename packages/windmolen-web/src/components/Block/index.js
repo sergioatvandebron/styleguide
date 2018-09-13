@@ -1,6 +1,7 @@
 import Base from '../Base';
 import { colors } from '../../globals';
 import { media } from 'styled-bootstrap-grid';
+import styled from 'styled-components';
 
 const Block = styled(Base.withComponent('div'))`
   padding: 30px;
