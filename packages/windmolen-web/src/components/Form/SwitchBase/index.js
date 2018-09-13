@@ -221,7 +221,6 @@ SwitchBase.defaultProps = {
   labelPlacement: 'end',
   defaultChecked: false,
   checked: null,
-  name: null,
   icon: null,
   iconVariant: 0,
   iconChecked: null,
