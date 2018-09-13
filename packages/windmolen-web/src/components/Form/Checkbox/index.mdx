@@ -39,6 +39,40 @@ The checkbox component is a wrapper around the `SwitchBase` component.
   <Checkbox label="Gender" labelPlacement="start" value="my value" />
 </Playground>
 
+## Custom icons
+<Playground wrapper={Wrapper}>
+  <div>
+    <Checkbox
+      label="This will switch icon only"
+      value="my value"
+      icon="twitter"
+      iconChecked="facebook"
+      iconVariant={2}
+    />
+  </div>
+
+  <div>
+    <Checkbox
+      label="This will switch variant"
+      value="my value"
+      icon="twitter"
+      iconVariant={2}
+      iconVariantChecked={0}
+    />
+  </div>
+
+  <div>
+    <Checkbox
+      label="This will switch icon and variant"
+      value="my value"
+      icon="twitter"
+      iconChecked="facebook"
+      iconVariant={2}
+      iconVariantChecked={0}
+    />
+  </div>
+</Playground>
+
 ## Checked on default
 <Playground wrapper={Wrapper}>
   <Checkbox label="Gender" value="my value" defaultChecked />

@@ -5,6 +5,10 @@ const RadioGroup = ({
   name,
   value,
   onChange,
+  variant,
+  iconVariant,
+  iconVariantChecked,
+  iconFontSize,
 }) => {
   return (
     <div className="RadioGroup">
@@ -15,6 +19,10 @@ const RadioGroup = ({
 
         return React.cloneElement(child, {
           name,
+          variant,
+          iconVariant,
+          iconVariantChecked,
+          iconFontSize,
           checked: value === child.props.value,
           onChange: (checked) => {
             if (checked) {

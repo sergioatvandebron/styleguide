@@ -102,6 +102,7 @@ const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
   case 'body':
   case 'regular':
     return px(isMobile ? 32 : 40);
+
   default:
       return 'inherit';
   }

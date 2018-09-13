@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { type Node, Component } from 'react';
 import styled from 'styled-components';
 import Icon from '../../Icon';
 import Base from '../../Base';
+import Span from '../../Span';
 import { colors } from '../../../globals';
+import { px } from '../../../utils';
 
 type Props = {
   /**
@@ -16,6 +18,9 @@ type Props = {
 
   /** Used to specify the 'value' attribute. */
   value: string,
+
+  /** Specify a different variant. */
+  variant: 'button-large' | 'button-small',
 
   /** A callback function when the 'checked' value has been changed. */
   onChange?: func,
@@ -49,24 +54,40 @@ type Props = {
 
   /** The icon variant for the active (checked) state. */
   iconVariantChecked?: number,
+
+  /** The font size for the icon. */
+  iconFontSize: string,
 }
 
-function getSwitchType(type) {
+const getSwitchType = (type) => {
   switch (type) {
-    case 'toggle':
-    case 'checkbox':
-      return 'checkbox';
+  case 'toggle':
+  case 'checkbox':
+    return 'checkbox';
 
-    case 'radio':
-      return 'radio'
+  case 'radio':
+    return 'radio'
 
-    default:
-      console.warn(`Unknown toggle type ${type}`);
+  default:
+    console.warn(`Unknown toggle type ${type}`);
   }
 }
 
+const variantStyles = {
+  'button-small': {
+    width: px(50),
+    height: px(50),
+  },
+  'button-large': {
+    width: px(160),
+    height: px(160),
+  },
+}
+const getVariantStyle = (variant, prop) => variantStyles[variant][prop];
 
-const StyledLabel = styled(Base.withComponent('span'))`
+const StyledIcon = styled(Icon)``;
+
+const StyledLabel = styled(Span)`
   vertical-align: middle;
   ${props => {
     const margin = 15;
@@ -76,7 +97,7 @@ const StyledLabel = styled(Base.withComponent('span'))`
   }};
 `;
 
-const StyledSwitchBase = styled.span`
+const StyledSwitchBaseCore = styled(Span)`
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -90,6 +111,64 @@ const StyledSwitchBase = styled.span`
   }
 `;
 
+const StyledSwitchBaseButton = styled.div`
+  transition-property: opacity;
+  transition-duration: 0.33s;
+  transition-timing-function: cubic-bezier(0.23, 0, 0.03, 1.01);
+  box-shadow: 0 0 5px 0 rgba(51, 61, 71, 0.2);
+  background-color: ${colors.white};
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  width: ${props => getVariantStyle(props.variant, 'width')}
+  height: ${props => getVariantStyle(props.variant, 'height')}
+  opacity: ${props => props.checked ? 1 : 0.3};
+
+  ${StyledSwitchBaseCore} {
+    flex-direction: column;
+  }
+
+  ${StyledLabel} {
+    margin: 0;
+    color: ${colors.charcoalGray};
+  }
+
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+
+  &:hover:not(:active):not(:focus) {
+    cursor: pointer;
+    opacity: 1;
+
+    ${StyledLabel} {
+      color: ${colors.warmGray};
+    }
+
+    ${StyledIcon} {
+      background-position-y: -3em;
+    }
+  }
+`;
+
+const StyledSwitchBase = (props) => {
+  const { style, ...other } = props;
+  switch (props.variant) {
+    case 'button-large':
+    case 'button-small':
+      return (
+        <StyledSwitchBaseButton style={style} {...other}>
+          <StyledSwitchBaseCore {...other} />
+        </StyledSwitchBaseButton>
+      );
+
+    default:
+      return <StyledSwitchBaseCore {...props} />;
+  }
+};
+
 const StyledToggleContainer = styled.div`
   transition: background 0.33s cubic-bezier(0.23, 0, 0.03, 1.01);
   background-color: ${props => props.checked ? colors.charcoalGray : colors.silver};
@@ -99,6 +178,7 @@ const StyledToggleContainer = styled.div`
   padding: 2px;
   position: relative;
 `;
+
 const StyledToggleCircle = styled.div`
   transition: left 0.33s cubic-bezier(0.23, 0, 0.03, 1.01);
   width: 16px;
@@ -139,7 +219,7 @@ const StyledSwitch = (props) => {
 
   return props.type === 'toggle'
     ? <StyledToggle checked={props.checked} />
-    : <Icon name={icon} variant={variant} />;
+    : <StyledIcon name={icon} variant={variant} fontSize={props.iconFontSize} />;
 }
 
 class SwitchBase extends Component<Props> {
@@ -178,17 +258,14 @@ class SwitchBase extends Component<Props> {
       name,
       value,
       checked: checkedProp,
-      ...props
+      ...other
     } = this.props;
 
     const checked = this.isControlled ? checkedProp : this.state.checked;
     const switchType = getSwitchType(this.props.type);
 
     return (
-      <StyledSwitchBase
-        onClick={this.toggle}
-        {...props}
-      >
+      <StyledSwitchBase onClick={this.toggle} {...other} checked={checked}>
         <input
           type={switchType}
           ref={inputRef}
@@ -203,7 +280,9 @@ class SwitchBase extends Component<Props> {
             {label}
           </StyledLabel>
         )}
-        <StyledSwitch checked={checked} {...props} />
+
+        <StyledSwitch checked={checked} {...other} />
+
         {(labelPlacement === 'end' && label !== null) && (
           <StyledLabel>
             {label}
@@ -225,6 +304,8 @@ SwitchBase.defaultProps = {
   iconVariant: 0,
   iconChecked: null,
   iconVariantChecked: null,
+  iconFontSize: '100%',
+  variant: null,
 };
 
 export default SwitchBase;
