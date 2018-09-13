@@ -11,6 +11,9 @@ type Props = {
    */
   type: 'checkbox' | 'radio' | 'toggle',
 
+  /** Specify the 'name' attribute. */
+  name: string,
+
   /** A name to group toggles (mainly used for radios). */
   name?: string,
 
@@ -33,22 +36,19 @@ type Props = {
   labelPlacement?: 'start' | 'end',
 
   /** Make a controlled toggle by specifying the 'checked' property manually. */
-  checked: bool,
-
-  /** Specify the 'name' attribute. */
-  name: string,
+  checked?: bool,
 
   /** The icon name for the default (unchecked) state. */
-  icon: string,
+  icon?: string,
 
   /** The icon name for the active (checked) state. */
-  iconChecked: string,
+  iconChecked?: string,
 
   /** The icon variant for the default (unchecked) state. */
-  iconVariant: number,
+  iconVariant?: number,
 
   /** The icon variant for the active (checked) state. */
-  iconVariantChecked: number,
+  iconVariantChecked?: number,
 }
 
 function getSwitchType(type) {
