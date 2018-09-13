@@ -104,9 +104,8 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => styl
   color: ${variant('color')};
   cursor: ${variant('cursor')};
   display: ${props => props.variant === 'text' ? 'inline' : 'block'};
-  font-size: inherit;
   font-weight: 600;
-  padding: ${props => props.variant === 'text' ? 0 : '9px 20px'};
+  padding: ${props => props.variant === 'text' ? 0 : '8px 20px'};
   text-align: left;
   text-decoration: ${variant('textDecoration')};
   width: ${props => props.variant === 'text' ? 'auto' : '100%'};
