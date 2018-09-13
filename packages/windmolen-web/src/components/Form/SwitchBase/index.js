@@ -11,11 +11,11 @@ type Props = {
    */
   type: 'checkbox' | 'radio' | 'toggle',
 
-  /** Specify the 'name' attribute. */
+  /** Used to specify the 'name' attribute. */
   name: string,
 
-  /** A name to group toggles (mainly used for radios). */
-  name?: string,
+  /** Used to specify the 'value' attribute. */
+  value: string,
 
   /** A callback function when the 'checked' value has been changed. */
   onChange?: func,
