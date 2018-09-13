@@ -41,6 +41,40 @@ The Radio component is a wrapper around the `SwitchBase` component.
   <Radio label="Gender" labelPlacement="start" value="my value" />
 </Playground>
 
+## Custom icons
+<Playground wrapper={Wrapper}>
+  <div>
+    <Radio
+      label="This will switch icon only"
+      value="my value"
+      icon="twitter"
+      iconChecked="facebook"
+      iconVariant={2}
+    />
+  </div>
+
+  <div>
+    <Radio
+      label="This will switch variant"
+      value="my value"
+      icon="twitter"
+      iconVariant={2}
+      iconVariantChecked={0}
+    />
+  </div>
+
+  <div>
+    <Radio
+      label="This will switch icon and variant"
+      value="my value"
+      icon="twitter"
+      iconChecked="facebook"
+      iconVariant={2}
+      iconVariantChecked={0}
+    />
+  </div>
+</Playground>
+
 ## Radio groups
 <Playground wrapper={Wrapper}>
   <RadioGroup

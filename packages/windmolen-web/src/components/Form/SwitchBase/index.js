@@ -5,7 +5,10 @@ import Base from '../../Base';
 import { colors } from '../../../globals';
 
 type Props = {
-  /** Specify the type of input toggle. */
+  /**
+   * Specify the type of input toggle.
+   * Available options: checkbox, radio, toggle.
+   */
   type: 'checkbox' | 'radio' | 'toggle',
 
   /** A name to group toggles (mainly used for radios). */
@@ -34,6 +37,18 @@ type Props = {
 
   /** Specify the 'name' attribute. */
   name: string,
+
+  /** The icon name for the default (unchecked) state. */
+  icon: string,
+
+  /** The icon name for the active (checked) state. */
+  iconChecked: string,
+
+  /** The icon variant for the default (unchecked) state. */
+  iconVariant: number,
+
+  /** The icon variant for the active (checked) state. */
+  iconVariantChecked: number,
 }
 
 function getSwitchType(type) {
@@ -106,9 +121,25 @@ const StyledToggle = (props) => {
 
 const StyledSwitch = (props) => {
   const switchType = getSwitchType(props.type);
+
+  // If the regular version is specified but not the checked version then make
+  // the checked version the regular version.
+  const iconType = props.icon || switchType;
+  const iconTypeChecked = (props.icon !== null && props.iconChecked === null)
+    ? props.icon
+    : (props.iconChecked || `${switchType}--checked`);
+  const icon = props.checked ? iconTypeChecked : iconType;
+
+  // If the regular version is specified but not the checked version then make
+  // the checked version the regular version.
+  const iconVariantChecked = props.iconVariantChecked === null
+    ? props.iconVariant
+    : props.iconVariantChecked;
+  const variant = props.checked ? iconVariantChecked : props.iconVariant;
+
   return props.type === 'toggle'
     ? <StyledToggle checked={props.checked} />
-    : <Icon name={props.checked ? `${switchType}--checked` : switchType} />;
+    : <Icon name={icon} variant={variant} />;
 }
 
 class SwitchBase extends Component<Props> {
@@ -191,6 +222,10 @@ SwitchBase.defaultProps = {
   defaultChecked: false,
   checked: null,
   name: null,
+  icon: null,
+  iconVariant: 0,
+  iconChecked: null,
+  iconVariantChecked: null,
 };
 
 export default SwitchBase;
