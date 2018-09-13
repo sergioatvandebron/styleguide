@@ -76,7 +76,7 @@ const StyledSwitchBase = styled.span`
 `;
 
 const StyledToggleContainer = styled.div`
-  transition: background 0.2s ease-out;
+  transition: background 0.33s cubic-bezier(0.23, 0, 0.03, 1.01);
   background-color: ${props => props.checked ? colors.charcoalGray : colors.silver};
   width: 35px;
   height: 20px;
@@ -85,7 +85,7 @@ const StyledToggleContainer = styled.div`
   position: relative;
 `;
 const StyledToggleCircle = styled.div`
-  transition: left 0.2s ease-out;
+  transition: left 0.33s cubic-bezier(0.23, 0, 0.03, 1.01);
   width: 16px;
   height: 16px;
   border-radius: 50%;

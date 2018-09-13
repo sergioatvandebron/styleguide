@@ -24,7 +24,7 @@ type PressableProps = {
   variant?: VariantType,
 
   /** Either a html element (e.g. "'a'") or a React component */
-  as?: 'string' | Node,
+  as?: string | Node,
   /** Used with button* variants */
   small?: boolean,
   /** Used with button* variants */
