@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Icon from '../../Icon';
 import Base from '../../Base';
+import { colors } from '../../../globals';
 
 type Props = {
   /** Specify the type of input toggle. */
@@ -35,9 +36,29 @@ type Props = {
   name: string,
 }
 
+function getSwitchType(type) {
+  switch (type) {
+    case 'toggle':
+    case 'checkbox':
+      return 'checkbox';
+
+    case 'radio':
+      return 'radio'
+
+    default:
+      console.warn(`Unknown toggle type ${type}`);
+  }
+}
+
+
 const StyledLabel = styled(Base.withComponent('span'))`
   vertical-align: middle;
-  ${props => props.labelPlacement === 'start' ? 'margin-right: 10px;' : 'margin-left: 10px;'}
+  ${props => {
+    const margin = 15;
+    return props.labelPlacement === 'start'
+      ? `margin-right: ${margin}px;`
+      : `margin-left: ${margin}px;`;
+  }};
 `;
 
 const StyledSwitchBase = styled.span`
@@ -54,6 +75,42 @@ const StyledSwitchBase = styled.span`
   }
 `;
 
+const StyledToggleContainer = styled.div`
+  transition: background 0.2s ease-out;
+  background-color: ${props => props.checked ? colors.charcoalGray : colors.silver};
+  width: 35px;
+  height: 20px;
+  border-radius: 12px;
+  padding: 2px;
+  position: relative;
+`;
+const StyledToggleCircle = styled.div`
+  transition: left 0.2s ease-out;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: ${colors.white};
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: ${props => props.checked ? 'calc(100% - 18px)' : '2px'};
+`;
+
+const StyledToggle = (props) => {
+  return (
+    <StyledToggleContainer {...props}>
+      <StyledToggleCircle {...props} />
+    </StyledToggleContainer>
+  );
+};
+
+const StyledSwitch = (props) => {
+  const switchType = getSwitchType(props.type);
+  return props.type === 'toggle'
+    ? <StyledToggle checked={props.checked} />
+    : <Icon name={props.checked ? `${switchType}--checked` : switchType} />;
+}
+
 class SwitchBase extends Component<Props> {
   constructor(props: Props) {
     super(props);
@@ -68,7 +125,6 @@ class SwitchBase extends Component<Props> {
     }
 
     this.toggle = this.toggle.bind(this);
-    this.getToggleType = this.getToggleType.bind(this);
   }
 
   toggle() {
@@ -82,20 +138,6 @@ class SwitchBase extends Component<Props> {
     this.props.onChange(checked);
   }
 
-  getToggleType(type) {
-    switch (type) {
-      case 'toggle':
-      case 'checkbox':
-        return 'checkbox';
-
-      case 'radio':
-        return 'radio'
-
-      default:
-        console.log(`Unknown toggle type ${type}`);
-    }
-  }
-
   render() {
     const {
       label,
@@ -104,11 +146,12 @@ class SwitchBase extends Component<Props> {
       inputProps,
       name,
       value,
+      checked: checkedProp,
       ...props
     } = this.props;
 
-    const checked = this.isControlled ? this.props.checked : this.state.checked;
-    const toggleType = this.getToggleType(this.props.type);
+    const checked = this.isControlled ? checkedProp : this.state.checked;
+    const switchType = getSwitchType(this.props.type);
 
     return (
       <StyledSwitchBase
@@ -116,7 +159,7 @@ class SwitchBase extends Component<Props> {
         {...props}
       >
         <input
-          type={toggleType}
+          type={switchType}
           ref={inputRef}
           checked={checked}
           onChange={this.toggle}
@@ -124,13 +167,13 @@ class SwitchBase extends Component<Props> {
           value={value}
           {...inputProps}
         />
-        {labelPlacement === 'start' && (
+        {(labelPlacement === 'start' && label !== null) && (
           <StyledLabel labelPlacement={labelPlacement}>
             {label}
           </StyledLabel>
         )}
-        <Icon name={checked ? `${toggleType}--checked` : toggleType} />
-        {labelPlacement === 'end' && (
+        <StyledSwitch checked={checked} {...props} />
+        {(labelPlacement === 'end' && label !== null) && (
           <StyledLabel>
             {label}
           </StyledLabel>
@@ -143,7 +186,7 @@ class SwitchBase extends Component<Props> {
 SwitchBase.defaultProps = {
   onChange: () => {},
   inputRef: () => {},
-  label: '',
+  label: null,
   labelPlacement: 'end',
   defaultChecked: false,
   checked: null,
