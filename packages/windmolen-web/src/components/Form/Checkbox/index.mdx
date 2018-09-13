@@ -73,6 +73,37 @@ The checkbox component is a wrapper around the `SwitchBase` component.
   </div>
 </Playground>
 
+## Using variants
+Note that there is a `style` attribute being passed with margin, which is used
+just for the sake of an example. Spacing and other additional styling should be
+provided in the webapp.
+<Playground wrapper={Wrapper}>
+  <Checkbox
+    label="1"
+    value="people1"
+    icon="people--one"
+    variant="button-large"
+    iconFontSize="60px"
+    style={{ margin: '20px' }}
+  />
+  <Checkbox
+    label="2"
+    value="people2"
+    icon="people--two"
+    variant="button-large"
+    iconFontSize="60px"
+    style={{ margin: '20px' }}
+  />
+  <Checkbox
+    label="3"
+    value="people3"
+    icon="people--three"
+    variant="button-large"
+    iconFontSize="60px"
+    style={{ margin: '20px' }}
+  />
+</Playground>
+
 ## Checked on default
 <Playground wrapper={Wrapper}>
   <Checkbox label="Gender" value="my value" defaultChecked />

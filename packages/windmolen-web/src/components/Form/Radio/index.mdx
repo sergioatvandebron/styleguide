@@ -10,6 +10,7 @@ import Wrapper from '../../Wrapper';
 import Radio from './';
 import SwitchBase from '../SwitchBase';
 import RadioGroup from '../RadioGroup';
+import { H3 } from '../../Headings';
 
 # Radio
 
@@ -77,37 +78,75 @@ The Radio component is a wrapper around the `SwitchBase` component.
 
 ## Using variants
 Note that there is a `style` attribute being passed with margin, which is used
-just for the sake of an example. Spacing and other additional styling should be
-provided in the webapp.
+just for the sake of a decent looking example. Spacing and other additional
+styling should be applied in the webapp.
+
+The `RadioGroup` has props that will be passed to the child `Radio` components.
+Check out the `Props` section at the `RadioGroup` component.
+
 <Playground wrapper={Wrapper}>
-  <RadioGroup
-    name="gender"
-    value="people1"
-    onChange={(value) => {
-      console.log('Using variants - onChange', value);
-    }}
-    variant="button-large"
-    iconFontSize="60px"
-  >
-    <Radio
-      label="1"
+  <div>
+    <H3>button-large</H3>
+    <RadioGroup
+      name="gender"
       value="people1"
-      icon="people--one"
-      style={{ margin: '20px' }}
-    />
-    <Radio
-      label="2"
+      onChange={(value) => {
+        console.log('Using variants - onChange', value);
+      }}
+      variant="button-large"
+      iconFontSize="60px"
+    >
+      <Radio
+        label="1"
+        value="people1"
+        icon="people--one"
+        style={{ margin: '20px' }}
+      />
+      <Radio
+        label="2"
+        value="people2"
+        icon="people--two"
+        style={{ margin: '20px' }}
+      />
+      <Radio
+        label="3"
+        value="people3"
+        icon="people--three"
+        style={{ margin: '20px' }}
+      />
+    </RadioGroup>
+  </div>
+
+  <div style={{ marginTop: '60px' }}>
+    <H3>button-small</H3>
+    <RadioGroup
+      name="gender"
       value="people2"
-      icon="people--two"
-      style={{ margin: '20px' }}
-    />
-    <Radio
-      label="3"
-      value="people3"
-      icon="people--three"
-      style={{ margin: '20px' }}
-    />
-  </RadioGroup>
+      onChange={(value) => {
+        console.log('Using variants - onChange', value);
+      }}
+      variant="button-small"
+    >
+      <Radio
+        label="1"
+        value="people1"
+        icon="people--one--thick"
+        style={{ margin: '8px' }}
+      />
+      <Radio
+        label="2"
+        value="people2"
+        icon="people--two--thick"
+        style={{ margin: '8px' }}
+      />
+      <Radio
+        label="3"
+        value="people3"
+        icon="people--three--thick"
+        style={{ margin: '8px' }}
+      />
+    </RadioGroup>
+  </div>
 </Playground>
 
 ## Radio groups

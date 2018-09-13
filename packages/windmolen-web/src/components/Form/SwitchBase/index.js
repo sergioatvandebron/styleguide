@@ -1,12 +1,12 @@
 import React, { type Node, Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Icon from '../../Icon';
 import Base from '../../Base';
 import Span from '../../Span';
 import { colors } from '../../../globals';
 import { px } from '../../../utils';
 
-type Props = {
+export type Props = {
   /**
    * Specify the type of input toggle.
    * Available options: checkbox, radio, toggle.
@@ -125,11 +125,16 @@ const StyledSwitchBaseButton = styled.div`
   height: ${props => getVariantStyle(props.variant, 'height')}
   opacity: ${props => props.checked ? 1 : 0.3};
 
+  * {
+    pointer-events: none;
+  }
+
   ${StyledSwitchBaseCore} {
     flex-direction: column;
   }
 
   ${StyledLabel} {
+    ${props => props.variant === 'button-small' && 'display: none;'}
     margin: 0;
     color: ${colors.charcoalGray};
   }
@@ -139,18 +144,20 @@ const StyledSwitchBaseButton = styled.div`
     opacity: 1;
   }
 
-  &:hover:not(:active):not(:focus) {
-    cursor: pointer;
-    opacity: 1;
+  ${props => !props.checked && css`
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
 
-    ${StyledLabel} {
-      color: ${colors.warmGray};
-    }
+      ${StyledLabel} {
+        color: ${colors.warmGray};
+      }
 
-    ${StyledIcon} {
-      background-position-y: -3em;
+      ${StyledIcon} {
+        background-position-y: -3em;
+      }
     }
-  }
+  `}
 `;
 
 const StyledSwitchBase = (props) => {
@@ -217,9 +224,15 @@ const StyledSwitch = (props) => {
     : props.iconVariantChecked;
   const variant = props.checked ? iconVariantChecked : props.iconVariant;
 
+  const iconProps = {
+    variant,
+    name: icon,
+    fontSize: props.iconFontSize !== null ? props.iconFontSize : undefined,
+  }
+
   return props.type === 'toggle'
     ? <StyledToggle checked={props.checked} />
-    : <StyledIcon name={icon} variant={variant} fontSize={props.iconFontSize} />;
+    : <StyledIcon {...iconProps} />;
 }
 
 class SwitchBase extends Component<Props> {
@@ -304,7 +317,7 @@ SwitchBase.defaultProps = {
   iconVariant: 0,
   iconChecked: null,
   iconVariantChecked: null,
-  iconFontSize: '100%',
+  iconFontSize: null,
   variant: null,
 };
 
