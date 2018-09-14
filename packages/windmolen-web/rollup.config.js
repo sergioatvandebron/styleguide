@@ -52,7 +52,8 @@ export default {
       exclude: 'node_modules/**',
       delimiters: ['', ''],
 
-      'components/Icon/': ''
+      'components/Icon/': '',
+      'components/Modal/': ''
     }),
   ].filter(Boolean)
 };
