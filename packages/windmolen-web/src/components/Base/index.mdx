@@ -6,9 +6,44 @@ route: /Base/Base
 
 import { Playground } from 'docz'
 import Base from './'
+import Wrapper from '../Wrapper';
 import { colors } from '../../globals';
 
 # Base
 ## Basic usage
 `<Base />` is the base component that gets extended by all others, where some common styles get applied.
 It will likely never be used directly.
+
+<Playground wrapper={Wrapper}>
+  {Object.keys(colors).map(colorName => {
+    const color = colors[colorName];
+    return (
+      <div style={{
+        width: 250,
+        height: 150,
+        marginBottom: 120,
+        display: 'inline-block',
+      }}>
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            backgroundColor: color,
+          }}
+        />
+        <div
+          style={{
+            display: 'block',
+            width: '100%',
+            color: 'black',
+            padding: 5,
+            background: 'white',
+          }}
+        >
+          <div>{color}</div>
+          <div>{colorName}</div>
+        </div>
+      </div>
+    );
+  })}
+</Playground>
