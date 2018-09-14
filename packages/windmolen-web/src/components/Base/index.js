@@ -104,7 +104,7 @@ const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
     return px(isMobile ? 32 : 40);
 
   default:
-      return 'inherit';
+    return 'inherit';
   }
 };
 

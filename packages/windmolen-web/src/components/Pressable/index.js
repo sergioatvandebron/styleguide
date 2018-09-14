@@ -98,6 +98,10 @@ const getVariantProperty = (variant: VariantType, property: string): string | nu
 const variant = property => props => getVariantProperty(props.variant, property);
 
 const pressableFactory = (element): ReactComponentStyled<PressableProps> => styled(Base.withComponent(element))`
+  background-color: ${variant('backgroundColor')};
+  border: ${variant('border')};
+  box-shadow: ${variant('shadow')};
+  color: ${variant('color')};
   cursor: ${variant('cursor')};
   display: ${props => props.variant === 'text' ? 'inline' : 'block'};
   font-weight: 600;
@@ -105,13 +109,6 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => styl
   text-align: left;
   text-decoration: ${variant('textDecoration')};
   width: ${props => props.variant === 'text' ? 'auto' : '100%'};
-
-  &&& {
-    background-color: ${variant('backgroundColor')};
-    border: ${variant('border')};
-    box-shadow: ${variant('shadow')};
-    color: ${variant('color')};
-  }
 
   ${props => props.variant !== 'text' && `
     display: inline-flex;
@@ -132,10 +129,8 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => styl
   }
 
   &:hover {
-    &&& {
-      background-color: ${variant('hoverBackgroundColor')};
-      color: ${variant('hoverColor')};
-    }
+    background-color: ${variant('hoverBackgroundColor')};
+    color: ${variant('hoverColor')};
 
     ${StyledRightIcon},
     ${StyledLeftIcon} {
