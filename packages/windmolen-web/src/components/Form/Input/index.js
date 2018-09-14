@@ -194,11 +194,10 @@ const StyledIconContainer = styled(Base)`
   }
 `;
 
-const StyledAutoSuggestion = styled(Base)`
+const StyledAutoSuggestionContainer = styled(Base)`
   box-shadow: 0 11px 15px 0 rgba(0, 0, 0, 0.1);
   left: 0;
-  padding-bottom: 5px;
-  padding-top: 55px;
+  padding-top: 50px;
   position: absolute;
   right: 0;
   top: 0;
@@ -207,6 +206,15 @@ const StyledAutoSuggestion = styled(Base)`
   &&& {
     background-color: ${colors.white};
   }
+`;
+
+const StyledAutoSuggestion = styled(Base)`
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 250px;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   .suggestion {
     padding-left: 20px;
@@ -247,9 +255,11 @@ const Input = ({ className, autoCompleteProps, ...props }: InputProps) => {
             />
           )}
           renderMenu={(children) => (
-            <StyledAutoSuggestion>
-              {children}
-            </StyledAutoSuggestion>
+            <StyledAutoSuggestionContainer>
+              <StyledAutoSuggestion>
+                {children}
+              </StyledAutoSuggestion>
+            </StyledAutoSuggestionContainer>
           )}
           {...autoCompleteProps}
         />
