@@ -15,6 +15,7 @@ export { default as Link } from './components/Link';
 export { default as BoxShadow } from './components/BoxShadow';
 export { default as Animate } from './components/Animate';
 export { default as Pressable } from './components/Pressable';
+export { default as Modal } from './components/Modal';
 
 // Bootstrap
 export { default as Container } from './components/Bootstrap/Container';
