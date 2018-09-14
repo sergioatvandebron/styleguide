@@ -57,7 +57,7 @@ const pressableButtonPrimary: Variant = {
   iconVariant: 1,
   hoverIconVariant: 1,
   textDecoration: 'none',
-  cursor: 'default',
+  cursor: 'pointer',
 };
 
 const pressableButtonAlternate: Variant = {
@@ -70,7 +70,7 @@ const pressableButtonAlternate: Variant = {
   iconVariant: 0,
   hoverIconVariant: 2,
   textDecoration: 'none',
-  cursor: 'default',
+  cursor: 'pointer',
 };
 
 const pressableButtonOutline: Variant = {
@@ -83,7 +83,7 @@ const pressableButtonOutline: Variant = {
   iconVariant: 1,
   hoverIconVariant: 1,
   textDecoration: 'none',
-  cursor: 'default',
+  cursor: 'pointer',
 };
 
 const pressableVariants: VariantList = {
