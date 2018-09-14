@@ -59,6 +59,7 @@ const fontSize = (props: BaseProps, isMobile: boolean = true) => {
   case 'body':
   case 'regular':
     return px(isMobile ? 18 : 20);
+
   default:
     return 'inherit';
   }

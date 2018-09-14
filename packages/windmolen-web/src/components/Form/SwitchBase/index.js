@@ -301,7 +301,7 @@ class SwitchBase extends Component<Props> {
           {...inputProps}
         />
         {(labelPlacement === 'start' && label !== null) && (
-          <StyledLabel labelPlacement={labelPlacement}>
+          <StyledLabel labelPlacement={labelPlacement} fontSize="body-xsmall">
             {label}
           </StyledLabel>
         )}
@@ -309,7 +309,7 @@ class SwitchBase extends Component<Props> {
         <StyledSwitch checked={checked} {...other} />
 
         {(labelPlacement === 'end' && label !== null) && (
-          <StyledLabel>
+          <StyledLabel labelPlacement={labelPlacement} fontSize="body-xsmall">
             {label}
           </StyledLabel>
         )}
