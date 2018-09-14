@@ -77,13 +77,13 @@ const gridTheme = {
     xs: 575,
   },
   row: {
-    padding: 15,
+    padding: 20,
   },
   col: {
-    padding: 15,
+    padding: 20,
   },
   container: {
-    padding: 15,
+    padding: 20,
   },
 };
 
