@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="2640px" height="150px" viewBox="0 0 2640 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="2670px" height="150px" viewBox="0 0 2670 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
     <title>sprite-sheet</title>
     <desc>Created with Sketch.</desc>
@@ -144,6 +144,11 @@
         <polygon id="path-275" points="0 0.4974375 7.30898437 0.4974375 7.30898437 7.40610937 0 7.40610937"></polygon>
         <polygon id="path-277" points="0.429351563 0 4.69224219 0 4.69224219 4.26338281 0.429351563 4.26338281"></polygon>
         <polygon id="path-279" points="0 0.4974375 7.30898437 0.4974375 7.30898437 7.40610937 0 7.40610937"></polygon>
+        <rect id="path-281" x="0" y="0" width="30" height="30"></rect>
+        <rect id="path-283" x="0" y="0" width="30" height="30"></rect>
+        <rect id="path-285" x="0" y="0" width="30" height="30"></rect>
+        <rect id="path-287" x="0" y="0" width="30" height="30"></rect>
+        <rect id="path-289" x="0" y="0" width="30" height="30"></rect>
     </defs>
     <g id="sprite-sheet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="icon/black/small/twitter" transform="translate(30.000000, 0.000000)">
@@ -3664,7 +3669,7 @@
                 </g>
             </g>
         </g>
-        <g id="iconicon/grey/small/tussenwoning" transform="translate(2190.000000, 60.000000)">
+        <g id="icon/grey/small/tussenwoning" transform="translate(2190.000000, 60.000000)">
             <g id="icon/black/large/tussenwoning">
                 <g>
                     <rect id="size" x="0" y="0" width="30" height="30"></rect>
@@ -3757,8 +3762,8 @@
             </g>
         </g>
         <g id="icon/blue/small/hoekwoning" transform="translate(2220.000000, 60.000000)">
-            <g id="icon/grey/small/hoekwoning">
-                <g id="icon/black/large/hoekwoning">
+            <g id="icon/black/large/hoekwoning">
+                <g>
                     <rect id="size" x="0" y="0" width="30" height="30"></rect>
                     <g id="icon" transform="translate(1.000000, 6.500000)" fill="#778EA6" stroke="#778EA6" stroke-width="0.5">
                         <g id="Group-16">
@@ -6074,6 +6079,76 @@
             <g>
                 <rect id="mask" fill-rule="nonzero" x="0" y="0" width="30" height="30"></rect>
                 <polyline id="Stroke-1" stroke="#333D47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="9 16 13 20 21 10"></polyline>
+            </g>
+        </g>
+        <g id="icon/black/large/close" transform="translate(2640.000000, 0.000000)">
+            <g>
+                <mask id="mask-282" fill="white">
+                    <use xlink:href="#path-281"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g id="Group-3" mask="url(#mask-282)" fill="#333D47" fill-rule="nonzero">
+                    <g transform="translate(15.095975, 15.095975) rotate(-315.000000) translate(-15.095975, -15.095975) translate(0.595975, 1.175975)" id="Rectangle">
+                        <rect x="12.76" y="0" width="4.06" height="27.84"></rect>
+                        <rect transform="translate(14.790000, 13.920000) rotate(-270.000000) translate(-14.790000, -13.920000) " x="12.76" y="0" width="4.06" height="27.84"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="icon/white/large/close" transform="translate(2640.000000, 30.000000)">
+            <g>
+                <mask id="mask-284" fill="white">
+                    <use xlink:href="#path-283"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g id="Group-3" mask="url(#mask-284)" fill="#FFFFFF" fill-rule="nonzero">
+                    <g transform="translate(15.039406, 15.152543) rotate(-315.000000) translate(-15.039406, -15.152543) translate(0.539406, 1.152543)" id="Rectangle">
+                        <rect x="12.76" y="0" width="4.06" height="27.84"></rect>
+                        <rect transform="translate(14.790000, 13.920000) rotate(-270.000000) translate(-14.790000, -13.920000) " x="12.76" y="0" width="4.06" height="27.84"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="icon/blue/large/close" transform="translate(2640.000000, 60.000000)">
+            <g>
+                <mask id="mask-286" fill="white">
+                    <use xlink:href="#path-285"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g id="Group-3" mask="url(#mask-286)" fill="#778EA6" fill-rule="nonzero">
+                    <g transform="translate(15.039406, 15.152543) rotate(-315.000000) translate(-15.039406, -15.152543) translate(0.539406, 1.152543)" id="Rectangle">
+                        <rect x="12.76" y="0" width="4.06" height="27.84"></rect>
+                        <rect transform="translate(14.790000, 13.920000) rotate(-270.000000) translate(-14.790000, -13.920000) " x="12.76" y="0" width="4.06" height="27.84"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="icon/darkgrey/large/close" transform="translate(2640.000000, 90.000000)">
+            <g>
+                <mask id="mask-288" fill="white">
+                    <use xlink:href="#path-287"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g id="Group-3" mask="url(#mask-288)" fill="#717171" fill-rule="nonzero">
+                    <g transform="translate(15.039406, 15.152543) rotate(-315.000000) translate(-15.039406, -15.152543) translate(0.539406, 1.152543)" id="Rectangle">
+                        <rect x="12.76" y="0" width="4.06" height="27.84"></rect>
+                        <rect transform="translate(14.790000, 13.920000) rotate(-270.000000) translate(-14.790000, -13.920000) " x="12.76" y="0" width="4.06" height="27.84"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="icon/lightgrey/large/close" transform="translate(2640.000000, 120.000000)">
+            <g>
+                <mask id="mask-290" fill="white">
+                    <use xlink:href="#path-289"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g id="Group-3" mask="url(#mask-290)" fill="#C1C1C1" fill-rule="nonzero">
+                    <g transform="translate(15.039406, 15.152543) rotate(-315.000000) translate(-15.039406, -15.152543) translate(0.539406, 1.152543)" id="Rectangle">
+                        <rect x="12.76" y="0" width="4.06" height="27.84"></rect>
+                        <rect transform="translate(14.790000, 13.920000) rotate(-270.000000) translate(-14.790000, -13.920000) " x="12.76" y="0" width="4.06" height="27.84"></rect>
+                    </g>
+                </g>
             </g>
         </g>
     </g>

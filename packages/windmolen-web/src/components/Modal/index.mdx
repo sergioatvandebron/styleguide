@@ -1,0 +1,112 @@
+---
+name: Modal
+menu: Elements
+route: /Elements/Modal
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import Modal from './';
+import { H3 } from '../Headings';
+import Paragraph from '../Paragraph';
+
+# Modal
+
+## Props
+<PropsTable of={Modal} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <div style={{
+    // Add a style object, for the sake of an example
+    transform: 'translate(0, 0)',
+    width: '100%',
+    height: 0,
+    paddingBottom: '50%',
+  }}>
+    <Modal
+      onClose={() => { console.log('Trigger function here to close the modal') }}
+    >
+      <H3>Lorem ipsum</H3>
+      <Paragraph>
+        Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        tempus sem nec velit rutrum viverra. Aliquam interdum bibendum facilisis.
+        Aliquam ac ante vel lorem pretium tincidunt. Aliquam pharetra ullamcorper
+        metus, at sollicitudin nulla vulputate non. Aliquam in pretium diam.
+        Donec et erat porttitor, sagittis elit id, aliquam dolor. Duis varius
+        neque eget risus ultricies volutpat.
+      </Paragraph>
+    </Modal>
+  </div>
+</Playground>
+
+## Hiding the 'close' button
+<Playground wrapper={Wrapper}>
+  <div style={{
+    // Add a style object, for the sake of an example
+    transform: 'translate(0, 0)',
+    width: '100%',
+    height: 0,
+    paddingBottom: '50%',
+  }}>
+    <Modal hideCloseButton>
+      <H3>Lorem ipsum</H3>
+      <Paragraph>
+        Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        tempus sem nec velit rutrum viverra. Aliquam interdum bibendum facilisis.
+        Aliquam ac ante vel lorem pretium tincidunt. Aliquam pharetra ullamcorper
+        metus, at sollicitudin nulla vulputate non. Aliquam in pretium diam.
+        Donec et erat porttitor, sagittis elit id, aliquam dolor. Duis varius
+        neque eget risus ultricies volutpat.
+      </Paragraph>
+    </Modal>
+  </div>
+</Playground>
+
+## Hiding the logo
+<Playground wrapper={Wrapper}>
+  <div style={{
+    // Add a style object, for the sake of an example
+    transform: 'translate(0, 0)',
+    width: '100%',
+    height: 0,
+    paddingBottom: '50%',
+  }}>
+    <Modal hideLogo>
+      <H3>Lorem ipsum</H3>
+      <Paragraph>
+        Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+        tempus sem nec velit rutrum viverra. Aliquam interdum bibendum facilisis.
+        Aliquam ac ante vel lorem pretium tincidunt. Aliquam pharetra ullamcorper
+        metus, at sollicitudin nulla vulputate non. Aliquam in pretium diam.
+        Donec et erat porttitor, sagittis elit id, aliquam dolor. Duis varius
+        neque eget risus ultricies volutpat.
+      </Paragraph>
+    </Modal>
+  </div>
+</Playground>
+
+## Hiding the header
+<Playground wrapper={Wrapper}>
+  <div style={{
+    // Add a style object, for the sake of an example
+    transform: 'translate(0, 0)',
+    width: '100%',
+    height: 0,
+    paddingBottom: '50%',
+  }}>
+    <Modal hideHeader>
+      <div>
+        <H3>Lorem ipsum</H3>
+        <Paragraph>
+          Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          tempus sem nec velit rutrum viverra. Aliquam interdum bibendum facilisis.
+          Aliquam ac ante vel lorem pretium tincidunt. Aliquam pharetra ullamcorper
+          metus, at sollicitudin nulla vulputate non. Aliquam in pretium diam.
+          Donec et erat porttitor, sagittis elit id, aliquam dolor. Duis varius
+          neque eget risus ultricies volutpat.
+        </Paragraph>
+      </div>
+    </Modal>
+  </div>
+</Playground>
