@@ -14,8 +14,6 @@ export default {
     },
   },
 
-
-
   modifyBundlerConfig: (config) => {
     return config;
   }
