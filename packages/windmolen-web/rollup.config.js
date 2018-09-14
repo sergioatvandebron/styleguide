@@ -1,7 +1,9 @@
+/* global process */
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
-import fileUrl from 'rollup-plugin-url';
+import rebase from 'rollup-plugin-rebase';
+import replace from 'rollup-plugin-post-replace';
 
 export default {
   input: 'src/index.js',
@@ -22,6 +24,12 @@ export default {
   ],
 
   plugins: [
+    rebase({
+      folder: 'assets',
+      verbose: true,
+      import: ['**/*.svg']
+    }),
+
     resolve({
       module: true,
       extensions: ['.js'],
@@ -33,13 +41,19 @@ export default {
       plugins: ['external-helpers', 'babel-plugin-transform-object-rest-spread']
     }),
 
-    fileUrl({
-      limit: Infinity,
-      emitFiles: true
-    })
+    process.env.NODE_ENV === 'production' && terser({
+      warnings: 'verbose'
+    }),
 
-    // terser({
-    //   warnings: 'verbose'
-    // }),
-  ]
-}
+    // after building, assets will end up in `./assets/file`, relatively to the
+    // importing module (e.g. `Icon`), so we need to strip `components/Icon` from
+    // the import statement to match the actual path
+    replace({
+      exclude: 'node_modules/**',
+      delimiters: ['', ''],
+
+      'components/Icon/': ''
+    }),
+  ].filter(Boolean)
+};
+

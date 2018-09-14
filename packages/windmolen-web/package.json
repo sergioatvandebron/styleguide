@@ -1,6 +1,6 @@
 {
   "name": "@vandebron/windmolen-web",
-  "version": "2.0.1-5.91",
+  "version": "2.0.1-5.93",
   "description": "vandebron's styleguide for web",
   "main": "dist/bundle.js",
   "publishConfig": {
@@ -8,8 +8,7 @@
   },
   "scripts": {
     "clean-dist": "rimraf dist/**",
-    "copy-assets": "cd src && cpy --parents assets/ ../dist/",
-    "build": "yarn clean-dist && yarn copy-assets && rollup -c rollup.config.js",
+    "build": "yarn clean-dist && NODE_ENV=production rollup -c rollup.config.js",
     "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
     "start": "npm run website:start",
@@ -30,7 +29,6 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "classnames": "^2.2.6",
-    "cpy-cli": "^2.0.0",
     "cross-env": "^5.2.0",
     "docz": "^0.9.6",
     "docz-plugin-babel6": "^0.10.3",
@@ -44,9 +42,10 @@
     "rollup": "^0.64.1",
     "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-post-replace": "^1.0.0",
+    "rollup-plugin-rebase": "^2.0.3",
     "rollup-plugin-svgo": "^1.0.1",
     "rollup-plugin-terser": "^1.0.1",
-    "rollup-plugin-url": "^1.4.0",
     "styled-bootstrap-grid": "^1.0.4",
     "styled-components": "^3.4.2",
     "svg-inline-loader": "^0.8.0"

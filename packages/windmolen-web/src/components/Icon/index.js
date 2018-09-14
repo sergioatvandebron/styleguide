@@ -11,6 +11,7 @@ type Props = {
   name: string,
   fontSize: string,
   variant?: number,
+  className?: string,
 };
 
 const spritesheet = {};
@@ -111,7 +112,9 @@ spritesheet.names = [
   'close',
 ];
 
-const StyledSpan = styled(Span)`
+const StyledSpan = styled(Span).attrs({
+  className: props => props.className + ' windmolen-spritesheet'
+})`
   background-image: url('${SpritesheetPNG}');
   background-image: url('${SpritesheetSVG}');
   background-position: -${props => spritesheet.names.indexOf(props.name)}em -${props => props.variant}em;
@@ -136,6 +139,7 @@ const Icon = (props: Props): Node => (
 Icon.defaultProps = {
   fontSize: '150%',
   variant: 0,
+  className: ''
 };
 
 export {
