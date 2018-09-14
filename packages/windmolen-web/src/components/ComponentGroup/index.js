@@ -54,27 +54,27 @@ const getSpacing = (breakpoint, divider, size, property, placement) => {
     const topValue = (spacings[breakpoint][size] / dividerTop) || 0;
     const bottomValue = (spacings[breakpoint][size] / dividerBottom) || 0;
     switch (placement) {
-    case 'top':
-        return `${property}-${placement}: ${topValue}px;`;
-    case 'bottom':
-      return `${property}-${placement}: ${bottomValue}px;`;
-    case 'top-bottom':
-      return `
-        ${property}-top: ${topValue}px;
-        ${property}-bottom: ${bottomValue}px;
-      `;
+      case 'top':
+          return `${property}-${placement}: ${topValue}px;`;
+      case 'bottom':
+        return `${property}-${placement}: ${bottomValue}px;`;
+      case 'top-bottom':
+        return `
+          ${property}-top: ${topValue}px;
+          ${property}-bottom: ${bottomValue}px;
+        `;
     }
   }
 };
 
 const getSeparator = (type, placement) => {
   switch (type) {
-  case 'border':
-    if (placement) {
-      return `
-        border-${placement}: 1px solid ${colors.silver};
-      `;
-    }
+    case 'border':
+      if (placement) {
+        return `
+          border-${placement}: 1px solid ${colors.silver};
+        `;
+      }
   }
 };
 

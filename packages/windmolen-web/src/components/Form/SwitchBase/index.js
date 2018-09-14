@@ -64,15 +64,15 @@ export type Props = {
 
 const getSwitchType = (type) => {
   switch (type) {
-  case 'toggle':
-  case 'checkbox':
-    return 'checkbox';
+    case 'toggle':
+    case 'checkbox':
+      return 'checkbox';
 
-  case 'radio':
-    return 'radio'
+    case 'radio':
+      return 'radio'
 
-  default:
-    console.warn(`Unknown toggle type ${type}`);
+    default:
+      console.warn(`Unknown toggle type ${type}`);
   }
 }
 

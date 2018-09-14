@@ -25,43 +25,43 @@ export type BaseProps = {
 
 const fontSize = (props: BaseProps, isMobile: boolean = true) => {
   switch (props.fontSize) {
-  case 'h1':
-    return px(isMobile ? 40 : 80);
+    case 'h1':
+      return px(isMobile ? 40 : 80);
 
-  case 'h2':
-    return px(isMobile ? 35 : 55);
+    case 'h2':
+      return px(isMobile ? 35 : 55);
 
-  case 'h3':
-    return px(isMobile ? 28 : 40);
+    case 'h3':
+      return px(isMobile ? 28 : 40);
 
-  case 'h4':
-    return px(isMobile ? 18 : 24);
+    case 'h4':
+      return px(isMobile ? 18 : 24);
 
-  case 'h5':
-    return px(18);
+    case 'h5':
+      return px(18);
 
-  case 'button-small':
-    return px(14);
+    case 'button-small':
+      return px(14);
 
-  case 'button':
-  case 'body-xsmall':
-    return px(16);
+    case 'button':
+    case 'body-xsmall':
+      return px(16);
 
-  case 'lead':
-    return px(isMobile ? 20 : 24);
+    case 'lead':
+      return px(isMobile ? 20 : 24);
 
-  case 'super-huge':
-    return px(isMobile ? 80 : 100);
+    case 'super-huge':
+      return px(isMobile ? 80 : 100);
 
-  case 'link':
-    return '100%';
+    case 'link':
+      return '100%';
 
-  case 'body':
-  case 'regular':
-    return px(isMobile ? 18 : 20);
+    case 'body':
+    case 'regular':
+      return px(isMobile ? 18 : 20);
 
-  default:
-    return 'inherit';
+    default:
+      return 'inherit';
   }
 };
 
