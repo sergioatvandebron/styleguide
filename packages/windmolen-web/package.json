@@ -1,6 +1,6 @@
 {
   "name": "@vandebron/windmolen-web",
-  "version": "2.0.1-5.95",
+  "version": "2.0.1-5.96",
   "description": "vandebron's styleguide for web",
   "main": "dist/bundle.js",
   "publishConfig": {
