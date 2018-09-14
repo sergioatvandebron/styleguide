@@ -77,10 +77,14 @@ const variantStyles = {
   'button-small': {
     width: px(50),
     height: px(50),
+    paddingLeft: px(7),
+    paddingRight: px(7),
   },
   'button-large': {
     width: px(160),
     height: px(160),
+    paddingLeft: px(20),
+    paddingRight: px(20),
   },
 }
 const getVariantStyle = (variant, prop) => variantStyles[variant][prop];
@@ -109,6 +113,12 @@ const StyledSwitchBaseCore = styled(Span)`
   input {
     display: none;
   }
+`;
+
+const StyledSwitchBaseButtonWrapper = styled.div`
+  display: inline-flex;
+  padding-left: ${props => getVariantStyle(props.variant, 'paddingLeft')}
+  padding-right: ${props => getVariantStyle(props.variant, 'paddingRight')}
 `;
 
 const StyledSwitchBaseButton = styled.div`
@@ -166,9 +176,11 @@ const StyledSwitchBase = (props) => {
     case 'button-large':
     case 'button-small':
       return (
-        <StyledSwitchBaseButton style={style} {...other}>
-          <StyledSwitchBaseCore {...other} />
-        </StyledSwitchBaseButton>
+        <StyledSwitchBaseButtonWrapper {...other}>
+          <StyledSwitchBaseButton style={style} {...other}>
+            <StyledSwitchBaseCore {...other} />
+          </StyledSwitchBaseButton>
+        </StyledSwitchBaseButtonWrapper>
       );
 
     default:

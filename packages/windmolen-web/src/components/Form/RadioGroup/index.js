@@ -1,4 +1,5 @@
 import React, { type Node } from 'react';
+import styled from 'styled-components';
 
 type Props = {
   children: Node,
@@ -11,6 +12,8 @@ type Props = {
   iconFontSize?: string,
 };
 
+const StyledRadioGroup = styled.div``;
+
 const RadioGroup = ({
   children,
   name,
@@ -21,7 +24,7 @@ const RadioGroup = ({
   iconVariantChecked,
   iconFontSize,
 }: Props) => (
-  <div className="RadioGroup">
+  <StyledRadioGroup>
     {React.Children.map(children, child => {
       if (!React.isValidElement(child)) {
         return null;
@@ -35,13 +38,11 @@ const RadioGroup = ({
         iconFontSize,
         checked: value === child.props.value,
         onChange: (checked) => {
-          if (checked) {
-            onChange(child.props.value);
-          }
+          onChange(child.props.value);
         },
       });
     })}
-  </div>
+  </StyledRadioGroup>
 );
 
 RadioGroup.defaultProps = {
