@@ -19,7 +19,7 @@ export type Props = {
   /** Used to specify the 'value' attribute. */
   value: string,
 
-  /** Specify a different variant. */
+  /** Specify a different switch variant. */
   variant: 'button-large' | 'button-small',
 
   /** A callback function when the 'checked' value has been changed. */
@@ -39,6 +39,9 @@ export type Props = {
 
   /** The placement of the label relative to the input. */
   labelPlacement?: 'start' | 'end',
+
+  /** Specify additional props that wil be passed to the label. */
+  labelProps: object,
 
   /** Make a controlled toggle by specifying the 'checked' property manually. */
   checked?: bool,
@@ -283,11 +286,18 @@ class SwitchBase extends Component<Props> {
       name,
       value,
       checked: checkedProp,
+      labelProps,
       ...other
     } = this.props;
 
     const checked = this.isControlled ? checkedProp : this.state.checked;
     const switchType = getSwitchType(this.props.type);
+
+    const otherLabelProps = {
+      labelPlacement,
+      fontSize: 'body-xsmall',
+      ...labelProps,
+    }
 
     return (
       <StyledSwitchBase onClick={this.toggle} {...other} checked={checked}>
@@ -301,7 +311,7 @@ class SwitchBase extends Component<Props> {
           {...inputProps}
         />
         {(labelPlacement === 'start' && label !== null) && (
-          <StyledLabel labelPlacement={labelPlacement} fontSize="body-xsmall">
+          <StyledLabel {...otherLabelProps}>
             {label}
           </StyledLabel>
         )}
@@ -309,7 +319,7 @@ class SwitchBase extends Component<Props> {
         <StyledSwitch checked={checked} {...other} />
 
         {(labelPlacement === 'end' && label !== null) && (
-          <StyledLabel labelPlacement={labelPlacement} fontSize="body-xsmall">
+          <StyledLabel {...otherLabelProps}>
             {label}
           </StyledLabel>
         )}
@@ -323,6 +333,7 @@ SwitchBase.defaultProps = {
   inputRef: () => {},
   label: null,
   labelPlacement: 'end',
+  labelProps: {},
   defaultChecked: false,
   checked: null,
   icon: null,
