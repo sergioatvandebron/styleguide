@@ -20,7 +20,7 @@ type VariantList = {
   [VariantType]: Variant
 };
 
-type PressableProps = {
+export type PressableProps = {
   children?: Node,
   variant?: VariantType,
 
@@ -146,6 +146,9 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   &:hover {
     background-color: ${variant('hoverBackgroundColor')};
     color: ${variant('hoverColor')};
+    // for now, the following works because it's always the same
+    // change it if that stops being the case
+    text-decoration: ${variant('textDecoration')};
 
     ${StyledRightIcon},
     ${StyledLeftIcon} {
