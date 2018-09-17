@@ -16,6 +16,7 @@ export { default as BoxShadow } from './components/BoxShadow';
 export { default as Animate } from './components/Animate';
 export { default as Pressable } from './components/Pressable';
 export { default as Modal } from './components/Modal';
+export { default as Bold } from './components/Bold';
 
 // Bootstrap
 export { default as Container } from './components/Bootstrap/Container';

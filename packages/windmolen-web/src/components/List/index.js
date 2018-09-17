@@ -1,10 +1,12 @@
 // @flow
-import React, { type Node } from 'react';
+import React, { type Node, PureComponent } from 'react';
 import styled from 'styled-components';
 import { media } from 'styled-bootstrap-grid';
 import Base from '../Base';
 import Span from '../Span';
 import Icon from '../Icon';
+import Bold from '../Bold';
+import Paragraph from '../Paragraph';
 import { colors } from '../../globals';
 
 type ListProps = {
@@ -35,6 +37,12 @@ type ItemProps = {
   inheritedIcon: string,
   children?: Node
 };
+
+type ExpandableItemProps = ItemProps & {
+  defaultExpanded: boolean,
+  title: Node,
+  children?: Node
+}
 
 // Item
 const Li = styled(Base.withComponent('li'))`
@@ -68,6 +76,54 @@ const Item = ({ icon, inheritedIcon, children, ...props }: ItemProps) => {
   );
 };
 
+// expandable Item
+const ItemWithPointer = styled(Item)`
+  cursor: pointer;
+`;
+
+const BoldWithPointer = styled(Bold)`
+  cursor: pointer;
+`;
+
+const ItemWithRotatedIcon = styled(Item)`
+  ${StyledIcon} {
+    transform: rotate(90deg);
+  }
+`;
+
+class ExpandableItem extends PureComponent<ExpandableItemProps, { isExpanded: boolean }> {
+  static defaultProps = {
+    defaultExpanded: false
+  };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isExpanded: props.defaultExpanded
+    };
+  }
+
+  toggleExpanded = () => this.setState({ isExpanded: !this.state.isExpanded });
+
+  render() {
+    const { title, children } = this.props;
+
+    return this.state.isExpanded
+      ? (
+        <ItemWithRotatedIcon {...this.props} icon="caret-right" onClick={this.toggleExpanded}>
+          <BoldWithPointer>{title}</BoldWithPointer>
+          <Paragraph>{children}</Paragraph>
+        </ItemWithRotatedIcon>
+      ) : (
+        <ItemWithPointer {...this.props} icon="caret-right" onClick={this.toggleExpanded}>
+          {title}
+        </ItemWithPointer>
+      );
+  }
+}
+
 List.Item = Item;
+List.ExpandableItem = ExpandableItem;
 
 export default List;
