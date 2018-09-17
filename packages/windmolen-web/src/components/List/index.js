@@ -39,6 +39,7 @@ type ItemProps = {
 };
 
 type ExpandableItemProps = ItemProps & {
+  onChange: Function,
   defaultExpanded: boolean,
   title: Node,
   children?: Node
@@ -93,7 +94,8 @@ const ItemWithRotatedIcon = styled(Item)`
 
 class ExpandableItem extends PureComponent<ExpandableItemProps, { isExpanded: boolean }> {
   static defaultProps = {
-    defaultExpanded: false
+    defaultExpanded: false,
+    onChange() {}
   };
 
   constructor(props) {
@@ -104,7 +106,12 @@ class ExpandableItem extends PureComponent<ExpandableItemProps, { isExpanded: bo
     };
   }
 
-  toggleExpanded = () => this.setState({ isExpanded: !this.state.isExpanded });
+  toggleExpanded = () => {
+    const isExpanded = !this.state.isExpanded;
+
+    this.props.onChange(isExpanded);
+    this.setState({ isExpanded });
+  }
 
   render() {
     const { title, children } = this.props;
