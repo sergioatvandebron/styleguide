@@ -38,7 +38,7 @@ export default {
     babel({
       exclude: ['node_modules/**'],
       include: ['**/*.js'],
-      plugins: ['external-helpers', 'babel-plugin-transform-object-rest-spread']
+      plugins: ['external-helpers', 'babel-plugin-transform-object-rest-spread', 'babel-plugin-transform-class-properties']
     }),
 
     process.env.NODE_ENV === 'production' && terser({
