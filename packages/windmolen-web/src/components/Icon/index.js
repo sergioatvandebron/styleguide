@@ -2,11 +2,11 @@
 import type { Node } from 'react';
 import React from 'react';
 import styled from 'styled-components';
+import { media } from 'styled-bootstrap-grid';
 import Span from '../Span';
 import SpritesheetSVG from '../../assets/icons/sprite-sheet.svg';
 import SpritesheetPNG from '../../assets/icons/sprite-sheet.png';
 import { colors } from '../../globals';
-import { media } from 'styled-bootstrap-grid';
 
 type Props = {
   /** The name of the icon. */

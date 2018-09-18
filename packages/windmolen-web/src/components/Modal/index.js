@@ -1,5 +1,6 @@
 import React, { type Node } from 'react';
 import styled from 'styled-components';
+import { media } from 'styled-bootstrap-grid';
 import { colors } from '../../globals';
 import Icon from '../Icon';
 import ComponentGroup from '../ComponentGroup';
@@ -40,9 +41,12 @@ const StyledModalContainer = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(51, 61, 71, 0.5);
-  padding: 20px;
   z-index: 1000;
   text-align: center;
+
+  ${media.desktop`
+    padding: 20px;
+  `}
 `;
 
 const StyledModal = styled.div`
