@@ -8,6 +8,10 @@ To run in development mode, run
 
 then open [http://localhost:4000/](http://localhost:4000/).
 
+## Adding icons
+
+Simply put the icon svg file in ./assets/icons/fa or ./assets/icons/ftic (I dunno what the folder names stand for) and rebuild the project by running `yarn dist`.
+
 ## Elements
 - [x] Headings
 - [x] Paragraph
