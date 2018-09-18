@@ -6,11 +6,25 @@ import Span from '../Span';
 import SpritesheetSVG from '../../assets/icons/sprite-sheet.svg';
 import SpritesheetPNG from '../../assets/icons/sprite-sheet.png';
 import { colors } from '../../globals';
+import { media } from 'styled-bootstrap-grid';
 
 type Props = {
+  /** The name of the icon. */
   name: string,
+
+  /** The font-size for the icon. */
   fontSize: string,
+
+  /**
+   * The desktop font-size for the icon. A fallback is being done to
+   * 'font-size' when this prop is not specified.
+   */
+  desktopFontSize: string,
+
+  /** The icon color (variant). */
   variant?: number,
+
+  /** Additional classes. */
   className?: string,
 };
 
@@ -45,7 +59,7 @@ spritesheet.names = [
   'laadpaal--left',
   'slim-laden--left',
   'leaf',
-  'windmill-blades',
+  'windmill--thick',
   'caret-right',
   'star',
   'play',
@@ -129,6 +143,10 @@ const StyledSpan = styled(Span).attrs({
   &&& {
     font-size: ${props => props.fontSize};
     line-height: 1;
+
+    ${media.desktop`
+      font-size: ${props => props.desktopFontSize || props.fontSize};
+    `}
   }
 }`;
 
@@ -137,6 +155,7 @@ const Icon = (props: Props): Node => (
 );
 
 Icon.defaultProps = {
+  desktopFontSize: null,
   fontSize: '150%',
   variant: 0,
   className: ''

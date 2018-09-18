@@ -23,6 +23,7 @@ const RadioGroup = ({
   iconVariant,
   iconVariantChecked,
   iconFontSize,
+  desktopIconFontSize,
 }: Props) => (
   <StyledRadioGroup>
     {React.Children.map(children, child => {
@@ -36,6 +37,7 @@ const RadioGroup = ({
         iconVariant,
         iconVariantChecked,
         iconFontSize,
+        desktopIconFontSize,
         checked: value === child.props.value,
         onChange: (checked) => {
           onChange(child.props.value);

@@ -1,5 +1,6 @@
 import React, { type Node, Component } from 'react';
 import styled, { css } from 'styled-components';
+import { media } from 'styled-bootstrap-grid';
 import Icon from '../../Icon';
 import Base from '../../Base';
 import Span from '../../Span';
@@ -76,21 +77,23 @@ const getSwitchType = (type) => {
   }
 }
 
-const variantStyles = {
-  'button-small': {
-    width: px(50),
-    height: px(50),
-    paddingLeft: px(7),
-    paddingRight: px(7),
-  },
-  'button-large': {
-    width: px(160),
-    height: px(160),
-    paddingLeft: px(20),
-    paddingRight: px(20),
-  },
-}
-const getVariantStyle = (variant, prop) => variantStyles[variant][prop];
+const getVariantStyle = (variant, prop, isMobile: boolean = true) => {
+  const variantStyles = {
+    'button-small': {
+      width: isMobile ? '100%' : px(50),
+      height: isMobile ? '100%' : px(50),
+      spacing: isMobile ? px(10) : px(8),
+      spacing: isMobile ? px(10) : px(8),
+    },
+    'button-large': {
+      width: isMobile ? '100%' : px(160),
+      height: isMobile ? '100%' : px(160),
+      spacing: isMobile ? px(8) : px(20),
+      spacing: isMobile ? px(8) : px(20),
+    },
+  };
+  return variantStyles[variant][prop];
+};
 
 const StyledIcon = styled(Icon)``;
 
@@ -119,9 +122,15 @@ const StyledSwitchBaseCore = styled(Span)`
 `;
 
 const StyledSwitchBaseButtonWrapper = styled.div`
-  display: inline-flex;
-  padding-left: ${props => getVariantStyle(props.variant, 'paddingLeft')}
-  padding-right: ${props => getVariantStyle(props.variant, 'paddingRight')}
+  display: flex;
+  padding-top: ${props => getVariantStyle(props.variant, 'spacing')}
+  padding-bottom: ${props => getVariantStyle(props.variant, 'spacing')}
+
+  ${media.desktop`
+    display: inline-flex;
+    padding-left: ${props => getVariantStyle(props.variant, 'spacing', false)}
+    padding-right: ${props => getVariantStyle(props.variant, 'spacing', false)}
+  `}
 `;
 
 const StyledSwitchBaseButton = styled.div`
@@ -131,25 +140,43 @@ const StyledSwitchBaseButton = styled.div`
   box-shadow: 0 0 5px 0 rgba(51, 61, 71, 0.2);
   background-color: ${colors.white};
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   user-select: none;
   width: ${props => getVariantStyle(props.variant, 'width')}
   height: ${props => getVariantStyle(props.variant, 'height')}
   opacity: ${props => props.checked ? 1 : 0.3};
 
+  ${media.desktop`
+    width: ${props => getVariantStyle(props.variant, 'width', false)}
+    height: ${props => getVariantStyle(props.variant, 'height', false)}
+    justify-content: center;
+    align-items: center;
+  `}
+
   * {
     pointer-events: none;
   }
 
   ${StyledSwitchBaseCore} {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    padding: ${props => getVariantStyle(props.variant, 'spacing')}
+
+    ${media.desktop`
+      flex-direction: column;
+      padding: 0;
+    `}
   }
 
   ${StyledLabel} {
     ${props => props.variant === 'button-small' && 'display: none;'}
-    margin: 0;
+    margin: 0 0 0 12px;
     color: ${colors.charcoalGray};
+
+    ${media.desktop`
+      margin: 0;
+    `}
   }
 
   &:active,
@@ -243,6 +270,7 @@ const StyledSwitch = (props) => {
     variant,
     name: icon,
     fontSize: props.iconFontSize !== null ? props.iconFontSize : undefined,
+    desktopFontSize: props.desktopIconFontSize !== null ? props.desktopIconFontSize : undefined,
   }
 
   return props.type === 'toggle'
