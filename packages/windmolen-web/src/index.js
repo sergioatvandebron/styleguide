@@ -19,6 +19,7 @@ export { default as Modal } from './components/Modal';
 export { default as Bold } from './components/Bold';
 export { default as Tab } from './components/Tab';
 export { default as VerticalTabs } from './components/VerticalTabs';
+export { default as FloatingInfoBlock } from './components/FloatingInfoBlock';
 
 // Bootstrap
 export { default as Container } from './components/Bootstrap/Container';
