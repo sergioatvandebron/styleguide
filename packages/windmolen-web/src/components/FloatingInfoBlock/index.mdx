@@ -1,0 +1,42 @@
+---
+name: FloatingInfoBlock
+menu: Elements
+route: /Elements/FloatingInfoBlock
+---
+
+import { Playground, PropsTable } from 'docz'
+import Wrapper from '../Wrapper';
+import FloatingInfoBlock from './';
+import Paragraph from '../Paragraph';
+
+# FloatingInfoBlock
+
+## Props
+<PropsTable of={FloatingInfoBlock} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <FloatingInfoBlock iconProps={{ name: 'windmill' }}>
+    <Paragraph fontSize="body-xsmall" fontWeight={700} margin={0}>
+      &euro; 136,92
+    </Paragraph>
+    <Paragraph fontSize="body-xsmall" margin={0}>
+      per maand
+    </Paragraph>
+  </FloatingInfoBlock>
+</Playground>
+
+## Custom icon
+<Playground wrapper={Wrapper}>
+  <FloatingInfoBlock
+    iconProps={{ name: 'facebook', fontSize: '50px' }}
+    iconBackgroundColor="red"
+  >
+    <Paragraph fontSize="body-xsmall" fontWeight={700} margin={0}>
+      &euro; 136,92
+    </Paragraph>
+    <Paragraph fontSize="body-xsmall" margin={0}>
+      per maand
+    </Paragraph>
+  </FloatingInfoBlock>
+</Playground>

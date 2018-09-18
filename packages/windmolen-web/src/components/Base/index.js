@@ -18,9 +18,16 @@ export type FontSize = 'h1'
   | 'regular'
   | 'super-huge';
 
+export type FontWeight = 100
+  | 300
+  | 400
+  | 600
+  | 700;
+
 export type BaseProps = {
   withShadow?: boolean,
   fontSize?: FontSize,
+  fontWeight?: FontWeight,
   margin?: string
 };
 
@@ -123,7 +130,7 @@ const Base = styled.div`
   font-size: ${props => fontSize(props)};
   font-stretch: normal;
   font-style: normal;
-  font-weight: normal;
+  font-weight: ${props => props.fontWeight || 400};
   letter-spacing: normal;
   line-height: ${props => lineHeight(props)};
 
