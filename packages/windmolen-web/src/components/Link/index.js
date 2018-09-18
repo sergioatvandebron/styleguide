@@ -1,16 +1,8 @@
 // @flow
-import React, { type Node } from 'react';
-import Pressable from '../Pressable';
+import React from 'react';
+import Pressable, { type PressableProps } from '../Pressable';
 
-type LinkProps = {
-  asButton?: boolean,
-
-  /** Buttom theme, c.f. see <Button /> */
-  hideArrow?: boolean,
-  children?: Node,
-  icon?: string,
-  small?: boolean,
-};
+type LinkProps = PressableProps;
 
 const Link = (props: LinkProps) => <Pressable {...props} />;
 

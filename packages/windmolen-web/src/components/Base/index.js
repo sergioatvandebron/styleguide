@@ -11,9 +11,10 @@ export type FontSize = 'h1'
   | 'h5'
   | 'button'
   | 'button-small'
-  | 'body-xsmall'
   | 'lead'
   | 'body'
+  | 'body-small'
+  | 'body-xsmall'
   | 'regular'
   | 'super-huge';
 
@@ -41,10 +42,11 @@ const fontSize = (props: BaseProps, isMobile: boolean = true) => {
       return px(18);
 
     case 'button-small':
+    case 'body-xsmall':
       return px(14);
 
     case 'button':
-    case 'body-xsmall':
+    case 'body-small':
       return px(16);
 
     case 'lead':
@@ -88,8 +90,11 @@ const lineHeight = (props: BaseProps, isMobile: boolean = true) => {
   case 'button':
     return px(isMobile ? 20 : 32);
 
-  case 'body-xsmall':
+  case 'body-small':
     return px(32);
+
+  case 'body-xsmall':
+    return px(22);
 
   case 'lead':
     return px(isMobile ? 32 : 40);

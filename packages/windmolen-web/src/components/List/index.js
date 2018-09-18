@@ -52,7 +52,7 @@ const Li = styled(Base.withComponent('li'))`
   padding-left: 30px;
 `;
 
-const StyledIcon = styled(Icon)`
+export const StyledIcon = styled(Icon)`
   position: absolute;
   left: -5px;
 
@@ -72,7 +72,7 @@ const Item = ({ icon, inheritedIcon, children, ...props }: ItemProps) => {
   return (
     <Li {...props}>
       <StyledIcon name={usedIcon} />
-      <StyledItemContent fontSize="body-xsmall">{children}</StyledItemContent>
+      <StyledItemContent fontSize="body-small">{children}</StyledItemContent>
     </Li>
   );
 };
