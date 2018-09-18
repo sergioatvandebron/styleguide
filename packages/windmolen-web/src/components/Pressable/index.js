@@ -54,6 +54,7 @@ const pressableButtonPrimary: Variant = {
   hoverBackgroundColor: colors.shuttleGray,
   shadow: '0 0 8px 0 rgba(0, 0, 0, 0.12)',
   border: `1px solid ${colors.charcoalGray}`,
+  hoverBorder: `1px solid ${colors.shuttleGray}`,
   iconVariant: 1,
   hoverIconVariant: 1,
   textDecoration: 'none',
@@ -95,7 +96,8 @@ const pressableVariants: VariantList = {
 
 // utils to access the property value for a given Pressable variant
 const getVariantProperty = (variant: VariantType, property: string): string | number => pressableVariants[variant][property];
-const variant = property => props => getVariantProperty(props.variant, property);
+const variant = (property, fallbackProperty) => props =>
+  getVariantProperty(props.variant, property) || getVariantProperty(props.variant, fallbackProperty);
 
 const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base.withComponent(element).extend`
   background-color: ${variant('backgroundColor')};
@@ -131,6 +133,7 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   &:hover {
     background-color: ${variant('hoverBackgroundColor')};
     color: ${variant('hoverColor')};
+    border: ${variant('hoverBorder', 'border')};
 
     ${StyledRightIcon},
     ${StyledLeftIcon} {
