@@ -26,6 +26,7 @@ const StyledFloatingInfoBlock = styled.div`
   box-shadow: -2rem 1.4rem 2rem 0 rgba(0, 0, 0, 0.18);
   display: inline-flex;
   height: 65px;
+  color: ${colors.charcoalGray};
 `;
 
 const StyledInnerContainer = styled.div`
