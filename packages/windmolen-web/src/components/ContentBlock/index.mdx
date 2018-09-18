@@ -14,6 +14,24 @@ import Button from '../Button';
 
 # ContentBlock
 
+The `<ContentBlock />` has the following cases defined:
+- Case 1 (default):
+  - text on the left
+  - images on the right (one image)
+- Case 2:
+  - images on the left (one image)
+  - text on the right
+- Case 3:
+  - text on the left
+  - images on the right (two images)
+- Case 4:
+  - images on the left (two images)
+  - text on the right
+
+NOTE: When using 1 image, it is not recommended to set an
+`aspectRatio` for the image, as in `<ContentBlock images=[{ src: '...', aspectRatio: '4:3' }] />`. This will ruin styling.
+
+
 ## Props
 <PropsTable of={ContentBlock} />
 
