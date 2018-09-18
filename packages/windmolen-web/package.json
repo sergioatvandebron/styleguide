@@ -12,7 +12,7 @@
     "lint": "eslint -c .eslintrc.json 'src/**/*.js'",
     "test": "jest",
     "start": "npm run website:start",
-    "website:start": "cross-env HTTPS=false docz dev",
+    "website:start": "cross-env NODE_ENV=development HTTPS=false docz dev",
     "website:build": "docz build",
     "prepack": "yarn build"
   },

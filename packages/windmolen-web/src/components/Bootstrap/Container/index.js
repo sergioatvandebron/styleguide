@@ -12,7 +12,7 @@ const Container = styled(BootstrapContainer)`
   ${props => props.medium && `max-width: ${px(CONTAINER_MEDIUM)};`}
 
   ${props => (!props.small && !props.medium) && media.giant`
-    max-width: 1200px;
+    max-width: ${px(1200)};
   `}
   }
 `;

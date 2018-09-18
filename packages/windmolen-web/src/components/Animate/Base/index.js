@@ -20,7 +20,7 @@ type Props = {
 };
 
 const StyledAnimatedBase = styled.div`
-  opacity: 0;
+  opacity: ${props => process.env.NODE_ENV === 'development' ? '1' : '0'};
   transition-property: opacity;
   transition-timing-function: ease-in-out;
   transition-duration: 1s;

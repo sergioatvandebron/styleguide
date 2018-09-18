@@ -25,7 +25,7 @@ import Button from '../Button';
         title: 'A test placeholder',
         alt: 'A test placeholder',
         src: 'https://via.placeholder.com/1440x800/888/fff',
-        key: 'example-1'
+        key: 'example-1',
       },
     ]}
   >
@@ -49,7 +49,7 @@ import Button from '../Button';
         title: 'A test placeholder',
         alt: 'A test placeholder',
         src: 'https://via.placeholder.com/1440x800/888/fff',
-        key: 'example-2'
+        key: 'example-2',
       },
     ]}
   >
@@ -72,13 +72,47 @@ import Button from '../Button';
         title: 'A test placeholder',
         alt: 'A test placeholder',
         src: 'https://via.placeholder.com/1440x800/888/fff',
-        key: 'example-3-image-1'
+        key: 'example-3-image-1',
+        aspectRatio: '16:9',
       },
       {
         title: 'A test placeholder 2',
         alt: 'A test placeholder 2',
         src: 'https://via.placeholder.com/800x800',
-        key: 'example-3-image-2'
+        key: 'example-3-image-2',
+        aspectRatio: '1:1',
+      },
+    ]}
+  >
+    <H2>Het ontstaan Vandebron</H2>
+    <Paragraph>
+      Vandebron is ontstaan vanuit het geloof in positieve verandering: het
+      versnellen van de transitie naar 100% duurzame energie. Bijdragen aan
+      deze verandering hoeft helemaal niet ingewikkeld te zijn. We bieden
+      slimme energietoepassingen die goed zijn voor de wereld en goed voor jou.
+    </Paragraph>
+    <Button theme="alternate">Lees meer</Button>
+  </ContentBlock>
+</Playground>
+
+## Two images + flipped images
+<Playground wrapper={Wrapper}>
+  <ContentBlock
+    imagesFlipped
+    images={[
+      {
+        title: 'A test placeholder',
+        alt: 'A test placeholder',
+        src: 'https://via.placeholder.com/1440x800/888/fff',
+        key: 'example-4-image-1',
+        aspectRatio: '16:9',
+      },
+      {
+        title: 'A test placeholder 2',
+        alt: 'A test placeholder 2',
+        src: 'https://via.placeholder.com/800x800',
+        key: 'example-4-image-2',
+        aspectRatio: '1:1',
       },
     ]}
   >
@@ -102,13 +136,82 @@ import Button from '../Button';
         title: 'A test placeholder',
         alt: 'A test placeholder',
         src: 'https://via.placeholder.com/1440x800/888/fff',
-        key: 'example-4-image-1'
+        key: 'example-5-image-1',
+        aspectRatio: '16:9',
       },
       {
         title: 'A test placeholder 2',
         alt: 'A test placeholder 2',
         src: 'https://via.placeholder.com/800x800',
-        key: 'example-4-image-2'
+        key: 'example-5-image-2',
+        aspectRatio: '1:1',
+      },
+    ]}
+  >
+    <H2>Het ontstaan Vandebron</H2>
+    <Paragraph>
+      Vandebron is ontstaan vanuit het geloof in positieve verandering: het
+      versnellen van de transitie naar 100% duurzame energie. Bijdragen aan
+      deze verandering hoeft helemaal niet ingewikkeld te zijn. We bieden
+      slimme energietoepassingen die goed zijn voor de wereld en goed voor jou.
+    </Paragraph>
+    <Button theme="alternate">Lees meer</Button>
+  </ContentBlock>
+</Playground>
+
+## Two images + flipped + images flipped
+<Playground wrapper={Wrapper}>
+  <ContentBlock
+    flipped
+    imagesFlipped
+    images={[
+      {
+        title: 'A test placeholder',
+        alt: 'A test placeholder',
+        src: 'https://via.placeholder.com/1440x800/888/fff',
+        key: 'example-6-image-1',
+        aspectRatio: '16:9',
+      },
+      {
+        title: 'A test placeholder 2',
+        alt: 'A test placeholder 2',
+        src: 'https://via.placeholder.com/800x800',
+        key: 'example-6-image-2',
+        aspectRatio: '1:1',
+      },
+    ]}
+  >
+    <H2>Het ontstaan Vandebron</H2>
+    <Paragraph>
+      Vandebron is ontstaan vanuit het geloof in positieve verandering: het
+      versnellen van de transitie naar 100% duurzame energie. Bijdragen aan
+      deze verandering hoeft helemaal niet ingewikkeld te zijn. We bieden
+      slimme energietoepassingen die goed zijn voor de wereld en goed voor jou.
+    </Paragraph>
+    <Button theme="alternate">Lees meer</Button>
+  </ContentBlock>
+</Playground>
+
+## Two images + flipped + images flipped + different size
+<Playground wrapper={Wrapper}>
+  <ContentBlock
+    flipped
+    imagesFlipped
+    images={[
+      {
+        title: 'A test placeholder',
+        alt: 'A test placeholder',
+        src: 'https://via.placeholder.com/1440x800/888/fff',
+        key: 'example-7-image-1',
+        aspectRatio: '4:3',
+      },
+      {
+        title: 'A test placeholder 2',
+        alt: 'A test placeholder 2',
+        src: 'https://via.placeholder.com/800x800',
+        key: 'example-7-image-2',
+        aspectRatio: '1:1',
+        size: 'small',
       },
     ]}
   >

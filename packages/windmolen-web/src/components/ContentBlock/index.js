@@ -1,23 +1,38 @@
 // @flow
 import React, { Fragment, type Node } from 'react';
+import classNames from 'classnames';
 import { media } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 import Container from '../Bootstrap/Container';
 import Row from '../Bootstrap/Row';
 import Col from '../Bootstrap/Col';
 import Animate from '../Animate';
+import Image from '../Image';
 
 import Base from '../Base';
 
 export type Props = {
+  /** An array of the images being shown. */
   images?: array,
+
+  /** When specified, the content/image container will be flipped. */
   flipped?: boolean,
+
+  /** When specified, the images will flip sides. */
+  imagesFlipped?: boolean,
+
+  /** Specifiy a size (will be applied to very specific images). */
+  size?: string,
+
+  /** The content itself. */
   children?: Node
 };
 
+const StyledImage = styled(Image)``;
+
 const StyledContentBlock = styled(Base.withComponent('div'))`
   ${media.desktop`
-    min-height: 540px;
+    min-height: 510px;
     position: relative;
     display: flex;
     align-items: center;
@@ -26,7 +41,7 @@ const StyledContentBlock = styled(Base.withComponent('div'))`
   /* one image */
   .content-block--image-wrapper:first-child:nth-last-child(1) {
     ${media.desktop`
-      height: 540px;
+      height: 510px;
     `}
 
     .content-block--image {
@@ -45,24 +60,17 @@ const StyledContentBlock = styled(Base.withComponent('div'))`
   /* two images */
   .content-block--image-wrapper:first-child:nth-last-child(2),
   .content-block--image-wrapper:first-child:nth-last-child(2) ~ .content-block--image-wrapper {
-    .content-block--image {
-      height: 100%;
-      width: 100%;
-      max-width: 100%;
-      object-fit: cover;
-
-      ${media.desktop`
-        float: ${props => props.flipped ? 'right' : 'left'};
-      `}
-    }
-
     &:nth-child(1) {
       margin-top: -50px;
       width: 100%;
-      padding-right: 50px;
       position: relative;
       z-index: 2;
       order: 2;
+      ${props => props.imagesFlipped ? `
+        padding-left: 60px;
+      ` : `
+        padding-right: 60px;
+      `}
 
       ${media.desktop`
         margin-top: -80px;
@@ -73,17 +81,28 @@ const StyledContentBlock = styled(Base.withComponent('div'))`
     }
 
     &:nth-child(2) {
-      align-self: flex-end;
-      width: 50%;
+      align-self: ${props => props.imagesFlipped ? 'flex-start' : 'flex-end'};
       height: auto;
       object-fit: cover;
       order: 1;
-
       ${media.desktop`
-        width: 200px;
-        height: 200px;
         object-fit: cover;
       `}
+
+      &.size--small {
+        width: 110px;
+        ${media.desktop`
+          width: 200px;
+        `}
+      }
+
+      &.size--large {
+        width: 170px;
+        ${media.desktop`
+          width: 300px;
+        `}
+      }
+
     }
   }
 
@@ -111,6 +130,7 @@ const StyledContentBlock = styled(Base.withComponent('div'))`
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     ${media.desktop`
       margin-bottom: 0;
@@ -132,12 +152,8 @@ const StyledRow = styled(Row)`
   `}
 `;
 
-const ContentBlock = ({
-  images,
-  flipped,
-  children,
-}: Props) => {
-  const colAttrs = flipped ? {
+const ContentBlock = ({ children, ...props }: Props) => {
+  const colAttrs = props.flipped ? {
     lg: 5,
     lgOffset: 7,
   } : {
@@ -145,58 +161,68 @@ const ContentBlock = ({
   };
 
   const renderContent = (images) => {
-    if (images.length == 2) {
-      return (
-        <StyledContainer>
-          <StyledRow>
+    switch (images.length) {
+      case 2:
+        return (
+          <StyledContainer>
+            <StyledRow>
+              <div className="content-block--images-container">
+                {images.map(({ key, size, ...props, }) => (
+                  <div className={classNames('content-block--image-wrapper', {
+                    [`size--${size}`]: size,
+                  })}
+                  key={key}
+                >
+                    <StyledImage
+                      className="content-block--image"
+                      {...props}
+                    />
+                  </div>
+                ))}
+              </div>
+              <Col className="content-block--content-wrapper" {...colAttrs}>
+                {children}
+              </Col>
+            </StyledRow>
+          </StyledContainer>
+        );
+
+      case 1:
+      default:
+        return (
+          <Fragment>
             <div className="content-block--images-container">
-              {images.map(({ src, key, ...props, }) => (
+              {images.map(({ key, ...props, }) => (
                 <div className="content-block--image-wrapper" key={key}>
-                  <img
+                  <StyledImage
                     className="content-block--image"
-                    src={src}
                     {...props}
                   />
                 </div>
               ))}
             </div>
-            <Col className="content-block--content-wrapper" {...colAttrs}>
-              {children}
-            </Col>
-          </StyledRow>
-        </StyledContainer>
-      );
+            <StyledContainer>
+              <Row>
+                <Col className="content-block--content-wrapper" {...colAttrs}>
+                  {children}
+                </Col>
+              </Row>
+            </StyledContainer>
+          </Fragment>
+        );
     }
-
-    // Single image
-    return (
-      <Fragment>
-        <div className="content-block--images-container">
-          {images.map(({ src, key, ...props, }) => (
-            <div className="content-block--image-wrapper" key={key}>
-              <img
-                className="content-block--image"
-                src={src}
-                {...props}
-              />
-            </div>
-          ))}
-        </div>
-        <StyledContainer>
-          <Row>
-            <Col className="content-block--content-wrapper" {...colAttrs}>
-              {children}
-            </Col>
-          </Row>
-        </StyledContainer>
-      </Fragment>
-    );
   };
+
+  // Set default values for all the images.
+  const alteredImages = props.images.map(attrs => ({
+    size: 'large',
+    ...attrs,
+  }))
 
   return (
     <Animate.Block>
-      <StyledContentBlock flipped={flipped}>
-        {renderContent(images)}
+      <StyledContentBlock {...props}>
+        {renderContent(alteredImages)}
       </StyledContentBlock>
     </Animate.Block>
   );
