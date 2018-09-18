@@ -39,6 +39,7 @@ type ItemProps = {
 };
 
 type ExpandableItemProps = ItemProps & {
+  handleClick: Function,
   defaultExpanded: boolean,
   title: Node,
   children?: Node
@@ -51,7 +52,7 @@ const Li = styled(Base.withComponent('li'))`
   padding-left: 30px;
 `;
 
-const StyledIcon = styled(Icon)`
+export const StyledIcon = styled(Icon)`
   position: absolute;
   left: -5px;
 
@@ -71,7 +72,7 @@ const Item = ({ icon, inheritedIcon, children, ...props }: ItemProps) => {
   return (
     <Li {...props}>
       <StyledIcon name={usedIcon} />
-      <StyledItemContent fontSize="body-xsmall">{children}</StyledItemContent>
+      <StyledItemContent fontSize="body-small">{children}</StyledItemContent>
     </Li>
   );
 };
@@ -93,7 +94,8 @@ const ItemWithRotatedIcon = styled(Item)`
 
 class ExpandableItem extends PureComponent<ExpandableItemProps, { isExpanded: boolean }> {
   static defaultProps = {
-    defaultExpanded: false
+    defaultExpanded: false,
+    handleClick() {}
   };
 
   constructor(props) {
@@ -104,7 +106,12 @@ class ExpandableItem extends PureComponent<ExpandableItemProps, { isExpanded: bo
     };
   }
 
-  toggleExpanded = () => this.setState({ isExpanded: !this.state.isExpanded });
+  toggleExpanded = () => {
+    const isExpanded = !this.state.isExpanded;
+
+    this.props.handleClick(isExpanded);
+    this.setState({ isExpanded });
+  }
 
   render() {
     const { title, children } = this.props;

@@ -6,7 +6,8 @@ import { media } from 'styled-bootstrap-grid';
 import Icon from '../Icon';
 import { colors } from '../../globals';
 
-export type VariantType= 'text'
+export type VariantType = 'text'
+  | 'text-boring'
   | 'button-primary'
   | 'button-alternate'
   | 'button-outline';
@@ -19,7 +20,7 @@ type VariantList = {
   [VariantType]: Variant
 };
 
-type PressableProps = {
+export type PressableProps = {
   children?: Node,
   variant?: VariantType,
 
@@ -44,6 +45,19 @@ const pressableText: Variant = {
   iconVariant: 0,
   hoverIconVariant: 0,
   textDecoration: 'underline',
+  cursor: 'pointer',
+};
+
+const pressableTextBoring: Variant = {
+  color: colors.charcoalGray,
+  backgroundColor: colors.transparent,
+  hoverColor: colors.charcoalGray,
+  hoverBackgroundColor: colors.transparent,
+  shadow: 'none',
+  border: `1px solid ${colors.transparent}`,
+  iconVariant: 0,
+  hoverIconVariant: 0,
+  textDecoration: 'none',
   cursor: 'pointer',
 };
 
@@ -89,6 +103,7 @@ const pressableButtonOutline: Variant = {
 
 const pressableVariants: VariantList = {
   'text': pressableText,
+  'text-boring': pressableTextBoring,
   'button-primary': pressableButtonPrimary,
   'button-alternate': pressableButtonAlternate,
   'button-outline': pressableButtonOutline
@@ -105,14 +120,14 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   box-shadow: ${variant('shadow')};
   color: ${variant('color')};
   cursor: ${variant('cursor')};
-  display: ${props => props.variant === 'text' ? 'inline' : 'block'};
-  font-weight: 600;
-  padding: ${props => props.variant === 'text' ? 0 : '8px 20px'};
+  display: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'inline' : 'block'};
+  font-weight: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'inherit' : 600};
+  padding: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 0 : '8px 20px'};
   text-align: left;
   text-decoration: ${variant('textDecoration')};
-  width: ${props => props.variant === 'text' ? 'auto' : '100%'};
+  width: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'auto' : '100%'};
 
-  ${props => props.variant !== 'text' && `
+  ${props => props.variant !== 'text' && props.variant !== 'text-boring' && `
     display: inline-flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -134,6 +149,10 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
     background-color: ${variant('hoverBackgroundColor')};
     color: ${variant('hoverColor')};
     border: ${variant('hoverBorder', 'border')};
+
+    // for now, the following works because it's always the same
+    // change it if that stops being the case
+    text-decoration: ${variant('textDecoration')};
 
     ${StyledRightIcon},
     ${StyledLeftIcon} {
@@ -172,8 +191,8 @@ const StyledPressableText = styled('span')`
 const Pressable = (props: PressableProps) => {
   const { as: baseElement, children, icon, ...componentProps } = props;
   const Component = pressableFactory(baseElement);
-  const showArrowIcon = props.variant !== 'text' && !props.hideArrow;
-  const showIcon = props.icon && props.variant !== 'text';
+  const showArrowIcon = props.variant !== 'text' && props.variant !== 'text-boring' && !props.hideArrow;
+  const showIcon = props.icon && props.variant !== 'text' && props.variant !== 'text-boring';
 
   // TODO wait for do expressions to land in ecmascript, because i will NOT do `let`
   const fontSize = (function(props) {
@@ -181,7 +200,7 @@ const Pressable = (props: PressableProps) => {
       return 'button-small';
     }
 
-    if (props.variant === 'text') {
+    if (props.variant === 'text' || props.variant === 'text-boring') {
       return 'inherit';
     }
 

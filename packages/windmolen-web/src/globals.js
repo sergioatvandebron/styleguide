@@ -47,6 +47,7 @@ const colors = {
   shuttleGray: '#50606f',
   warmGray: '#717171',
   silver: '#c1c1c1',
+  gallery: '#ececec',
   bermudaGray: '#778ea6',
   alabaster: '#fcfcfc',
   red: '#d0021b',

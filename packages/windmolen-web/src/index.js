@@ -17,6 +17,8 @@ export { default as Animate } from './components/Animate';
 export { default as Pressable } from './components/Pressable';
 export { default as Modal } from './components/Modal';
 export { default as Bold } from './components/Bold';
+export { default as Tab } from './components/Tab';
+export { default as VerticalTabs } from './components/VerticalTabs';
 
 // Bootstrap
 export { default as Container } from './components/Bootstrap/Container';

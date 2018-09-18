@@ -1,0 +1,33 @@
+---
+name: VerticalTabs
+menu: Elements
+route: /Elements/VerticalTabs
+---
+
+import { Playground, PropsTable } from 'docz';
+import Wrapper from '../Wrapper';
+import VerticalTabs from './';
+import Tab from '../Tab';
+import Bold from '../Bold';
+import Span from '../Span';
+import Paragraph from '../Paragraph';
+
+# VerticalTabs
+
+## Props 
+<PropsTable of={VerticalTabs} />
+
+## Basic usage
+<Playground wrapper={Wrapper}>
+  <VerticalTabs>
+    <Tab icon="star-outline--thick" title="Populaire vragen" active>
+      Momenteel de meest gestelde vragen
+    </Tab>
+    <Tab icon="vdb-logo" title="Vandebron">
+      Over Vandebron en contact met ons opnemen
+    </Tab>
+    <Tab icon="wallet--thick" title="Geldzaken">
+      Alles over termijnbedragen en energienota's
+    </Tab>
+  </VerticalTabs>
+</Playground>
