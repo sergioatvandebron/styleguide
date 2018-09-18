@@ -10,7 +10,7 @@ const VerticalTabs = styled(List)`
 
   ${StyledTab} {
     border-bottom: 1px solid ${colors.gallery};
-    padding: 20px 10px 20px 55px;
+    padding: 10px 10px 15px 55px;
 
     &:last-child {
       border-bottom: 0;
