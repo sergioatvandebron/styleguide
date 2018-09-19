@@ -1,4 +1,4 @@
-import React, { type Node } from 'react';
+import React, { type Node, Component } from 'react';
 import styled from 'styled-components';
 import { media } from 'styled-bootstrap-grid';
 import { colors } from '../../globals';
@@ -72,6 +72,10 @@ const StyledHeader = styled.div`
   position: relative;
   width: 100%;
   min-height: 65px;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  transition: box-shadow 0.3s ease-in-out;
+
+  ${props => props.isScrolling && 'box-shadow: 0 0 8px 0 rgba(51, 61, 71, 0.12);'}
 
   ${media.desktop`
     min-height: 90px;
@@ -108,46 +112,83 @@ const StyledContentWrapper = styled.div`
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  background:
-    linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
-    radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
-  background:
-    linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
-    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
-  background-repeat: no-repeat;
-  background-color: white;
-  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-  background-attachment: local, local, scroll, scroll;
-`
+`;
 
-const Modal = ({ children, ...props }: Props) => (
-  <StyledModalContainer {...props}>
-    <StyledModal>
-      {!props.hideHeader && (
-        <StyledHeader>
-          {!props.hideLogo && (
-            <StyledLogoContainer>
-              <StyledLogo src={logo} alt="vandebron" />
-            </StyledLogoContainer>
+class Modal extends Component<Props> {
+  constructor(props: Props) {
+    super(props);
+    this._frameId;
+
+    this.state = {
+      isScrolling: false,
+    };
+
+    this.startLoop = this.startLoop.bind(this);
+    this.stopLoop = this.stopLoop.bind(this);
+    this.loop = this.loop.bind(this);
+  }
+
+  componentDidMount() {
+    this.startLoop();
+  }
+
+  componentWillUnmount() {
+    this.stopLoop();
+  }
+
+  startLoop() {
+    if (!this._frameId) {
+      this._frameId = window.requestAnimationFrame(this.loop);
+    }
+  }
+
+  loop() {
+    if (this.contentWrapper) {
+      const isScrolling = this.contentWrapper.scrollTop > 0;
+      if (isScrolling !== this.state.isScrolling) {
+        this.setState({ isScrolling });
+      }
+    }
+
+    // Set up next iteration of the loop.
+    this._frameId = window.requestAnimationFrame(this.loop)
+  }
+
+  stopLoop() {
+    window.cancelAnimationFrame(this._frameId);
+  }
+
+  render() {
+    return (
+      <StyledModalContainer {...this.props}>
+        <StyledModal>
+          {!this.props.hideHeader && (
+            <StyledHeader isScrolling={this.state.isScrolling}>
+              {!this.props.hideLogo && (
+                <StyledLogoContainer>
+                  <StyledLogo src={logo} alt="vandebron" />
+                </StyledLogoContainer>
+              )}
+              {!this.props.hideCloseButton && (
+                <StyledCloseButton
+                  name="close"
+                  onClick={this.props.onClose}
+                  fontSize="18px"
+                  desktopFontSize="24px"
+                />
+              )}
+            </StyledHeader>
           )}
-          {!props.hideCloseButton && (
-            <StyledCloseButton
-              name="close"
-              onClick={props.onClose}
-              fontSize="18px"
-              desktopFontSize="24px"
-            />
-          )}
-        </StyledHeader>
-      )}
-      <StyledContentWrapper>
-        <ComponentGroup padding="large">
-          {children}
-        </ComponentGroup>
-      </StyledContentWrapper>
-    </StyledModal>
-  </StyledModalContainer>
-);
+          <StyledContentWrapper innerRef={(node) => { this.contentWrapper = node; }}>
+            <ComponentGroup padding="large">
+              {this.props.children}
+            </ComponentGroup>
+          </StyledContentWrapper>
+        </StyledModal>
+      </StyledModalContainer>
+    );
+  }
+}
 
 Modal.defaultProps = {
   onClose: () => {},
