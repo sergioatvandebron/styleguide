@@ -1,5 +1,5 @@
 // @flow
-import React, { type Node, PureComponent } from 'react';
+import React, { type Node, Component } from 'react';
 import styled from 'styled-components';
 import { media } from 'styled-bootstrap-grid';
 import Base from '../Base';
@@ -92,7 +92,7 @@ const ItemWithRotatedIcon = styled(Item)`
   }
 `;
 
-class ExpandableItem extends PureComponent<ExpandableItemProps, { isExpanded: boolean }> {
+class ExpandableItem extends Component<ExpandableItemProps, { isExpanded: boolean }> {
   static defaultProps = {
     defaultExpanded: false,
     handleClick() {}
@@ -108,9 +108,7 @@ class ExpandableItem extends PureComponent<ExpandableItemProps, { isExpanded: bo
 
   toggleExpanded = () => {
     const isExpanded = !this.state.isExpanded;
-
-    this.props.handleClick(isExpanded);
-    this.setState({ isExpanded });
+    this.setState({ isExpanded }, () => this.props.handleClick(isExpanded));
   }
 
   render() {
