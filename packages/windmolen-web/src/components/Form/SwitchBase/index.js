@@ -328,7 +328,7 @@ class SwitchBase extends Component<Props> {
       labelPlacement,
       fontSize: 'body-xsmall',
       ...labelProps,
-    }
+    };
 
     return (
       <StyledSwitchBase onClick={this.toggle} {...other} checked={checked}>

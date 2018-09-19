@@ -1,4 +1,5 @@
 import React, { type Node, Component } from 'react';
+import classNames from 'classnames';
 import styled from 'styled-components';
 import { media } from 'styled-bootstrap-grid';
 import { colors } from '../../globals';
@@ -160,8 +161,8 @@ class Modal extends Component<Props> {
 
   render() {
     return (
-      <StyledModalContainer {...this.props}>
-        <StyledModal>
+      <StyledModalContainer {...this.props} className={classNames('fadeIn', this.props.className)}>
+        <StyledModal className="fadeInUp">
           {!this.props.hideHeader && (
             <StyledHeader isScrolling={this.state.isScrolling}>
               {!this.props.hideLogo && (
