@@ -61,6 +61,9 @@ export type Props = {
 
   /** The font size for the icon. */
   iconFontSize: string,
+
+  /** The font size for the icon for desktop. */
+  desktopIconFontSize: string,
 }
 
 const getSwitchType = (type) => {
@@ -369,6 +372,7 @@ SwitchBase.defaultProps = {
   iconChecked: null,
   iconVariantChecked: null,
   iconFontSize: null,
+  desktopIconFontSize: null,
   variant: null,
 };
 

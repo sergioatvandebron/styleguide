@@ -143,9 +143,8 @@ const StyledSpan = styled(Span).attrs({
   &&& {
     font-size: ${props => props.fontSize};
     line-height: 1;
-
     ${media.desktop`
-      font-size: ${props => props.desktopFontSize || props.fontSize};
+      ${props => props.desktopFontSize !== null && `font-size: ${props.desktopFontSize};`}
     `}
   }
 }`;
