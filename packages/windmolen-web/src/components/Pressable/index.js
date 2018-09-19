@@ -24,14 +24,20 @@ export type PressableProps = {
   children?: Node,
   variant?: VariantType,
 
-  /** Either an HTML element (e.g. "'a'") or a React component */
+  /** Either an HTML element (e.g. "'a'") or a React component. */
   as?: string | Node,
-  /** Used with button* variants */
+
+  /** Used with button* variants. */
   small?: boolean,
-  /** Used with button* variants */
-  hideArrow?: boolean,
-  /** Name of the icon to use, same as <Icon /> */
-  icon?: string
+
+  /** Wether to hide the icon or not. */
+  hideIcon?: boolean,
+
+  /** Name of the icon to use, same as <Icon />. */
+  icon?: string,
+
+  /** The placement of the icon. */
+  iconPlacement?: 'start' | 'end',
 };
 
 // Pressable variant definitions
@@ -122,10 +128,18 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   cursor: ${variant('cursor')};
   display: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'inline' : 'block'};
   font-weight: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'inherit' : 600};
-  padding: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 0 : '8px 20px'};
   text-align: left;
   text-decoration: ${variant('textDecoration')};
   width: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'auto' : '100%'};
+  padding: ${props => {
+    if (props.variant === 'text' || props.variant === 'text-boring') {
+      return 0;
+    } else if (props.hideIcon) {
+      return '14px 20px';
+    }
+
+    return '8px 20px';
+  }};
 
   ${props => props.variant !== 'text' && props.variant !== 'text-boring' && `
     display: inline-flex;
@@ -191,8 +205,8 @@ const StyledPressableText = styled('span')`
 const Pressable = (props: PressableProps) => {
   const { as: baseElement, children, icon, ...componentProps } = props;
   const Component = pressableFactory(baseElement);
-  const showArrowIcon = props.variant !== 'text' && props.variant !== 'text-boring' && !props.hideArrow;
-  const showIcon = props.icon && props.variant !== 'text' && props.variant !== 'text-boring';
+  const showLeftIcon = props.variant !== 'text' && props.variant !== 'text-boring' && props.iconPlacement === 'start' && !props.hideIcon;
+  const showRightIcon = props.variant !== 'text' && props.variant !== 'text-boring' && props.iconPlacement === 'end' && !props.hideIcon;
 
   // TODO wait for do expressions to land in ecmascript, because i will NOT do `let`
   const fontSize = (function(props) {
@@ -209,9 +223,9 @@ const Pressable = (props: PressableProps) => {
 
   return (
     <Component fontSize={fontSize} {...componentProps}>
-      {showIcon && <StyledLeftIcon name={icon} />}
+      {showLeftIcon && <StyledLeftIcon name={icon} />}
       <StyledPressableText>{children}</StyledPressableText>
-      {showArrowIcon && <StyledRightIcon name="arrow-right" />}
+      {showRightIcon && <StyledRightIcon name={icon} />}
     </Component>
   );
 };
@@ -220,7 +234,9 @@ Pressable.defaultProps = {
   as: 'button',
   variant: 'button-primary',
   small: false,
-  hideArrow: false,
+  hideIcon: false,
+  icon: 'arrow-right',
+  iconPlacement: 'end',
 };
 
 // last cast to make sure we don't accidentally mistype a prop

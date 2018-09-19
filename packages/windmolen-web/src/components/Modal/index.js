@@ -35,7 +35,7 @@ const StyledCloseButton = styled(Icon)`
   }
 
   ${media.desktop`
-    top: 30px;
+    top: 34px;
     right: 30px;
   `}
 `;
@@ -49,6 +49,7 @@ const StyledModalContainer = styled.div`
   background-color: rgba(51, 61, 71, 0.5);
   z-index: 1000;
   text-align: center;
+  overflow: hidden;
 
   ${media.desktop`
     padding: 20px;
@@ -60,19 +61,21 @@ const StyledModal = styled.div`
   background-color: ${colors.white};
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
 const StyledHeader = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  z-index: 2;
+  min-height: 65px;
+
+  ${media.desktop`
+    min-height: 90px;
+  `}
 `;
 
 const StyledLogo = styled(Image)`
@@ -81,9 +84,9 @@ const StyledLogo = styled(Image)`
 
 const StyledLogoContainer = styled.div`
   position: absolute;
-  top: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   user-select: none;
 
   ${StyledLogo} {
@@ -91,7 +94,7 @@ const StyledLogoContainer = styled.div`
   }
 
   ${media.desktop`
-    height: 15px;
+    top: 30px;
     left: 30px;
     transform: none;
 
@@ -101,12 +104,27 @@ const StyledLogoContainer = styled.div`
   `}
 `;
 
+const StyledContentWrapper = styled.div`
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background:
+    linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+    radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+  background:
+    linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%,
+    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-attachment: local, local, scroll, scroll;
+`
+
 const Modal = ({ children, ...props }: Props) => (
   <StyledModalContainer {...props}>
     <StyledModal>
-      <div>
-        {!props.hideHeader && (
-          <StyledHeader>
+      {!props.hideHeader && (
+        <StyledHeader>
           {!props.hideLogo && (
             <StyledLogoContainer>
               <StyledLogo src={logo} alt="vandebron" />
@@ -121,11 +139,12 @@ const Modal = ({ children, ...props }: Props) => (
             />
           )}
         </StyledHeader>
-        )}
-      </div>
-      <ComponentGroup padding="large">
-        {children}
-      </ComponentGroup>
+      )}
+      <StyledContentWrapper>
+        <ComponentGroup padding="large">
+          {children}
+        </ComponentGroup>
+      </StyledContentWrapper>
     </StyledModal>
   </StyledModalContainer>
 );

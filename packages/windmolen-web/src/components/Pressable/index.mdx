@@ -38,6 +38,11 @@ import Pressable from './';
   <Pressable as="a" variant="text-boring" href="#anchor-boring-text" fontSize="body">An anchor</Pressable>
 </Playground>
 
+## Alternate button hiding arrow
+<Playground wrapper={Wrapper}>
+  <Pressable variant="button-alternate" fontSize="button" hideIcon>A button</Pressable>
+</Playground>
+
 ## Alternate button
 <Playground wrapper={Wrapper}>
   <Pressable variant="button-alternate" fontSize="button">A button</Pressable>
@@ -55,7 +60,8 @@ import Pressable from './';
 
 ## With custom icon
 <Playground wrapper={Wrapper}>
-  <Pressable fontSize="button" icon="arrow-left" hideArrow>With custom icon on the left</Pressable>
+  <Pressable fontSize="button" icon="arrow-left" iconPlacement="start">With custom icon on the left</Pressable>
+  <Pressable fontSize="button" icon="windmill">With custom icon on the right</Pressable>
 </Playground>
 
 ## With custom component
