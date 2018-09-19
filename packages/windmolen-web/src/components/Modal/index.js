@@ -1,9 +1,11 @@
 import React, { type Node } from 'react';
 import styled from 'styled-components';
+import { media } from 'styled-bootstrap-grid';
 import { colors } from '../../globals';
 import Icon from '../Icon';
 import ComponentGroup from '../ComponentGroup';
 import logo from '../../assets/vdb-logo.svg';
+import Image from '../Image';
 
 type Props = {
   /** The children that will be rendered within the modal. */
@@ -24,13 +26,18 @@ type Props = {
 
 const StyledCloseButton = styled(Icon)`
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 24px;
+  right: 20px;
 
   &:hover {
     background-position-y: -3em;
     cursor: pointer;
   }
+
+  ${media.desktop`
+    top: 30px;
+    right: 30px;
+  `}
 `;
 
 const StyledModalContainer = styled.div`
@@ -40,9 +47,12 @@ const StyledModalContainer = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(51, 61, 71, 0.5);
-  padding: 20px;
   z-index: 1000;
   text-align: center;
+
+  ${media.desktop`
+    padding: 20px;
+  `}
 `;
 
 const StyledModal = styled.div`
@@ -65,11 +75,30 @@ const StyledHeader = styled.div`
   z-index: 2;
 `;
 
+const StyledLogo = styled(Image)`
+  vertical-align: middle;
+`;
+
 const StyledLogoContainer = styled.div`
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   user-select: none;
+
+  ${StyledLogo} {
+    height: 15px;
+  }
+
+  ${media.desktop`
+    height: 15px;
+    left: 30px;
+    transform: none;
+
+    ${StyledLogo} {
+      height: 20px;
+    }
+  `}
 `;
 
 const Modal = ({ children, ...props }: Props) => (
@@ -80,11 +109,16 @@ const Modal = ({ children, ...props }: Props) => (
           <StyledHeader>
           {!props.hideLogo && (
             <StyledLogoContainer>
-            <img src={logo} alt="vandebron" />
-          </StyledLogoContainer>
+              <StyledLogo src={logo} alt="vandebron" />
+            </StyledLogoContainer>
           )}
           {!props.hideCloseButton && (
-            <StyledCloseButton name="close" onClick={props.onClose} />
+            <StyledCloseButton
+              name="close"
+              onClick={props.onClose}
+              fontSize="18px"
+              desktopFontSize="24px"
+            />
           )}
         </StyledHeader>
         )}
