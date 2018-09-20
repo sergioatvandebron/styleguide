@@ -27,7 +27,6 @@ export default {
     rebase({
       folder: 'assets',
       verbose: true,
-      import: ['**/*.svg']
     }),
 
     resolve({
@@ -41,9 +40,9 @@ export default {
       plugins: ['external-helpers', 'babel-plugin-transform-object-rest-spread', 'babel-plugin-transform-class-properties']
     }),
 
-    process.env.NODE_ENV === 'production' && terser({
-      warnings: 'verbose'
-    }),
+    // process.env.NODE_ENV === 'production' && terser({
+    //   warnings: 'verbose'
+    // }),
 
     // after building, assets will end up in `./assets/file`, relatively to the
     // importing module (e.g. `Icon`), so we need to strip `components/Icon` from

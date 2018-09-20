@@ -1,36 +1,76 @@
 // @flow
 import { injectGlobal } from 'styled-components';
 
-/** Font */
-type FontThickness = 'thin'
-  | 'light'
-  | 'regular'
-  | 'semibold'
-  | 'bold'
-  | 'extrabold'
-  | 'black';
-
-type FontWeight = 100 | 300 | 400 | 600 | 700 | 800 | 900;
-
-const fontFace = (weight: FontWeight, thickness: FontThickness) => `@font-face {
-  font-family: "Proxima Nova";
-  src: url('./assets/fonts/proxima-nova-${thickness}.eot');
-  src:
-    url('./assets/fonts/proxima-nova-${thickness}.eot?#iefix') format("embedded-opentype");
-    url('./assets/fonts/proxima-nova-${thickness}.woff'); format("woff")
-    url('./assets/fonts/proxima-nova-${thickness}.ttf'); format("truetype")
-    url('./assets/fonts/proxima-nova-${thickness}.svg#proxima_nova'); format("svg")
-  font-weight: ${weight};
-}`;
-
 injectGlobal`
-  ${fontFace(100, 'thin')}
-  ${fontFace(300, 'light')}
-  ${fontFace(400, 'regular')}
-  ${fontFace(600, 'semibold')}
-  ${fontFace(700, 'bold')}
-  ${fontFace(800, 'extrabold')}
-  ${fontFace(900, 'black')}
+  @font-face {
+  font-family: "proxima nova";
+  src: url(${require('./assets/fonts/proxima-nova-thin.eot')});
+  src:
+    url(${require('./assets/fonts/proxima-nova-thin.eot')}?#iefix) format("embedded-opentype"),
+    url(${require('./assets/fonts/proxima-nova-thin.ttf')}) format("truetype"),
+    url(${require('./assets/fonts/proxima-nova-thin.svg')}?#proxima_nova) format("svg");
+  font-weight: 100;
+  }
+
+  @font-face {
+  font-family: "proxima nova";
+  src: url(${require('./assets/fonts/proxima-nova-light.eot')});
+  src:
+    url(${require('./assets/fonts/proxima-nova-light.eot')}?#iefix) format("embedded-opentype"),
+    url(${require('./assets/fonts/proxima-nova-light.ttf')}) format("truetype"),
+    url(${require('./assets/fonts/proxima-nova-light.svg')}?#proxima_nova) format("svg");
+  font-weight: 300;
+  }
+
+  @font-face {
+  font-family: "proxima nova";
+  src: url(${require('./assets/fonts/proxima-nova-regular.eot')});
+  src:
+    url(${require('./assets/fonts/proxima-nova-regular.eot')}?#iefix) format("embedded-opentype"),
+    url(${require('./assets/fonts/proxima-nova-regular.ttf')}) format("truetype"),
+    url(${require('./assets/fonts/proxima-nova-regular.svg')}?#proxima_nova) format("svg");
+  font-weight: 400;
+  }
+
+  @font-face {
+  font-family: "proxima nova";
+  src: url(${require('./assets/fonts/proxima-nova-semibold.eot')});
+  src:
+    url(${require('./assets/fonts/proxima-nova-semibold.eot')}?#iefix) format("embedded-opentype"),
+    url(${require('./assets/fonts/proxima-nova-semibold.ttf')}) format("truetype"),
+    url(${require('./assets/fonts/proxima-nova-semibold.svg')}?#proxima_nova) format("svg");
+  font-weight: 600;
+  }
+
+  @font-face {
+  font-family: "proxima nova";
+  src: url(${require('./assets/fonts/proxima-nova-bold.eot')});
+  src:
+    url(${require('./assets/fonts/proxima-nova-bold.eot')}?#iefix) format("embedded-opentype"),
+    url(${require('./assets/fonts/proxima-nova-bold.ttf')}) format("truetype"),
+    url(${require('./assets/fonts/proxima-nova-bold.svg')}?#proxima_nova) format("svg");
+  font-weight: 700;
+  }
+
+  @font-face {
+  font-family: "proxima nova";
+  src: url(${require('./assets/fonts/proxima-nova-extrabold.eot')});
+  src:
+    url(${require('./assets/fonts/proxima-nova-extrabold.eot')}?#iefix) format("embedded-opentype"),
+    url(${require('./assets/fonts/proxima-nova-extrabold.ttf')}) format("truetype"),
+    url(${require('./assets/fonts/proxima-nova-extrabold.svg')}?#proxima_nova) format("svg");
+  font-weight: 800;
+  }
+
+  @font-face {
+  font-family: "proxima nova";
+  src: url(${require('./assets/fonts/proxima-nova-black.eot')});
+  src:
+    url(${require('./assets/fonts/proxima-nova-black.eot')}?#iefix) format("embedded-opentype"),
+    url(${require('./assets/fonts/proxima-nova-black.ttf')}) format("truetype"),
+    url(${require('./assets/fonts/proxima-nova-black.svg')}?#proxima_nova) format("svg");
+  font-weight: 900;
+  }
 
   body {
     font-size: 18px;
@@ -41,25 +81,25 @@ injectGlobal`
   }
 `;
 
-/** Colors */
+/** colors */
 const colors = {
-  charcoalGray: '#333d47',
-  shuttleGray: '#50606f',
-  warmGray: '#717171',
+  charcoalgray: '#333d47',
+  shuttlegray: '#50606f',
+  warmgray: '#717171',
   silver: '#c1c1c1',
   gallery: '#ececec',
-  bermudaGray: '#778ea6',
+  bermudagray: '#778ea6',
   alabaster: '#fcfcfc',
   red: '#d0021b',
   green: '#6fd300',
   white: '#ffffff',
   black: '#000000',
 
-  // Specify rgba value instead of the word 'transparent' because of IE.
+  // specify rgba value instead of the word 'transparent' because of ie.
   transparent: 'rgba(255, 255, 255, 0)',
 };
 
-// Bootstrap grid
+// bootstrap grid
 const gridTheme = {
   breakpoints: {
     giant: 1200,
