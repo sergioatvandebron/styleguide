@@ -55,7 +55,7 @@ class AnimateBase extends Component<Props> {
 
   componentDidMount() {
     const parentSelector = this.props.scrollableParentSelector;
-    this.scrollableParent = parentSelector ? document.querySelector(parentSelector) : window;
+    this.scrollableParent = (parentSelector ? document.querySelector(parentSelector) : window) || window;
 
     const { isAboveViewport } = this.getVisibility();
     if (isAboveViewport) {
