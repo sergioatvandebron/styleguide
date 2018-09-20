@@ -110,6 +110,7 @@ const StyledLogoContainer = styled.div`
 `;
 
 const StyledContentWrapper = styled.div`
+  width: 100%;
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
