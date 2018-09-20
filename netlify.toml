@@ -3,6 +3,6 @@ ID = 'windmolen-web'
 
 [build]
   base = "packages/windmolen-web"
-  publish = "packages/windmolen-web/dist"
+  publish = "packages/windmolen-web/.docz/dist"
   command = "yarn website:build"
 
