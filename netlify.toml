@@ -1,5 +1,5 @@
 [Settings]
-ID = 'id'
+ID = 'windmolen-web'
 
 [build]
   base = "packages/windmolen-web"
