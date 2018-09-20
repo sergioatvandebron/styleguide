@@ -83,12 +83,12 @@ injectGlobal`
 
 /** colors */
 const colors = {
-  charcoalgray: '#333d47',
-  shuttlegray: '#50606f',
-  warmgray: '#717171',
+  charcoalGray: '#333d47',
+  shuttleGray: '#50606f',
+  warmGray: '#717171',
   silver: '#c1c1c1',
   gallery: '#ececec',
-  bermudagray: '#778ea6',
+  bermudaGray: '#778ea6',
   alabaster: '#fcfcfc',
   red: '#d0021b',
   green: '#6fd300',
