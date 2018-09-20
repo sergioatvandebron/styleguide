@@ -126,26 +126,23 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
   box-shadow: ${variant('shadow')};
   color: ${variant('color')};
   cursor: ${variant('cursor')};
-  display: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'inline' : 'block'};
-  font-weight: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'inherit' : 600};
   text-align: left;
   text-decoration: ${variant('textDecoration')};
-  width: ${props => props.variant === 'text' || props.variant === 'text-boring' ? 'auto' : '100%'};
-  padding: ${props => {
-    if (props.variant === 'text' || props.variant === 'text-boring') {
-      return 0;
-    } else if (props.hideIcon) {
-      return '14px 20px';
-    }
+  height: ${props => props.small ? '50px' : '60px'};
 
-    return '8px 20px';
-  }};
-
-  ${props => props.variant !== 'text' && props.variant !== 'text-boring' && `
+  ${props => props.variant !== 'text' && props.variant !== 'text-boring' ? `
     display: inline-flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    font-weight: 600;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  ` : `
+    display: inline;
+    font-weight: inherit;
+    width: auto;
   `}
 
   ${StyledRightIcon} {
@@ -176,6 +173,7 @@ const pressableFactory = (element): ReactComponentStyled<PressableProps> => Base
 
   ${media.desktop`
     width: auto;
+    height: ${props => props.small ? '40px' : '50px'};
 
     ${StyledRightIcon} {
       margin-left: 10px;
