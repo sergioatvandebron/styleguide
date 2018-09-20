@@ -162,8 +162,8 @@ class Modal extends Component<Props> {
 
   render() {
     return (
-      <StyledModalContainer {...this.props} className={classNames('fadeIn', this.props.className)}>
-        <StyledModal className="fadeInUp">
+      <StyledModalContainer {...this.props} className={classNames('animated fadeIn', this.props.className)}>
+        <StyledModal className="animated fadeInUp">
           {!this.props.hideHeader && (
             <StyledHeader isScrolling={this.state.isScrolling}>
               {!this.props.hideLogo && (
